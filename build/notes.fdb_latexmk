@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1743576326.74904 "notes.tex" "build/notes.pdf" "notes" 1743576327.33691 0
+["pdflatex"] 1744626450.55192 "notes.tex" "build/notes.pdf" "notes" 1744626450.9494 0
   "/home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/fontname/texfonts.map" 1741388039 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1741388039 5466553 2748998d7db8078826afa1f272036265 ""
   "/home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1741388039 1004 54797486969f23fa377b128694d548df ""
@@ -35,8 +35,8 @@
   "/home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1741388039 29785 9f93ab201fe5dd053afcc6c1bcf7d266 ""
   "/home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/web2c/texmf.cnf" 1741388039 42151 79f67285bdd95beca4d137b380b4b9e5 ""
   "/home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1741388039 3346150 07cce5a227fd5693bacd02b4f90fce20 ""
-  "build/notes.aux" 1743576327.22171 132 038e1076a9b61925d6ff2882e6abcd08 "pdflatex"
-  "notes.tex" 1743575095.27862 1948 426a40103bb534d54033b6d2d68cac1b ""
+  "build/notes.aux" 1744626447.93253 131 815836c7042f7b19594e52b192e21eef "pdflatex"
+  "notes.tex" 1743578322.18592 1947 3712bed97d90bf94c94eeced66f0c452 ""
   (generated)
   "build/notes.aux"
   "build/notes.log"
