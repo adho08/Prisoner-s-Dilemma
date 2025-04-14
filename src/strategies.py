@@ -1,22 +1,49 @@
+import random
+
 class Strategy:
 
-    def __init__(self, name):
+    def __init__(self, start, name):
+        self.start = start
         self.name = name
+        self.history = []
+        self.opponent_history = []
+        self.points = 0
 
-    def make_move(self):
+    def make_move(self, round):
         # Return True for 'c' or False for 'd'
         raise NotImplementedError("Subclasses must implement this method")
 
-class Cooperate(Strategy):
-    def __init__(self):
-        super().__init__("Cooperate")
+    def update(self, move, opponent_move):
+        self.history.append(move)
+        self.opponent_history.append(opponent_move)
 
-    def make_move(self):
+class AlwaysCooperate(Strategy):
+    def __init__(self):
+        super().__init__(True, "AlwaysCooperate")
+
+    def make_move(self, round):
         return True
 
-class Defect(Strategy):
+class AlwaysDefect(Strategy):
     def __init__(self):
-        super().__init__("Defect")
+        super().__init__(False, "AlwaysDefect")
 
-    def make_move(self):
+    def make_move(self, round):
         return False
+
+class Tit4Tat(Strategy):
+    def __init__(self):
+        super().__init__(True, "TitForTat")
+
+    def make_move(self, round):
+        if round == 0:
+            return self.start
+        else:
+            return self.opponent_history[round - 1]
+
+class Random(Strategy):
+    def __init__(self):
+        super().__init__(True, "Random")
+
+    def make_move(self, round):
+        return random.choice([True, False])

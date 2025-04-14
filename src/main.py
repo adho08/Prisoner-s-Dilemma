@@ -1,30 +1,44 @@
 # import strategies from strategies directory
-from strategies import Cooperate, Defect
+from strategies import AlwaysCooperate, AlwaysDefect, Tit4Tat, Random
 from game import PrisonersDilemma
 
 # initialize the strategies
-AC = Cooperate()
-AD = Defect()
+AC = AlwaysCooperate()
+AD = AlwaysDefect()
+T4T = Tit4Tat()
+RND = Random()
 
 # initialize the game
-PD = PrisonersDilemma(AC, AC)
- 
+PD = PrisonersDilemma(T4T, RND)
+
 def main():
     s1 = PD.strategy1
     s2 = PD.strategy2
-
-    m1 = s1.make_move()
-    m2 = s2.make_move()
-    result = PD.award(m1, m2)
-
-
-    # printing the result
-
+    
+    # printing the head of table
     padding = 14
     print(f"{s1.name : <{padding}} | {s2.name : <{padding}}")
-    print((2 * padding + 2) * '-')
-    print(f"{result[0] : <{padding}} | {result[1] : <{padding}}")
+    n = 2 * (padding + 2)
+    print(n * '-')
+
+    rounds = 100000
+
+    for round in range(rounds):
+        m1 = s1.make_move(round=round)
+        m2 = s2.make_move(round=round)
+        result = PD.award(m1, m2)
+
+        # updating the strategy
+        s1.update(m1, m2)
+        s2.update(m2, m1)
+        s1.points += result[0]
+        s2.points += result[1]
+
+        print(f"{result[0] : ^{padding}} | {result[1] : ^{padding}}")
+
+    print("\nMax Points:")
+    print(f"{s1.name} -> {s1.points} | {s2.name} -> {s2.points}")
+
 
 if __name__ == '__main__':
     main()
-
