@@ -54,7 +54,6 @@ def pf(s1, s2):
     f = open("tournament.txt", 'a')
     f.write(f"\n\n{s1}                    {s2}")
 
-
 def pr(r1, r2):
     f = open("tournament.txt", 'a')
     f.write(f"\n{r1}                    {r2}")
