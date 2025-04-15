@@ -38,6 +38,7 @@ def main():
 
     print("\nMax Points:")
     print(f"{s1.name} -> {s1.points} | {s2.name} -> {s2.points}")
+    print(f"Winner: {s1.name if s1.points > s2.points else s2.name}")
 
 
 if __name__ == '__main__':
