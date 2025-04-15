@@ -1,7 +1,6 @@
 import random
 
 class Strategy:
-
     def __init__(self, start, name):
         self.start = start
         self.name = name
