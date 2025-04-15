@@ -1,13 +1,13 @@
 class PrisonersDilemma:
 
-    def __init__(self, strategy1, strategy2):
-        self.strategy1 = strategy1
-        self.strategy2 = strategy2
+    def __init__(self, strategies):
+        # stored strategies in a list
+        self.strategies = strategies
 
         # awarding points
         self.MAX = 5
-        self.MIN = 0
         self.MC = 3
+        self.MIN = 0
         self.MD = 1
 
     def award(self, move1, move2):

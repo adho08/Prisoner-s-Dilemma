@@ -9,37 +9,55 @@ T4T = Tit4Tat()
 RND = Random()
 
 # initialize the game
-PD = PrisonersDilemma(T4T, RND)
+PD = PrisonersDilemma([AD, T4T, AC])
 
 def main():
-    s1 = PD.strategy1
-    s2 = PD.strategy2
+    f = open("tournament.txt", 'w')
+    f.write("")
     
-    # printing the head of table
-    padding = 14
-    print(f"{s1.name : <{padding}} | {s2.name : <{padding}}")
-    n = 2 * (padding + 2)
-    print(n * '-')
+    rounds = 200
 
-    rounds = 100000
+    # loop through the strategies so every strategy playes against each strategy
+    for i in range(len(PD.strategies) - 1, 0, -1):
+        for j in range(i - 1, -1, -1):
+            strategy1 = PD.strategies[i]
+            strategy2 = PD.strategies[j]
+            playIPD(strategy1, strategy2, rounds)
 
-    for round in range(rounds):
-        m1 = s1.make_move(round=round)
-        m2 = s2.make_move(round=round)
-        result = PD.award(m1, m2)
+    # sort the list of strategies based on the points
+    for strategy in sorted(PD.strategies):
+        print(f"{strategy}: {strategy.points}")
 
-        # updating the strategy
-        s1.update(m1, m2)
-        s2.update(m2, m1)
-        s1.points += result[0]
-        s2.points += result[1]
 
-        print(f"{result[0] : ^{padding}} | {result[1] : ^{padding}}")
+def playIPD(strategy1, strategy2, rounds):
+    print(f"{strategy1.name} vs. {strategy2.name}")
+    pf(strategy1, strategy2)
+    strategy1.reset()
+    strategy2.reset()
+    for i in range(rounds):
+        playPD(strategy1, strategy2, i)
 
-    print("\nMax Points:")
-    print(f"{s1.name} -> {s1.points} | {s2.name} -> {s2.points}")
-    print(f"Winner: {s1.name if s1.points > s2.points else s2.name}")
 
+def playPD(strategy1, strategy2, round):
+    m1 = strategy1.make_move(round=round)
+    m2 = strategy2.make_move(round=round)
+    result = PD.award(m1, m2)
+
+    # updating the strategy
+    strategy1.update(m1, m2)
+    strategy2.update(m2, m1)
+    strategy1.points += result[0]
+    strategy2.points += result[1]
+    pr(result[0], result[1])
+
+def pf(s1, s2):
+    f = open("tournament.txt", 'a')
+    f.write(f"\n\n{s1}                    {s2}")
+
+
+def pr(r1, r2):
+    f = open("tournament.txt", 'a')
+    f.write(f"\n{r1}                    {r2}")
 
 if __name__ == '__main__':
     main()
