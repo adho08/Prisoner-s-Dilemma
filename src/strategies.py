@@ -5,10 +5,15 @@ from functools import total_ordering
 class Strategy:
     def __init__(self, start, name):
         self.start = start
-        self.name = name
         self.history = []
         self.opponent_history = []
         self.points = 0
+
+        # set the name of the instance to the name of the class by default
+        if name is None:
+            self.name = self.__class__.__name__
+        else:
+            self.name = name
 
     def make_move(self, round):
         # Return True for 'c' or False for 'd'
@@ -25,28 +30,34 @@ class Strategy:
     def __repr__(self):
         return self.name
 
+    def __eq__(self, other):
+        return self.points == other.points
+
+    def __lt__(self, other):
+        return self.points < other.points
+
     def __gt__(self, other):
         if self.points >= other.points:
             return self.name >= other.name
         return self.points >= other.points
 
 class AlwaysCooperate(Strategy):
-    def __init__(self):
-        super().__init__(True, "AlwaysCooperate")
+    def __init__(self, name=None):
+        super().__init__(True, name)
 
     def make_move(self, round):
         return True
 
 class AlwaysDefect(Strategy):
-    def __init__(self):
-        super().__init__(False, "AlwaysDefect")
+    def __init__(self, name=None):
+        super().__init__(False, name)
 
     def make_move(self, round):
         return False
 
 class Tit4Tat(Strategy):
-    def __init__(self):
-        super().__init__(True, "TitForTat")
+    def __init__(self, name=None):
+        super().__init__(True, name)
 
     def make_move(self, round):
         if round == 0:
@@ -55,8 +66,8 @@ class Tit4Tat(Strategy):
             return self.opponent_history[round - 1]
 
 class Random(Strategy):
-    def __init__(self):
-        super().__init__(True, "Random")
+    def __init__(self, name=None):
+        super().__init__(True, name)
 
     def make_move(self, round):
         return random.choice([True, False])

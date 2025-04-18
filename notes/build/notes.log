@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  15 APR 2025 11:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  17 APR 2025 10:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -45,28 +45,38 @@ LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 
+./notes.tex:7: Undefined control sequence.
+l.7 	\url
+         {https://www.investopedia.com/terms/n/nash-equilibrium.asp}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
 
 [1
 
-{/home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}{/home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (build/notes.aux)
+{/home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}] (build/notes.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 442 strings out of 473190
- 8657 string characters out of 5697562
+ 436 strings out of 473190
+ 8547 string characters out of 5697562
  396066 words of memory out of 5000000
- 23772 multiletter control sequences out of 15000+600000
- 559777 words of font info for 39 fonts, out of 8000000 for 9000
+ 23768 multiletter control sequences out of 15000+600000
+ 559442 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,5n,50p,140b,120s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on build/notes.pdf (1 page, 29387 bytes).
+ 35i,5n,50p,384b,111s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/linuxbrew/.linuxbrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on build/notes.pdf (1 page, 27660 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 14 compressed objects within 1 object stream
+ 18 PDF objects out of 1000 (max. 8388607)
+ 10 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
