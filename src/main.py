@@ -4,6 +4,7 @@ from game import PrisonersDilemma
 import csv
 import subprocess
 import os
+from collections import defaultdict
 
 # initialize the strategies
 AC = AlwaysCooperate()
@@ -24,7 +25,7 @@ r_script_path = "../data/results.R"  # Path to R script from Python script
 r_script_dir = os.path.dirname(os.path.abspath(r_script_path))
 
 # list of all strategies that take participate in the tournament
-strategies_list = [AC, T4T, AD, RND]
+strategies_list = [T4T, AD, RND]
     
 # initialize the game
 PD = PrisonersDilemma(strategies_list)
@@ -32,12 +33,14 @@ PD = PrisonersDilemma(strategies_list)
 def main():
     f = open(tournament_path, 'w')
     f.write("")
-    
+
+    strategies = PD.strategies
+
     print("Games: ")
 
     # loop through the strategies so every strategy playes against each strategy
-    for i in range(len(PD.strategies)):
-        for j in range(i, len(PD.strategies)):
+    for i in range(len(strategies)):
+        for j in range(i, len(strategies)):
             strategy1 = PD.strategies[i]
             strategy2 = PD.strategies[j]
             playIPD(strategy1, strategy2)
@@ -45,7 +48,6 @@ def main():
     # sort the list of strategies based on the points
     print("\nResults: ")
 
-    strategies = PD.strategies
     strategies.sort(reverse=True)
     for index, strategy in enumerate(strategies):
         print(f"{index + 1}. {strategy.name : <{spacing}} {strategy.points : >5}pts")
