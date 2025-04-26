@@ -1,10 +1,11 @@
 # import strategies from strategies directory
-from strategies import AlwaysCooperate, AlwaysDefect, Tit4Tat, Random
+
+from strategies import *
 from game import PrisonersDilemma
 import csv
 import subprocess
 import os
-from collections import defaultdict
+import io
 
 # initialize the strategies
 AC = AlwaysCooperate()
@@ -12,37 +13,37 @@ AD = AlwaysDefect()
 T4T = Tit4Tat()
 RND = Random()
 
-spacing = 20
-rounds = 200
+spacing: int = 20
+rounds: int = 200
 
-tournament_path = "../data/tournament.txt"
-results_path = "../data/results.csv"
+tournament_path: str = "../data/tournament.txt"
+results_path: str = "../data/results.csv"
 
 # Store current directory
-original_dir = os.getcwd()
+original_dir: str = os.getcwd()
 # Get the directory of the R script
-r_script_path = "../data/results.R"  # Path to R script from Python script
-r_script_dir = os.path.dirname(os.path.abspath(r_script_path))
+r_script_path: str = "../data/results.R"  # Path to R script from Python script
+r_script_dir: str = os.path.dirname(os.path.abspath(r_script_path))
 
 # list of all strategies that take participate in the tournament
-strategies_list = [T4T, AD, RND]
+strategies_list: list[Strategy] = [AC, T4T, RND, AD]
     
 # initialize the game
 PD = PrisonersDilemma(strategies_list)
 
 def main():
-    f = open(tournament_path, 'w')
+    f: io.TextIOWrapper[io._WrappedBuffer] = open(tournament_path, 'w')
     f.write("")
 
-    strategies = PD.strategies
+    strategies: list[Strategy] = PD.strategies
 
     print("Games: ")
 
     # loop through the strategies so every strategy playes against each strategy
     for i in range(len(strategies)):
         for j in range(i, len(strategies)):
-            strategy1 = PD.strategies[i]
-            strategy2 = PD.strategies[j]
+            strategy1: Strategy = PD.strategies[i]
+            strategy2: Strategy = PD.strategies[j]
             playIPD(strategy1, strategy2)
 
     # sort the list of strategies based on the points
@@ -77,9 +78,9 @@ def playIPD(strategy1, strategy2):
 
 # play one game of Prisoner's Dilemma
 def playPD(strategy1, strategy2, round):
-    m1 = strategy1.make_move(round=round)
-    m2 = strategy2.make_move(round=round)
-    result = PD.award(m1, m2)
+    m1: bool = strategy1.make_move(round=round)
+    m2: bool = strategy2.make_move(round=round)
+    result: tuple[int, int] = PD.award(m1, m2)
 
     # updating the strategy
     strategy1.update(m1, m2)
@@ -108,7 +109,7 @@ def printResults(strategies):
 
     # write in form of dictionary the strategies and the points
     f = open(results_path, 'a')
-    fieldnames = ['strategy', 'points']
+    fieldnames: list[str] = ['strategy', 'points']
     writer = csv.DictWriter(f, fieldnames=fieldnames)
     writer.writeheader()
 
