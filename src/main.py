@@ -1,5 +1,4 @@
 # import strategies from strategies directory
-
 from strategies import *
 from game import PrisonersDilemma
 import csv
@@ -13,26 +12,26 @@ AD = AlwaysDefect()
 T4T = Tit4Tat()
 RND = Random()
 
-spacing: int = 20
-rounds: int = 200
+spacing = 20
+rounds = 200
 
 tournament_path: str = "../data/tournament.txt"
 results_path: str = "../data/results.csv"
 
 # Store current directory
-original_dir: str = os.getcwd()
+original_dir = os.getcwd()
 # Get the directory of the R script
-r_script_path: str = "../data/results.R"  # Path to R script from Python script
-r_script_dir: str = os.path.dirname(os.path.abspath(r_script_path))
+r_script_path = "../data/results.R"  # Path to R script from Python script
+r_script_dir = os.path.dirname(os.path.abspath(r_script_path))
 
 # list of all strategies that take participate in the tournament
-strategies_list: list[Strategy] = [AC, T4T, RND, AD]
+strategies_list = [AC, T4T, RND, AD]
     
 # initialize the game
 PD = PrisonersDilemma(strategies_list)
 
-def main():
-    f: io.TextIOWrapper[io._WrappedBuffer] = open(tournament_path, 'w')
+def main() -> None:
+    f = open(tournament_path, 'w')
     f.write("")
 
     strategies: list[Strategy] = PD.strategies
@@ -54,7 +53,7 @@ def main():
         print(f"{index + 1}. {strategy.name : <{spacing}} {strategy.points : >5}pts")
 
     # print results in csv file
-    printResults(strategies)
+    printResultsInBarPlot(strategies)
 
     # Change to the R script's directory
     os.chdir(r_script_dir)
@@ -64,9 +63,9 @@ def main():
 
 
 # play the Iterated Prisoner's Dilemma
-def playIPD(strategy1, strategy2):
+def playIPD(strategy1: Strategy, strategy2: Strategy):
 
-    printTournament(strategy1, strategy2)
+    printTournamentHeader(strategy1, strategy2)
 
     strategy1.reset()
     strategy2.reset()
@@ -78,31 +77,31 @@ def playIPD(strategy1, strategy2):
 
 # play one game of Prisoner's Dilemma
 def playPD(strategy1, strategy2, round):
-    m1: bool = strategy1.make_move(round=round)
-    m2: bool = strategy2.make_move(round=round)
-    result: tuple[int, int] = PD.award(m1, m2)
+    move1: bool = strategy1.make_move(round=round)
+    move2: bool = strategy2.make_move(round=round)
+    result1, result2 = PD.award(move1, move2)
 
     # updating the strategy
-    strategy1.update(m1, m2)
-    strategy2.update(m2, m1)
-    strategy1.points += result[0]
-    strategy2.points += result[1]
-    printTable(result[0], result[1])
+    strategy1.update(move1, move2, result1)
+    strategy2.update(move2, move1, result2)
+
+    # print the results in the 'tournament.txt' file
+    printResultsInTable(result1, result2)
 
 # print in file
-def printTournament(s1, s2):
+def printTournamentHeader(strategy1: Strategy, strategy2: Strategy) -> None:
     f = open(tournament_path, 'a')
-    f.write(f"{s1.name : ^{spacing}} | {s2.name : ^{spacing}}\n")
+    f.write(f"{strategy1.name : ^{spacing}} | {strategy2.name : ^{spacing}}\n")
     f.write((2 * spacing + 2) * '-')
     f.write('\n')
 
 # print results
-def printTable(r1, r2):
+def printResultsInTable(r1, r2):
     f = open(tournament_path, 'a')
     f.write(f"{r1 : ^{spacing}} | {r2 : ^{spacing}}\n")
 
 # for r to do statistics
-def printResults(strategies):
+def printResultsInBarPlot(strategies):
     # clear the file
     f = open(results_path, 'w')
     f.write("")
