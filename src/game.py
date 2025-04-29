@@ -15,6 +15,7 @@ class PrisonersDilemma:
 
         # cooperate = True
         # defect = False
+        # TODO: make payoff-matrix continuous
         self.payoffs = [
             [tuple((self.MD, self.MD)), tuple((self.MAX, self.MIN))],
             [tuple((self.MIN, self.MAX)), tuple((self.MC, self.MC))]
