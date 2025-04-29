@@ -15,8 +15,8 @@ RND = Random()
 spacing = 20
 rounds = 200
 
-tournament_path: str = "../data/tournament.txt"
-results_path: str = "../data/results.csv"
+tournament_path = "../data/tournament.txt"
+results_path = "../data/results.csv"
 
 # Store current directory
 original_dir = os.getcwd()
