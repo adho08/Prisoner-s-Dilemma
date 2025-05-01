@@ -1,6 +1,6 @@
 # import strategies from strategies directory
 from strategies import *
-from game import PrisonersDilemma
+from game import PrisonersDilemma, CPDVector1D
 import csv
 import subprocess
 import os
@@ -77,8 +77,8 @@ def playIPD(strategy1: Strategy, strategy2: Strategy):
 
 # play one game of Prisoner's Dilemma
 def playPD(strategy1, strategy2, round):
-    move1: bool = strategy1.make_move(round=round)
-    move2: bool = strategy2.make_move(round=round)
+    move1: CPDVector1D = strategy1.make_move(round=round)
+    move2: CPDVector1D = strategy2.make_move(round=round)
     result1, result2 = PD.award(move1, move2)
 
     # updating the strategy

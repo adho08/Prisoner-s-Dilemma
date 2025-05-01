@@ -1,5 +1,6 @@
 import random
 from functools import total_ordering
+import game
 
 @total_ordering
 class Strategy(object):
@@ -15,8 +16,7 @@ class Strategy(object):
         else:
             self.name = name
 
-    def make_move(self, round: int = 0) -> bool:
-        # Return True for 'c' or False for 'd'
+    def make_move(self, round: int = 0) -> CPDVector1D:
         raise NotImplementedError("Subclasses must implement this method")
 
     def update(self, move: bool, opponent_move: bool, payoff: int) -> None:

@@ -1,5 +1,15 @@
 from strategies import Strategy
-import numpy as np
+
+class CPDVector1D:
+
+    def __init__(self, c: float = 0, d: float = 0):
+        self.c = self._clamp(c)
+        self.d = self._clamp(d)
+
+    # ensure the components c and d are between 0 and 1
+    def _clamp(self, value: float) -> float:
+        return max(0.0, min(1.0, value))
+
 
 class PrisonersDilemma:
 
@@ -15,11 +25,11 @@ class PrisonersDilemma:
 
         # cooperate = True
         # defect = False
-        # TODO: make payoff-matrix continuous
         self.payoffs = [
             [tuple((self.MD, self.MD)), tuple((self.MAX, self.MIN))],
             [tuple((self.MIN, self.MAX)), tuple((self.MC, self.MC))]
         ]
 
-    def award(self, move1: bool, move2: bool) -> tuple[int, int]:
-        return self.payoffs[move1][move2]
+    def award(self, move1: CPDVector1D, move2: CPDVector1D) -> tuple[int, int]:
+        
+        return (1, 1)
