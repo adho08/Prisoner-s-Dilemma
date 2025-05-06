@@ -1,5 +1,4 @@
 strategy,points
-Tit4Tat,2464
-Random,2270
-AlwaysDefect,2160
-AlwaysCooperate,2121
+Tit4Tat,1999.0
+AlwaysCooperate,1800.0
+AlwaysDefect,1604.0

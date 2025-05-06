@@ -46,14 +46,14 @@ class AlwaysCooperate(Strategy):
         super().__init__(True, name)
 
     def make_move(self, round=None):
-        return 1
+        return 1.0
 
 class AlwaysDefect(Strategy):
     def __init__(self, name: str | None = None):
         super().__init__(False, name)
 
     def make_move(self, round=None):
-        return 0
+        return 0.0
 
 class Tit4Tat(Strategy):
     def __init__(self, name: str | None = None):

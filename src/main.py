@@ -24,7 +24,7 @@ r_script_path = "../data/results.R"  # Path to R script from Python script
 r_script_dir = os.path.dirname(os.path.abspath(r_script_path))
 
 # list of all strategies that take participate in the tournament
-strategies_list = [AC, T4T, RND, AD]
+strategies_list = [AC, T4T, AD]
     
 # initialize the game
 PD = PrisonersDilemma(strategies_list)

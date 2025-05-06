@@ -1,16 +1,5 @@
 from strategies import Strategy
 
-class CPDVector1D:
-
-    def __init__(self, c: float = 0, d: float = 0):
-        self.c = self._clamp(c)
-        self.d = self._clamp(d)
-
-    # ensure the components c and d are between 0 and 1
-    def _clamp(self, value: float) -> float:
-        return max(0.0, min(1.0, value))
-
-
 class PrisonersDilemma:
 
     def __init__(self, strategies: list[Strategy]):
@@ -26,8 +15,8 @@ class PrisonersDilemma:
         # cooperate = True
         # defect = False
         self.payoffs = [
-            [tuple((self.MD, self.MD)), tuple((self.MAX, self.MIN))],
-            [tuple((self.MIN, self.MAX)), tuple((self.MC, self.MC))]
+            [tuple((self.MD, self.MD)), tuple((self.MIN, self.MAX))],
+            [tuple((self.MAX, self.MIN)), tuple((self.MC, self.MC))]
         ]
 
     # created by ChapGPT
