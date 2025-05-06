@@ -30,6 +30,25 @@ class PrisonersDilemma:
             [tuple((self.MIN, self.MAX)), tuple((self.MC, self.MC))]
         ]
 
-    def award(self, move1: CPDVector1D, move2: CPDVector1D) -> tuple[int, int]:
+    # created by ChapGPT
+    def award(self, x: float, y: float) -> tuple[float, float]:
+        """
+        Bilinear interpolation of a 2x2 matrix where each element is a tuple (a, b).
+        Returns an interpolated tuple (a_interp, b_interp).
+        """
+        def lerp2(a00: int, a01: int, a10: int, a11: int) -> float:
+            return (
+                a00 * (1 - x) * (1 - y) +
+                a01 * x * (1 - y) +
+                a10 * (1 - x) * y +
+                a11 * x * y
+            )
         
-        return (1, 1)
+        # Extract the four tuples
+        (a00, b00), (a01, b01) = self.payoffs[0]
+        (a10, b10), (a11, b11) = self.payoffs[1]
+
+        a_interp: float = lerp2(a00, a01, a10, a11)
+        b_interp: float = lerp2(b00, b01, b10, b11)
+
+        return (a_interp, b_interp)

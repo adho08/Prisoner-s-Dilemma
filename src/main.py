@@ -1,10 +1,9 @@
 # import strategies from strategies directory
 from strategies import *
-from game import PrisonersDilemma, CPDVector1D
+from game import PrisonersDilemma
 import csv
 import subprocess
 import os
-import io
 
 # initialize the strategies
 AC = AlwaysCooperate()
@@ -71,14 +70,17 @@ def playIPD(strategy1: Strategy, strategy2: Strategy):
     strategy2.reset()
     for i in range(rounds):
         print(f"[{i+1}/{rounds}]\r{strategy1.name} vs. {strategy2.name} ", end='', flush=True)
-        playPD(strategy1, strategy2, i)
+        playCPD(strategy1, strategy2, i)
+    printInTournament("\n")    
     print()
 
 
-# play one game of Prisoner's Dilemma
-def playPD(strategy1, strategy2, round):
-    move1: CPDVector1D = strategy1.make_move(round=round)
-    move2: CPDVector1D = strategy2.make_move(round=round)
+# play one game of Continuous Prisoner's Dilemma
+def playCPD(strategy1, strategy2, round):
+    move1: float = strategy1.make_move(round=round)
+    move2: float = strategy2.make_move(round=round)
+
+    # get the results of the payoff matrix
     result1, result2 = PD.award(move1, move2)
 
     # updating the strategy
@@ -86,19 +88,19 @@ def playPD(strategy1, strategy2, round):
     strategy2.update(move2, move1, result2)
 
     # print the results in the 'tournament.txt' file
-    printResultsInTable(result1, result2)
+    printInTournament(f"{result1 : ^{spacing}} | {result2 : ^{spacing}}\n")
 
 # print in file
 def printTournamentHeader(strategy1: Strategy, strategy2: Strategy) -> None:
     f = open(tournament_path, 'a')
     f.write(f"{strategy1.name : ^{spacing}} | {strategy2.name : ^{spacing}}\n")
-    f.write((2 * spacing + 2) * '-')
+    f.write((2 * spacing + 3) * '-')
     f.write('\n')
 
 # print results
-def printResultsInTable(r1, r2):
+def printInTournament(content: str = ""):
     f = open(tournament_path, 'a')
-    f.write(f"{r1 : ^{spacing}} | {r2 : ^{spacing}}\n")
+    f.write(content)
 
 # for r to do statistics
 def printResultsInBarPlot(strategies):
@@ -118,4 +120,3 @@ def printResultsInBarPlot(strategies):
 
 if __name__ == '__main__':
     main()
-    print("on feature")
