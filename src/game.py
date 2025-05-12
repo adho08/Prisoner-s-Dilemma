@@ -3,8 +3,13 @@ from strategies import Strategy
 class PrisonersDilemma:
 
     def __init__(self, strategies: list[Strategy]):
-        # stored strategies in a list
+        # stored strategies in a list and make names unique
         self.strategies = strategies
+
+        # TODO: make names of strategies in list unique to be counted as one strategy each when evaluating/ranking
+        for i in range(len(self.strategies)-1):
+            for j in range(i-1):
+                pass
 
         # awarding points
         self.MAX: int = 5

@@ -8,6 +8,7 @@ import os
 # initialize the strategies
 AC = AlwaysCooperate()
 AD = AlwaysDefect()
+AD2 = AlwaysDefect("2")
 T4T = Tit4Tat()
 RND = Random()
 
@@ -24,7 +25,7 @@ r_script_path = "../data/results.R"  # Path to R script from Python script
 r_script_dir = os.path.dirname(os.path.abspath(r_script_path))
 
 # list of all strategies that take participate in the tournament
-strategies_list = [AC, T4T, AD]
+strategies_list = [T4T, AC]
     
 # initialize the game
 PD = PrisonersDilemma(strategies_list)
