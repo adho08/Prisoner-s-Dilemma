@@ -5,11 +5,12 @@ from game import PrisonersDilemma
 # initialize the strategies
 AC = AlwaysCooperate()
 AD = AlwaysDefect()
-T4T = Tit4Tat()
 RND = Random()
+T4T = Tit4Tat()
+T4T2 = Tit4Tat()
 
 # initialize the game
-PD = PrisonersDilemma(T4T, RND)
+PD = PrisonersDilemma(T4T, T4T2)
 
 def main():
     s1 = PD.strategy1
@@ -21,7 +22,7 @@ def main():
     n = 2 * (padding + 2)
     print(n * '-')
 
-    rounds = 100000
+    rounds = 200
 
     for round in range(rounds):
         m1 = s1.make_move(round=round)
@@ -38,7 +39,7 @@ def main():
 
     print("\nMax Points:")
     print(f"{s1.name} -> {s1.points} | {s2.name} -> {s2.points}")
-    print(f"Winner: {s1.name if s1.points > s2.points else s2.name}")
+    print(f"Winner: {s1.name if s1.points > s2.points else (s2.name if s1.points < s2.points else "Draw")}")
 
 
 if __name__ == '__main__':
