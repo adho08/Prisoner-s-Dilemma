@@ -1,4 +1,4 @@
-from strategies import Strategy
+from strategies import *
 
 class PrisonersDilemma:
 
@@ -7,15 +7,26 @@ class PrisonersDilemma:
         self.strategies = strategies
 
         # TODO: make names of strategies in list unique to be counted as one strategy each when evaluating/ranking
-        for i in range(len(self.strategies)-1):
-            for j in range(i-1):
-                pass
+        n_strategies = {}
+        for strategy in self.strategies:
+            if strategy.__class__ not in n_strategies:
+                n_strategies[strategy.__class__] = []
+            n_strategies[strategy.__class__].append(strategy)
+
+        for strategy_list in n_strategies.values():
+            i = 0
+            for strategy in strategy_list:
+                strategy.setName(f" ({i})")
+                i += 1
 
         # awarding points
         self.MAX: int = 5
         self.MC: int = 3
         self.MIN: int = 0
         self.MD: int = 1
+
+        # give game payoffs to class Strategy
+        Strategy.setPayoffs(self.MAX, self.MIN, self.MC, self.MD)
 
         # cooperate = True
         # defect = False
@@ -26,6 +37,11 @@ class PrisonersDilemma:
 
     # created by ChapGPT
     def award(self, x: float, y: float) -> tuple[float, float]:
+
+        # set x and y within range of 0 - 1
+        x = max(0, min(x, 1))
+        y = max(0, min(y, 1))
+
         """
         Bilinear interpolation of a 2x2 matrix where each element is a tuple (a, b).
         Returns an interpolated tuple (a_interp, b_interp).

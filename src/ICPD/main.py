@@ -8,24 +8,25 @@ import os
 # initialize the strategies
 AC = AlwaysCooperate()
 AD = AlwaysDefect()
-AD2 = AlwaysDefect("2")
+AD2 = AlwaysDefect()
 T4T = Tit4Tat()
 RND = Random()
+IN = Inverse()
 
 spacing = 20
 rounds = 200
 
-tournament_path = "../data/tournament.txt"
-results_path = "../data/results.csv"
+tournament_path = "../../data/tournament.txt"
+results_path = "../../data/results.csv"
 
 # Store current directory
 original_dir = os.getcwd()
 # Get the directory of the R script
-r_script_path = "../data/results.R"  # Path to R script from Python script
+r_script_path = "../../data/results.R"  # Path to R script from Python script
 r_script_dir = os.path.dirname(os.path.abspath(r_script_path))
 
 # list of all strategies that take participate in the tournament
-strategies_list = [T4T, AC]
+strategies_list = [AD, AD2, T4T, IN]
     
 # initialize the game
 PD = PrisonersDilemma(strategies_list)
