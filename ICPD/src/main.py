@@ -17,16 +17,17 @@ spacing = 20
 rounds = 200
 
 tournament_path = "./../data/tournament.txt"
-results_path = "../data/results.csv"
+results_path = "./../data/results.csv"
 
 # Store current directory
 original_dir = os.getcwd()
 # Get the directory of the R script
 r_script_path = "../data/results.R"  # Path to R script from Python script
 r_script_dir = os.path.dirname(os.path.abspath(r_script_path))
+r_script_abs_path = os.path.abspath(r_script_path)
 
 # list of all strategies that take participate in the tournament
-strategies_list = [AD, AD2, T4T, IN]
+strategies_list = [AD2, T4T]
     
 # initialize the game
 PD = PrisonersDilemma(strategies_list)
@@ -56,9 +57,13 @@ def main() -> None:
     # print results in csv file
     printResultsInBarPlot(strategies)
 
-    # Change to the R script's directory
+    # Change to the Rscript's directory
     os.chdir(r_script_dir)
-    subprocess.call("Rscript ../data/results.r", shell=True)
+    # Execute results.r in shell
+    subprocess.call("Rscript results.r", shell=True)
+
+    print(f"\nPrinting Plot in {r_script_abs_path}")
+
     # Return to original directory
     os.chdir(original_dir)
 
