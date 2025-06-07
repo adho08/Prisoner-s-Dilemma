@@ -1,8 +1,15 @@
+from strategies import *
+
 class PrisonersDilemma:
 
-    def __init__(self, strategy1, strategy2):
-        self.strategy1 = strategy1
-        self.strategy2 = strategy2
+    def __init__(self, strategies: list[Strategy]):
+
+        self.strategies = strategies
+
+        # TODO: make strategy names unique
+        # for i in strategies:
+        #     for j in strategies:
+        #
 
         # awarding points
         self.MAX = 5
@@ -10,7 +17,7 @@ class PrisonersDilemma:
         self.MC = 3
         self.MD = 1
 
-    def award(self, move1, move2):
+    def award(self, move1: bool, move2: bool) -> tuple[int, int]:
         # cooperate = True
         # defect = False
 

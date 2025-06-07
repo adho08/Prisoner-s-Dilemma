@@ -12,9 +12,29 @@ class Strategy:
         # Return True for 'c' or False for 'd'
         raise NotImplementedError("Subclasses must implement this method")
 
-    def update(self, move, opponent_move):
+    def update(self, move, opponent_move, result):
         self.history.append(move)
         self.opponent_history.append(opponent_move)
+        self.points += result
+
+    def reset(self) -> None:
+        self.history = []
+        self.opponent_history = []
+
+    def __repr__(self):
+        return self.name
+
+    def __eq__(self, other) -> bool:
+        return self.points == other.points
+
+    def __lt__(self, other) -> bool:
+        return self.points < other.points
+
+    def __gt__(self, other) -> bool:
+        if self.points >= other.points:
+            return self.name >= other.name
+        return self.points >= other.points
+
 
 class AlwaysCooperate(Strategy):
     def __init__(self):
@@ -46,3 +66,15 @@ class Random(Strategy):
 
     def make_move(self, round):
         return random.choice([True, False])
+
+class ForgivingTFT(Strategy):
+    def __init__(self):
+        super().__init__(True, "FTFT") 
+
+    def make_move(self, round):
+        if round in (0, 1):
+            return True
+        elif not self.opponent_history[round - 1] and not self.opponent_history[round - 2]:
+            return False
+        else:
+            return self.opponent_history[round - 1]
