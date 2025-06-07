@@ -22,7 +22,7 @@ results_path = "./../data/results.csv"
 # Store current directory
 original_dir = os.getcwd()
 # Get the directory of the R script
-r_script_path = "../data/results.R"  # Path to R script from Python script
+r_script_path = "../data/results.r"  # Path to R script from Python script
 r_script_dir = os.path.dirname(os.path.abspath(r_script_path))
 r_script_abs_path = os.path.abspath(r_script_path)
 

@@ -40,7 +40,7 @@ class Strategy(ABC):
         self.MIN = mc
         self.MD = md
 
-    def setName(self, name: str) -> None:
+    def appendName(self, name: str) -> None:
         self.name += name
 
     def __repr__(self):
