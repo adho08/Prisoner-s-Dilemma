@@ -7,7 +7,7 @@ AC = Cooperate()
 AD = Defect()
 
 # initialize the game
-PD = PrisonersDilemma(AC, AC)
+PD = PrisonersDilemma(AD, AC)
  
 def main():
     s1 = PD.strategy1
