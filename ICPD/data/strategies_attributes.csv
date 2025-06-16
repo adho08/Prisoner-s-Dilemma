@@ -1,0 +1,7 @@
+strategy,nice,retaliates,forgiving,envious
+Tit4Tat (0),True,True,True,False
+Average2 (0),True,True,True,False
+Random (0),,,,
+AlwaysCooperate (0),True,False,True,False
+AlwaysDefect (1),False,True,False,True
+AlwaysDefect (0),False,True,False,True
