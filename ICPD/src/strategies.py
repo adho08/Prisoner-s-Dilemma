@@ -4,8 +4,16 @@ from functools import total_ordering
 
 @total_ordering
 class Strategy(ABC):
-    def __init__(self, start: bool, name: str | None = None):
+    def __init__(self, start: float | None, name: str | None = None):
+
         self.start = start
+
+        self.isNice = None if self.start == None else True if self.start >= 0.5 else False
+        # These attributes have to be defined inside each strategy as they depend heavily on their behaviour
+        self.retaliates = None
+        self.isForgiving = None
+        self.isEnvious = None
+
         self.history: list[float] = []
         self.opponent_history: list[float] = []
         self.points: int = 0
@@ -24,6 +32,7 @@ class Strategy(ABC):
     def make_move(self, round: int = 0) -> float:
         raise NotImplementedError("Subclasses must implement this method")
 
+    # Update the history or own moves, opponent moves and points
     def update(self, move: bool, opponent_move: bool, payoff: int) -> None:
         self.history.append(move)
         self.opponent_history.append(opponent_move)
@@ -59,46 +68,72 @@ class Strategy(ABC):
 
 class AlwaysCooperate(Strategy):
     def __init__(self, name: str | None = None):
-        super().__init__(True, name)
+        super().__init__(1.0, name)
+        self.retaliates = False
+        self.isForgiving = True
+        self.isEnvious = False
 
     def make_move(self, round=None):
         return 1.0
 
 class AlwaysDefect(Strategy):
     def __init__(self, name: str | None = None):
-        super().__init__(False, name)
+        super().__init__(0.0, name)
+        self.retaliates = True 
+        self.isForgiving = False
+        self.isEnvious = True 
 
     def make_move(self, round=None):
         return 0.0
 
 class Tit4Tat(Strategy):
     def __init__(self, name: str | None = None):
-        super().__init__(True, name)
+        super().__init__(1.0, name)
+        self.retaliates = True 
+        self.isForgiving = True
+        self.isEnvious = False
 
     def make_move(self, round=None):
         # return the same as the opponent returned in the last round, start with 1.0/Cooperate
-        if round == 0:
+        if round == 0 and self.start != None:
             return self.start
         else:
-            return self.opponent_history[round - 1]
+            return self.opponent_history[-1]
 
 class Random(Strategy):
     def __init__(self, name: str | None = None):
-        super().__init__(True, name)
+        super().__init__(None, name)
 
-    def make_move(self, round=None):
+    def make_move(self, round: int = 0):
         return random.uniform(0, 1)
 
 class Inverse(Strategy):
     def __init__(self, name: str | None = None):
-        super().__init__(True, name)
+        super().__init__(1.0, name)
 
-    def make_move(self, round=None):
+    def make_move(self, round: int = 0):
         """
         returnes the required value to calculate the average of MAX/2
         start with 1.0/Cooperate
         """
-        if round == 0:
+        if round == 0 and self.start != None:
             return self.start
         else:
             return 2 * self.MAX - self.opponent_history[round - 1]
+
+class Average2(Strategy):
+    def __init__(self, name: str | None = None):
+        super().__init__(1.0, name)
+        self.retaliates = True
+        self.isForgiving = True
+        self.isEnvious = False
+
+    def make_move(self, round: int = 0) -> float:
+        """
+        starts with cooperation
+        returnes the average of the opponent's last two moves
+        """
+        if round < 2 and self.start != None:
+            return self.start
+        else:
+            return (self.opponent_history[-1] + self.opponent_history[-2])/2

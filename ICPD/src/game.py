@@ -36,9 +36,9 @@ class PrisonersDilemma:
     # Created by ChapGPT
     def award(self, x: float, y: float) -> tuple[float, float]:
 
-        # Set x and y within range of 0 - 1
-        x = max(0, min(x, 1))
-        y = max(0, min(y, 1))
+        # If x and y are not between 0 and 1, raise an error
+        if not (0 <= x <= 1) or not (0 <= y <= 1):
+            raise ValueError("\nStrategies can only submit cooperation between 0 and 1", x if not (0 <= x <= 1) else y)
 
         """
         Bilinear interpolation of a 2x2 matrix where each element is a tuple (a, b).
@@ -56,7 +56,7 @@ class PrisonersDilemma:
         (a00, b00), (a01, b01) = self.payoffs[0]
         (a10, b10), (a11, b11) = self.payoffs[1]
 
-        a_interp: float = lerp2(a00, a01, a10, a11)
-        b_interp: float = lerp2(b00, b01, b10, b11)
+        a_interp: float = round(lerp2(a00, a01, a10, a11), 2)
+        b_interp: float = round(lerp2(b00, b01, b10, b11), 2)
 
         return (a_interp, b_interp)
