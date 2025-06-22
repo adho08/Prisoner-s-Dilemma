@@ -1,7 +1,7 @@
-MA/
-ICPD/data/plots
-ICPD/src/__pycache__
-IPD/data/plots
-IPD/src/__pycache__
-PD/data/plots
-PD/src/__pycache__
+./ICPD/data/plots/
+./ICPD/src/__pycache__/
+./IPD/data/plots/
+./IPD/src/__pycache__/
+./PD/data/plots/
+./PD/src/__pycache__/
+./docs/
