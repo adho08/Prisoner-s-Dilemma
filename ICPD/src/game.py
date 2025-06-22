@@ -18,7 +18,7 @@ class PrisonersDilemma:
                 strategy.appendName(f" ({i})")
 
         # Awarding points
-        self.MAX: int = 5
+        self.MAX: int = 100
         self.MC: int = 3
         self.MIN: int = 0
         self.MD: int = 1

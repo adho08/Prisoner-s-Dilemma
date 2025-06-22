@@ -12,7 +12,15 @@ AD2 = AlwaysDefect()
 T4T = Tit4Tat()
 RND = Random()
 IN = Inverse()
-T42T = Average2()
+AVR2 = Average2()
+AVR3 = Average3()
+AVR5 = Average5()
+NTR = Neutral()
+T4TB = Tit4TatB()
+UTE = Adapt()
+
+# list of all strategies that take participate in the tournament
+strategies_list = [UTE, NTR, T4TB, AD, AVR5, AC, T4T]
 
 spacing = 20
 rounds = 20
@@ -27,9 +35,6 @@ original_dir = os.getcwd()
 r_script_path = "../data/results.r"  # Path to R script from Python script
 r_script_dir = os.path.dirname(os.path.abspath(r_script_path))
 r_script_abs_path = os.path.abspath(r_script_path)
-
-# list of all strategies that take participate in the tournament
-strategies_list = [AD, AC, AD2, T4T, RND, T42T]
     
 # initialize the game
 PD = PrisonersDilemma(strategies_list)
