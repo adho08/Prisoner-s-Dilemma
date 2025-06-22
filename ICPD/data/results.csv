@@ -1,7 +1,8 @@
 strategy,points
-Tit4Tat (0),323.84000000000003
-Average2 (0),320.75
-Random (0),285.7
-AlwaysCooperate (0),279.36
-AlwaysDefect (1),272.45000000000005
-AlwaysDefect (0),267.29999999999995
+Neutral (0),4353.8
+AlwaysDefect (0),4120.0
+Tit4TatB (0),2146.49
+Tit4Tat (0),1814.5
+Average5 (0),845.54
+GoodWill (0),829.3
+AlwaysCooperate (0),387.0
