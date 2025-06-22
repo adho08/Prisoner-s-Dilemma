@@ -1,7 +1,7 @@
 ./ICPD/data/
 ./ICPD/src/__pycache__/
-./IPD/data/plots/
+./IPD/data/
 ./IPD/src/__pycache__/
-./PD/data/plots/
+./PD/data/
 ./PD/src/__pycache__/
 ./docs/
