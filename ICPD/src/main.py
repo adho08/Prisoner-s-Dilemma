@@ -4,6 +4,7 @@ from game import PrisonersDilemma
 import csv
 import subprocess
 import os
+import random
 
 # initialize the strategies
 AC = AlwaysCooperate()
@@ -18,6 +19,9 @@ AVR5 = Average5()
 NTR = Neutral()
 T4TB = Tit4TatB()
 UTE = Adapt()
+
+# noise determines the deviation of the perception of the opponent to the cooperation/defection
+noise = random.uniform(0.0, 1.0)
 
 # list of all strategies that take participate in the tournament
 strategies_list = [UTE, NTR, T4TB, AD, AVR5, AC, T4T]
@@ -37,13 +41,13 @@ r_script_dir = os.path.dirname(os.path.abspath(r_script_path))
 r_script_abs_path = os.path.abspath(r_script_path)
     
 # initialize the game
-PD = PrisonersDilemma(strategies_list)
+CPD = PrisonersDilemma(strategies_list)
 
 def main() -> None:
     f = open(tournament_path, 'w')
     f.write("")
 
-    strategies: list[Strategy] = PD.strategies
+    strategies: list[Strategy] = CPD.strategies
 
     print("Games: ")
 
@@ -51,8 +55,8 @@ def main() -> None:
         # loop through the strategies so every strategy playes against each strategy
         for i in range(len(strategies)):
             for j in range(i, len(strategies)):
-                strategy1: Strategy = PD.strategies[i]
-                strategy2: Strategy = PD.strategies[j]
+                strategy1: Strategy = CPD.strategies[i]
+                strategy2: Strategy = CPD.strategies[j]
                 playICPD(strategy1, strategy2)
 
     except Exception as e:
@@ -105,8 +109,9 @@ def playCPD(strategy1, strategy2, round):
 
     try:
         # get the results of the payoff matrix
-        result1, result2 = PD.award(move1, move2)
+        result1, result2 = CPD.award(move1, move2)
     except ValueError as e:
+        # if move1 or move2 was out of range (0, 1), raise an exception
         raise Exception(e.args[0], strategy1 if e.args[1] == 'x' else strategy2)
     else:
         # updating the strategy

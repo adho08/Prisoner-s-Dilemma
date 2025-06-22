@@ -1,4 +1,5 @@
 from strategies import *
+from random import uniform
 
 class PrisonersDilemma:
 
@@ -18,7 +19,7 @@ class PrisonersDilemma:
                 strategy.appendName(f" ({i})")
 
         # Awarding points
-        self.MAX: int = 100
+        self.MAX: int = 5 
         self.MC: int = 3
         self.MIN: int = 0
         self.MD: int = 1
@@ -35,10 +36,20 @@ class PrisonersDilemma:
 
     # Created by ChapGPT
     def award(self, x: float, y: float) -> tuple[float, float]:
-
+        
         # If x and y are not between 0 and 1, raise an error
         if not (0 <= x <= 1) or not (0 <= y <= 1):
             raise ValueError("\nStrategies can only submit cooperation between 0 and 1", x if not (0 <= x <= 1) else y)
+
+        # set noise to deviate the actual amount of cooperation/defection
+        noise = round(random.triangular(-0.2, 0.2, 0.0), 2)
+
+        # add noise (deviation of the actual amount of cooperation/defection)
+        x_deviation = x + noise
+        x = max(0.0, min(1.0, x_deviation))
+
+        y_deviation = y + noise
+        y = max(0.0, min(1.0, y_deviation))
 
         """
         Bilinear interpolation of a 2x2 matrix where each element is a tuple (a, b).
