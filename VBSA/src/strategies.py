@@ -22,6 +22,8 @@ class Strategy(ABC):
         self.MC = 0
         self.MIN = 0
         self.MD = 0
+
+        self.parameter = 0
         
         # set the name of the instance to the name of the class by default
         if name is None:
@@ -33,7 +35,7 @@ class Strategy(ABC):
         raise NotImplementedError("Subclasses must implement this method")
 
     # Update the history or own moves, opponent moves and points
-    def update(self, move: bool, opponent_move: bool, payoff: float) -> None:
+    def update(self, move: float, opponent_move: float, payoff: float) -> None:
         self.history.append(move)
         self.opponent_history.append(opponent_move)
         self.points += payoff
@@ -42,14 +44,13 @@ class Strategy(ABC):
         self.history = []
         self.opponent_history = []
 
-    @classmethod
-    def setPayoffs(self, max: int, min: int, mc: int, md: int) -> None:
+    def set_payoffs(self, max: int, min: int, mc: int, md: int) -> None:
         self.MAX = max
         self.MC = min
         self.MIN = mc
         self.MD = md
 
-    def appendName(self, name: str) -> None:
+    def append_to_name(self, name: str) -> None:
         self.name += name
 
     def __repr__(self):
@@ -65,6 +66,18 @@ class Strategy(ABC):
         if self.points >= other.points:
             return self.name >= other.name
         return self.points >= other.points
+
+# Parameter-Based Strategy
+class PBStrategy(Strategy):
+    def __init__(self, parameter: int = 0, start: float | None = None, name: str | None = None) -> None:
+        super().__init__(start, name)
+        self.parameter = parameter
+
+    def set_parameter(self, value: int):
+        self.parameter = value
+
+    def increment_parameter(self):
+        self.parameter += 1
 
 class AlwaysCooperate(Strategy):
     def __init__(self, name: str | None = None):
@@ -121,40 +134,6 @@ class Inverse(Strategy):
         else:
             return 2 * self.MAX - self.opponent_history[round - 1]
 
-class Average2(Strategy):
-    def __init__(self, name: str | None = None):
-        super().__init__(1.0, name)
-        self.retaliates = True
-        self.isForgiving = True
-        self.isEnvious = False
-
-    def make_move(self, round: int = 0) -> float:
-        """
-        starts with cooperation
-        returnes the average of the opponent's last two moves
-        """
-        if round < 2 and self.start != None:
-            return self.start
-        else:
-            return (self.opponent_history[-1] + self.opponent_history[-2])/2
-
-class Average3(Strategy):
-    def __init__(self, name: str | None = None):
-        super().__init__(1.0, name)
-        self.retaliates = True
-        self.isForgiving = True
-        self.isEnvious = False
-
-    def make_move(self, round: int = 0) -> float:
-        """
-        starts with cooperation
-        returnes the average of the opponent's last two moves
-        """
-        if round < 3 and self.start != None:
-            return self.start
-        else:
-            return (self.opponent_history[-1] + self.opponent_history[-2] + self.opponent_history[-3])/3
-
 class Neutral(Strategy):
     def __init__(self, name: str | None = None):
         super().__init__(0.5, name)
@@ -186,7 +165,7 @@ class Adapt(Strategy):
         self.isForgiving = True
         self.isEnvious = False
 
-    def make_move(self, round=None):
+    def make_move(self, round=None) -> float:
         if round < 2 and self.start != None:
             return self.start
         elif self.opponent_history[-1] >= self.history[-1]:
@@ -194,19 +173,25 @@ class Adapt(Strategy):
         else:
             return self.history[-1] - 0.2 if self.history[-1] > 0.2 else 0.0
 
-class Average5(Strategy):
-    def __init__(self, name: str | None = None):
-        super().__init__(1.0, name)
+class Average(PBStrategy):
+    def __init__(self, parameter = 2, start = 1.0, name: str | None = None):
+        super().__init__(parameter, start, name)
         self.retaliates = True
         self.isForgiving = True
         self.isEnvious = False
+    
+    # Update the history or own moves, opponent moves and points and increment parameter by one
+    def update(self, move: float, opponent_move: float, payoff: float) -> None:
+        self.history.append(move)
+        self.opponent_history.append(opponent_move)
+        self.points += payoff
 
     def make_move(self, round: int = 0) -> float:
         """
-        starts with cooperation
-        returnes the average of the opponent's last two moves
+        starts with full cooperation
+        returnes the average of the opponent's last parameter moves
         """
-        if round < 5 and self.start != None:
+        if round < self.parameter and self.start != None:
             return self.start
         else:
-            return (self.opponent_history[-1] + self.opponent_history[-2] + self.opponent_history[-3] + self.opponent_history[-4] + self.opponent_history[-5])/5
+            return sum(self.opponent_history[-1 * self.parameter:])/len(self.opponent_history[-1 * self.parameter:])

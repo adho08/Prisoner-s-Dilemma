@@ -1,15 +1,31 @@
 from strategies import *
 from random import uniform
 
-class PrisonersDilemma:
+class PrisonersDilemma(object):
 
-    def __init__(self, strategies: list[Strategy]):
-        # Stored strategies in a list and make names unique
-        self.strategies = strategies
+    # Awarding points
+    MAX: int = 5 
+    MC: int = 3
+    MIN: int = 0
+    MD: int = 1
+
+    # Cooperate = True
+    # Defect = False
+    payoffs = [
+        [tuple((MD, MD)), tuple((MIN, MAX))],
+        [tuple((MAX, MIN)), tuple((MC, MC))]
+    ]
+
+    @staticmethod
+    def make_distinctive(strategies: list[Strategy]) -> None:
+
+        for strategy in strategies:
+            # Give game payoffs to class Strategy
+            strategy.set_payoffs(PrisonersDilemma.MAX, PrisonersDilemma.MIN, PrisonersDilemma.MC, PrisonersDilemma.MD)
 
         # Make names of strategies in list unique to be counted as one strategy each when evaluating/ranking
         n_strategies = {}
-        for strategy in self.strategies:
+        for strategy in strategies:
             if strategy.__class__ not in n_strategies:
                 n_strategies[strategy.__class__] = []
             n_strategies[strategy.__class__].append(strategy)
@@ -18,24 +34,9 @@ class PrisonersDilemma:
             for i, strategy in enumerate(strategy_list):
                 strategy.appendName(f" ({i})")
 
-        # Awarding points
-        self.MAX: int = 5 
-        self.MC: int = 3
-        self.MIN: int = 0
-        self.MD: int = 1
-
-        # Give game payoffs to class Strategy
-        Strategy.setPayoffs(self.MAX, self.MIN, self.MC, self.MD)
-
-        # Cooperate = True
-        # Defect = False
-        self.payoffs = [
-            [tuple((self.MD, self.MD)), tuple((self.MIN, self.MAX))],
-            [tuple((self.MAX, self.MIN)), tuple((self.MC, self.MC))]
-        ]
-
     # Created by ChapGPT
-    def award(self, x: float, y: float) -> tuple[float, float]:
+    @staticmethod
+    def award(x: float, y: float) -> tuple[float, float]:
         
         # If x and y are not between 0 and 1, raise an error
         if not (0 <= x <= 1) or not (0 <= y <= 1):
@@ -51,6 +52,8 @@ class PrisonersDilemma:
         y_deviation = y + noise
         y = max(0.0, min(1.0, y_deviation))
 
+        # print(f"{x}, {y}")
+
         """
         Bilinear interpolation of a 2x2 matrix where each element is a tuple (a, b).
         Returns an interpolated tuple (a_interp, b_interp).
@@ -64,8 +67,8 @@ class PrisonersDilemma:
             )
         
         # Extract the four tuples
-        (a00, b00), (a01, b01) = self.payoffs[0]
-        (a10, b10), (a11, b11) = self.payoffs[1]
+        (a00, b00), (a01, b01) = PrisonersDilemma.payoffs[0]
+        (a10, b10), (a11, b11) = PrisonersDilemma.payoffs[1]
 
         a_interp: float = round(lerp2(a00, a01, a10, a11), 2)
         b_interp: float = round(lerp2(b00, b01, b10, b11), 2)
