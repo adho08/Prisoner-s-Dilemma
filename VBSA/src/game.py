@@ -2,7 +2,7 @@ from strategies import *
 
 class PrisonersDilemma(object):
 
-    # Awarding points
+    # awarding points
     MAX: int = 5 
     MC: int = 3
     MIN: int = 0
@@ -19,10 +19,10 @@ class PrisonersDilemma(object):
     def make_distinctive(strategies: list[Strategy]) -> None:
 
         for strategy in strategies:
-            # Give game payoffs to class Strategy
+            # give game payoffs to class Strategy
             strategy.set_payoffs(PrisonersDilemma.MAX, PrisonersDilemma.MIN, PrisonersDilemma.MC, PrisonersDilemma.MD)
 
-        # Make names of strategies in list unique to be counted as one strategy each when evaluating/ranking
+        # make names of strategies in list unique to be counted as one strategy each when evaluating/ranking
         n_strategies = {}
         for strategy in strategies:
             if strategy.__class__ not in n_strategies:
@@ -37,13 +37,15 @@ class PrisonersDilemma(object):
     @staticmethod
     def award(x: float, y: float) -> tuple[float, float]:
         
-        # If x and y are not between 0 and 1, raise an error
+        # if x and y are not between 0 and 1, raise an error
         if not (0 <= x <= 1) or not (0 <= y <= 1):
             raise ValueError("\nStrategies can only submit cooperation between 0 and 1", x if not (0 <= x <= 1) else y)
+        
+        noise = 0.2
 
         # set noise to deviate the actual amount of cooperation/defection
-        noise_x = round(random.triangular(-0.2, 0.2, 0.0), 2)
-        noise_y = round(random.triangular(-0.2, 0.2, 0.0), 2)
+        noise_x = round(random.triangular(-noise, noise, 0.0), 2)
+        noise_y = round(random.triangular(-noise, noise, 0.0), 2)
 
         # add noise (deviation of the actual amount of cooperation/defection)
         x_deviation = x + noise_x
