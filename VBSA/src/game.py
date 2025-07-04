@@ -1,5 +1,4 @@
 from strategies import *
-from random import uniform
 
 class PrisonersDilemma(object):
 
@@ -43,16 +42,15 @@ class PrisonersDilemma(object):
             raise ValueError("\nStrategies can only submit cooperation between 0 and 1", x if not (0 <= x <= 1) else y)
 
         # set noise to deviate the actual amount of cooperation/defection
-        noise = round(random.triangular(-0.2, 0.2, 0.0), 2)
+        noise_x = round(random.triangular(-0.2, 0.2, 0.0), 2)
+        noise_y = round(random.triangular(-0.2, 0.2, 0.0), 2)
 
         # add noise (deviation of the actual amount of cooperation/defection)
-        x_deviation = x + noise
+        x_deviation = x + noise_x
         x = max(0.0, min(1.0, x_deviation))
 
-        y_deviation = y + noise
+        y_deviation = y + noise_y
         y = max(0.0, min(1.0, y_deviation))
-
-        # print(f"{x}, {y}")
 
         """
         Bilinear interpolation of a 2x2 matrix where each element is a tuple (a, b).
