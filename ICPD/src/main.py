@@ -20,9 +20,6 @@ NTR = Neutral()
 T4TB = Tit4TatB()
 UTE = Adapt()
 
-# noise determines the deviation of the perception of the opponent to the cooperation/defection
-noise = random.uniform(0.0, 1.0)
-
 # list of all strategies that take participate in the tournament
 strategies_list = [UTE, NTR, T4TB, AD, AVR5, AC, T4T]
 
@@ -70,7 +67,7 @@ def main() -> None:
 
         strategies.sort(reverse=True)
         for i, strategy in enumerate(strategies):
-            print(f"{i + 1}. {strategy.name : <{spacing}} {strategy.points : >5}pts")
+            print(f"{i + 1}. {strategy: <{spacing}} {strategy.points : >5}pts")
 
         # print results in csv file
         printResultsInCSV(strategies)
@@ -114,7 +111,7 @@ def playCPD(strategy1, strategy2, round):
         # if move1 or move2 was out of range (0, 1), raise an exception
         raise Exception(e.args[0], strategy1 if e.args[1] == 'x' else strategy2)
     else:
-        # updating the strategy
+        # updating the strategymai
         strategy1.update(move1, move2, result1)
         strategy2.update(move2, move1, result2)
 

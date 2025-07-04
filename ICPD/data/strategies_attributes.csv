@@ -1,7 +1,7 @@
 strategy,nice,retaliates,forgiving,envious
 Adapt (0),True,True,True,False
-Average5 (0),True,True,True,False
 Tit4Tat (0),True,True,True,False
+Average5 (0),True,True,True,False
 AlwaysCooperate (0),True,False,True,False
 Neutral (0),,False,True,False
 Tit4TatB (0),False,True,True,False
