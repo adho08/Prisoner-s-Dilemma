@@ -3,7 +3,7 @@ from game import PrisonersDilemma as PD
 import csv
 
 results_path = "../data/results.csv"
-results = "parameter_1, points_1, parameter_2, points_3\n"
+results = ""
 
 rounds = 20
 increment_rounds_1 = 7
@@ -15,7 +15,7 @@ AVR = Average(2)
 ADT = Adapt(1)
 RND = Random(1)
 
-PBstrategies: list[PBStrategy] = [AVR, ADT]
+PBstrategies: list[PBStrategy] = [AVR, RND]
 
 T4T = Tit4Tat()
 AD = AlwaysDefect()
@@ -23,11 +23,16 @@ AD = AlwaysDefect()
 strategies_set: list[Strategy] = [AD]
 
 def main() -> None:
+    global results
 
     print("Games: ")
     strategy1 = PBstrategies[0]
     strategy2 = PBstrategies[1]
-            # increment the parameter every time a new ICPD is played
+
+    # csv header
+    results += f"{strategy1}, {strategy2.points}, {strategy2}, {strategy2.points}\n"
+
+    # increment the parameter every time a new ICPD is played
     for _ in range(increment_rounds_1):
         for _ in range(increment_rounds_2):
             # print(f"{strategy1} vs. {strategy2}")
@@ -40,13 +45,7 @@ def main() -> None:
         strategy2.parameter += 1
         strategy1.reset_parameter()
 
-
-    # print("\n")
-    # print("Results: ")
-    # for i, strategy in enumerate(PBstrategies):
-    #     print(f"{i + 1}. {strategy : <{spacing}} {strategy.points : >5}pts")
-
-    printInCSV(results)
+    print_in_csv(results)
 
 def play_ICPD(stg1: PBStrategy, stg2: Strategy):
     global results
@@ -71,7 +70,7 @@ def play_CPD(stg1: PBStrategy, stg2: Strategy, round: int):
         stg1.update(m1, m2, r1)
         stg2.update(m2, m1, r2)
 
-def printInCSV(string):
+def print_in_csv(string):
     f = open(results_path, 'w')
 
     # deleting content of file
