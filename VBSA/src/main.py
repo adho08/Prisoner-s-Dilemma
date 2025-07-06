@@ -6,16 +6,17 @@ results_path = "../data/results.csv"
 results = ""
 
 rounds = 20
-increment_rounds_1 = 7
-increment_rounds_2 = 7
+repeated = 1000
+parameters_1 = list(range(0, 6))
+parameters_2 = list(range(0, 11))
 spacing = 20
 
 AC = AlwaysCooperate()
 AVR = Average(2)
 ADT = Adapt(1)
-RND = Random(1)
+RND = RandomNeutral(1)
 
-PBstrategies: list[PBStrategy] = [AVR, RND]
+PB_strategies: list[PBStrategy] = [ADT, RND]
 
 T4T = Tit4Tat()
 AD = AlwaysDefect()
@@ -26,38 +27,43 @@ def main() -> None:
     global results
 
     print("Games: ")
-    strategy1 = PBstrategies[0]
-    strategy2 = PBstrategies[1]
+    strategy1 = PB_strategies[0]
+    strategy2 = PB_strategies[1]
 
     # csv header
-    results += f"{strategy1}, {strategy2.points}, {strategy2}, {strategy2.points}\n"
+    results += f"{strategy1}, {strategy1}.parameter, {strategy2}, {strategy2}.parameter\n"
 
     # increment the parameter every time a new ICPD is played
-    for _ in range(increment_rounds_1):
-        for _ in range(increment_rounds_2):
-            # print(f"{strategy1} vs. {strategy2}")
+    for parameter_2 in parameters_2:
+        strategy2.parameter = parameter_2
+        for parameter_1 in parameters_1:
+            strategy1.parameter = parameter_1
+            # print(f"{parameter_1, parameter_2}")
             play_ICPD(strategy1, strategy2)
-            strategy1.parameter += 1
-            print(strategy1, strategy1.points)
-            print(strategy2, strategy2.points)
-            strategy1.reset()
-            strategy2.reset()
-        strategy2.parameter += 1
         strategy1.reset_parameter()
 
     print_in_csv(results)
 
+
 def play_ICPD(stg1: PBStrategy, stg2: Strategy):
     global results
 
-    print(f"\n{stg1}: {stg1.parameter}, {stg2}: {stg2.parameter}")
+    # play the ICPD multiple times to smooth out the peaks due to noise
+    for _ in range(repeated):
 
-    for round in range(rounds):
-        play_CPD(stg1, stg2, round)
+        # the iterated continuous prisoner's dilemma
+        for round in range(rounds):
+            play_CPD(stg1, stg2, round)
 
-    # add the total points gained after the ICPD of both strategies
-    results += f"{stg1.parameter}, {stg1.points}, {stg2.parameter}, {stg2.points}\n"
+        print(f"\n{stg1}: {stg1.parameter}, {stg2}: {stg2.parameter}")
+        print(stg1, stg1.points)
+        print(stg2, stg2.points)
 
+        # add the total points gained after the ICPD of both strategies
+        results += f"{stg1.parameter}, {stg1.points}, {stg2.parameter}, {stg2.points}\n"
+
+        stg1.reset()
+        stg2.reset()
 
 def play_CPD(stg1: PBStrategy, stg2: Strategy, round: int):
     try:
@@ -73,7 +79,7 @@ def play_CPD(stg1: PBStrategy, stg2: Strategy, round: int):
 def print_in_csv(string):
     f = open(results_path, 'w')
 
-    # deleting content of file
+    # overwrite the content of the file
     f.write(string)
 
 if __name__ == "__main__":
