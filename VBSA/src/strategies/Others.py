@@ -1,4 +1,4 @@
-from strategies.py import Strategy, PBStrategy
+from .strategies import Strategy, PBStrategy
 
 class Inverse(Strategy):
     def __init__(self, name: str | None = None):
@@ -6,8 +6,8 @@ class Inverse(Strategy):
 
     def make_move(self, round: int = 0):
         """
-        returnes the required value to calculate the average of MAX/2
-        start with 1.0/Cooperate
+        Returnes the required value to calculate the average of MAX/2
+        Start with 1.0/Cooperate
         """
         if round == 0 and self._start != None:
             return self._start
@@ -22,6 +22,12 @@ class Adapt(PBStrategy):
         self._isEnvious = False
 
     def make_move(self, round=None) -> float:
+        """
+        Starts the first two rounds with full cooperation.
+        If the opponent defected more than Adapt, defect parameter/20 more in the next round.
+        If the opponen cooperated more than Adapt, go the that level of cooperation in the next round.
+        Parameter 0 is identical to AlwaysCooperate. (See Basic.py)
+        """
         if round < 2 and self._start != None:
             return self._start
         # if opponent's move is greater than the last own move, go to his level of cooperation

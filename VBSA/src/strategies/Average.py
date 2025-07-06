@@ -1,4 +1,4 @@
-from strategies.py import Strategy, PBStrategy
+from .strategies import Strategy, PBStrategy
 
 class Average(PBStrategy):
     def __init__(self, parameter: int = 2, start = 1.0, name: str | None = None):
@@ -7,16 +7,12 @@ class Average(PBStrategy):
         self._isForgiving = True
         self._isEnvious = False
     
-    # Update the history or own moves, opponent moves and points and increment parameter by one
-    def update(self, move: float, opponent_move: float, payoff: float) -> None:
-        self._history.append(move)
-        self._opponent_history.append(opponent_move)
-        self.points += payoff
-
     def make_move(self, round: int = 0) -> float:
         """
-        starts with full cooperation
-        returnes the average of the opponent's last parameter moves
+        Starts with full cooperation.
+        Returnes the average of the opponent's last parameter moves.
+        Parameter 1 is identical to Tit4Tat. (See TitForTat.py)
+        Parameter 0 throws a ZeroDivisionError.
         """
         if round <= self.parameter and self._start != None:
             return self._start

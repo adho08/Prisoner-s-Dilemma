@@ -1,4 +1,4 @@
-from strategies import Strategy, PBStrategy
+from .strategies import Strategy, PBStrategy
  
 class Tit4Tat(Strategy):
     def __init__(self, name: str | None = None):

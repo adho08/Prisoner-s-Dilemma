@@ -1,4 +1,4 @@
-from strategies.py import Strategy, PBStrategy
+from .strategies import Strategy, PBStrategy
 
 class AlwaysCooperate(Strategy):
     def __init__(self, name: str | None = None):
