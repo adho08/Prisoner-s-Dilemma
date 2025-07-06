@@ -5,4 +5,5 @@
 ./PD/data/
 ./PD/src/__pycache__/
 ./VBSA/src/__pycache__/
+./VBSA/data/__pycache__/
 ./docs/
