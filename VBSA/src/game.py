@@ -1,4 +1,5 @@
 from strategies import *
+import random
 
 class PrisonersDilemma(object):
 
