@@ -80,9 +80,10 @@ class PrisonersDilemma(object):
 
         return (a_interp, b_interp)
 
-    def award_algebraic(self, x: float, y: float) -> tuple[float, float]:
+    @classmethod
+    def award_algebraic(cls, x: float, y: float) -> tuple[float, float]:
 
-        v1 = x - self.c*y
-        v2 = y - self.c*x
+        v1 = x - cls.c*y
+        v2 = y - cls.c*x
 
         return v1, v2
