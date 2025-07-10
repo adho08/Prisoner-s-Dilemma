@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+=======
+./ICPD/data/
+./ICPD/src/__pycache__/
+./IPD/data/
+./IPD/src/__pycache__/
+./PD/data/
+./PD/src/__pycache__/
+./VBSA/src/__pycache__/
+./VBSA/data/__pycache__/
+./docs/
+>>>>>>> 34aea383a68f348416b24a659b43105da0343277
