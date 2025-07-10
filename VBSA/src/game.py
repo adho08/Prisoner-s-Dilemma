@@ -3,14 +3,9 @@ import random
 
 class PrisonersDilemma(object):
 
-<<<<<<< HEAD
-
 
     # ------------------ interpolated payoff matrix version ------------------ 
-    # Awarding points
-=======
     # awarding points
->>>>>>> 34aea383a68f348416b24a659b43105da0343277
     MAX: int = 5 
     MC: int = 3
     MIN: int = 0
