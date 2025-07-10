@@ -2,6 +2,9 @@ from strategies import *
 
 class PrisonersDilemma(object):
 
+
+
+    # ------------------ interpolated payoff matrix version ------------------ 
     # Awarding points
     MAX: int = 5 
     MC: int = 3
@@ -14,6 +17,10 @@ class PrisonersDilemma(object):
         [tuple((MD, MD)), tuple((MIN, MAX))],
         [tuple((MAX, MIN)), tuple((MC, MC))]
     ]
+
+    # ------------------ algebraic version ------------------ 
+    # cost-to-benefit ratio
+    c = 0.5
 
     @staticmethod
     def make_distinctive(strategies: list[Strategy]) -> None:
@@ -35,7 +42,7 @@ class PrisonersDilemma(object):
 
     # Created by ChapGPT
     @staticmethod
-    def award(x: float, y: float) -> tuple[float, float]:
+    def award_interpolated(x: float, y: float) -> tuple[float, float]:
         
         # If x and y are not between 0 and 1, raise an error
         if not (0 <= x <= 1) or not (0 <= y <= 1):
@@ -72,3 +79,10 @@ class PrisonersDilemma(object):
         b_interp: float = round(lerp2(b00, b01, b10, b11), 2)
 
         return (a_interp, b_interp)
+
+    def award_algebraic(self, x: float, y: float) -> tuple[float, float]:
+
+        v1 = x - self.c*y
+        v2 = y - self.c*x
+
+        return v1, v2
