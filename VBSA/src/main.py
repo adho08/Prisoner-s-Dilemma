@@ -61,7 +61,7 @@ def play_CPD(stg1: PBStrategy, stg2: Strategy, round: int):
     except ValueError as e:
         print(e)
     else:
-        r1, r2 = PD.award(m1, m2)
+        r1, r2 = PD.award_algebraic(m1, m2)
         stg1.update(m1, m2, r1)
         stg2.update(m2, m1, r2)
         results += f"{stg1.parameter}, {r1}, {stg2.parameter}, {r2}\n"
