@@ -3,6 +3,10 @@ import random
 
 class PrisonersDilemma(object):
 
+    # 0 <= noise <= 1
+    # 0: full discrete
+    # 1: fully random
+    noise = 0.2
 
     # ------------------ interpolated payoff matrix version ------------------ 
     # awarding points
@@ -40,6 +44,22 @@ class PrisonersDilemma(object):
             for i, strategy in enumerate(strategy_list):
                 strategy.appendName(f" ({i})")
 
+    @classmethod
+    def __add_noise_influence(cls, x: float, y: float) -> tuple[float, float]:
+
+        # set noise to deviate the actual amount of cooperation/defection
+        noise_x = round(random.triangular(-cls.noise, cls.noise, 0.0), 2)
+        noise_y = round(random.triangular(-cls.noise, cls.noise, 0.0), 2)
+
+        # add noise (deviation of the actual amount of cooperation/defection)
+        x_deviated = x + noise_x
+        x = max(0.0, min(1.0, x_deviated))
+
+        y_deviated = y + noise_y
+        y = max(0.0, min(1.0, y_deviated))
+
+        return x, y
+
     # Created by ChapGPT
     @staticmethod
     def award_interpolated(x: float, y: float) -> tuple[float, float]:
@@ -48,18 +68,19 @@ class PrisonersDilemma(object):
         if not (0 <= x <= 1) or not (0 <= y <= 1):
             raise ValueError("\nStrategies can only submit cooperation between 0 and 1", x if not (0 <= x <= 1) else y)
         
-        noise = 0
+        # noise between 0 and 1
+        noise = 0.2
 
         # set noise to deviate the actual amount of cooperation/defection
         noise_x = round(random.triangular(-noise, noise, 0.0), 2)
         noise_y = round(random.triangular(-noise, noise, 0.0), 2)
 
         # add noise (deviation of the actual amount of cooperation/defection)
-        x_deviation = x + noise_x
-        x = max(0.0, min(1.0, x_deviation))
+        x_deviated = x + noise_x
+        x = max(0.0, min(1.0, x_deviated))
 
-        y_deviation = y + noise_y
-        y = max(0.0, min(1.0, y_deviation))
+        y_deviated = y + noise_y
+        y = max(0.0, min(1.0, y_deviated))
 
         """
         Bilinear interpolation of a 2x2 matrix where each element is a tuple (a, b).
@@ -85,7 +106,12 @@ class PrisonersDilemma(object):
     @classmethod
     def award_algebraic(cls, x: float, y: float) -> tuple[float, float]:
 
+        x, y = cls.__add_noise_influence(x, y)
+
         v1 = x - cls.c*y
         v2 = y - cls.c*x
 
         return v1, v2
+
+
+
