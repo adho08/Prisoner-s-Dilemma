@@ -39,7 +39,6 @@ def main() -> None:
         strategy2.parameter = parameter_2
         for parameter_1 in parameters_1:
             strategy1.parameter = parameter_1
-            # print(f"{parameter_1, parameter_2}")
             play_ICPD(strategy1, strategy2)
         strategy1.reset_parameter()
 
