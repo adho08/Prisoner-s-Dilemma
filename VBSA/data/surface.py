@@ -13,8 +13,8 @@ sys.path.insert(0, str(script_dir.parent / 'data'))
 
 df = pd.read_csv("results.csv")
 header = list(df.columns)
-strategy_1 = header[0]
-strategy_2 = header[2]
+strategy_1 = header[0].split('.')[0]
+strategy_2 = header[2].split('.')[0]
 
 # parameter axes
 list1 = df[df.columns[0]].to_numpy().tolist()[:len(parameters_1)*repeated:repeated]
