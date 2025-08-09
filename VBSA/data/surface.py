@@ -8,7 +8,7 @@ from pathlib import Path
 # import variable of another python script
 script_dir = Path(__file__).parent
 sys.path.insert(0, str(script_dir.parent / 'src'))
-from main import parameters_1, repeated
+from main.py import parameters_1, repeated
 sys.path.insert(0, str(script_dir.parent / 'data'))
 
 df = pd.read_csv("results.csv")
