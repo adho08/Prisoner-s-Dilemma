@@ -1,0 +1,79 @@
+\documentclass[4pt, english]{article}
+\usepackage{setspace}
+\usepackage[a4paper, margin=1.3in, footskip=0.25in]{geometry}
+\usepackage{textpos}
+\usepackage{booktabs}
+
+% display a section only in toc
+\newcommand{\unsection}[1]{%
+  \par
+  \addvspace{\bigskipamount}% or whatever separation you want to use
+  \stepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+}
+
+\title{
+	Axelrod's Tournament Revisited: \\
+	\large A mathematical simulation of human interactions.
+}
+\author{Adrian Hossner}
+
+\begin{document}
+\maketitle
+\tableofcontents
+% disabling page numbering in toc
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\pagenumbering{gobble}
+
+% a small justification why Results, Discussion and Limitations and Conclusion and Outlook are not described in this Feinkonzept.
+\begin{textblock*}{100mm}(0cm, 1cm)
+	(The last three sections depend on the optained findings and are therefore not elaborated in this concept paper. They only demonstrate the structure of my Maturaarbeit (MA).)
+\end{textblock*}
+
+\newpage
+
+\begin{spacing}{0.7}
+
+\section{Introduction}
+	Many conflicts result from the desire to maximise one's own gain. These games of conflict often include strategies of defection or cooperation, which play an important role in how such conflicts are played out. This subject can be interpreted in many different fields of science. My MA deals with a mathematical analysis of this problem, namely by implementing Axelrod's Tournament. Successful strategies will be ranked and evaluated. The analysis also evaluates strategies in the political, economical and social world.
+
+\section{Theoretical Foundations}
+	In order to comprehend the key concepts of my MA, the underlying principles that underpin my analysis need to be reviewed. These include:
+	\begin{description}
+		\item[Game Theory:] Game Theory is a mathematical study that examines interactions between strategies.
+		\item[Prisoner's Dilemma:] In the Prisoner's Dilemma, two strategies play against each other. They can either cooperate or defect. They get points from the payoff matrix based on the decision they have made.
+
+% Payoff matrix
+
+\begin{center}
+\begin{tabular}{ c|c|c }
+   & C & D \\ 
+   \hline
+C & 3, 3 & 0, 5\\  
+   \hline
+ D & 5, 0 & 1, 1
+\end{tabular}
+\end{center}
+
+The dilemma's core arises from the following. It is the most logical to pick defection because the payoff 5 or 1 point is better than 3 or 0 points. But this infact is a loss of points for both since they could have got 3 points with mutual cooperation instead of only 1 point. 
+
+		\item[Iterated Prisoner's Dilemma:] This variant of the Prisoner's Dilemma consists of two strategies and a number of rounds where in each round the two strategies play the single Prisoner's Dilemma and gain points that are added up until the end.
+		\item[Axelrod's Tournament:] This tournament was invented by the mathematician named Robert Axelrod. The idea behind this tournament is that it brings together multiple strategies that play the Iterated Prisoner's Dilemma against every strategy including itself. At the end, the strategies are ranked according to their success i.e. the number of points they have gained.
+		\item[Advanced Variants:] There are more sophisticated variants such as the Iterated Continuous Prisoner's Dilemma where payoffs are given based on non-binary decisions of the strategies. 
+%Also the evolutionary model of the Prisoner's Dilemma can be examined where a group of strategies play against each other. Survival of one strategy is determined by whether they won or lost against another. Reproduction is guaranteed by a win. A certain stable state of a percentage of all inital strategies in that group will eventually establish.
+		\item[Current Findings:] Studies have repeatedly shown that the strategy named tit-for-tat is the most successful one. This strategy follows the idea of equivalent retaliation i.e. it will cooperate or defect likewise as the opponent did the last round. Four criteria were identified to be important to get a high-scoring output of the tournament: niceness, willingness to retaliate, being forgiving and not being envious. 
+%A strategy is recommended to have the following attributes: Niceness, it has to start with cooperation. Willingness to retaliate, it has to strike back if it gets exploited. Be forgiving, it must not take the opponent's actions from the extensive past in account. Not being envious, the strategy must strive for its own maximal output rather than defeating the opponent.
+		\item[Relevance to the Project:] Even though much research has been conducted so far, my MA will experiment with slightly different parameters such as an remodeled payoff matrix, modified strategies and different inputs such as a revised composition of multiple strategies in one tournament.
+	\end{description}
+
+\section{Methods and Implementation}
+	The simulation of Axelrod's Tournament will be implemented in Python. More efficient propgramming languages such as Java or C++ will be applied if required due to slow speed. Data generation such as a ranking will automatically be constructed in bar plots. The most successful strategies will be described in depth.
+
+\unsection{Results}
+
+\unsection{Discussion and Limitations}
+
+\unsection{Conclusion and Outlook}
+
+\end{spacing}
+\end{document}

@@ -1,0 +1,318 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{hyperref}
+
+\title{Research of Parameters in Strategies of the Iterated Continuous Prisoner's Dilemma}
+\author{Adrian Hossner}
+\date{ } % display no date
+
+\begin{document}
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+
+\section*{Abstract}
+
+\section{Introduction}
+
+\begin{itemize}
+
+	\item Interactions\\
+		implication range is wide:\\
+		from two persons in a relationship to countries in alliance\\
+		from two impala's algrooming to zebras warning the herd about a lion \\
+	% https://www.cell.com/trends/ecology-evolution/pdf/S0169-5347(00)88988-0.pdf
+
+	\item Key hook:\\
+		helping someone with possible cost -- cooperation\\
+		being selfish but breaking trust -- defection\\
+
+	\item model PD:\\
+		single interaction\\
+		already well analysed\\
+		Nash found solution/equilibrium\\
+
+	\item Iterated:\\
+		more interesting, insightful\\
+		strategies\\
+
+	\item non-suited variants:\\
+		Axelrod's Tournament\\
+		Evolution\\
+
+	\item continuous:\\
+		more complex, accurate\\
+
+	\item parameters:\\
+		determines behaviour\\
+		create surface\\
+		the part that has not been experimented\\
+
+	\item overall and difference:\\
+		overall: wealth of population\\
+		difference: competence between individuals\\
+
+\end{itemize}
+
+\section{Theoretical Foundations}
+\begin{itemize}
+
+	\item Game Theory (optional, not needed for understanding)\\
+		mathematical framework to investigate interactions\\
+
+	\item Prisoner's Dilemma:\\
+		
+The Prisoner's Dilemma (PD) is a famous intellectual game in Game Theory. 
+It was invented by Merrill Flood and Melvin Dresher in 1950. 
+In order to understand the dilemma, a proper context has to be established. 
+Two persons are arrested and are sued for having stolen something. 
+The police, however, has not enough evidence to imprison them. 
+As a consequence of that, the police interrogates the two criminals. 
+They can either say nothing or confess that the other suspect was involved in the crime. 
+They can either cooperate or defect without having the possibility to talk to each other before the decision. 
+A certain tactic is being used by the police officers. 
+They make it profitable for the criminals to confess. 
+They let the criminal out of prison earlier if he/she confesses. 
+But if the other also confesses, both stay long in prison. 
+If he/she says nothing and the other confesses, he/she will stay very long in prison. 
+If, however, both stay silent, both of them go to prison in a relatively short amount of time. 
+The following matrix visualises the pay-off's in this game in a comprehensive way:
+
+% specific pay-off matrix
+\begin{center}
+\begin{tabular}{ c|c|c }
+   & C & D \\ 
+   \hline
+ C & 3, 3 & 10, 0\\  
+   \hline
+ D & 0, 10 & 5, 5
+\end{tabular}
+\end{center}
+
+C stands for cooperation and D stands for defection. 
+Cooperation is defined by remaining silent whereas defection means confessing. 
+The dilemma consists of the following. 
+Confessing seems attractive since the interrogated criminal can walk out freely without going to prison. 
+However, if the second criminal also confesses, both get five years in prison. 
+This is, nevertheless, the worst outcome for both which could have been avoided as both could have stayed silent.\\
+John Nash, a mathematician which made great contributions in Game Theory, has proved that it is the most logical option for both to confess, always. 
+A Nash-equilibrium is introduced. 
+It defines a stable state in which both would not change their decision even though they would know if the other cooperated or defected.\\
+This game composes a one-time interaction very well in a mathematical and analytical perspective. 
+The pay-off's in the matrix can be changed as long as these rules stay valid.
+
+
+% general pay-off matrix
+\begin{center}
+\begin{tabular}{ c|c|c }
+   & C & D \\ 
+   \hline
+ C & R, R & S, T\\  
+   \hline
+ D & T, S & P, P
+\end{tabular}
+\end{center}
+
+$$T > R > P > S$$
+$$2*R > T + S$$
+
+	\item Iterated:\\
+		
+The Iterated Prisoner's Dilemma (IPD) is a game which extends the PD. 
+As the name suggests, the PD is played a number of times sequentially. 
+After each round the pay-off gets accumulated to the points one strategy has already gained. 
+Since a strategy wants to gain as many points as possible, the pay-off matrix should be altered accordingly.\\
+
+\begin{center}
+\begin{tabular}{ c|c|c }
+   & C & D \\ 
+   \hline
+ C & 3, 3 & 0, 5\\  
+   \hline
+ D & 5, 0 & 1, 1
+\end{tabular}
+\end{center}
+
+The Nash-equilibrium in the IPD differs from that in the PD.
+This means that cooperation can earn out long-term. 
+By cooperating, one is building trust with another. 
+One strategy can only get the maximum points, which can be gained by always getting the 5 points each round, by defecting and the opponent's cooperation. 
+Since the opponent will likely not cooperate after one strategy always defects, the maximum is practically impossible to receive. 
+So, the relative high amount and the possibility of getting it for both is by cooperating.\\
+The number of round that will be played has to be unknown to both strategies. 
+There is no sense in cooperating the last round since trust does not matter after the game is ended. 
+And because trust will be given up in the last round, there is no sense for both to keep trust the second last round. 
+This will end up in an inductive defection behaviour for both strategies the whole game.\\
+This extension of the PD allows us to simulate a relationship over time where the two players interact multiple times.
+
+	\item Strategies:\\
+
+A strategy is to be considered as an autonomous player which has its own behaviour.
+A strategy has the whole history of its own contribution and the ones of the opponent at hand to generate the decision for the next round.
+These decisions are calculated by using conditions and probabilities on the given data.\\
+
+	\item Continuous:\\
+
+The continuous variant is considered more accurate to the real world since the decisions are rather rare only either cooperation or defection.
+The pay-off system needs to be altered accordingly.
+The pay-off of [sciencedirect.com] is suitable for this project.
+
+$$p1 = x - c*y$$
+$$p2 = y - c*x$$
+
+The amount of cooperation is called investment and can range from zero to one (0 to 1) where full defection is represented by 0 and cooperation corresponds to 1.
+The variable x is the investment of strategy 1 and y is the investment of strategy 2.
+The parameter c also ranges from 0 to 1 and describes the cost of cooperation.
+\\
+
+		% 0 to 1 rather than cooperation or defection\\
+		% Pay-off system\\ % https://www.sciencedirect.com/science/article/pii/S0022519306004255?casa_token=hIA0lYvzjf8AAAAA:Up2uQ89wotaLz7s1R0dM2FK7SaulAo40wIM-BdM9yooZ8uJeRL6mPs-K55dPNGs4XkcclNVjDQ#aep-section-id24
+		% more accurate\\
+		% more complex, generates more data \textrightarrow more insightful\\
+
+	\item Noise:\\
+
+Noise in the ICPD is the equivalent to miscommunication or misunderstanding in the real world.
+In this variant of the PD, noise is essential to trigger interesting outcomes.
+When a game of the ICPD is started and two strategies who start with a full investment, many strategies only respond with full investments.
+So noise is necessary to trigger continuous investments. 
+Without noise, in many cases, the ICPD would be equivalent to the IPD.
+
+		% sometimes necessary to trigger continuous investments\\
+		% simulates misunderstandings\\
+
+	\item Parameter-based:\\
+
+The main idea of this paper is to use parameter-based strategies.
+These strategies hold a parameter that defines the behaviour of the strategy.
+This parameter can determine the investment of one strategy in many ways.
+[Example]
+
+
+		% Define parameter within strategies\\
+		% determine the behaviour\\
+
+	\item Surfaces:\\
+
+The end result of this paper will be several surface plots.
+The data will be generated by letting two parameter-based strategies play against each other the ICPD.
+The game will be structured so that every parameter came against every other parameter in the ICPD.
+Like this a surface can be plotted by having the x-axis being the parameter of strategy 1 and the y-axis being the parameter of strategy 2.
+The z-axis will indicate the points one strategy gained.
+That being said, one surface will be shown for each strategy.
+Further more, the two z-axis of the two surfaces can be added and form a new surface which shows the overall points gained by both strategies.
+The complement to that would be to subtract the two z-axis to plot a surface which describes how much better one strategy was than the other.
+
+		% Let two strategies play ICPD\\
+		% let every parameter play against every other parameter\\
+		% parameters as x and y-axis, points as z-axis\\
+		% one surface for each strategy\\
+		% overall surface is population wealth (addition)\\
+		% difference surface is individual competence (subtraction)
+
+	\item Simultaneous vs Alternating:\\
+
+Two main differences can be seen when simulating an iterated variant of the PD.
+On one hand there is the simultaneous form whereby the strategies submit their contribution at the same time.
+On the other hand, there is the alternating form in which on e strategy submits its contribution and the other strategy can respond to this contribution is that round.
+Since the alternating form gives and advantage to the strategy which is allowed to respond, this only makes things more complicated than necessary.
+So, this analysis is only dedicated to the simultaneous form.
+
+	\item Current Findings:\\
+
+In the simpler variants, e.g. the IPD without noise, it has been proved many times over that the strategy tit-for-tat is the most successful one. [sources]
+The success of strategies, however, can vary depending on certain conditions such as the influence of noise or different pay-off systems where continuous investments can be submitted.
+So, the very specific area of the simultaneous ICPD, has not been very well explored.
+
+		% (None really)\\
+		% Not well explored: simultaneous Iterated Continuous Prisoner's Dilemma
+
+\end{itemize}
+
+\section{Methods and Implementation}
+\begin{itemize}
+
+	\item Programming language:\\
+
+The simulation, data generation and visualisation is completely written in Python (3).
+
+% Everything in Python (simulation/data generation/visualisation)\\
+		% Github: \href{https://github.com/adho08/Prisoner-s-Dilemma}{Repository}\\
+
+	\item Data Generation:\\
+		two strategies\\
+		every parameter against every parameter\\
+		play several times to smooth out noise (average)\\
+
+	\item Implemented Variants:\\
+		Prisoner's Dilemma\\
+		Iterated Prisoner's Dilemma\\
+		Iterated Continuous Prisoner's Dilemma\\
+		Parameter-Based Strategies\\
+		only PBS important for MA\\
+
+	\item Simulated Strategies and explanation of parameter\\
+		Average\\
+		RandomContinuous\\
+		RandomDiscrete\\
+		Adapt\\
+		...\\
+
+\end{itemize}
+
+\section{Results}
+\begin{itemize}
+
+	\item Surfaces:\\
+		plots\\
+		surface of strategy 1\\
+		surface of strategy 2\\
+		surface of both (added)\\
+		surface showing difference (subtracted)\\
+
+	\item Analysis:\\
+		hills and valleys\\
+
+\end{itemize}
+
+\section{Discussion}
+\begin{itemize}
+
+	\item ?
+
+\end{itemize}
+
+\section{Conclusions and Outlook}
+\begin{itemize}
+
+	\item Summary and Quintessence\\
+		which strategy 1 better than which strategy 2\\
+		which parameter to be used\\
+
+	\item Application in the Real World\\
+		strategies translated to real persons\\
+		giving examples (Politics, economics to simple human beings)\\
+		prospect to the future (which ones will win?)
+
+\end{itemize}
+
+\section{Self Reflection}
+\begin{itemize}
+
+	\item Challenges\\
+		estimation of time consumption\\
+		transforming ideas during process\\
+		dedication
+
+	\item Learnings\\
+		reading professional papers\\
+		writing English\\
+		experimental workflow (usage of neovim, tmux and terminal)
+
+\end{itemize}
+
+\section{Annex}
+\end{document}
