@@ -40,9 +40,9 @@ zmin = 0 # min(matrix1.min(), matrix2.min())
 zmax = max(matrix1.max(), matrix2.max())
 
 fig = make_subplots(
-    rows=1, cols=3,
-    specs=[[{'type': 'surface'}, {'type': 'surface'}, {'type': 'surface'}]],
-    subplot_titles=(header[0], header[2], "Overall (Mean)")
+    rows=2, cols=2,
+    specs=[[{'type': 'surface'}, {'type': 'surface'}], [{'type': 'surface'}, {'type': 'surface'}]],
+    subplot_titles=(header[0], header[2], "Overall (Mean)", "Overall (Difference)")
 )
 
 # ---------------------- surface plot strategy_1 ---------------------- 
@@ -50,7 +50,7 @@ fig.add_trace(go.Surface(
     x=list1, y=list2, z=matrix1,
     colorscale=colorscale,
     cmin=zmin, cmax=zmax,
-    colorbar=dict(title="Z", len=0.75, x=0.30)),
+    colorbar=dict(title="Points", len=0.75, x=0.30)),
     row=1, col=1
 )
 
@@ -63,7 +63,7 @@ fig.add_trace(go.Surface(
     row=1, col=2
 )
 
-# ---------------------- surface plot overall ((strategy_1 + strategy_2) / 2) ---------------------- 
+# ---------------------- surface plot overall (mean) ---------------------- 
 matrix3 = np.mean(np.array([matrix1, matrix2]), axis=0)
 overall_zmin = 0 # matrix3.min()
 overall_zmax = zmax # matrix3.max()
@@ -72,8 +72,33 @@ fig.add_trace(go.Surface(
     x=list1, y=list2, z=matrix3,
     colorscale=colorscale,
     cmin=overall_zmin, cmax=overall_zmax,
-    colorbar=dict(title="Z", len=0.75, x=0.66)),
-    row=1, col=3
+    colorbar=dict(title="Points", len=0.75, x=0.66)),
+    row=2, col=1
+)
+
+# ---------------------- surface plot overall (difference) ---------------------- 
+matrix4 = matrix2-matrix1
+diff_zmin = matrix4.min()
+diff_zmax = zmax # matrix4.max()
+
+# combine difference sruface with plane at z=0
+fig.add_trace(go.Surface(
+    x=list1, y=list2, z=matrix4,
+    colorscale=colorscale,
+    cmin=diff_zmin, cmax=diff_zmax,
+    colorbar=dict(title="Points", len=0.75, x=0.66)),
+    row=2, col=2
+)
+
+# Then, add the z=0 plane (same x and y, z = 0)
+fig.add_trace(go.Surface(
+    x=list1, y=list2,
+    z=np.zeros_like(matrix4),  # plane at z=0
+    showscale=False,
+    opacity=0.4,  # semi-transparent
+    colorscale=[[0, 'gray'], [1, 'gray']],
+    name='z=0 Plane'),
+    row=2, col=2
 )
 
 # Define axis ranges
@@ -84,8 +109,7 @@ fig.update_layout(
     scene=dict(
         aspectmode='cube',
         xaxis=dict(
-            title=dict(text=strategy_1),
-            range=[x_min, x_max]),
+            title=dict(text=strategy_1), range=[x_min, x_max]),
         yaxis=dict(
             title=dict(text=strategy_2), 
             range=[y_min, y_max]),
@@ -110,6 +134,17 @@ fig.update_layout(
             title=dict(text=strategy_2), 
             range=[y_min, y_max]),
         zaxis=dict(range=[overall_zmin, overall_zmax])
+    ),
+    scene4=dict(
+        aspectmode='manual',
+        aspectratio=dict(x=1, y=1, z=2),
+        xaxis=dict(
+            title=dict(text=strategy_1),
+            range=[x_min, x_max]),
+        yaxis=dict(
+            title=dict(text=strategy_2), 
+            range=[y_min, y_max]),
+        zaxis=dict(range=[diff_zmin, diff_zmax])
     )
 )
 
