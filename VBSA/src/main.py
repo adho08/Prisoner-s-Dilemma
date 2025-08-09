@@ -32,7 +32,7 @@ def main() -> None:
     strategy2 = PB_strategies[1]
 
     # csv header
-    results += f"{strategy1}, {strategy1}.parameter, {strategy2}, {strategy2}.parameter\n"
+    results += f"{strategy1}.parameter, {strategy1}.points, {strategy2}.parameter, {strategy2}.points\n"
 
     # increment the parameter every time a new ICPD is played
     for parameter_2 in parameters_2:
