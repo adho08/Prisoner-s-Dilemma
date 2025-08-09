@@ -42,7 +42,7 @@ class PrisonersDilemma(object):
         if not (0 <= x <= 1) or not (0 <= y <= 1):
             raise ValueError("\nStrategies can only submit cooperation between 0 and 1", x if not (0 <= x <= 1) else y)
         
-        noise = 0.2
+        noise = 0
 
         # set noise to deviate the actual amount of cooperation/defection
         noise_x = round(random.triangular(-noise, noise, 0.0), 2)
@@ -71,7 +71,7 @@ class PrisonersDilemma(object):
         (a00, b00), (a01, b01) = PrisonersDilemma.payoffs[0]
         (a10, b10), (a11, b11) = PrisonersDilemma.payoffs[1]
 
-        a_interp: float = round(lerp2(a00, a01, a10, a11), 2)
-        b_interp: float = round(lerp2(b00, b01, b10, b11), 2)
+        a_interp: float = lerp2(a00, a01, a10, a11)
+        b_interp: float = lerp2(b00, b01, b10, b11)
 
         return (a_interp, b_interp)

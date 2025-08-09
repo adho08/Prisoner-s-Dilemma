@@ -1,22 +1,23 @@
 from strategies import *
 from game import PrisonersDilemma as PD
-import csv
 
 results_path = "../data/results.csv"
 results = ""
 
 rounds = 20
-repeated = 1000
-parameters_1 = list(range(0, 6))
-parameters_2 = list(range(0, 11))
+repeated = 1
+parameters_1 = list(range(2, 6))
+parameters_2 = list(range(2, 11))
 spacing = 20
 
 AC = AlwaysCooperate()
 AVR = Average(2)
 ADT = Adapt(1)
 RND = RandomNeutral(1)
+RNDC = RandomNeutral(1)
+RNDD = RandomDiscrete(1)
 
-PB_strategies: list[PBStrategy] = [ADT, RND]
+PB_strategies: list[PBStrategy] = [AVR, ADT]
 
 T4T = Tit4Tat()
 AD = AlwaysDefect()
@@ -60,7 +61,7 @@ def play_ICPD(stg1: PBStrategy, stg2: Strategy):
         print(stg2, stg2.points)
 
         # add the total points gained after the ICPD of both strategies
-        results += f"{stg1.parameter}, {stg1.points}, {stg2.parameter}, {stg2.points}\n"
+        results += f"{stg1.parameter}, {stg1.points:0.2f}, {stg2.parameter}, {stg2.points:0.2f}\n"
 
         stg1.reset()
         stg2.reset()
