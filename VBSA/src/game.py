@@ -23,9 +23,7 @@ class PrisonersDilemma(object):
     ]
 
     # ------------------ algebraic version ------------------ 
-    # cost-to-benefit ratio
-    c = 0.5
-
+    
     @staticmethod
     def make_distinctive(strategies: list[Strategy]) -> None:
 
@@ -61,26 +59,14 @@ class PrisonersDilemma(object):
         return x, y
 
     # Created by ChapGPT
-    @staticmethod
-    def award_interpolated(x: float, y: float) -> tuple[float, float]:
+    @classmethod
+    def award_interpolated(cls, x: float, y: float) -> tuple[float, float]:
         
         # if x and y are not between 0 and 1, raise an error
         if not (0 <= x <= 1) or not (0 <= y <= 1):
             raise ValueError("\nStrategies can only submit cooperation between 0 and 1", x if not (0 <= x <= 1) else y)
-        
-        # noise between 0 and 1
-        noise = 0.2
 
-        # set noise to deviate the actual amount of cooperation/defection
-        noise_x = round(random.triangular(-noise, noise, 0.0), 2)
-        noise_y = round(random.triangular(-noise, noise, 0.0), 2)
-
-        # add noise (deviation of the actual amount of cooperation/defection)
-        x_deviated = x + noise_x
-        x = max(0.0, min(1.0, x_deviated))
-
-        y_deviated = y + noise_y
-        y = max(0.0, min(1.0, y_deviated))
+        x, y = cls.__add_noise_influence(x, y)
 
         """
         Bilinear interpolation of a 2x2 matrix where each element is a tuple (a, b).
@@ -108,8 +94,11 @@ class PrisonersDilemma(object):
 
         x, y = cls.__add_noise_influence(x, y)
 
-        v1 = x - cls.c*y
-        v2 = y - cls.c*x
+        # cost-to-benefit ratio
+        c = 0.1
+
+        v1 = y - c*x
+        v2 = x - c*y
 
         return v1, v2
 
