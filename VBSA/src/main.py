@@ -5,24 +5,20 @@ results_path = "../data/results.csv"
 results = ""
 
 rounds = 20
-repeated = 1
-parameters_1 = list(range(2, 6))
-parameters_2 = list(range(2, 11))
+repeated = 100
 spacing = 20
 
 AC = AlwaysCooperate()
-AVR = Average(2)
-ADT = Adapt(1)
-RND = RandomNeutral(1)
-RNDC = RandomNeutral(1)
-RNDD = RandomDiscrete(1)
-
-PB_strategies: list[PBStrategy] = [AVR, ADT]
-
+AVR = Average()
+ADT = Adapt()
+ADT2 = Adapt2()
+RND = RandomNeutral()
+RNDC = RandomNeutral()
+RNDD = RandomDiscrete()
 T4T = Tit4Tat()
 AD = AlwaysDefect()
 
-strategies_set: list[Strategy] = [AD]
+PB_strategies: list[PBStrategy] = [AVR, RND]
 
 def main() -> None:
     global results
@@ -35,9 +31,9 @@ def main() -> None:
     results += f"{strategy1}.parameter, {strategy1}.points, {strategy2}.parameter, {strategy2}.points\n"
 
     # increment the parameter every time a new ICPD is played
-    for parameter_2 in parameters_2:
+    for parameter_2 in strategy2.parameter_list:
         strategy2.parameter = parameter_2
-        for parameter_1 in parameters_1:
+        for parameter_1 in strategy1.parameter_list:
             strategy1.parameter = parameter_1
             play_ICPD(strategy1, strategy2)
         strategy1.reset_parameter()
