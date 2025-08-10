@@ -32,8 +32,11 @@ class Strategy(ABC):
         else:
             self._name = name
 
+        super().__init__()
+
+    @abstractmethod
     def make_move(self, round: int = 0) -> float:
-        raise NotImplementedError("Subclasses must implement this method")
+        pass
 
     # Update the history or own moves, opponent moves and points
     def update(self, move: float, opponent_move: float, payoff: float) -> None:
@@ -74,10 +77,15 @@ class Strategy(ABC):
 
 # Parameter-Based Strategy
 class PBStrategy(Strategy):
+    @abstractmethod
     def __init__(self, parameter: int = 0, start: float | None = None, name: str | None = None) -> None:
         super().__init__(start, name)
-        self.init_param = parameter
-        self.parameter = parameter
+        self._init_parameter = self.parameter_list[0]
+        self.parameter = self._init_parameter 
+
+    @property
+    def parameter_list(self) -> list[int]:
+        return list(range(0, 10))
 
     def reset_parameter(self) -> None:
-        self.parameter = self.init_param
+        self.parameter = self._init_parameter 

@@ -10,6 +10,9 @@ class AlwaysCooperate(Strategy):
     def make_move(self, round=None):
         return 1.0
 
+    def reset_parameter(self):
+        return 0
+
 class AlwaysDefect(Strategy):
     def __init__(self, name: str | None = None):
         super().__init__(0.0, name)
@@ -19,6 +22,9 @@ class AlwaysDefect(Strategy):
 
     def make_move(self, round=None):
         return 0.0
+
+    def reset_parameter(self):
+        return 0
 
 class Neutral(Strategy):
     def __init__(self, name: str | None = None):
