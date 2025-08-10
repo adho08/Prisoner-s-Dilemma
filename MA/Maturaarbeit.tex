@@ -108,6 +108,7 @@ A Nash-equilibrium is introduced.
 It defines a stable state in which both would not change their decision even though they would know if the other cooperated or defected.\\
 This game composes a one-time interaction very well in a mathematical and analytical perspective. 
 The pay-off's in the matrix can be changed as long as these rules stay valid.
+% \url{https://www.investopedia.com/terms/n/nash-equilibrium.asp}
 
 
 % general pay-off matrix
@@ -165,8 +166,8 @@ The continuous variant is considered more accurate to the real world since the d
 The pay-off system needs to be altered accordingly.
 The pay-off of [sciencedirect.com] is suitable for this project.
 
-$$p1 = x - c*y$$
-$$p2 = y - c*x$$
+$$p1 = y - c*x$$
+$$p2 = x - c*y$$
 
 The amount of cooperation is called investment and can range from zero to one (0 to 1) where full defection is represented by 0 and cooperation corresponds to 1.
 The variable x is the investment of strategy 1 and y is the investment of strategy 2.
@@ -193,7 +194,7 @@ Without noise, in many cases, the ICPD would be equivalent to the IPD.
 
 The main idea of this paper is to use parameter-based strategies.
 These strategies hold a parameter that defines the behaviour of the strategy.
-This parameter can determine the investment of one strategy in many ways.
+The parameter will always range from 1 to 10 inclusively.
 [Example]
 
 
@@ -240,6 +241,20 @@ So, the very specific area of the simultaneous ICPD, has not been very well expl
 \section{Methods and Implementation}
 \begin{itemize}
 
+	\item Simulated Strategies and explanation of parameter:\\
+		Average:\\
+The strategy Average belongs to the group of the responding/responsive strategies.
+It takes the investments of the opponent in the last $n$ previous rounds where $n = parameter$ as variables to its function to calculate the mean.
+This mean will then be submitted in the next round.
+Since in the first $n$ rounds the strategy cannot calculate an average, it will submit full cooperation to offer maximum points for both of them.
+
+
+
+		RandomContinuous\\
+		RandomDiscrete\\
+		Adapt\\
+		...\\
+
 	\item Programming language:\\
 
 The simulation, data generation and visualisation is completely written in Python (3).
@@ -258,14 +273,7 @@ The simulation, data generation and visualisation is completely written in Pytho
 		Iterated Continuous Prisoner's Dilemma\\
 		Parameter-Based Strategies\\
 		only PBS important for MA\\
-
-	\item Simulated Strategies and explanation of parameter\\
-		Average\\
-		RandomContinuous\\
-		RandomDiscrete\\
-		Adapt\\
-		...\\
-
+	
 \end{itemize}
 
 \section{Results}
