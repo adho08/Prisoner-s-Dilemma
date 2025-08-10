@@ -8,7 +8,7 @@ from pathlib import Path
 # import variable of another python script
 script_dir = Path(__file__).parent
 sys.path.insert(0, str(script_dir.parent / 'src'))
-from main.py import parameters_1, repeated
+from main import parameters_1, repeated
 sys.path.insert(0, str(script_dir.parent / 'data'))
 
 df = pd.read_csv("results.csv")
@@ -42,7 +42,7 @@ zmax = max(matrix1.max(), matrix2.max())
 fig = make_subplots(
     rows=2, cols=2,
     specs=[[{'type': 'surface'}, {'type': 'surface'}], [{'type': 'surface'}, {'type': 'surface'}]],
-    subplot_titles=(header[0], header[2], "Overall (Mean)", "Overall (Difference)")
+    subplot_titles=(strategy_1, strategy_2, "Overall (Mean)", "Overall (Difference)")
 )
 
 # ---------------------- surface plot strategy_1 ---------------------- 
