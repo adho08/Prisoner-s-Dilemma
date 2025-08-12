@@ -85,7 +85,7 @@ class PBStrategy(Strategy):
 
     @property
     def parameter_list(self) -> list[int]:
-        return list(range(0, 10))
+        return list(range(0, 11)) # list from 0 to 10 inclusively
 
     def reset_parameter(self) -> None:
         self.parameter = self._init_parameter 
