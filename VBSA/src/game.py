@@ -6,7 +6,7 @@ class PrisonersDilemma(object):
     # 0 <= noise <= 1
     # 0: full discrete
     # 1: fully random
-    noise = 0.2
+    noise = 0.0
 
     # ------------------ interpolated payoff matrix version ------------------ 
     # awarding points
@@ -95,12 +95,9 @@ class PrisonersDilemma(object):
         x, y = cls.__add_noise_influence(x, y)
 
         # cost-to-benefit ratio
-        c = 0.1
+        c = 0.3
 
         v1 = y - c*x
         v2 = x - c*y
 
         return v1, v2
-
-
-
