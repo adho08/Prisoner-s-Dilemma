@@ -23,7 +23,7 @@ AD = AlwaysDefect()
 ALWS = AlwaysSame()
 ALWS2 = AlwaysSame()
 
-PB_strategies: list[PBStrategy] = [ALWS2, ALWS]
+PB_strategies: list[PBStrategy] = [AVR, ADT4]
 strategy_1 = PB_strategies[0]
 strategy_2 = PB_strategies[1]
 

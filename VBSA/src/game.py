@@ -81,8 +81,8 @@ class PrisonersDilemma(object):
             )
         
         # Extract the four tuples
-        (a00, b00), (a01, b01) = PrisonersDilemma.payoffs[0]
-        (a10, b10), (a11, b11) = PrisonersDilemma.payoffs[1]
+        (a00, b00), (a01, b01) = cls.payoffs[0]
+        (a10, b10), (a11, b11) = cls.payoffs[1]
 
         a_interp: float = lerp2(a00, a01, a10, a11)
         b_interp: float = lerp2(b00, b01, b10, b11)
