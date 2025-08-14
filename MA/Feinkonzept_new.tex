@@ -29,7 +29,7 @@
 	In order to comprehend the key concepts of my MA, the underlying principles that underpin my analysis need to be reviewed. These include:
 	\begin{description}
 		\item[Game Theory:] Game Theory is a mathematical study that examines interactions between strategies.
-		\item[Prisoner's Dilemma:] In the Prisoner's Dilemma, two strategies play against each other. They can either cooperate or defect. They get points from the payoff matrix based on the decision they have made.
+		\item[Prisoner's Dilemma:] In the Prisoner's Dilemma, two strategies play against each other. They can either cooperate or defect. They get points from the pay-off matrix based on the decision they have made.
 
 % Payoff matrix
 
@@ -47,8 +47,8 @@ The dilemma's core arises from the following. It is the most logical to pick def
 		\item[Iterated Prisoner's Dilemma:] This variant of the Prisoner's Dilemma consists of two strategies and a number of rounds where in each round the two strategies play the single Prisoner's Dilemma and gain points that are added up until the end.
 		\item[Iterated Continuous Prisoner's Dilemma] The Iterated Continuous Prisoner's Dilemma is a variant where pay-offs are given based on non-binary decisions of the strategies. Meaning, strategies can submit any number between zero and one.
 		\item[Advanced Variants:]
-Also the evolutionary model of the Prisoner's Dilemma can be examined where a group of strategies play against each other. Survival of one strategy is determined by whether they won or lost against another. Reproduction is guaranteed by a win. A certain stable state of a percentage of all inital strategies in that group will eventually establish.
-		\item[Current Findings:] Studies have repeatedly shown that the strategy named Tit-For-Tat is the most successful one in the Iterated Prisoner's Dilemma. This strategy follows the idea of equivalent retaliation i.e. it will cooperate or defect likewise as the opponent did the last round. Four criteria were identified to be important to get a high-scoring output of the tournament: niceness, willingness to retaliate, being forgiving and not being envious. The continuous variant, on the other hand, has only been used in relevance to the evolutionary aspect. As you will read later, my MA does not concern the evolutionary variant and is thus a completely new idea.
+Also the evolutionary model of the Prisoner's Dilemma can be examined where a group of strategies play against each other. Survival of one strategy is determined by whether they won or lost against another. Reproduction is guaranteed by a win. A certain stable state of a percentage of all initial strategies in that group will eventually establish.
+		\item[Current Findings:] Studies have repeatedly shown that the strategy named Tit-For-Tat is the most successful one in the Iterated Prisoner's Dilemma. This strategy follows the idea of equivalent retaliation i.e. it will cooperate or defect likewise as the opponent did the last round. Four criteria were identified to be important to get a high-scoring output of the tournament: niceness, willingness to retaliate, being forgiving and not being envious. The continuous variant, on the other hand, has only been used in context with the evolutionary aspect. As you will read later, my MA does not concern the evolutionary variant and is thus a completely new idea.
 %A strategy is recommended to have the following attributes: Niceness, it has to start with cooperation. Willingness to retaliate, it has to strike back if it gets exploited. Be forgiving, it must not take the opponent's actions from the extensive past in account. Not being envious, the strategy must strive for its own maximal output rather than defeating the opponent.
 		\item[Relevance to the Project:] I will use the pay-off system of an external paper. (It will be linked in my MA).  
 	\end{description}
@@ -59,7 +59,7 @@ Also the evolutionary model of the Prisoner's Dilemma can be examined where a gr
 		\item[Simulation:]
 			The main idea of this MA is that strategies hold a parameter which determines their behaviour. It influences how they calculate their decision. This parameter ranges from zero to ten. I will implement five strategies in total and let every strategy play against every other strategy, including itself. One game consists of multiple Iterated Continuous Prisoner's Dilemma's. In one interaction of two strategies, I will let every parameter play against every other parameter. I will plot surfaces with the generated data and analyse these surfaces considering their hills and valleys.
 		\item[Programming Language:]
-	The simulation of these parameter-based strategies playing the Iterated Continuous Prisoner's Dilemma will be implemented in Python. More efficient programming languages such as Java or C++ will be applied if required due to slow speed. Data generation such as a ranking will automatically be constructed in bar plots. The most successful strategies will be described in depth.
+	The simulation of these parameter-based strategies playing the Iterated Continuous Prisoner's Dilemma will be implemented in Python. More efficient programming languages such as Java or C++ will be applied if required due to slow speed. Data generation and plotting the surfaces is automatically done by the simulation. The most successful strategies will be described in depth.
 	\end{description}
 
 \section{Results}
