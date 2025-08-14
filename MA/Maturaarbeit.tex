@@ -2,6 +2,10 @@
 \usepackage{xcolor}
 \usepackage{textcomp}
 \usepackage{hyperref}
+\usepackage{graphicx}
+
+% relative path to images directory
+% \graphicspath{ {./images/} }
 
 \title{Research of Parameters in Strategies of the Iterated Continuous Prisoner's Dilemma}
 \author{Adrian Hossner}
@@ -107,9 +111,8 @@ John Nash, a mathematician which made great contributions in Game Theory, has pr
 A Nash-equilibrium is introduced. 
 It defines a stable state in which both would not change their decision even though they would know if the other cooperated or defected.\\
 This game composes a one-time interaction very well in a mathematical and analytical perspective. 
-The pay-off's in the matrix can be changed as long as these rules stay valid.
+The pay-off's in the matrix can be changed as long as these rules stay fulfilled.
 % \url{https://www.investopedia.com/terms/n/nash-equilibrium.asp}
-
 
 % general pay-off matrix
 \begin{center}
@@ -123,13 +126,20 @@ The pay-off's in the matrix can be changed as long as these rules stay valid.
 \end{center}
 
 $$T > R > P > S$$
-$$2*R > T + S$$
 
 	\item Iterated:\\
 		
 The Iterated Prisoner's Dilemma (IPD) is a game which extends the PD. 
 As the name suggests, the PD is played a number of times sequentially. 
 After each round the pay-off gets accumulated to the points one strategy has already gained. 
+A strategy is to be considered as an autonomous player which has its own behaviour.
+A strategy has the whole history of its own contributions and the ones of the opponent at hand to generate the decision for the next round.
+These decisions are calculated by using conditions and probabilities that will be applied on the given data.
+In this, and in the following variants, the analogy to the real world is changed.
+It is wanted to maximize their output in the end.
+In contrary to the initial variant, it means that high number are wanted instead of unwanted.
+To still hold on the idea of the Prisoner's Dilemma, the pay-off's could be interpreted as to be subtracted.
+Meaning, the bigger the points, the sooner one gets out of prison.
 Since a strategy wants to gain as many points as possible, the pay-off matrix should be altered accordingly.\\
 
 \begin{center}
@@ -141,6 +151,23 @@ Since a strategy wants to gain as many points as possible, the pay-off matrix sh
  D & 5, 0 & 1, 1
 \end{tabular}
 \end{center}
+
+And to generalise this matrix as well, the numbers can be replaced with variables.
+These variables $T, R, P \: \mathrm{and} \: T$ % can be changes no matter how ...
+
+
+\begin{center}
+\begin{tabular}{ c|c|c }
+   & C & D \\ 
+   \hline
+ C & R, R & S, T\\  
+   \hline
+ D & T, S & P, P
+\end{tabular}
+\end{center}
+
+$$T < R < P < S$$
+$$2R > T + S$$
 
 The Nash-equilibrium in the IPD differs from that in the PD.
 This means that cooperation can earn out long-term. 
@@ -154,24 +181,78 @@ And because trust will be given up in the last round, there is no sense for both
 This will end up in an inductive defection behaviour for both strategies the whole game.\\
 This extension of the PD allows us to simulate a relationship over time where the two players interact multiple times.
 
-	\item Strategies:\\
-
-A strategy is to be considered as an autonomous player which has its own behaviour.
-A strategy has the whole history of its own contribution and the ones of the opponent at hand to generate the decision for the next round.
-These decisions are calculated by using conditions and probabilities on the given data.\\
-
 	\item Continuous:\\
 
 The continuous variant is considered more accurate to the real world since the decisions are rather rare only either cooperation or defection.
-The pay-off system needs to be altered accordingly.
-The pay-off of [sciencedirect.com] is suitable for this project.
-
-$$p1 = y - c*x$$
-$$p2 = x - c*y$$
-
 The amount of cooperation is called investment and can range from zero to one (0 to 1) where full defection is represented by 0 and cooperation corresponds to 1.
-The variable x is the investment of strategy 1 and y is the investment of strategy 2.
-The parameter c also ranges from 0 to 1 and describes the cost of cooperation.
+One would suspect a very similar pay-off system to the iterated variant.
+In the discrete version, it looked like this:
+
+\begin{center}
+\begin{tabular}{ c c }
+Pay-off Player A & Pay-off Player B\\
+\begin{tabular}{ c|c|c }
+   & $C_A$ & $D_A$ \\ 
+   \hline
+ $C_B$ & 3 & 5\\  
+   \hline
+ $D_B$ & 0 & 1
+\end{tabular}
+&
+\begin{tabular}{ c|c|c }
+   & $C_A$ & $D_A$ \\ 
+   \hline
+ $C_B$ & 3 & 0\\  
+   \hline
+ $D_B$ & 5 & 1
+\end{tabular}
+\end{tabular}
+\end{center}
+
+This is possible by bilinearly interpolating the pay-off matrix so that the lines become fluid.
+This will establish a field that can be represented by colour grades, a heat map.
+The equation for utilizing this heat map correctly are also displayed.
+
+% TODO: 
+% - include ChatGPT in paper (say that I used it to generate the figures)
+% - ask ChatGPT to make replace numbers with variables (T, R, P, S) to generalise
+% - display the functions ChatGPT used to generate the heat maps
+% - write a fluid transit from bilinear interpolated to equations
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_A}\hfill
+	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_B}
+	\caption{Pay-off hash maps in the continuous variant of the IPD.}
+\end{figure}
+
+I used ChatGPT-o4 to generate these heat maps.
+It generated them using these functions:
+
+$$U_A = (1-x)(1-y)R_A + (1-x)yS_A + x(1-y)T_A + xyP_A$$
+$$U_B = (1-x)(1-y)R_B + (1-x)yS_B + x(1-y)T_B + xyP_B$$
+
+These functions are applied to every point on the map.
+The variable x is the investment of strategy A and y is the investment of strategy B.
+There is, however, another way of determine the pay-off's.
+This approach uses only equations instead.
+It is much easier to implement but understanding is the difficult part.
+This pay-off system of [sciencedirect.com] is formed by:
+
+$$P_A = y - c*x$$
+$$P_B = x - c*y$$
+
+$P_A$ and $P_B$ are the pay-off's of strategy A and B respectively.
+The coefficient c ranges, as well as x and y, from 0 to 1 and describes the cost-to-benefit ratio.
+The base of the pay-off's are the opponent's investment.
+Then the strategy's own investment gets multiplied by the coefficient c and then is subtracted from the base.
+This means the pay-off is highly influenced by the opponent's investment.
+Let's see if the principles of the initial PD are still valid.
+It is better for one to defect (submit a 0) to get rid of the subtraction.
+And it is better for the strategy if the opponent's cooperates.
+If both defect, one gets zero points.
+If both cooperate, both get $1 - c$ points.
+If, however, one strategy exploits the opponent, meaning it defect while the other cooperates, it will get the maximum points being 1.
+[Examples of coefficient c]
 \\
 
 		% 0 to 1 rather than cooperation or defection\\
@@ -229,9 +310,10 @@ The parameter will always range from 1 to 10 inclusively.
 The end result of this paper will be several surface plots.
 The data will be generated by letting two parameter-based strategies play against each other the ICPD.
 The game will be structured so that every parameter came against every other parameter in the ICPD.
+In total, I will let them play the ICPD 100 times in order to smooth out abnormalities which happen only once.
 Like this, a surface can be plotted by having the x-axis being the parameter of strategy 1 and the y-axis being the parameter of strategy 2.
 The z-axis will indicate the points one strategy gained.
-That being said, one surface will be shown for each strategy.
+Since there are two strategies in one game, one surface will be shown for each strategy.
 Further more, the two z-axis of the two surfaces can be added and form a new surface which shows the overall points gained by both strategies.
 The complement to that would be to subtract the two z-axis to plot a surface showing the difference between the two surfaces.
 This describes how much better one strategy was than the other.
@@ -349,14 +431,9 @@ Adapt & AlwaysCooperate & -
 	\item Programming language:\\
 
 The simulation, data generation and visualisation is completely written in Python (3).
-
-% Everything in Python (simulation/data generation/visualisation)\\
-		% Github: \href{https://github.com/adho08/Prisoner-s-Dilemma}{Repository}\\
-
-	\item Data Generation:\\
-		two strategies\\
-		every parameter against every parameter\\
-		play several times to smooth out noise (average)\\
+For the visualisation, as in generating the surface plots, I used a python library called Plotly.
+If anyone is interested in simulating the project on their machine, they can go on my GitHub page and follow the instructions there:
+\href{https://github.com/adho08/Prisoner-s-Dilemma}{https://github.com/adho08/Prisoner-s-Dilemma}
 
 	\item Implemented Variants:\\
 		Prisoner's Dilemma\\
