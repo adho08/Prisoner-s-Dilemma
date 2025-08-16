@@ -251,7 +251,9 @@ It is better for one to defect (submit a 0) to get rid of the subtraction.
 And it is better for the strategy if the opponent's cooperates.
 If both defect, one gets zero points.
 If both cooperate, both get $1 - c$ points.
-If, however, one strategy exploits the opponent, meaning it defect while the other cooperates, it will get the maximum points being 1.
+If, however, one strategy exploits the opponent, meaning it defects while the other cooperates, it will get the maximum points being 1.
+The opponent would then get $-c$ points.
+This is the least one can receive.
 [Examples of coefficient c]
 \\
 
@@ -356,14 +358,14 @@ In total, this would equal to 60 surface plots.\\
 The following strategies are described by algorithmising them.
 $i(\theta)$ is a function that corresponds to the investment in the current round and holds the variable $\theta$ which is the parameter of the strategy in this round.
 I showcase what the behaviour of the strategy will be equivalent to when the parameter is 0, 5 and 10 for an easier understanding.\\
-		\\Average:\\
-The strategy Average (Avr) belongs to the group of the responding/responsive strategies.
-It takes the investments of the opponent in the last $\theta_{\mathrm{Avr}}$ previous rounds as variables to its function to calculate the mean.
+		\\Mean:\\
+The strategy Mean belongs to the group of the responsive strategies.
+It takes the investments of the opponent in the last $\theta_{\mathrm{Mean}}$ previous rounds as variables to its function to calculate the mean.
 This mean will then be submitted in the next round.
-Since in the first $\theta_{\mathrm{Avr}}$ rounds the strategy cannot calculate an average, it will submit full cooperation to offer maximum points for both of them.
-$$i(\theta_{\mathrm{Avr}}) = \frac{1}{\theta_{\mathrm{Avr}}}\sum_{k=1}^{\theta_{\mathrm{Avr}}}\bar i_k$$
+Since in the first $\theta_{\mathrm{Mean}}$ rounds the strategy cannot calculate an average, it will submit full cooperation to offer maximum points for both of them.
+$$i(\theta_{\mathrm{Mean}}) = \frac{1}{\theta_{\mathrm{Mean}}}\sum_{k=1}^{\theta_{\mathrm{Mean}}}\bar i_k$$
 The variable $\bar i_k$ is the $k$'th element of the history of the opponent's investments, $k = 1$ being the last round.
-This strategy, Average, with the parameter 0 is equivalent to  since it only calculates the mean of the last opponent's submission.\\
+This strategy, Mean, with the parameter 0 is equivalent to  since it only calculates the mean of the last opponent's submission.\\
 		\\Adapt:\\
 Adapt (Adp) is an, as the name suggests, adaptive and thus responsive strategy.
 It starts with full cooperation to offer a constructive relationship within this simulation.
@@ -422,7 +424,7 @@ Random-Continuous & Neutral & Random-Discrete ($\theta = 5$) \\
    \hline
 Always-Same & AlwaysDefect & AlwaysCooperate \\
    \hline
-Average & Tit-For-Tat & - \\
+Mean & Tit-For-Tat & - \\
    \hline
 Adapt & AlwaysCooperate & - 
 \end{tabular}
