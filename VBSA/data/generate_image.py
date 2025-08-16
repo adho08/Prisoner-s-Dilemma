@@ -44,6 +44,26 @@ colorscale = 'Plasma'
 zmin = 0 # min(matrix1.min(), matrix2.min())
 zmax = max(matrix1.max(), matrix2.max())
 
+# ---------------------- function for updating the fig layout ---------------------- 
+def update_fig_layout(title:str):
+    fig.update_layout(
+        title=dict(
+            text=title,
+            x=0.5,
+            xanchor="center"
+        ),
+        scene=dict(
+            xaxis_title=strategy_1,
+            yaxis_title=strategy_2,
+            zaxis_title="Points"
+        ),
+        margin=dict(l=0, r=0, b=0, t=40),  # reduce padding cuts
+        scene_camera=dict(
+            eye=dict(x=1.5, y=1.5, z=1)  # move camera further back
+        )
+    )
+
+
 # ---------------------- surface plot strategy_1 ---------------------- 
 fig = go.Figure(data=go.Surface(
     x=list1, y=list2, z=matrix1,
@@ -53,19 +73,7 @@ fig = go.Figure(data=go.Surface(
     )
 )
 
-fig.update_layout(
-    title=dict(
-        text=strategy_1,
-        x=0.5,
-        xanchor="center"
-    ),
-    scene=dict(
-        xaxis_title=strategy_1,
-        yaxis_title=strategy_2,
-        zaxis_title="Points"
-    ),
-    margin=dict(l=0, r=0, b=0, t=40)  # reduce padding cuts
-)
+update_fig_layout(strategy_1)
 
 fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_1.png")
 
@@ -79,19 +87,7 @@ fig = go.Figure(data=go.Surface(
     )
 )
 
-fig.update_layout(
-    title=dict(
-        text=strategy_2,
-        x=0.5,
-        xanchor="center"
-    ),
-    scene=dict(
-        xaxis_title=strategy_1,
-        yaxis_title=strategy_2,
-        zaxis_title="Points"
-    ),
-    margin=dict(l=0, r=0, b=0, t=40)  # reduce padding cuts
-)
+update_fig_layout(strategy_2)
 
 fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_2.png")
 
@@ -107,19 +103,7 @@ fig = go.Figure(data=go.Surface(
     cmin=overall_zmin, cmax=overall_zmax)
 )
 
-fig.update_layout(
-    title=dict(
-        text=f"{strategy_1} + {strategy_2}",
-        x=0.5,
-        xanchor="center"
-    ),
-    scene=dict(
-        xaxis_title=strategy_1,
-        yaxis_title=strategy_2,
-        zaxis_title="Points"
-    ),
-    margin=dict(l=0, r=0, b=0, t=40)  # reduce padding cuts
-)
+update_fig_layout(f"{strategy_1} + {strategy_2}")
 
 fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_mean.png")
 
@@ -146,19 +130,7 @@ fig.add_trace(go.Surface(
     name='z=0 Plane'),
 )
 
-fig.update_layout(
-    title=dict(
-        text=f"{strategy_1} - {strategy_2}",
-        x=0.5,
-        xanchor="center"
-    ),
-    scene=dict(
-        xaxis_title=strategy_1,
-        yaxis_title=strategy_2,
-        zaxis_title="Points"
-    ),
-    margin=dict(l=0, r=0, b=0, t=40)  # reduce padding cuts
-)
+update_fig_layout(f"{strategy_1} - {strategy_2}")
 
 fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_diff1.png")
 
@@ -185,19 +157,7 @@ fig.add_trace(go.Surface(
     name='z=0 Plane'),
 )
 
-fig.update_layout(
-    title=dict(
-        text=f"{strategy_2} - {strategy_1}",
-        x=0.5,
-        xanchor="center"
-    ),
-    scene=dict(
-        xaxis_title=strategy_1,
-        yaxis_title=strategy_2,
-        zaxis_title="Points"
-    ),
-    margin=dict(l=0, r=0, b=0, t=40)  # reduce padding cuts
-)
+update_fig_layout(f"{strategy_2} - {strategy_1}")
 
 fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_diff2.png")
 
