@@ -1,16 +1,20 @@
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 import pandas as pd
 import numpy as np
 import sys
+import os
 from pathlib import Path
-import plotly.io as pio
 
 # import variable of another python script
 script_dir = Path(__file__).parent
 sys.path.insert(0, str(script_dir.parent / 'src'))
 from main import strategy_1, strategy_2, repeated
 sys.path.insert(0, str(script_dir.parent / 'data'))
+
+cwd = os.getcwd()
+directory = os.path.join(cwd, rf"{strategy_1}_vs_{strategy_2}")
+if not os.path.exists(directory):
+    os.mkdir(directory)
 
 df = pd.read_csv("results.csv")
 header = list(df.columns)
@@ -75,7 +79,7 @@ fig = go.Figure(data=go.Surface(
 
 update_fig_layout(strategy_1)
 
-fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_1.png")
+fig.write_image(f"plots/{strategy_1}.png")
 
 # ---------------------- surface plot strategy_2 ---------------------- 
 fig = go.Figure(data=go.Surface(
@@ -89,7 +93,7 @@ fig = go.Figure(data=go.Surface(
 
 update_fig_layout(strategy_2)
 
-fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_2.png")
+fig.write_image(f"plots/{strategy_2}.png")
 
 # ---------------------- surface plot overall (mean) ---------------------- 
 matrix3 = np.mean(np.array([matrix1, matrix2]), axis=0)
@@ -105,7 +109,7 @@ fig = go.Figure(data=go.Surface(
 
 update_fig_layout(f"{strategy_1} + {strategy_2}")
 
-fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_mean.png")
+fig.write_image(f"plots/mean.png")
 
 # ---------------------- surface plot overall (difference strategy1) ---------------------- 
 matrix3 = matrix1-matrix2
@@ -132,7 +136,7 @@ fig.add_trace(go.Surface(
 
 update_fig_layout(f"{strategy_1} - {strategy_2}")
 
-fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_diff1.png")
+fig.write_image(f"plots/{strategy_1}_diff.png")
 
 # ---------------------- surface plot overall (difference strategy2) ---------------------- 
 matrix3 = matrix2-matrix1
@@ -159,6 +163,6 @@ fig.add_trace(go.Surface(
 
 update_fig_layout(f"{strategy_2} - {strategy_1}")
 
-fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_diff2.png")
+fig.write_image(f"plots/{strategy_2}_diff.png")
 
 print("finished")
