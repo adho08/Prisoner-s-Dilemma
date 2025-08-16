@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import sys
 from pathlib import Path
+import plotly.io as pio
 
 # import variable of another python script
 script_dir = Path(__file__).parent
@@ -50,12 +51,14 @@ fig = make_subplots(
 )
 
 # ---------------------- surface plot strategy_1 ---------------------- 
-fig.add_trace(go.Surface(
+srf_1 = go.Surface(
     x=list1, y=list2, z=matrix1,
     colorscale=colorscale,
     cmin=zmin, cmax=zmax,
     # colorbar=dict(title="Points", len=0.75, x=0.45)
-    ),
+    )
+
+fig.add_trace(srf_1,
     row=1, col=1
 )
 
@@ -156,3 +159,5 @@ fig.update_layout(
 )
 
 fig.show()
+pio.write_image(srf_1, f"plots/{strategy_1}_vs_{strategy_2}.png")
+print("finished")
