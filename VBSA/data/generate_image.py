@@ -63,7 +63,8 @@ fig.update_layout(
         xaxis_title=strategy_1,
         yaxis_title=strategy_2,
         zaxis_title="Points"
-    )
+    ),
+    margin=dict(l=0, r=0, b=0, t=40)  # reduce padding cuts
 )
 
 fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_1.png")
@@ -88,7 +89,8 @@ fig.update_layout(
         xaxis_title=strategy_1,
         yaxis_title=strategy_2,
         zaxis_title="Points"
-    )
+    ),
+    margin=dict(l=0, r=0, b=0, t=40)  # reduce padding cuts
 )
 
 fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_2.png")
@@ -115,7 +117,8 @@ fig.update_layout(
         xaxis_title=strategy_1,
         yaxis_title=strategy_2,
         zaxis_title="Points"
-    )
+    ),
+    margin=dict(l=0, r=0, b=0, t=40)  # reduce padding cuts
 )
 
 fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_mean.png")
@@ -153,7 +156,8 @@ fig.update_layout(
         xaxis_title=strategy_1,
         yaxis_title=strategy_2,
         zaxis_title="Points"
-    )
+    ),
+    margin=dict(l=0, r=0, b=0, t=40)  # reduce padding cuts
 )
 
 fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_diff1.png")
@@ -191,7 +195,8 @@ fig.update_layout(
         xaxis_title=strategy_1,
         yaxis_title=strategy_2,
         zaxis_title="Points"
-    )
+    ),
+    margin=dict(l=0, r=0, b=0, t=40)  # reduce padding cuts
 )
 
 fig.write_image(f"plots/{strategy_1}_vs_{strategy_2}_diff2.png")
