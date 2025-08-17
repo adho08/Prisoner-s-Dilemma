@@ -24,7 +24,7 @@ class PrisonersDilemma(object):
 
     # ------------------ algebraic version ------------------ 
     # cost-to-benefit ratio
-    c = 0.3
+    c = 0.5
     
     @staticmethod
     def make_distinctive(strategies: list[Strategy]) -> None:
@@ -96,7 +96,10 @@ class PrisonersDilemma(object):
 
         # x, y = cls.__add_noise_influence(x, y)
 
-        v1 = y - cls.c*x
-        v2 = x - cls.c*y
+        # base line, so no negative pay-off's
+        b = cls.c
+
+        v1 = y - cls.c*x + b
+        v2 = x - cls.c*y + b
 
         return v1, v2

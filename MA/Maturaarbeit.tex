@@ -215,17 +215,12 @@ This is possible by bilinearly interpolating the pay-off matrix so that the line
 This will establish a field that can be represented by colour grades, a heat map.
 The equation for utilizing this heat map correctly are also displayed.
 
-% TODO: 
-% - include ChatGPT in paper (say that I used it to generate the figures)
-% - ask ChatGPT to make replace numbers with variables (T, R, P, S) to generalise
-% - display the functions ChatGPT used to generate the heat maps
-% - write a fluid transit from bilinear interpolated to equations
-% \begin{figure}[htbp]
-% 	\centering
-% 	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_A}\hfill
-% 	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_B}
-% 	\caption{Pay-off hash maps in the continuous variant of the IPD.}
-% \end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_A}\hfill
+	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_B}
+	\caption{Pay-off hash maps in the continuous variant of the IPD.}
+\end{figure}
 
 I used ChatGPT-o4 to generate these heat maps.
 It generated them using these functions:
@@ -453,24 +448,41 @@ For the visualisation, as in generating the surface plots, I used a python libra
 If anyone is interested in simulating the project on their machine, they can go on my GitHub page and follow the instructions there:
 \href{https://github.com/adho08/Prisoner-s-Dilemma}{https://github.com/adho08/Prisoner-s-Dilemma}
 
-	\item Implemented Variants:\\
-		Prisoner's Dilemma\\
-		Iterated Prisoner's Dilemma\\
-		Iterated Continuous Prisoner's Dilemma\\
-		Parameter-Based Strategies\\
-		only PBS important for MA\\
+	% \item Implemented Variants:\\
+	% 	Prisoner's Dilemma\\
+	% 	Iterated Prisoner's Dilemma\\
+	% 	Iterated Continuous Prisoner's Dilemma\\
+	% 	Parameter-Based Strategies\\
+	% 	only PBS important for MA\\
 	
 \end{itemize}
 
 \section{Results}
-\begin{itemize}
+
+In the following two pages, you will see all the surfaces of both Random-Discrete and Random-Continuous.
+There are five surfaces that are generated from one ICPD.
+The two most trivial plots show the gains of the strategy itself and the opponent's.
+These surfaces are not only marked by height but also by the colour.
+So, one can read this surface exactly by regarding this colour scale.\\
+\includegraphics[height=3.0cm]{plots/Colorscales/Plasma.png}\\
+The next two surfaces concern the advantage one strategy has over the other.
+This shows us how much more one strategy had over the other.
+For the surface of the main strategy, simply the opponent's surface is subtracted from it's surface and vice versa.
+Also here there is a colour scale.
+This colour scale, however, differs from the first one.
+I chose to use different colour scales for visualisation due to the fact that the advantage surfaces have a different z-axis range than the first two.\\
+\includegraphics[height=3.0cm]{plots/Colorscales/Cividis.png}\\
+The last row of surfaces displays how much points have been gained by both.
+To generate these surfaces, one must add the surfaces which describe how much one has gained.
+This plot has as the advantage surfaces a again, different z-axis range.
+So a new colour scale is introduced.\\
+\includegraphics[height=3.0cm]{plots/Colorscales/Portland.png}\\
+
+
+\newpage
 
 \def \w {0.20}
 \def \a {45}
-
-\newpage
-\item Surfaces:\\
-
 
 % ------------------------------- Random-Discrete -------------------------------
 Random-Discrete\\
@@ -564,6 +576,22 @@ Random-Discrete\\
 	\end{minipage}
 \end{figure}
 
+% ------------------------------- Random-Continuous -------------------------------
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.1\textwidth}
+		\raggedleft
+		\rotatebox{90}{\parbox{3cm}{}}
+	\end{minipage}
+	\begin{minipage}[c]{0.80\textwidth}
+		\rotatebox{45}{\parbox{3cm}{Random-Discrete}}\hfill
+		\rotatebox{45}{\parbox{4cm}{Random-Continuous}}\hfill
+		\rotatebox{45}{\parbox{3cm}{AlwaysSame}}\hfill
+		\rotatebox{45}{\parbox{3cm}{Adapt-Discrete}}\hfill
+		\rotatebox{45}{\parbox{3cm}{Adapt-Continuous}}\hfill
+	\end{minipage}
+\end{figure}
+
 % ---------------- Gain Random-Continuous ----------------
 \begin{figure}[!h]
 	\centering
@@ -572,8 +600,8 @@ Random-Discrete\\
 		\rotatebox{90}{\parbox{3cm}{\centering Gain \\ Random-Continuous}}
 	\end{minipage}
 	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous/Random-Continuous.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png}\hfill
@@ -587,8 +615,8 @@ Random-Discrete\\
 		\rotatebox{90}{\parbox{3cm}{\centering Gain \\ Opponent}}
 	\end{minipage}
 	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous/Random-Continuous.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png}\hfill
@@ -602,8 +630,8 @@ Random-Discrete\\
 		\rotatebox{90}{\parbox{3cm}{\centering Advantage \\ Random-Continuous}}
 	\end{minipage}
 	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous/Random-Continuous_diff.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png}\hfill
@@ -617,8 +645,8 @@ Random-Discrete\\
 		\rotatebox{90}{\parbox{3cm}{\centering Advantage \\ Opponent}}
 	\end{minipage}
 	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous/Random-Continuous_diff.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png}\hfill
@@ -632,8 +660,8 @@ Random-Discrete\\
 		\rotatebox{90}{\parbox{3cm}{\centering Overall \\ Gain}}
 	\end{minipage}
 	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous/added.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png}\hfill
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png}\hfill 
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png}\hfill
@@ -642,22 +670,10 @@ Random-Discrete\\
 
 \newpage
 
-		plots\\
-		surface of strategy 1\\
-		surface of strategy 2\\
-		surface of both (added)\\
-		surface showing difference (subtracted A - B)\\
-		surface showing difference (subtracted B - A)\\
-
-	\item Analysis:\\
-		hills and valleys\\
-
-\end{itemize}
-
 \section{Discussion}
 \begin{itemize}
 
-	\item ?
+	\item Analysis
 
 \end{itemize}
 

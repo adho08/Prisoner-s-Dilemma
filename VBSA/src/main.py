@@ -27,7 +27,7 @@ ADPC2 = AdaptContinuous(name="Adapt-Continuous_2")
 ADPD = AdaptDiscrete(name="Adapt-Discrete")
 ADPD2 = AdaptDiscrete(name="Adapt-Discrete_2")
 
-PB_strategies: list[PBStrategy] = [RNDD, ADPD]
+PB_strategies: list[PBStrategy] = [RNDD, RNDD2]
 strategy_1 = PB_strategies[0]
 strategy_2 = PB_strategies[1]
 
@@ -87,8 +87,8 @@ def play_CPD(stg1: PBStrategy, stg2: Strategy, round: int):
     except ValueError as e:
         print(e)
     else:
-        # r1, r2 = PD.award_algebraic(m1, m2)
-        r1, r2 = PD.award_interpolated(m1, m2)
+        r1, r2 = PD.award_algebraic(m1, m2)
+        # r1, r2 = PD.award_interpolated(m1, m2)
         stg1.update(m1, m2, r1)
         stg2.update(m2, m1, r2)
 

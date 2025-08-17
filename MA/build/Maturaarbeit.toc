@@ -3,6 +3,6 @@
 \contentsline {section}{\numberline {3}Methods and Implementation}{6}{section.3}%
 \contentsline {section}{\numberline {4}Results}{9}{section.4}%
 \contentsline {section}{\numberline {5}Discussion}{11}{section.5}%
-\contentsline {section}{\numberline {6}Conclusions and Outlook}{12}{section.6}%
+\contentsline {section}{\numberline {6}Conclusions and Outlook}{11}{section.6}%
 \contentsline {section}{\numberline {7}Self Reflection}{12}{section.7}%
 \contentsline {section}{\numberline {8}Annex}{12}{section.8}%

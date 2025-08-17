@@ -51,9 +51,9 @@ colorscale_s = 'Plasma'
 colorscale_a = 'Portland'
 colorscale_d = 'Cividis'
 # least points possible
-zmin = -1 * rounds * PD.c
+zmin = 0
 # most points possible
-zmax = rounds * 5
+zmax = rounds * (1 + PD.c)
 
 # ---------------------- function for updating the fig layout ---------------------- 
 def update_fig_layout(fig, title:str, range, x=1, y=1, z=1):
@@ -78,11 +78,11 @@ def update_fig_layout(fig, title:str, range, x=1, y=1, z=1):
                 title=dict(
                     text="Points"
                 ),
-                nticks=4,
+                dtick=10,
                 range=range
             ),
-            aspectmode='cube',
-            # aspectratio=dict(x=x, y=y, z=z)
+            aspectmode='manual',
+            aspectratio=dict(x=x, y=y, z=z)
         ),
         margin=dict(l=0, r=0, b=0, t=0),  # reduce padding cuts
         scene_camera=dict(
@@ -100,14 +100,14 @@ fig1 = go.Figure(
 )
 
 # Then, add the z=0 plane (same x and y, z = 0)
-fig1.add_trace(go.Surface(
-    x=list1, y=list2,
-    z=np.zeros_like(matrix1),  # plane at z=0
-    showscale=False,
-    opacity=0.4,  # semi-transparent
-    colorscale=[[0, 'gray'], [1, 'gray']],
-    name='z=0 Plane'),
-)
+# fig1.add_trace(go.Surface(
+#     x=list1, y=list2,
+#     z=np.zeros_like(matrix1),  # plane at z=0
+#     showscale=False,
+#     opacity=0.4,  # semi-transparent
+#     colorscale=[[0, 'gray'], [1, 'gray']],
+#     name='z=0 Plane'),
+# )
 
 update_fig_layout(fig1, strategy_1, [zmin, zmax])
 
@@ -121,14 +121,14 @@ fig2 = go.Figure(data=go.Surface(
 )
 
 # Then, add the z=0 plane (same x and y, z = 0)
-fig2.add_trace(go.Surface(
-    x=list1, y=list2,
-    z=np.zeros_like(matrix2),  # plane at z=0
-    showscale=False,
-    opacity=0.4,  # semi-transparent
-    colorscale=[[0, 'gray'], [1, 'gray']],
-    name='z=0 Plane'),
-)
+# fig2.add_trace(go.Surface(
+#     x=list1, y=list2,
+#     z=np.zeros_like(matrix2),  # plane at z=0
+#     showscale=False,
+#     opacity=0.4,  # semi-transparent
+#     colorscale=[[0, 'gray'], [1, 'gray']],
+#     name='z=0 Plane'),
+# )
 
 update_fig_layout(fig2, strategy_2, [zmin, zmax])
 
@@ -161,21 +161,21 @@ fig4 = go.Figure(data=go.Surface(
 )
 
 # Then, add the z=0 plane (same x and y, z = 0)
-fig4.add_trace(go.Surface(
-    x=list1, y=list2,
-    z=np.zeros_like(matrix3),  # plane at z=0
-    showscale=False,
-    opacity=0.4,  # semi-transparent
-    colorscale=[[0, 'gray'], [1, 'gray']],
-    name='z=0 Plane'),
-)
+# fig4.add_trace(go.Surface(
+#     x=list1, y=list2,
+#     z=np.zeros_like(matrix3),  # plane at z=0
+#     showscale=False,
+#     opacity=0.4,  # semi-transparent
+#     colorscale=[[0, 'gray'], [1, 'gray']],
+#     name='z=0 Plane'),
+# )
 
 update_fig_layout(fig4, f"{strategy_1} + {strategy_2}", [added_zmin, added_zmax], z=2)
 
 # ---------------------- surface plot overall (difference strategy1) ---------------------- 
 matrix3 = matrix1 - matrix2
-diff_zmin = -1 * (zmax - zmin)
-diff_zmax = zmax - zmin
+diff_zmin = -zmax
+diff_zmax = zmax
 
 # combine difference surface with plane at z=0
 fig5 = go.Figure(data=go.Surface(
@@ -249,11 +249,11 @@ def make_colorscale_fig(colorscale, range):
 
     return cscale
 
-cscale_s = make_colorscale_fig(colorscale_s, [zmin, zmax])
-cscale_a = make_colorscale_fig(colorscale_a, [added_zmin, added_zmax])
-cscale_d = make_colorscale_fig(colorscale_d, [diff_zmin, diff_zmax])
-
-cscales = [cscale_s, cscale_a, cscale_d]
+# cscale_s = make_colorscale_fig(colorscale_s, [zmin, zmax])
+# cscale_a = make_colorscale_fig(colorscale_a, [added_zmin, added_zmax])
+# cscale_d = make_colorscale_fig(colorscale_d, [diff_zmin, diff_zmax])
+#
+# cscales = [cscale_s, cscale_a, cscale_d]
 
 # ---------------------- write plots into png's ---------------------- 
 pio.write_images(
