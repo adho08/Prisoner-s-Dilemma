@@ -13,9 +13,9 @@ class RandomDiscrete(PBStrategy):
         It is recommended to pass in a list of parameter of range from 0 to 10 inclusively.
         Parameter 0 has identical to AlwaysCooperate and parameter 10 corresponds to AlwaysDefect. (See Basic.py)
         """
-        return 1.0 if np.random.choice([True, False], p=[1 - self.parameter/10, self.parameter/10]) else 0.0
+        return 1.0 if np.random.choice([True, False], p=[self.parameter/10, 1 - self.parameter/10]) else 0.0
 
-class RandomNeutral(PBStrategy):
+class RandomContinuous(PBStrategy):
     def __init__(self, parameter: int = 1, start = None, name: str | None = None):
         super().__init__(parameter, start, name)
 
@@ -27,5 +27,7 @@ class RandomNeutral(PBStrategy):
         Parameter 0 is identical to Neutral. (See Basic.py)
         Parameter 10 is identical to RandomDiscrete.
         """
-        deviation = self.parameter/20
-        return 0.5 + deviation if np.random.choice([True, False]) else 0.5 - deviation
+        s = self.parameter/20
+        e = 1 if np.random.choice([True, False]) else -1 
+        i = 0.5 + e * s
+        return i

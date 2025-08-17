@@ -3,6 +3,7 @@
 \usepackage{textcomp}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage[a4paper, margin=1in, footskip=0.25in]{geometry}
 
 % relative path to images directory
 % \graphicspath{ {./images/} }
@@ -219,12 +220,12 @@ The equation for utilizing this heat map correctly are also displayed.
 % - ask ChatGPT to make replace numbers with variables (T, R, P, S) to generalise
 % - display the functions ChatGPT used to generate the heat maps
 % - write a fluid transit from bilinear interpolated to equations
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_A}\hfill
-	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_B}
-	\caption{Pay-off hash maps in the continuous variant of the IPD.}
-\end{figure}
+% \begin{figure}[htbp]
+% 	\centering
+% 	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_A}\hfill
+% 	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_B}
+% 	\caption{Pay-off hash maps in the continuous variant of the IPD.}
+% \end{figure}
 
 I used ChatGPT-o4 to generate these heat maps.
 It generated them using these functions:
@@ -464,7 +465,183 @@ If anyone is interested in simulating the project on their machine, they can go 
 \section{Results}
 \begin{itemize}
 
-	\item Surfaces:\\
+\def \w {0.20}
+\def \a {45}
+
+\newpage
+\item Surfaces:\\
+
+
+% ------------------------------- Random-Discrete -------------------------------
+Random-Discrete\\
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.1\textwidth}
+		\raggedleft
+		\rotatebox{90}{\parbox{3cm}{}}
+	\end{minipage}
+	\begin{minipage}[c]{0.80\textwidth}
+		\rotatebox{45}{\parbox{3cm}{Random-Discrete}}\hfill
+		\rotatebox{45}{\parbox{4cm}{Random-Continuous}}\hfill
+		\rotatebox{45}{\parbox{3cm}{AlwaysSame}}\hfill
+		\rotatebox{45}{\parbox{3cm}{Adapt-Discrete}}\hfill
+		\rotatebox{45}{\parbox{3cm}{Adapt-Continuous}}\hfill
+	\end{minipage}
+\end{figure}
+% ---------------- Gain Random-Discrete ----------------
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.1\textwidth}
+		\raggedleft
+		\rotatebox{90}{\parbox{3cm}{\centering Gain \\ Random-Discrete}}
+	\end{minipage}
+	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png}\hfill
+	\end{minipage}
+\end{figure}
+% ---------------- Gain Opponent ----------------
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.1\textwidth}
+		\raggedleft
+		\rotatebox{90}{\parbox{3cm}{\centering Gain \\ Opponent}}
+	\end{minipage}
+	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png}\hfill
+\end{minipage}
+\end{figure}
+% ---------------- Difference R-O ----------------
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.1\textwidth}
+		\raggedleft
+		\rotatebox{90}{\parbox{3cm}{\centering Advantage \\ Random-Discrete}}
+	\end{minipage}
+	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png}\hfill
+\end{minipage}
+\end{figure}
+% ---------------- Difference O-R ----------------
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.1\textwidth}
+		\raggedleft
+		\rotatebox{90}{\parbox{3cm}{\centering Advantage \\ Opponent}}
+	\end{minipage}
+	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png}\hfill
+\end{minipage}
+\end{figure}
+% ---------------- Addition----------------
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.1\textwidth}
+		\raggedleft
+		\rotatebox{90}{\parbox{3cm}{\centering Overall \\ Gain}}
+	\end{minipage}
+	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/added.png}\hfill 
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png}\hfill
+	\end{minipage}
+\end{figure}
+
+% ---------------- Gain Random-Continuous ----------------
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.1\textwidth}
+		\raggedleft
+		\rotatebox{90}{\parbox{3cm}{\centering Gain \\ Random-Continuous}}
+	\end{minipage}
+	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous/Random-Continuous.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png}\hfill
+	\end{minipage}
+\end{figure}
+% ---------------- Gain Opponent ----------------
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.1\textwidth}
+		\raggedleft
+		\rotatebox{90}{\parbox{3cm}{\centering Gain \\ Opponent}}
+	\end{minipage}
+	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous/Random-Continuous.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png}\hfill
+\end{minipage}
+\end{figure}
+% ---------------- Difference R-O ----------------
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.1\textwidth}
+		\raggedleft
+		\rotatebox{90}{\parbox{3cm}{\centering Advantage \\ Random-Continuous}}
+	\end{minipage}
+	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous/Random-Continuous_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png}\hfill
+\end{minipage}
+\end{figure}
+% ---------------- Difference O-R ----------------
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.1\textwidth}
+		\raggedleft
+		\rotatebox{90}{\parbox{3cm}{\centering Advantage \\ Opponent}}
+	\end{minipage}
+	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous/Random-Continuous_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png}\hfill
+\end{minipage}
+\end{figure}
+% ---------------- Addition----------------
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.1\textwidth}
+		\raggedleft
+		\rotatebox{90}{\parbox{3cm}{\centering Overall \\ Gain}}
+	\end{minipage}
+	\begin{minipage}[c]{0.80\textwidth}
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous/added.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png}\hfill
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png}\hfill 
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png}\hfill
+	\end{minipage}
+\end{figure}
+
+\newpage
+
 		plots\\
 		surface of strategy 1\\
 		surface of strategy 2\\

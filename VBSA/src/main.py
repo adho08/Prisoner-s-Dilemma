@@ -1,9 +1,6 @@
 from strategies import *
 from game import PrisonersDilemma as PD
 
-results_path = "../data/results.csv"
-results = ""
-
 rounds = 20
 repeated = 100
 spacing = 20
@@ -19,8 +16,8 @@ AD = AlwaysDefect()
 ALWS2 = AlwaysSame()
 
 # strategies in my MA
-RNDC = RandomNeutral(name="Random-Continuous")
-RNDC2 = RandomNeutral(name="Random-Continuous_2")
+RNDC = RandomContinuous(name="Random-Continuous")
+RNDC2 = RandomContinuous(name="Random-Continuous_2")
 RNDD = RandomDiscrete(name="Random-Discrete")
 RNDD2 = RandomDiscrete(name="Random-Discrete_2")
 ALWS = AlwaysSame()
@@ -30,9 +27,13 @@ ADPC2 = AdaptContinuous(name="Adapt-Continuous_2")
 ADPD = AdaptDiscrete(name="Adapt-Discrete")
 ADPD2 = AdaptDiscrete(name="Adapt-Discrete_2")
 
-PB_strategies: list[PBStrategy] = [RNDC, ADPC]
+PB_strategies: list[PBStrategy] = [RNDD, ADPD]
 strategy_1 = PB_strategies[0]
 strategy_2 = PB_strategies[1]
+
+results_path = rf"../data/{strategy_1}_vs_{strategy_2}_results.csv"
+results = ""
+
 
 def main() -> None:
     global results
@@ -59,7 +60,7 @@ def play_every_parameter(strategy_1, strategy_2):
         strategy_1.reset_parameter()
 
 
-def play_ICPD(stg1: PBStrategy, stg2: Strategy):
+def play_ICPD(stg1: PBStrategy, stg2: PBStrategy):
     global results
 
     # play the ICPD multiple times to smooth out the peaks due to noise
@@ -67,7 +68,7 @@ def play_ICPD(stg1: PBStrategy, stg2: Strategy):
 
         # the iterated continuous prisoner's dilemma
         for round in range(rounds):
-            play_CPD(stg1, stg2, round)
+            play_CPD(stg1, stg2, round+1)
 
         print(f"\n{stg1}: {stg1.parameter}, {stg2}: {stg2.parameter}")
         print(stg1, stg1.points)
@@ -86,7 +87,8 @@ def play_CPD(stg1: PBStrategy, stg2: Strategy, round: int):
     except ValueError as e:
         print(e)
     else:
-        r1, r2 = PD.award_algebraic(m1, m2)
+        # r1, r2 = PD.award_algebraic(m1, m2)
+        r1, r2 = PD.award_interpolated(m1, m2)
         stg1.update(m1, m2, r1)
         stg2.update(m2, m1, r2)
 

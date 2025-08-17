@@ -102,10 +102,11 @@ class AdaptContinuous(PBStrategy):
         Parameter 5 is Tit-For-Tat.
         Parameter 10 will submit twice the difference applied on the previous investment.
         """
-        if round <= 1 and self._start != None:
+        if round == 1 and self._start != None:
             return self._start
         else:
-            return max(0.0, min(1.0, self._history[-1] + self.parameter/5 * (self._opponent_history[-1] - self._history[-1])))
+            s = self.parameter/5 * (self._opponent_history[-1] - self._history[-1])
+            return max(0.0, min(1.0, self._history[-1] + s))
 
 class AdaptDiscrete(PBStrategy):
     def __init__(self, parameter: int = 1, start = 1.0, name: str | None = None):
@@ -121,7 +122,9 @@ class AdaptDiscrete(PBStrategy):
         This shift is the difference multiplied by the parameter/5.
         Parameter 0 is AlwaysCooperate.
         """
-        if round <= 1 and self._start != None:
+        if round == 1 and self._start != None:
             return self._start
         else:
-            return max(0.0, min(1.0, builtins.round(self._history[-1] + self.parameter/5 * (self._opponent_history[-1] - self._history[-1]))))
+            s = self.parameter/5 * (self._opponent_history[-1] - self._history[-1])
+            i = self._history[-1] + s
+            return 1.0 if i >= 0.5 else 0.0 # round to nearest integer (0.5 is rounded upwards)

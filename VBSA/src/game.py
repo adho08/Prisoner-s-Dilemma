@@ -68,7 +68,7 @@ class PrisonersDilemma(object):
         if not (0 <= x <= 1) or not (0 <= y <= 1):
             raise ValueError("\nStrategies can only submit cooperation between 0 and 1", x if not (0 <= x <= 1) else y)
 
-        x, y = cls.__add_noise_influence(x, y)
+        # x, y = cls.__add_noise_influence(x, y)
 
         """
         Bilinear interpolation of a 2x2 matrix where each element is a tuple (a, b).
@@ -94,7 +94,7 @@ class PrisonersDilemma(object):
     @classmethod
     def award_algebraic(cls, x: float, y: float) -> tuple[float, float]:
 
-        x, y = cls.__add_noise_influence(x, y)
+        # x, y = cls.__add_noise_influence(x, y)
 
         v1 = y - cls.c*x
         v2 = x - cls.c*y

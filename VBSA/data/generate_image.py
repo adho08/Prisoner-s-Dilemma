@@ -19,7 +19,7 @@ final_dir = os.path.join(plots_dir, rf"{strategy_1}_vs_{strategy_2}")
 if not os.path.exists(final_dir):
     os.mkdir(final_dir)
 
-df = pd.read_csv("results.csv")
+df = pd.read_csv(rf"{strategy_1}_vs_{strategy_2}_results.csv")
 header = list(df.columns)
 # strategy_1 = header[0].split('.')[0]
 # strategy_2 = header[2].split('.')[0]
@@ -53,7 +53,7 @@ colorscale_d = 'Cividis'
 # least points possible
 zmin = -1 * rounds * PD.c
 # most points possible
-zmax = rounds
+zmax = rounds * 5
 
 # ---------------------- function for updating the fig layout ---------------------- 
 def update_fig_layout(fig, title:str, range, x=1, y=1, z=1):
@@ -81,12 +81,12 @@ def update_fig_layout(fig, title:str, range, x=1, y=1, z=1):
                 nticks=4,
                 range=range
             ),
-            aspectmode='manual',
-            aspectratio=dict(x=x, y=y, z=z)
+            aspectmode='cube',
+            # aspectratio=dict(x=x, y=y, z=z)
         ),
         margin=dict(l=0, r=0, b=0, t=0),  # reduce padding cuts
         scene_camera=dict(
-            eye=dict(x=2.5, y=2.5, z=2.5)  # move camera further back
+            eye=dict(x=2.0, y=2.0, z=2.0)  # move camera further back
         )
     )
 
