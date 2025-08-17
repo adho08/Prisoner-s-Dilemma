@@ -13,17 +13,24 @@ AVR = Average()
 ADT = Adapt()
 ADT2 = Adapt2()
 ADT3 = Adapt3()
-ADT4 = Adapt4()
-ADT5 = Adapt4()
-RNDC = RandomNeutral()
-RNDD = RandomDiscrete()
 RND = RandomDiscrete()
 T4T = Tit4Tat()
 AD = AlwaysDefect()
-ALWS = AlwaysSame()
 ALWS2 = AlwaysSame()
 
-PB_strategies: list[PBStrategy] = [RNDC, ADT4]
+# strategies in my MA
+RNDC = RandomNeutral(name="Random-Continuous")
+RNDC2 = RandomNeutral(name="Random-Continuous_2")
+RNDD = RandomDiscrete(name="Random-Discrete")
+RNDD2 = RandomDiscrete(name="Random-Discrete_2")
+ALWS = AlwaysSame()
+ALWS2 = AlwaysSame(name="AlwaysSame_2")
+ADPC = AdaptContinuous(name="Adapt-Continuous")
+ADPC2 = AdaptContinuous(name="Adapt-Continuous_2")
+ADPD = AdaptDiscrete(name="Adapt-Discrete")
+ADPD2 = AdaptDiscrete(name="Adapt-Discrete_2")
+
+PB_strategies: list[PBStrategy] = [RNDC, ADPC]
 strategy_1 = PB_strategies[0]
 strategy_2 = PB_strategies[1]
 
@@ -32,9 +39,17 @@ def main() -> None:
 
     print("Games: ")
 
+    strategy_1 = PB_strategies[0]
+    strategy_2 = PB_strategies[1]
+    
     # csv header
     results += f"{strategy_1}.parameter, {strategy_1}.points, {strategy_2}.parameter, {strategy_2}.points\n"
 
+    play_every_parameter(strategy_1, strategy_2)
+
+    print_in_csv(results)
+
+def play_every_parameter(strategy_1, strategy_2):
     # increment the parameter every time a new ICPD is played
     for parameter_2 in strategy_2.parameter_list:
         strategy_2.parameter = parameter_2
@@ -42,8 +57,6 @@ def main() -> None:
             strategy_1.parameter = parameter_1
             play_ICPD(strategy_1, strategy_2)
         strategy_1.reset_parameter()
-
-    print_in_csv(results)
 
 
 def play_ICPD(stg1: PBStrategy, stg2: Strategy):
