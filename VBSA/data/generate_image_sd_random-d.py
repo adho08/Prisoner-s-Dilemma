@@ -36,19 +36,34 @@ list2 = df[df.columns[2]].to_numpy().tolist()[::len(parameters_1)*repeated]
 n, m = len(list1), len(list2)
 
 # data of strategy_1
-list3 = df[df.columns[1]].to_numpy().astype(float).tolist()[::repeated]
-matrix1 = np.array(list3).reshape((m, n))
+list_sd_1 = []
+list3 = df[df.columns[1]].to_numpy().astype(float).tolist()
+list3_avr = np.array(list3, dtype=float).reshape(-1, repeated).mean(axis=1).tolist()
+for i in list3[::repeated]:
+    list_sd_1.append(statistics.stdev(list3[:repeated]))
+    del list3[:repeated]
+matrix1 = np.array(list_sd_1).reshape((m, n))
+matrix1_avr = np.array(list3_avr).reshape((m, n))
+matrix2 = matrix1 + matrix1_avr
 
 # data of strategy_2
-list3 = df[df.columns[3]].to_numpy().astype(float).tolist()[::repeated]
-matrix2 = np.array(list3).reshape((m, n))
+list_sd_2 = []
+list4 = df[df.columns[3]].to_numpy().astype(float).tolist()
+list4_avr = np.array(list4, dtype=float).reshape(-1, repeated).mean(axis=1).tolist()
+for i in list4[::repeated]:
+    list_sd_2.append(statistics.stdev(list4[:repeated]))
+    del list4[:repeated]
+matrix3 = np.array(list_sd_2).reshape((m, n))
+matrix3_avr = np.array(list4_avr).reshape((m, n))
+matrix4 = matrix3 + matrix3_avr
 
 # different colorscales
-colorscale_s = 'Plasma'
+colorscale_s = 'Haline'
+colorscale_a = 'Aggrnyl'
 # least points possible
 zmin = 0
 # most points possible
-zmax = rounds * (1 + PD.c)
+zmax = max(matrix1.max(), matrix3.max())
 
 # ---------------------- function for updating the fig layout ---------------------- 
 def update_fig_layout(fig, title:str, range, x=1, y=1, z=1):
@@ -73,7 +88,6 @@ def update_fig_layout(fig, title:str, range, x=1, y=1, z=1):
                 title=dict(
                     text="Points"
                 ),
-                dtick=10,
                 range=range
             ),
             aspectmode='manual',
@@ -94,21 +108,46 @@ fig1 = go.Figure(
     cmin=zmin, cmax=zmax,),
 )
 
-# Then, add the z=0 plane (same x and y, z = 0)
-# fig1.add_trace(go.Surface(
-#     x=list1, y=list2,
-#     z=np.zeros_like(matrix1),  # plane at z=0
-#     showscale=False,
-#     opacity=0.4,  # semi-transparent
-#     colorscale=[[0, 'gray'], [1, 'gray']],
-#     name='z=0 Plane'),
-# )
-
 update_fig_layout(fig1, strategy_1, [zmin, zmax])
 
+# ---------------------- surface plot strategy_2 ---------------------- 
+fig2 = go.Figure(data=go.Surface(
+    x=list1, y=list2, z=matrix3,
+    colorscale=colorscale_s,
+    showscale=False,
+    cmin=zmin, cmax=zmax,
+    )
+)
+
+update_fig_layout(fig2, strategy_2, [zmin, zmax])
+
+# ---------------------- surface plot strategy_3 ---------------------- 
+zmax = max(matrix2.max(), matrix4.max())
+
+fig3 = go.Figure(
+    data=go.Surface(
+    x=list1, y=list2, z=matrix1_avr,
+    colorscale=colorscale_a,
+    showscale=False,
+    cmin=zmin, cmax=zmax,),
+)
+
+update_fig_layout(fig3, strategy_1, [zmin, zmax])
+
+# ---------------------- surface plot strategy_4 ---------------------- 
+fig4 = go.Figure(data=go.Surface(
+    x=list1, y=list2, z=matrix3_avr,
+    colorscale=colorscale_a,
+    showscale=False,
+    cmin=zmin, cmax=zmax,
+    )
+)
+
+update_fig_layout(fig4, strategy_2, [zmin, zmax])
+
 pio.write_images(
-    fig=[fig1],
-    file=[f"{final_dir}/{strategy_1}_sd.png"],
+    fig=[fig1, fig2, fig3, fig3],
+    file=[f"{final_dir}/{strategy_1}_sd.png", f"{final_dir}/{strategy_2}_sd.png", f"{final_dir}/{strategy_1}_sd_p_avr.png", f"{final_dir}/{strategy_2}_sd_p_avr.png"],
     width=500,
     height=500
 )
