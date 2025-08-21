@@ -27,7 +27,7 @@ ADPC2 = AdaptContinuous(name="Adapt-Continuous_2")
 ADPD = AdaptDiscrete(name="Adapt-Discrete")
 ADPD2 = AdaptDiscrete(name="Adapt-Discrete_2")
 
-PB_strategies: list[PBStrategy] = [RNDD, RNDD2]
+PB_strategies: list[PBStrategy] = [RNDD, ALWS]
 strategy_1 = PB_strategies[0]
 strategy_2 = PB_strategies[1]
 

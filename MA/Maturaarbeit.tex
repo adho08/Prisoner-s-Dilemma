@@ -2,6 +2,8 @@
 \usepackage{xcolor}
 \usepackage{textcomp}
 \usepackage{hyperref}
+\usepackage{subfig}
+\usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage[a4paper, margin=1in, footskip=0.25in]{geometry}
 
@@ -235,9 +237,10 @@ This approach uses only equations instead.
 It is much easier to implement but understanding is the difficult part.
 This pay-off system of [sciencedirect.com] is formed by:
 
-$$P_A = y - c*x$$
-$$P_B = x - c*y$$
+$$P_A = y - c*x + c$$
+$$P_B = x - c*y + c$$
 
++ c because no negative numbers.
 $P_A$ and $P_B$ are the pay-off's of strategy A and B respectively.
 The coefficient c ranges, as well as x and y, from 0 to 1 and describes the cost-to-benefit ratio.
 The base of the pay-off's are the opponent's investment.
@@ -367,14 +370,14 @@ I showcase what the behaviour of the strategy will be equivalent to when the par
 Adapt-Continuous (AdpC) is an, as the name suggests, adaptive and thus responsive strategy.
 It starts with full cooperation to offer a constructive relationship within this simulation.
 After having played one round, it will adapt to the submissions of the opponent by shifting its own investment towards the opponent's.
-$$i(\theta_{\mathrm{Adp}}) = i_1 + s(\theta_{\mathrm{Adp}})$$
-$$s(\theta_{\mathrm{Adp}}) = \frac{\theta_{\mathrm{Adp}}}{5} \cdot (\bar i_1 - i_1)$$
-The shift being applied to its own previous investment is notated with the function $s(\theta_{\mathrm{Adp}})$.
+$$i(\theta_{\mathrm{AdpC}}) = i_1 + s(\theta_{\mathrm{AdpC}})$$
+$$s(\theta_{\mathrm{AdpC}}) = \frac{\theta_{\mathrm{AdpC}}}{5} \cdot (\bar i_1 - i_1)$$
+The shift being applied to its own previous investment is notated with the function $s(\theta_{\mathrm{AdpC}})$.
 This strategy with the parameter 0 is identical to AlwaysCooperate since the difference and thus the shift is multiplied by 0.
-Dividing $\theta_{\mathrm{Adp}}$ by 5 implies the fact that this coefficient to the difference is equal to one if the parameter equals five.
+Dividing $\theta_{\mathrm{AdpC}}$ by 5 implies the fact that this coefficient to the difference is equal to one if the parameter equals five.
 This means that the strategy will shift its next investment to exactly the previous investment of the opponent.
 This behaviour corresponds to Tit-For-Tat.
-$\theta_{\mathrm{Adp}} = 10$ also shows an interesting nature of the strategy.
+$\theta_{\mathrm{AdpC}} = 10$ also shows an interesting nature of the strategy.
 By having the parameter set to ten, it means Adapt will add the shift to its own previous investment twice.
 Of course, one strategy is not allowed to submit any investment that exceeds the limits that is defined to be from 0 to 1.
 The implementation of this strategy will simply set its investment to the reached limit if surpassed.\\
@@ -382,14 +385,18 @@ The implementation of this strategy will simply set its investment to the reache
 As I mentioned, there is one continuous and one discrete strategy.
 This means there must be an Adapt-Discrete (AdpD) implemented.
 The simplest implementation of this strategy is to take the same investment function as Adapt-Continuous and round the result.
-$$i(\theta_{\mathrm{Adp}}) = \round{i_1 + s(\theta_{\mathrm{Adp}})}$$
-$$s(\theta_{\mathrm{Adp}}) = \frac{\theta_{\mathrm{Adp}}}{5} \cdot (\bar i_1 - i_1)$$
+$$i(\theta_{\mathrm{AdpD}}) = \round{i_1 + s(\theta_{\mathrm{AdpD}})}$$
+$$s(\theta_{\mathrm{AdpD}}) = \frac{\theta_{\mathrm{AdpD}}}{5} \cdot (\bar i_1 - i_1)$$
 Something that is not seen in these equations is that the strategy will start with full cooperation, as Adapt-Continuous.
 If $i(\theta_{\mathrm{AdpD}}) \ge 0.5$, the ultimate investment will be 1.
 Otherwise it will be equal to 0.
-The maximum difference there can be is when this strategy submits 1 and the opponent submits a 0.
-Looking at the function, this threshold of 0.5 can only be overstepped if $\theta_{\mathrm{AdpD}} \ge 3$.
-$\theta_{\mathrm{AdpD}} = 0$ means, as in the continuous version, that the strategy corresponds to AlwaysCooperate.
+Once the strategy is at full defection, it can only get to cooperation again if $\theta_{\mathrm{AdpD}} \ge 3$.
+Here is why:\\
+The maximum difference there can be is when this strategy submits 1 and the opponent submits a 0, so 1.
+Looking at the function, this threshold of 0.5 can only be overstepped if the shift is at least equal to 0.5.
+This only can be achieved if the coefficient is greater of equal to 0.5 ($\frac{\theta_{\mathrm{AdpD}}}{5} \ge 0.5$).
+This inequation is fulfilled if $\theta_{\mathrm{AdpD}} \ge 3$.\\
+$\theta_{\mathrm{AdpD}} = 0$ means, as in the continuous version, that the strategy corresponds to AlwaysCooperate because the shift is equal to 0 and thus always stays at its first investment, being full cooperation.
 If the parameter is equal to 10, it is most likely to jump from 1 to 0 back to 1 and so on.
 This only doesn't happen if the difference is less or equal to 0.25.\\
 		\\AlwaysSame:\\
@@ -461,221 +468,393 @@ If anyone is interested in simulating the project on their machine, they can go 
 
 In the following two pages, you will see all the surfaces of both Random-Discrete and Random-Continuous.
 There are five surfaces that are generated from one ICPD.
-The two most trivial plots show the gains of the strategy itself and the opponent's.
-These surfaces are not only marked by height but also by the colour.
-So, one can read this surface exactly by regarding this colour scale.\\
-\includegraphics[height=3.0cm]{plots/Colorscales/Plasma.png}\\
+The x-axis, the one in be bottom-right, shows the parameter of the main strategy.
+The y-axis, the other one on the bottom, indicates the parameter of the opponent.
+The z-axis always shows the points.
+All the surfaces are not only marked by height but also by the colour.
+The context in which points are displayed depends on the surface. 
+The first two rows are the most basic surface plots.
+They show the gains of the strategy itself and the opponent's.
+The highest point that can appear is at 30.
+And the lowest is at 0.
+The maximum can be calculated by regarding the pay-off equations.
+The maximum points are gained by exploitation.
+So, $P_A =  y - c \cdot x + c$ becomes by substitution $P_A = 1 - 0.5 \cdot 0 + 0.5$ \textrightarrow $P_A = 1.5$.
+And since the CPD is played 20 times, $P_A \cdot 20 = 30$
+So the boundaries in which the points can vary is from 0 to 30.\\
+All the points, that are at height 20, have their correspondence in the other surface since in order to get 20 points, mutual cooperation is required.
+The same principle can be allied to the maximum and minimum points.
+Wherever a minimum point can be seen, the correspondence is the maximum point at the same x-y-coordinate.
+The colour of the points indicates the same as the height, the number of points.
+So, one can read this surface more exactly by regarding this colour scale.\\
+A)
+% \includegraphics[height=3.0cm]{plots/Colorscales/Plasma.png}\\
 The next two surfaces concern the advantage one strategy has over the other.
 This shows us how much more one strategy had over the other.
 For the surface of the main strategy, simply the opponent's surface is subtracted from it's surface and vice versa.
-Also here there is a colour scale.
+The maximum and the minimum can be calculated by taking the difference of the maximum and the minimum of the first two surfaces.
+So, the points can vary between -30 and 30.
+(30 - 0 = 30, 0 - 30 = -30)
+The two initial surfaces would intersect if they were put into one coordinate system.
+The intersection is at all the locations where the both strategies have gained an equal amount of points.
+At this location of the intersection, the surface plot, that demonstrates the advantage, would intersect with the zero-plane because the difference of two same number is always equal to zero.\\
+The two advantage surfaces are always mirrored by the zero-plane since every time you subtract $A-B$, it is the same as $(B-A) \cdot -1$.\\
+If this surface plot happens to be completely over the zero-plane, it means that the displays strategy has won every game they have played.
+Also here, there is a colour scale.
 This colour scale, however, differs from the first one.
-I chose to use different colour scales for visualisation due to the fact that the advantage surfaces have a different z-axis range than the first two.\\
-\includegraphics[height=3.0cm]{plots/Colorscales/Cividis.png}\\
+I chose to use different colour scales for visualisation purposes due to the fact that the advantage surfaces have a different z-axis range than the first two.
+(-30 to 30)
+B)\\
+% \includegraphics[height=3.0cm]{plots/Colorscales/Cividis.png}\\
 The last row of surfaces displays how much points have been gained by both.
-To generate these surfaces, one must add the surfaces which describe how much one has gained.
-This plot has as the advantage surfaces a again, different z-axis range.
-So a new colour scale is introduced.\\
-\includegraphics[height=3.0cm]{plots/Colorscales/Portland.png}\\
-
+To generate these surfaces, one must add the surfaces which describe how much one has gained of the concerned strategies.
+Looking at the pay-off equations, a point can not be over the limit of 20.
+Both gain the most if both cooperate.
+Following the equations, one gets 1 point after every round.
+Since 20 rounds are played in total, the maximum is at 20.
+(20 rounds * 1 point = 20 points)
+I decided to also plot this surface to demonstrate the population welfare.
+This means that the higher the points, the most have gained both together.
+This plot has, as the advantage surfaces, a different z-axis range.
+So a new colour scale is introduced.
+C)\\
+\includegraphics[height=3cm]{plots/Colorscales/Plasma.png}
+\includegraphics[height=3cm]{plots/Colorscales/Cividis.png}
+\includegraphics[height=3cm]{plots/Colorscales/Portland.png}
 
 \newpage
 
-\def \w {0.20}
+\def \w {0.16}
 \def \a {45}
 
 % ------------------------------- Random-Discrete -------------------------------
 Random-Discrete\\
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{0.1\textwidth}
-		\raggedleft
-		\rotatebox{90}{\parbox{3cm}{}}
-	\end{minipage}
-	\begin{minipage}[c]{0.80\textwidth}
-		\rotatebox{45}{\parbox{3cm}{Random-Discrete}}\hfill
-		\rotatebox{45}{\parbox{4cm}{Random-Continuous}}\hfill
-		\rotatebox{45}{\parbox{3cm}{AlwaysSame}}\hfill
-		\rotatebox{45}{\parbox{3cm}{Adapt-Discrete}}\hfill
-		\rotatebox{45}{\parbox{3cm}{Adapt-Continuous}}\hfill
-	\end{minipage}
-\end{figure}
-% ---------------- Gain Random-Discrete ----------------
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{0.1\textwidth}
-		\raggedleft
-		\rotatebox{90}{\parbox{3cm}{\centering Gain \\ Random-Discrete}}
-	\end{minipage}
-	\begin{minipage}[c]{0.80\textwidth}
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png}\hfill
-	\end{minipage}
-\end{figure}
-% ---------------- Gain Opponent ----------------
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{0.1\textwidth}
-		\raggedleft
-		\rotatebox{90}{\parbox{3cm}{\centering Gain \\ Opponent}}
-	\end{minipage}
-	\begin{minipage}[c]{0.80\textwidth}
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png}\hfill
-\end{minipage}
-\end{figure}
-% ---------------- Difference R-O ----------------
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{0.1\textwidth}
-		\raggedleft
-		\rotatebox{90}{\parbox{3cm}{\centering Advantage \\ Random-Discrete}}
-	\end{minipage}
-	\begin{minipage}[c]{0.80\textwidth}
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png}\hfill
-\end{minipage}
-\end{figure}
-% ---------------- Difference O-R ----------------
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{0.1\textwidth}
-		\raggedleft
-		\rotatebox{90}{\parbox{3cm}{\centering Advantage \\ Opponent}}
-	\end{minipage}
-	\begin{minipage}[c]{0.80\textwidth}
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png}\hfill
-\end{minipage}
-\end{figure}
-% ---------------- Addition----------------
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{0.1\textwidth}
-		\raggedleft
-		\rotatebox{90}{\parbox{3cm}{\centering Overall \\ Gain}}
-	\end{minipage}
-	\begin{minipage}[c]{0.80\textwidth}
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/added.png}\hfill 
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png}\hfill
-	\end{minipage}
+\begin{figure}[h]
+    \centering
+    
+    % Header row
+    \begin{tabular}{p{0.7cm}ccccc}
+        & \rotatebox{45}{Random-Discrete} & \rotatebox{45}{Random-Continuous} & \rotatebox{45}{AlwaysSame} & \rotatebox{45}{Adapt-Discrete} & \rotatebox{45}{Adapt-Continuous} \\[1cm]
+        
+        % Gain Random-Discrete row
+        \rotatebox{90}{\parbox{2cm}{\centering Gain \\ Random-Discrete}} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png} \\[0.5cm]
+        
+        % Gain Opponent row  
+        \rotatebox{90}{\parbox{2cm}{\centering Gain \\ Opponent}} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png} \\[0.5cm]
+        
+        % Advantage Random-Discrete row
+        \rotatebox{90}{\parbox{2cm}{\centering Advantage \\ Random-Discrete}} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png} \\[0.5cm]
+        
+        % Advantage Opponent row
+        \rotatebox{90}{\parbox{2cm}{\centering Advantage \\ Opponent}} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png} \\[0.5cm]
+        
+        % Overall Gain row
+        \rotatebox{90}{\parbox{2cm}{\centering Overall \\ Gain}} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/added.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png} \\
+    \end{tabular}
+    
 \end{figure}
 
+\newpage
 % ------------------------------- Random-Continuous -------------------------------
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{0.1\textwidth}
-		\raggedleft
-		\rotatebox{90}{\parbox{3cm}{}}
-	\end{minipage}
-	\begin{minipage}[c]{0.80\textwidth}
-		\rotatebox{45}{\parbox{3cm}{Random-Discrete}}\hfill
-		\rotatebox{45}{\parbox{4cm}{Random-Continuous}}\hfill
-		\rotatebox{45}{\parbox{3cm}{AlwaysSame}}\hfill
-		\rotatebox{45}{\parbox{3cm}{Adapt-Discrete}}\hfill
-		\rotatebox{45}{\parbox{3cm}{Adapt-Continuous}}\hfill
-	\end{minipage}
-\end{figure}
-
-% ---------------- Gain Random-Continuous ----------------
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{0.1\textwidth}
-		\raggedleft
-		\rotatebox{90}{\parbox{3cm}{\centering Gain \\ Random-Continuous}}
-	\end{minipage}
-	\begin{minipage}[c]{0.80\textwidth}
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png}\hfill
-	\end{minipage}
-\end{figure}
-% ---------------- Gain Opponent ----------------
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{0.1\textwidth}
-		\raggedleft
-		\rotatebox{90}{\parbox{3cm}{\centering Gain \\ Opponent}}
-	\end{minipage}
-	\begin{minipage}[c]{0.80\textwidth}
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png}\hfill
-\end{minipage}
-\end{figure}
-% ---------------- Difference R-O ----------------
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{0.1\textwidth}
-		\raggedleft
-		\rotatebox{90}{\parbox{3cm}{\centering Advantage \\ Random-Continuous}}
-	\end{minipage}
-	\begin{minipage}[c]{0.80\textwidth}
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png}\hfill
-\end{minipage}
-\end{figure}
-% ---------------- Difference O-R ----------------
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{0.1\textwidth}
-		\raggedleft
-		\rotatebox{90}{\parbox{3cm}{\centering Advantage \\ Opponent}}
-	\end{minipage}
-	\begin{minipage}[c]{0.80\textwidth}
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png}\hfill
-\end{minipage}
-\end{figure}
-% ---------------- Addition----------------
-\begin{figure}[!h]
-	\centering
-	\begin{minipage}[c]{0.1\textwidth}
-		\raggedleft
-		\rotatebox{90}{\parbox{3cm}{\centering Overall \\ Gain}}
-	\end{minipage}
-	\begin{minipage}[c]{0.80\textwidth}
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png}\hfill
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png}\hfill 
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png}\hfill
-	\end{minipage}
+\begin{figure}[h]
+    \centering
+    
+    % Header row
+    \begin{tabular}{p{0.7cm}ccccc}
+        & \rotatebox{45}{Random-Discrete} & \rotatebox{45}{Random-Continuous} & \rotatebox{45}{AlwaysSame} & \rotatebox{45}{Adapt-Discrete} & \rotatebox{45}{Adapt-Continuous} \\[1cm]
+        
+        % Gain Random-Continuous row
+        \rotatebox{90}{\parbox{2cm}{\centering Gain \\ Random-Continuous}} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png} \\[0.5cm]
+        
+        % Gain Opponent row  
+        \rotatebox{90}{\parbox{2cm}{\centering Gain \\ Opponent}} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png} \\[0.5cm]
+        
+        % Advantage Random-Continuous row
+        \rotatebox{90}{\parbox{2cm}{\centering Advantage \\ Random-Continuous}} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png} \\[0.5cm]
+        
+        % Advantage Opponent row
+        \rotatebox{90}{\parbox{2cm}{\centering Advantage \\ Opponent}} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png} \\[0.5cm]
+        
+        % Overall Gain row
+        \rotatebox{90}{\parbox{2cm}{\centering Overall \\ Gain}} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png} &
+        \includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png} \\
+    \end{tabular}
 \end{figure}
 
 \newpage
 
-\section{Discussion}
 \begin{itemize}
 
-	\item Analysis
+	\item Random-Discrete\textunderscore2:\\
+
+		Gained points:\\
+			First, it has to be mentioned that Random-Discrete behaves like AlwaysSame.
+			This is due to the fact that I have run this simulation 100 times to smooth out one-time abnormalities.
+			This is notable by looking at the column where Random-Discrete plays against AlwaysSame.
+			These two columns look arguably alike.\\
+			Since the two strategies behave exactly in the same way, these two surface plots are simply mirror-inverted by 45° on the x- and y-axis.
+			The left and right corner are the extremes.
+			Random-Discrete gets exploited when it has its parameter at 10, meaning it corresponds to AlwaysCooperate, and Random-Discrete\textunderscore2 has its at 0, i.e. it is equivalent to AlwaysDefect.
+			This is how one can get the maximum output, by exploiting.
+			This can be seen in the surface of Random-Discrete\textunderscore2.
+			The behind corner is at the coordinate 0, 0.
+			There, both defect constantly.
+			This is the point where both get their relative lowest output, as can be seen later.\\
+			The nearest point is at the coordinate 10, 10.
+			The parameter 10 indicates the same behaviour as AlwaysCooperate.
+			So, both always cooperate and thus have not a so high output as when they exploit but fairly enough.\\
+		\\Advantages:\\
+			This time, the surface is mirrored at the cutting edge at $z=0$.
+			This is because both gain surfaces are mirrored.
+			The absolute peaks of both derive from having the maximum output.
+			Since one can get the maximum output only if the other gets exploited, the advantage surface result in the highest peak possible.
+			When the two parameter's are identical, however, they are not any better than the other.
+			This makes sense since they behave the same when they have the same parameter and can thus not exploit each other.\\
+		\\Overall:\\
+			Here, it is clearly visible that the hight point on the surface is when both cooperate.
+			This illustrates the dilemma pretty well.
+			It is better for both if they both cooperate, all the time.
+			As already mentioned, the most behind point, being the lowest, results from the fact that both defected constantly.
+			So, for the welfare of the population, it is best if both cooperate every round.
+
+	\item Random-Continuous\\
+
+		Gained points:\\
+			This surfaces ranges from 20 to 10 continuously.
+			It seems as the surface is not influenced by the parameter of Random-Continuous.
+			This is logical and will be looked at the discussion.\\
+			The second surface ranges from about 5 to 25.
+			Also here the surface is only influenced by the parameter of Random-Discrete.
+		\\Advantages:\\
+			Both surfaces, when put together in one plot, would intersect exactly in the middle.
+			Since they range from different limits but both upper and lower limit add up to 30, they intersect in the middle where the parameter of Random-Discrete is 5.
+			That is why the surface of advantage intersects the zero-plane at the same line.
+		\\Overall:\\
+			Naturally, this surface is only influenced by the parameter of Random-Discrete and not Random-Continuous.
+			It ranges continuously from 25 to 35.
+
+	\item AlwaysSame\\
+		This column of surfaces looks identical to the one against Random-Discrete\textunderscore2.
+		In the discussion further investigation will be made.
+		Since I have explained the properties of these surfaces already, I will not explain them again.
+
+	\item Adapt-Discrete\\
+
+		Gained points:\\
+			In the surface of Random-Discrete against Adapt-Discrete, there is a stripe at the parameter of Adapt-Discrete being 0 to 2.
+			The stripe ranges from absolute exploitation at (0, 0) to mutual cooperation at parameter of Random-Discrete being 10.
+			Abruptly, this stripe does not follow its pattern in the x-direction any more.
+			Rather a new slope is visible.
+			This slope has its lowest points at 10.
+			But, both slopes range from where they begin at the y-z-plane to 20 at the other y-z-plane.
+			Remember that 20 is the result of mutual cooperation.
+			As a result of that, there are also 20 points in the corresponding surface plot at the same x-y-coordinates.
+			This is indeed the case.
+			Also the maximum points of the first plot indicate that the same points on the other surface must be at height 0.
+			The broader slope is also going downwards.
+			But this slope is not as steep as the one on the other surface and thus has lower points at the edge where the parameter of Random-Discrete is 0.
+
+		Advantages:\\
+			Since the slopes look pretty similar, there are practically no advantages in this area.
+			At the coordinates of the stripe, however, is a great advantage which only Random-Continuous has over Adapt-Discrete.
+			The advantage surface of Adapt-Discrete is not visible to see relevant part.
+			The plane covers the inverted stripe of the advantage surface of Random-Discrete.
+			The rest of the surface is very near to the zero-plane which means it was as good as Random-Continuous in this area.
+		Overall:\\
+			Of course, the maximum points are at the locations where mutual cooperation is held place (40).
+			This stripe is, this time, not at steep as as the broader slope.
+			The slope ends at the y-z-plane at height 20.\\
+
+	\item Adapt-Continuous\\
+
+		Gained points:\\
+			Intuitively, the discrete stripe becomes a continuous curve.
+			The edge where points are at height 20, stays as it was in the game against Adapt-Discrete.
+			The broad slope is also similar to that surface, its lowest points being at 10.
+			The surface of Adapt-Continuous is in a same way similar to the one of Adapt-Discrete.
+			The edges are curved out.
+			But, the slope is, again, a bit steeper than the one of Random-Discrete.\\
+		Advantages:\\
+			The same applies at the advantage surfaces.
+			They simply are curvy instead of edgy.
+			The advantage surface of Adapt-Continuous is in a difficult angle to see.
+			The origin of the coordinate-system is the lowest point of this surface.
+			I concluded this fact by knowing that the highest point of the other advantage surface has its correspondence at height 0.\\
+		Overall:\\
+			The maximum points are aligned in a line.
+			More specific, an edge of the surface at height 40.
+			The least points are gained at the edge more behind at the y-z-plane.
+			This edge is rather a curve than a straight line.
+			This curve bows from exploitation at coordinates being at (0, 0) to 20, the absolute minimum of this surface.
+	
+	\item Random-Discrete:\\
+
+		This surface has already been explained.
+		These are the same surfaces as when Random-Discrete played against Random-Continuous in the first figure.
+	
+	\item Random-Continuous\textunderscore2:\\
+
+		Gained points:\\
+			As already mentioned, Random-Continuous behaves like Neutral by having played several times.
+			So, Random-Continuous will submit 0.5 always.
+			This results to having a completely flat surface.
+			We can calculate at which height the surface is.
+			Plugging in 0.5 for both x and y in the pay-off equations, we get $P_A = 0.5 - c \cdot 0.5 + c$ where $c$ is, as always, equal to 0.5.
+			The pay-off of strategy A is $P_A = 0.75$ and having played the ICPD 20 rounds, it is equal to $P_A \cdot 20 = 15$.
+			Both strategies A and B get the same pay-off since they submitted the same investment.
+			$P_B = P_A \rightarrow P_B \cdot 20 = 15$.
+			So, both surfaces are at the same height at every point.
+
+		Advantages:\\
+			Subtracting two flat surfaces at the same height at every coordinate, gives you a also flat surface which corresponds to the zero-plane.
+			No strategy was better than the other at any point.
+
+		Overall:\\
+			Adding these even two surfaces which are both at height 15, gives you a surface at height $15 + 15 = 30$.
+
+	\item AlwaysSame:\\
+
+		These surfaces are identical to the one's of the Random-Continuous vs. Random-Discrete interaction.
+		I will not describe them as they already have been.
+	
+	\item Adapt-Discrete:\\
+
+		Gained points:\\
+			There are two main levels on this surface.
+			The upper level in the Random-Continuous surface is at height 25.
+			The lower one is at height 10.
+			There is a little peak at the coordinate (5, 10).
+			The two levels are joined abruptly at a horizontal curve.\\
+			The surface of Adapt-Discrete is in some way inverted, meaning the upper level in the other surface corresponds to the lower level in this surface plot and vice versa.
+			This lower level is at height 10.
+			The upper level of this surface and the lower level of the other surface are at about the same height as we will see later (height 15).
+			Also, the peak is now a pointing downwards.
+
+		Advantages:\\
+			Naturally, the upper level of the first surface indicated that it semi-exploited Adapt-Discrete.
+			This is now visible in this surface due to the fact that this upper level is very high.
+			It was at every time on this level 15 points better than the opponent.
+			But, the lower level is nearly at height 0.
+			This is what we will see also in the next plot and that is what I meant when I said that the lower level of Random-Continuous and the upper level of Adapt-Discrete are about on the same height.
+			This level is, however, over the zero-plane, meaning that it was better in every single game they have played.\\
+			Here, we see that this Adapt-Discrete was semi-exploited.
+			The upper surface is a bit lower than the zero-plane.
+			This means that Adapt-Discrete was 
+			The peak of course is also inverted.
+
+		Overall:\\
+			According to this surface, the upper level of Random-Continuous added to the lower level of Adapt-Discrete higher than adding the two other levels with each other.
+			The peak indicates that also the peak of the surface of Random-Continuous is higher than the peak of the surface of Adapt-Discrete is low.
+			Only with this condition can this peak point upwards.
+		
+	 \item Adapt-Continuous:\\
+
+		 Gained points:\\
+		 	Random-Continuous's points range in a form of a wave or a curve in the y-direction.
+			This derives from the fact that, as already mentioned, Random-Continuous behaves like AlwaysSame with parameter 5.
+			So, in average it submits 0.5 all the time.
+			The highest points are along the edge of the x-z-plane which are at height 25.
+			Following in y-direction, the lines approximates to the plane at height 15 and at a certain parameter of Adapt-Continuous, it seems to have reached this plane.
+			From that on, it follows the plane until it reaches the last parameter of Adapt-Continuous.\\
+			This surface looks exactly the same with the notable difference that the curve is now pointed downwards.
+			The curve begins at height 10 and approximates a plane at height a bit less than 15.
+			The plane, this curve approximates, is in a bit darker tone of colour than the other plane.
+			This means that this approximated plane is a bit lower than the other.
+
+		Advantage:\\
+			This surface looks exactly like the first surface in this column, it is just a bit more extreme.
+			The curve is starting from 15 and diverges in the plane at height nearly 0.\\
+			This curved surface ranges, naturally, from -15 to nearly 0.
+			One remarkable feature that these surfaces have is, as the one's a column at the left, they do not intersect the zero-plane.
+			This means that Random-Continuous has gained more points in every game.
+			Adapt-Continuous is objectively worse since it lost every game.
+
+		Overall:\\
+			This surface shows us that the peak edge of the semi-exploitations added up with the exploited strategy's lowest edge is more than both submitting a fairly similar amount of investment.
+			Remarkably, the whole surface is pretty high.
+			The maximum is not reached but every point is fairly high.
+			
+		 	
+		 	
+\end{itemize}
+
+\section{Discussion}
+
+\begin{itemize}
+	\item Random vs Rigid:\\
+		% TODO: Explain what a mixed strategy is in foundations
+		I have spoken of the point that Random-Discrete, as a mixed strategy, behaves like AlwaysSame when taking the average of having played the game several times.
+		In the simulation, all games were played 100 times and taken the average to plot the surfaces.
+		But, of course, when only playing once, the surfaces would look different.\\
+		\includegraphics[width=0.2\linewidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_first.png}
+		\includegraphics[width=0.2\linewidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_first.png}\\
+		These surfaces show the gained points of Random-Discrete and AlwaysSame when playing the ICPD only once.
+		A rougher surface is visible.
+		This is due to the fact that Random-Discrete uses probabilities after all.
+		Where as AlwaysSame submits always a determined investment.\\
+		The surface of Random-Discrete is a bit evener. 
+		This fact can be explained by examining the pay-off equations:
+		$P_A = y - c \cdot x + c$ and $P_B = x - c \cdot y + c$\\
+		$x$ being the previous investment of Random-Discrete and $y$ is equal to the previous investment of AlwaysSame.
+		$x$ is relatively random, depending on Random-Discrete's parameter and $y$ is in one game always constant.
+		Subtracting only a fraction of the random investment pays off a more constant amount of points.\\
+		To calculate how much Random-Discrete derived from its constant-behavioured opponent, we can use the standard deviation for every game.
+		This means we can display a new surface plot which will describe how much off the investments were comparing to the average.
+		$$s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}$$
+
+
 
 \end{itemize}
+
 
 \section{Conclusions and Outlook}
 \begin{itemize}
