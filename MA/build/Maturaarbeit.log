@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.8.18)  23 AUG 2025 12:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.8.18)  23 AUG 2025 14:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -918,32 +918,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 869--892
  []
 
 [17 <./plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd.png> <./plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd.png> <./plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd_p_avr.png> <./plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd_p_avr.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 898--899
+<plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png, id=257, 702.625pt x 501.875pt>
+File: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png Graphic file (type png)
+<use plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png>
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png  used on input line 898.
+(pdftex.def)             Requested size: 226.48395pt x 161.77495pt.
+<plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png, id=258, 702.625pt x 501.875pt>
+File: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png Graphic file (type png)
+<use plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png>
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png  used on input line 901.
+(pdftex.def)             Requested size: 226.48395pt x 161.77495pt.
+<plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png, id=259, 702.625pt x 501.875pt>
+File: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png Graphic file (type png)
+<use plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png>
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png  used on input line 904.
+(pdftex.def)             Requested size: 226.48395pt x 161.77495pt.
+<plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png, id=260, 702.625pt x 501.875pt>
+File: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png Graphic file (type png)
+<use plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png>
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png  used on input line 906.
+(pdftex.def)             Requested size: 226.48395pt x 161.77495pt.
+<plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png, id=261, 702.625pt x 501.875pt>
+File: plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png Graphic file (type png)
+<use plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png>
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png  used on input line 909.
+(pdftex.def)             Requested size: 226.48395pt x 161.77495pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 892--912
+
+ []
+
+[18 <./plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold.png> <./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png>] [19 <./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png> <./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png> <./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 912--913
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 907--910
+Underfull \hbox (badness 10000) in paragraph at lines 923--926
 
  []
 
-[18 <./plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold.png>] [19] (build/Maturaarbeit.aux)
+[20 <./plots/Discussion/Adapt-Continuous/Payoffs_5_line_chart_0-10.png>] (build/Maturaarbeit.aux)
 Package rerunfilecheck Info: File `Maturaarbeit.out' has not changed.
 (rerunfilecheck)             Checksum: 2A703F8EB479D26DE4961D8AAE27BFA6;967.
  ) 
 Here is how much of TeX's memory you used:
- 11134 strings out of 477985
- 204676 string characters out of 5839380
+ 11171 strings out of 477985
+ 206991 string characters out of 5839380
  1865388 words of memory out of 6000000
- 31152 multiletter control sequences out of 15000+600000
+ 31182 multiletter control sequences out of 15000+600000
  516570 words of font info for 46 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,14n,79p,266b,568s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on build/Maturaarbeit.pdf (19 pages, 2298975 bytes).
+Output written on build/Maturaarbeit.pdf (20 pages, 2495910 bytes).
 PDF statistics:
- 329 PDF objects out of 1000 (max. 8388607)
- 158 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
- 375 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 343 PDF objects out of 1000 (max. 8388607)
+ 161 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 400 words of extra memory for PDF output out of 10000 (max. 10000000)
 
