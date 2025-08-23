@@ -59,11 +59,11 @@ matrix4 = matrix3 + matrix3_avr
 
 # different colorscales
 colorscale_s = 'Haline'
-colorscale_a = 'Aggrnyl'
+colorscale_a = 'Plasma'
 # least points possible
 zmin = 0
 # most points possible
-zmax = max(matrix1.max(), matrix3.max())
+zmax = max((matrix1+matrix1_avr).max(), (matrix3+matrix3_avr).max())
 
 # ---------------------- function for updating the fig layout ---------------------- 
 def update_fig_layout(fig, title:str, range, x=1, y=1, z=1):
@@ -105,33 +105,43 @@ def figure(matrix, zmin=zmin, zmax=zmax):
         x=list1, y=list2, z=matrix,
         colorscale=colorscale_s,
         showscale=False,
+        opacity=0.5,
         cmin=zmin, cmax=zmax,),
     )
 
     return fig
 
+def figure_add_trace(fig, matrix):
+    fig.add_trace(go.Surface(
+        x=list1, y=list2, z=matrix,
+        showscale=False,
+        opacity=0.4,  # semi-transparent
+        colorscale=[[0, 'gray'], [1, 'gray']],
+        ),
+    )
+
+
 # ---------------------- surface plot strategy_1 ---------------------- 
 
-fig1 = figure(matrix1)
+fig1 = figure(matrix1_avr)
+
+figure_add_trace(fig1, matrix1_avr+matrix1)
+figure_add_trace(fig1, matrix1_avr-matrix1)
+
 update_fig_layout(fig1, strategy_1, [zmin, zmax])
 
-# ---------------------- surface plot strategy_2 ---------------------- 
-fig2 = figure(matrix3)
+# ---------------------- surface plot strategy_1 ---------------------- 
+
+fig2 = figure(matrix3_avr)
+
+figure_add_trace(fig2, matrix3_avr+matrix3)
+figure_add_trace(fig2, matrix3_avr-matrix3)
+
 update_fig_layout(fig2, strategy_2, [zmin, zmax])
 
-# ---------------------- surface plot strategy_3 ---------------------- 
-zmax = max(matrix2.max(), matrix4.max())
-
-fig3 = figure(matrix1_avr)
-update_fig_layout(fig3, strategy_1, [zmin, zmax])
-
-# ---------------------- surface plot strategy_4 ---------------------- 
-fig4 = figure(matrix3_avr)
-update_fig_layout(fig4, strategy_2, [zmin, zmax])
-
 pio.write_images(
-    fig=[fig1, fig2, fig3, fig3],
-    file=[f"{final_dir}/{strategy_1}_sd.png", f"{final_dir}/{strategy_2}_sd.png", f"{final_dir}/{strategy_1}_sd_p_avr.png", f"{final_dir}/{strategy_2}_sd_p_avr.png"],
+    fig=[fig1, fig2],
+    file=[f"{final_dir}/{strategy_1}_sd_p_avr.png", f"{final_dir}/{strategy_2}_sd_p_avr.png"],
     width=500,
     height=500
 )

@@ -702,6 +702,7 @@ Random-Discrete\\
 			Also the maximum points of the first plot indicate that the same points on the other surface must be at height 0.
 			The broader slope is also going downwards.
 			But this slope is not as steep as the one on the other surface and thus has lower points at the edge where the parameter of Random-Discrete is 0.
+			When Random-Discrete has its parameter at 10, which means it behaves like AlwaysCooperate, mutual cooperation will take place.\\
 
 		Advantages:\\
 			Since the slopes look pretty similar, there are practically no advantages in this area.
@@ -852,14 +853,49 @@ Random-Discrete\\
 		This formula is being used, the standard deviation.
 		$$s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}$$
 		We get the following surface:\\
-		\includegraphics[width=0.6\linewidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd.png}
-		\includegraphics[width=0.6\linewidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd.png}\\
+		\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd.png}
+		\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd.png}\\
 		To conclude, choosing Random-Discrete, especially parameter from 2 to 8, as one's own behaviour means a high risk of loosing.
-		This chance of loosing is, however, equal to winning.
-		So, playing as Random-Discrete is risky whereby behaving like AlwaysSame, 
+		But, this risk of deviating from the average is at every point twice as much with AlwaysSame than Random-Discrete.
+		This means that when playing like Random-Discrete, one risks getting $\pm$ the standard deviation to the average.
+		But, one is applying twice this risk to the opponent which is in this case AlwaysSame.
+		This can be seen in these two following surface plots.\\
+		\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd_p_avr.png}
+		\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd_p_avr.png}\\
+		\\(Why chosen AlwaysSame?: Because AlwS and Rnd-D seem alike, but aren't)\\
+		\\(3D object in which the prob. is 66\% of being in there in one match.)
+		\\(Why are Standard Deviation surfaces same but different scales?)
 
-		
-
+	\item RandomD vs AdaptD:\\
+		When you look at the surface, this stripe is very remarkable.
+		We will look at why this stripe exists and why is only exists from AdaptD's parameter 0 to 2.\\
+		As Adapt-Discrete is explained, its investment is rounded to the nearest integer.
+		So, in order to get from investment 0 to 1 or vice versa, its investment has to get over the threshold of 0.5.
+		To demonstrate this point, the following graph is used.
+		It shows what the opponent's investment has to be at least or at most to surpass this threshold.\\
+		\includegraphics[width=0.5\textwidth]{plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold.png}\\
+		The derivation to calculate this function is the following can be found in the Appendix.
+		% TODO: Put the derivation
+		It can be seen that if Adapt-Discrete has the parameter from 0 to 2, the opponent's investment must be over 1 which is not possible.
+		This explains why Adapt-Discrete with its parameter set to either 0, 1 or 2 behaves exactly like AlwaysCooperate since it cannot surpass the threshold of 0.5.\\
+		Coming to the next attribute of this surface; the evenness of the rest of the surface.
+		The other part of the surface is first, not influenced by the parameter of Adapt-Discrete and second, has a little inclination.
+		This question can be answered with the fact that Random-Discrete behaves, as mentioned many times, like AlwaysSame.
+		The two slopes look nearly identical because Adapt-Discrete will also behave rigidly against a rigid strategy.
+		A little detail is that the slope of Adapt-Discrete has a very little larger inclination.
+		This means this slope is a little bit steeper.
+		This mysterious can be answered by the fact that Adapt-Discrete always starts off the game with full cooperation.
+		So, the first time, Adapt-Discrete gets a little bit more exploited the nearer the parameter of Random-Discrete gets to 0.
+		Because at parameter 0, Random-Discrete is like AlwaysDefect and gets thus fully exploited.
+		Random-Discrete's parameter 10, in contrary, it like full cooperation so it get not exploited.
+		This means that it gets more exploited the nearer Random-Discrete's parameter gets to 0.\\
+	\item RandomD vs AdaptC:\\
+		A same idea can be used to explain why this surface a similar appearance like the one before.
+		Adapt-Discrete with parameter 0 means AlwaysCooperate and gets thus more exploited the more it tends to parameter of Random-Discrete equal to 0.
+		Adapt-Discrete with parameter equal to 1, gets exploited the first few rounds.
+		But then it will catch a good position where Random-Discrete cannot exploit it so much any more.\\
+		The slope being steeper in Adapt-Continuous's surface is due to the same fact as the one in Adapt-Discrete's surface.
+	\item RandomD vs AdaptC:\\
 
 
 \end{itemize}
