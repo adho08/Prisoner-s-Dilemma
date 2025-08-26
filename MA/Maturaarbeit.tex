@@ -5,6 +5,7 @@
 \usepackage{subfig}
 \usepackage{subcaption}
 \usepackage{graphicx}
+\usepackage{wrapfig}
 \usepackage[a4paper, margin=1in, footskip=0.25in]{geometry}
 
 % relative path to images directory
@@ -466,12 +467,17 @@ If anyone is interested in simulating the project on their machine, they can go 
 
 \section{Results}
 
+\begin{wrapfigure}{l}{0.25\textwidth}
+\includegraphics[height=3cm]{plots/Colorscales/Plasma.png}{Plasma}
+\caption{Colour scale for the 'Gained Points' surfaces}
+\label{fig:Plasma}
+\end{wrapfigure}
 In the following two pages, you will see all the surfaces of both Random-Discrete and Random-Continuous.
-There are five surfaces that are generated from one ICPD.
+There are five surfaces in each interaction that are generated from one ICPD.
 The x-axis, the one in be bottom-right, shows the parameter of the main strategy.
-The y-axis, the other one on the bottom, indicates the parameter of the opponent.
+The y-axis, the other axis on the bottom, indicates the parameter of the opponent.
 The z-axis always shows the points.
-All the surfaces are not only marked by height but also by the colour.
+All the surfaces are not only marked by height but also by colour.
 The context in which points are displayed depends on the surface. 
 The first two rows are the most basic surface plots.
 They show the gains of the strategy itself and the opponent's.
@@ -480,15 +486,14 @@ And the lowest is at 0.
 The maximum can be calculated by regarding the pay-off equations.
 The maximum points are gained by exploitation.
 So, $P_A =  y - c \cdot x + c$ becomes by substitution $P_A = 1 - 0.5 \cdot 0 + 0.5$ \textrightarrow $P_A = 1.5$.
-And since the CPD is played 20 times, $P_A \cdot 20 = 30$
-So the boundaries in which the points can vary is from 0 to 30.\\
+And since the CPD is played 20 times, $P_A \cdot 20 = 30$.
+So, the boundaries in which the points can vary is from 0 to 30.
 All the points, that are at height 20, have their correspondence in the other surface since in order to get 20 points, mutual cooperation is required.
-The same principle can be allied to the maximum and minimum points.
+The same principle can be allied to the maximum, minimum points and mutual defection which is at height 10.
 Wherever a minimum point can be seen, the correspondence is the maximum point at the same x-y-coordinate.
 The colour of the points indicates the same as the height, the number of points.
-So, one can read this surface more exactly by regarding this colour scale.\\
-A)
-% \includegraphics[height=3.0cm]{plots/Colorscales/Plasma.png}\\
+So, one can read this surface more accurately by regarding Figure \ref{fig:Plasma}.
+
 The next two surfaces concern the advantage one strategy has over the other.
 This shows us how much more one strategy had over the other.
 For the surface of the main strategy, simply the opponent's surface is subtracted from it's surface and vice versa.
@@ -504,8 +509,8 @@ Also here, there is a colour scale.
 This colour scale, however, differs from the first one.
 I chose to use different colour scales for visualisation purposes due to the fact that the advantage surfaces have a different z-axis range than the first two.
 (-30 to 30)
-B)\\
-% \includegraphics[height=3.0cm]{plots/Colorscales/Cividis.png}\\
+B)
+% \includegraphics[height=3.0cm]{plots/Colorscales/Cividis.png}
 The last row of surfaces displays how much points have been gained by both.
 To generate these surfaces, one must add the surfaces which describe how much one has gained of the concerned strategies.
 Looking at the pay-off equations, a point can not be over the limit of 20.
@@ -517,10 +522,12 @@ I decided to also plot this surface to demonstrate the population welfare.
 This means that the higher the points, the most have gained both together.
 This plot has, as the advantage surfaces, a different z-axis range.
 So a new colour scale is introduced.
-C)\\
-\includegraphics[height=3cm]{plots/Colorscales/Plasma.png}
-\includegraphics[height=3cm]{plots/Colorscales/Cividis.png}
-\includegraphics[height=3cm]{plots/Colorscales/Portland.png}
+C)
+\newpage
+
+% \includegraphics[height=3cm]{plots/Colorscales/Plasma.png}
+% \includegraphics[height=3cm]{plots/Colorscales/Cividis.png}
+% \includegraphics[height=3cm]{plots/Colorscales/Portland.png}
 
 \newpage
 
@@ -873,10 +880,10 @@ Random-Discrete\\
 		So, in order to get from investment 0 to 1 or vice versa, its investment has to get over the threshold of 0.5.
 		To demonstrate this point, the following graph is used.
 		It shows what the opponent's investment has to be at least or at most to surpass this threshold.\\
-		\includegraphics[width=0.5\textwidth]{plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold.png}\\
+		\includegraphics[width=0.5\textwidth]{plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png}\\
 		The derivation to calculate this function is the following can be found in the Appendix.
 		% TODO: Put the derivation
-		It can be seen that if Adapt-Discrete has the parameter from 0 to 2, the opponent's investment must be over 1 which is not possible.
+		It can be seen that if Adapt-Discrete has the parameter from 0 to 2, the opponent's investment must be lower than 0 which is not possible.
 		This explains why Adapt-Discrete with its parameter set to either 0, 1 or 2 behaves exactly like AlwaysCooperate since it cannot surpass the threshold of 0.5.\\
 		Coming to the next attribute of this surface; the evenness of the rest of the surface.
 		The other part of the surface is first, not influenced by the parameter of Adapt-Discrete and second, has a little inclination.
@@ -909,10 +916,33 @@ Random-Discrete\\
 		\includegraphics[width=0.5\textwidth]{plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png}\\
 		To summarise, from parameter 0 to 5, the pay-offs get better since they can adapt better.
 		But, from parameter 5 onwards, the pay-offs stay exactly the same since their pay-offs converge to an average.\\
-	\item RandomC vs AdaptC:\\
-
-
-
+	\item RandomC vs AdaptD:\\
+		It is very interesting why such two plateaus exist.\\
+		\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Continuous_vs_Adapt-Discrete/surface_2D.png}\\
+		These plots describe exactly this.\\
+		\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Continuous/investments.png}
+		\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png}\\
+		Everything under the line of the first chart is where Adapt-Discrete gets exploited.
+		This means that Adapt-Discrete only cooperates and Random-Continuous, naturally, only submits 0.5.
+		This comes down to a simple fact.
+		We look at the case of Adapt-Discrete parameter 3.
+		The same idea applies to parameters 4 and 5 and technically 1 and 2 as well.
+		The height at parameter 3 is between the lines RndC 7 and RndC 6.
+		The lower line describes that this parameter of Random-Continuous and every further one does not exploit Adapt-Discrete.
+		Adapt-Discrete can surpass the threshold of 1.5 because the investment of Random-Continuous 1 and every further one submits a lower investment (with a 50\% change) and thus also defects.
+		The line above describes the first parameter that exploits Adapt-Discrete.
+		The investment of Random-Continuous must be below the point in order Adapt-Discrete to be able to jump from 1 to 0.
+		So, every parameter that is lower than 6, exploits Adapt-Discrete.\\
+		Only one aspect has not been clarified.
+		It has not been discussed why there is a one-time peak at the coordinates (5, 10) \textrightarrow (Random-Continuous 5, Adapt-Discrete = 10)\\
+		\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png}\\
+		This graph is only used to demonstrate that point.
+		At Adapt-Discrete 10, the lines of Random-Continuous 5 intersect perfectly.
+		This means that surpassing the threshold down is happening 50\% of the submits of Random-Continuous since only one line is below the blue point.
+		But, surpassing the threshold upwards is always the case since the two lines are at the same height or above the green line at 10.
+		So, Adapt-Discrete will go down 50\% of the times when it is at full cooperation.
+		But, it will go up to full cooperation when it is at full defection 100\% of the times.
+		This constellation is only the case with these specific parameters.
 
 \end{itemize}
 
@@ -921,30 +951,47 @@ Random-Discrete\\
 \begin{itemize}
 
 	\item Summary and Quintessence\\
-		which strategy 1 better than which strategy 2\\
-		which parameter to be used\\
+		First, we looked at the features of each surface.
+		To conclude, both Adapt-Discrete and Adapt-Continuous did very bad against Random-Discrete and Random-Continuous.
+		AlwaySame did equally well as bad against both random strategies.
+		The random strategies that played against themselves also scored fairly well.
 
-	\item Application in the Real World\\
-		strategies translated to real persons\\
-		giving examples (Politics, economics to simple human beings)\\
-		prospect to the future (which ones will win?)
+		Some areas in this simulation have not been explored due to factors concerning the time.
+		These areas apply to parameters such as the coefficient $c$ in the pay-off equations.
+		Or, the factor of noise, which changes the investments slightly and thus create a simulation where misunderstanding come to play.
+		Another limitation is the applicability to the real world.
+		To verify these results, further researches must be made.
+		These further researches concern empirical social or political researches.
+
+		To answer the initial question.
+		What behaviour is best when encountering an erratic behaviour.
+		As already mentioned, the interpretation into the real world are questionable.
+		But, from what we can conclude from this simulation is the following.
+		First, responsive/adaptive strategy could beat a random/erratic strategy.
+		The maximum they could get is mutual cooperation which is best for the total welfare but not ideal when one cares about advantage over the other.
+		Second, the rigid strategy could explore every outcome.
+		It could exploit the erratic strategy or lose against it.
+		But, it could also cooperate and defect mutually.
+		Ultimately, the random strategies itself could also get every outcome from the simulation.
+		This means when encountering a erratic strategy, it is best to be rigid or random oneself.
+		Being adaptive is only a loss.
 
 \end{itemize}
 
-\section{Self Reflection}
-\begin{itemize}
-
-	\item Challenges\\
-		estimation of time consumption\\
-		transforming ideas during process\\
-		dedication
-
-	\item Learnings\\
-		reading professional papers\\
-		writing English\\
-		experimental workflow (usage of neovim, tmux and terminal)
-
-\end{itemize}
+% \section{Self Reflection}
+% \begin{itemize}
+%
+% 	\item Challenges\\
+% 		estimation of time consumption\\
+% 		transforming ideas during process\\
+% 		dedication
+%
+% 	\item Learnings\\
+% 		reading professional papers\\
+% 		writing English\\
+% 		experimental workflow (usage of neovim, tmux and terminal)
+%
+% \end{itemize}
 
 \section{Annex}
 \end{document}
