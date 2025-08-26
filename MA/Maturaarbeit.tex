@@ -44,6 +44,9 @@
 		helping someone with possible cost -- cooperation\\
 		being selfish but breaking trust -- defection\\
 
+	\item Game Theory (optional, not needed for understanding)\\
+		mathematical framework to investigate interactions\\
+
 	\item model PD:\\
 		single interaction\\
 		already well analysed\\
@@ -72,12 +75,12 @@
 \end{itemize}
 
 \section{Theoretical Foundations}
-\begin{itemize}
 
-	\item Game Theory (optional, not needed for understanding)\\
-		mathematical framework to investigate interactions\\
+To grasp the game-theoretical approach pursued in this thesis, it is necessary to first understand the underlying key concepts. 
+The most important ones being the Prisoner's Dilemma (PD) (2.1), the introduction of iterations as an extension (2.2) and the approach of submitting continuous values (2.3).
+Furthermore, relevant information of published researches are provided as it seems helpful (2.5).
 
-	\item Prisoner's Dilemma:\\
+\subsection{Prisoner's Dilemma}
 		
 The Prisoner's Dilemma (PD) is a famous intellectual game in Game Theory. 
 It was invented by Merrill Flood and Melvin Dresher in 1950. 
@@ -132,7 +135,7 @@ The pay-off's in the matrix can be changed as long as these rules stay fulfilled
 
 $$T > R > P > S$$
 
-	\item Iterated:\\
+\subsection{Iterated}
 		
 The Iterated Prisoner's Dilemma (IPD) is a game which extends the PD. 
 As the name suggests, the PD is played a number of times sequentially. 
@@ -186,7 +189,7 @@ And because trust will be given up in the last round, there is no sense for both
 This will end up in an inductive defection behaviour for both strategies the whole game.\\
 This extension of the PD allows us to simulate a relationship over time where the two players interact multiple times.
 
-	\item Continuous:\\
+\subsection{Continuous}
 
 The continuous variant is considered more accurate to the real world since the decisions are rather rare only either cooperation or defection.
 The amount of cooperation is called investment and can range from zero to one (0 to 1) where full defection is represented by 0 and cooperation corresponds to 1.
@@ -263,7 +266,7 @@ This is the least one can receive.
 		% more accurate\\
 		% more complex, generates more data \textrightarrow more insightful\\
 
-	\item Noise:\\
+\subsection{Noise}
 
 Noise in the ICPD is the equivalent to miscommunication or misunderstanding in the real world.
 In this variant of the PD, noise is essential to trigger interesting outcomes.
@@ -274,7 +277,7 @@ Without noise, in many cases, the ICPD would be equivalent to the IPD.
 		% sometimes necessary to trigger continuous investments\\
 		% simulates misunderstandings\\
 
-	\item Simultaneous vs Alternating:\\
+\subsection{Simultaneous vs Alternating}
 
 Two main differences can be seen when simulating an iterated variant of the PD.
 On one hand there is the simultaneous form whereby the strategies submit their contribution at the same time.
@@ -282,7 +285,7 @@ On the other hand, there is the alternating form in which on e strategy submits 
 Since the alternating form gives and advantage to the strategy which is allowed to respond, this only makes things more complicated than necessary.
 So, this analysis is only dedicated to the simultaneous form.
 
-	\item Current Findings:\\
+\subsection{Current Findings}
 
 In the simpler variants, e.g. the IPD without noise, it has been proved many times over that the strategy Tit-For-Tat is the most successful one. [sources]
 The success of strategies, however, can vary depending on certain conditions such as the influence of noise or different pay-off systems where continuous investments can be submitted.
@@ -292,7 +295,6 @@ So, the very specific area of the simultaneous ICPD, has not been very well expl
 		% (None really)\\
 		% Not well explored: simultaneous Iterated Continuous Prisoner's Dilemma
 
-\end{itemize}
 
 \section{Methods and Implementation}
 \begin{itemize}
