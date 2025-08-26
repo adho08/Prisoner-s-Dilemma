@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1756236621.12204 "Maturaarbeit.tex" "build/Maturaarbeit.pdf" "Maturaarbeit" 1756236624.04576 0
+["pdflatex"] 1756242833.50508 "Maturaarbeit.tex" "build/Maturaarbeit.pdf" "Maturaarbeit" 1756242835.34669 0
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -82,10 +82,10 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1737590400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1756041941.56631 4547224 5cf1c14d6ee63f23cc6525ae387ed2c9 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1756041610 7759956 46aea47261505c31e75125fee8931c29 ""
-  "Maturaarbeit.tex" 1756236621.86284 59783 0a99de1a3949e8c094a8253ca4fd271f ""
-  "build/Maturaarbeit.aux" 1756236623.87847 2589 e539ca48fcbe77a04df010eda260f00f "pdflatex"
-  "build/Maturaarbeit.out" 1756236623.8799 1624 19d7935247eb1df3594fbccaf6482abb "pdflatex"
-  "build/Maturaarbeit.toc" 1756236623.88028 981 074ca0e538a243fd87a3b2cb11385c30 "pdflatex"
+  "Maturaarbeit.tex" 1756242832.62065 60100 37697504a0ede722775f1b981e480dfa ""
+  "build/Maturaarbeit.aux" 1756242835.23728 2589 e539ca48fcbe77a04df010eda260f00f "pdflatex"
+  "build/Maturaarbeit.out" 1756242835.2389 1624 19d7935247eb1df3594fbccaf6482abb "pdflatex"
+  "build/Maturaarbeit.toc" 1756242835.2389 981 074ca0e538a243fd87a3b2cb11385c30 "pdflatex"
   "images/pd_heatmap_A.png" 1755095647.56031 174676 be9cec53606a80f0599dec94469c15f3 ""
   "images/pd_heatmap_B.png" 1755095655.88822 184497 caec8985575284e71abcfa1660044d27 ""
   "plots/Colorscales/Plasma.png" 1755424831.10477 5996 3b44d0694c9dede8db2fa1bb00eecbde ""
