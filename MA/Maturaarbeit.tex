@@ -6,6 +6,7 @@
 \usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{amsmath}
 \usepackage[a4paper, margin=1in, footskip=0.25in]{geometry}
 
 % relative path to images directory
@@ -87,7 +88,7 @@ It was invented by Merrill Flood and Melvin Dresher in 1950.
 To understand the dilemma, a proper context has to be established.\\
 Two persons are arrested and sued for having committed a crime jointly.
 There is yet, however, insufficient evidence to imprison the two suspects.
-Despite not having enough prove, the police utilises one of its strategies.
+Despite not having enough prove, the police utilises one of its methods.
 They interrogate them separately without giving them a chance to coordinate beforehand.
 The convicts receive two options.
 On one hand, they can confess that the other suspect was involved in the crime. 
@@ -97,8 +98,8 @@ In case mutual trust and thus no confession took place, the twain separately rec
 If both confess, either obtains five years in prison.
 Nevertheless, by taking this course of action, this outcome is not the only existing.
 If one chooses to confess while the other remains silent, the informer is released, whereas the betrayed must devote ten years in prison.
-Complying with expectations is considered as cooperation.
-Whereby defection is the opposite, meaning breaking confidence and state.
+Remaining silent is considered as cooperation.
+Whereby defection is the opposite, meaning breaking confidence and therefore state.
 The following matrix visualises the pay-offs in this game in a comprehensive way:
 
 % specific pay-off matrix
@@ -115,15 +116,20 @@ The following matrix visualises the pay-offs in this game in a comprehensive way
 \noindent
 C represents cooperation and D corresponds to defection. 
 The dilemma consists of the following.\\
-The act of confessing appears alluring since there is a chance of eluding a sentence of ten years imprisoned.
+The act of confessing appears alluring since there is a chance of eluding imprisonment.
 Nonetheless, it is possible to receive five years in prison depending on the confederate's decision.
 If the second criminal also confesses, both get five years in prison. 
 This is the most inferior outcome for both which could have been avoided as either would have stayed silent.\\
-John Nash, a mathematician which made great contributions in Game Theory, has proved the most reasonable course of action to be to confess.
+John Nash, a mathematician which made great contributions in Game Theory, has proved the most reasonable course of action to be confessing.
 The Nash-equilibrium is introduced. 
 It defines a stable state in which both would not reconsider their own judgement although each of them would be aware of the other's decision.\\
 This game composes a one-time interaction excellently in a mathematical and analytical perspective. 
-The pay-off's in the matrix can be altered as long as these inequalities stay valid.
+The entitlement of the variables derives form the pay-off they suggest.\\
+$T$: Temptation,
+$R$: Reward,
+$P$: Punishment,
+$S$: Sucker's pay-off\\
+The pay-offs in the matrix can be altered as long as these inequalities stay valid.
 % \url{https://www.investopedia.com/terms/n/nash-equilibrium.asp}
 
 % general pay-off matrix
@@ -143,30 +149,27 @@ $$T > R > P > S$$
 		
 The Iterated Prisoner's Dilemma (IPD) is a game which extends the PD. 
 As the name suggests, the PD is played a number of times sequentially. 
-After each round the pay-off gets accumulated to the points one strategy has already gained. 
-A strategy is to be considered as an autonomous player which has its own behaviour.
-A strategy has the whole history of its own contributions and the ones of the opponent at hand to generate the decision for the next round.
-These decisions are calculated by using conditions and probabilities that will be applied on the given data.
+To refer to the number of rounds played, $n$ is used as the denotation. 
+The gained pay-offs accumulated over the last $n-i$ rounds are summed where $i$ represents the current round.
+A strategy is an autonomous player which has its own behaviour.
+Such a strategy has the whole history of the previous PDs at hand to generate the decision for the next round.
+These decisions are calculated using conditions and probabilities that will be applied on the given data.
 In this, and in the following variants, the analogy to the real world is changed.
-It is wanted to maximize their output in the end.
-In contrary to the initial variant, it means that high number are wanted instead of unwanted.
-To still hold on the idea of the Prisoner's Dilemma, the pay-off's could be interpreted as to be subtracted.
-Meaning, the bigger the points, the sooner one gets out of prison.
-Since a strategy wants to gain as many points as possible, the pay-off matrix should be altered accordingly.\\
+Maximising one owns points is preferred.
+Since a strategy strives to gain as many points as possible, the pay-off matrix must be altered accordingly.\\
 
 \begin{center}
 \begin{tabular}{ c|c|c }
    & C & D \\ 
    \hline
- C & 3, 3 & 0, 5\\  
+ C & 5, 5 & 10, 0\\  
    \hline
- D & 5, 0 & 1, 1
+ D & 0, 10 & 3, 3
 \end{tabular}
 \end{center}
 
-And to generalise this matrix as well, the numbers can be replaced with variables.
-These variables $T, R, P \: \mathrm{and} \: T$ % can be changes no matter how ...
-
+And to generalise this pay-off matrix as well, the numbers can be replaced with variables.
+The concept is used for $T$, $R$, $P$, and $S$, provided that the four inequalities are satisfied.
 
 \begin{center}
 \begin{tabular}{ c|c|c }
@@ -178,20 +181,28 @@ These variables $T, R, P \: \mathrm{and} \: T$ % can be changes no matter how ..
 \end{tabular}
 \end{center}
 
-$$T < R < P < S$$
-$$2R > T + S$$
+\begin{equation}
+T < R < P < S\\
+\end{equation}
+\begin{equation}\label{AvGrPa}
+2R > T + S
+\end{equation}
 
-The Nash-equilibrium in the IPD differs from that in the PD.
-This means that cooperation can earn out long-term. 
-By cooperating, one is building trust with another. 
-One strategy can only get the maximum points, which can be gained by always getting the 5 points each round, by defecting and the opponent's cooperation. 
-Since the opponent will likely not cooperate after one strategy always defects, the maximum is practically impossible to receive. 
-So, the relative high amount and the possibility of getting it for both is by cooperating.\\
-The number of round that will be played has to be unknown to both strategies. 
-There is no sense in cooperating the last round since trust does not matter after the game is ended. 
-And because trust will be given up in the last round, there is no sense for both to keep trust the second last round. 
-This will end up in an inductive defection behaviour for both strategies the whole game.\\
-This extension of the PD allows us to simulate a relationship over time where the two players interact multiple times.
+Inequality \eqref{AvGrPa} is necessary to avoid receiving greater pay-offs by alternating cooperation and defection.\\
+The Nash-equilibrium in the IPD differs from the that in the PD.
+This implies that mutual cooperation yields long-term benefits.
+Playing cooperation increases trust whereas defection allows exploitation.
+Maximum pay-off during all the games is achieved only by consistent exploitation ($n \cdot T$).
+Since persistent defection leads to mutual defection as a response, the practical attainment of the maximum points is severely limited.
+To conclude, both strategies benefit the most with mutual cooperation.\\
+A problem arises in the last round.
+Since cooperation is only played to conserve trust, the reasonable action in the last round is to defect as trust has no use beyond the game.
+If both strategies act rational, mutual defection will be played in the last round.
+And because both are aware of this fact, there is no logical reason to cooperate the second last round.
+This will end up in an inductive defection behaviour for both strategies the whole game.
+So, to prevent constant mutual defection, the number of rounds played is an information that needs to be hidden from both strategies.
+As a consequence of that, $n$ is a random number whose limits can be defined.\\
+This extension of the PD allows to simulate a relationship of two individuals.
 
 \subsection{Continuous}
 
