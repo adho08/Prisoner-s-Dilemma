@@ -8,8 +8,8 @@
 \contentsline {section}{\numberline {3}Methods and Implementation}{6}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Study design}{6}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Implemented Strategies}{7}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Implementation Details}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Implementation Details}{8}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Results}{9}{section.4}%
-\contentsline {section}{\numberline {5}Discussion}{16}{section.5}%
-\contentsline {section}{\numberline {6}Conclusions and Outlook}{21}{section.6}%
-\contentsline {section}{\numberline {7}Annex}{21}{section.7}%
+\contentsline {section}{\numberline {5}Discussion}{15}{section.5}%
+\contentsline {section}{\numberline {6}Conclusions and Outlook}{20}{section.6}%
+\contentsline {section}{\numberline {7}Annex}{20}{section.7}%
