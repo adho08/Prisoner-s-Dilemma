@@ -13,6 +13,13 @@
 % \graphicspath{ {./images/} }
 \newcommand{\round}[1]{\ensuremath{\lfloor#1\rceil}}
 
+% make captions of figures cursive
+\DeclareCaptionFormat{custom}
+{
+    \textbf{#1#2}\textit{\small #3}
+}
+\captionsetup{format=custom}
+
 \title{Research of Parameters in Strategies of the Iterated Continuous Prisoner's Dilemma}
 \author{Adrian Hossner}
 \date{ } % display no date
@@ -206,126 +213,158 @@ This extension of the PD allows to simulate a relationship of two individuals.
 
 \subsection{Continuous}
 
-The continuous variant is considered more accurate to the real world since the decisions are rather rare only either cooperation or defection.
-The amount of cooperation is called investment and can range from zero to one (0 to 1) where full defection is represented by 0 and cooperation corresponds to 1.
-One would suspect a very similar pay-off system to the iterated variant.
-In the discrete version, it looked like this:
+In this variant, strategies are not limited to either cooperate or defect; instead, they can chose any level of cooperation between 0 and 1.
+It is thus named Iterated Continuous Prisoner's Dilemma (ICPD)
+This cooperation level, called investment or contribution, ranges from zero (defect) to one (cooperate).
+The continuous form offers enhanced precision and mathematical applicability.\\
+% One would suspect a very similar pay-off system to the iterated variant.
+% In the discrete version, it looked like this:
+%
+% \begin{center}
+% \begin{tabular}{ c c }
+% Pay-off Player A & Pay-off Player B\\
+% \begin{tabular}{ c|c|c }
+%    & $C_A$ & $D_A$ \\ 
+%    \hline
+%  $C_B$ & 3 & 5\\  
+%    \hline
+%  $D_B$ & 0 & 1
+% \end{tabular}
+% &
+% \begin{tabular}{ c|c|c }
+%    & $C_A$ & $D_A$ \\ 
+%    \hline
+%  $C_B$ & 3 & 0\\  
+%    \hline
+%  $D_B$ & 5 & 1
+% \end{tabular}
+% \end{tabular}
+% \end{center}
 
-\begin{center}
-\begin{tabular}{ c c }
-Pay-off Player A & Pay-off Player B\\
-\begin{tabular}{ c|c|c }
-   & $C_A$ & $D_A$ \\ 
-   \hline
- $C_B$ & 3 & 5\\  
-   \hline
- $D_B$ & 0 & 1
-\end{tabular}
-&
-\begin{tabular}{ c|c|c }
-   & $C_A$ & $D_A$ \\ 
-   \hline
- $C_B$ & 3 & 0\\  
-   \hline
- $D_B$ & 5 & 1
-\end{tabular}
-\end{tabular}
-\end{center}
-
-This is possible by bilinearly interpolating the pay-off matrix so that the lines become fluid.
+Two main approaches will be presented and evaluated for practicality in this thesis.
+First, an intuitive extension of the iterated form. And second, a way that simplifies mathematically analysability.\\
+A similar concept can be used to calculate the pay-offs given the investments of both strategies.
+This concept is referring to a matrix-like pay-off system.
+To include continuous values, a mathematical procedure is applied to the discrete version of the matrix, namely bilinear interpolation.
 This will establish a field that can be represented by colour grades, a heat map.
-The equation for utilizing this heat map correctly are also displayed.
+Please see Figure \ref{fig:heatmaps}.
+The equation used to calculate this heat map can be found in the Appendix.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_A}\hfill
 	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_B}
-	\caption{Pay-off hash maps in the continuous variant of the IPD.}
+	\captionsetup{singlelinecheck=false}
+	\caption{Pay-off heat maps in the ICPD.}
+	\label{fig:heatmaps}
 \end{figure}
 
-I used ChatGPT-o4 to generate these heat maps.
-It generated them using these functions:
-
-$$U_A = (1-x)(1-y)R_A + (1-x)yS_A + x(1-y)T_A + xyP_A$$
-$$U_B = (1-x)(1-y)R_B + (1-x)yS_B + x(1-y)T_B + xyP_B$$
-
-These functions are applied to every point on the map.
-The variable x is the investment of strategy A and y is the investment of strategy B.
-There is, however, another way of determine the pay-off's.
-This approach uses only equations instead.
-It is much easier to implement but understanding is the difficult part.
+% I used ChatGPT-o4 to generate these heat maps.
+% It generated them using these functions:
+%
+% $$U_A = (1-x)(1-y)R_A + (1-x)yS_A + x(1-y)T_A + xyP_A$$
+% $$U_B = (1-x)(1-y)R_B + (1-x)yS_B + x(1-y)T_B + xyP_B$$
+%
+% These functions are applied to every point on the map.
+% The variable x is the investment of strategy A and y is the investment of strategy B.
+The second approach utilises only equations instead.
 This pay-off system of [sciencedirect.com] is formed by:
 
-$$P_A = y - c*x + c$$
-$$P_B = x - c*y + c$$
+$$p_A = y - c \cdot x + c$$
+$$p_B = x - c \cdot y + c$$
 
-+ c because no negative numbers.
-$P_A$ and $P_B$ are the pay-off's of strategy A and B respectively.
-The coefficient c ranges, as well as x and y, from 0 to 1 and describes the cost-to-benefit ratio.
-The base of the pay-off's are the opponent's investment.
-Then the strategy's own investment gets multiplied by the coefficient c and then is subtracted from the base.
-This means the pay-off is highly influenced by the opponent's investment.
-Let's see if the principles of the initial PD are still valid.
-It is better for one to defect (submit a 0) to get rid of the subtraction.
-And it is better for the strategy if the opponent's cooperates.
-If both defect, one gets zero points.
-If both cooperate, both get $1 - c$ points.
-If, however, one strategy exploits the opponent, meaning it defects while the other cooperates, it will get the maximum points being 1.
-The opponent would then get $-c$ points.
-This is the least one can receive.
-[Examples of coefficient c]
-\\
+$p_A$ and $p_B$ are the pay-offs of strategy A and B respectively.
+$x$ is the investment of strategy A and $y$ is that of strategy B.
+The coefficient $c$ ranges, as well as x and y, from 0 to 1 and describes the cost-to-benefit ratio.
+The pay-off is highly influenced by the opponent's investment.
+Only a fraction of one owns contribution is subtracted, $c$ being the coefficient.
+The minimum pay-off one strategy can collect is then $-c$.
+To avoid negative pay-offs and enhance subsequent convenience, a third addend is appended, $c$.
+So, the least points that can be gained is 0.
+The maximal points, which can be earned by exploitation, is $1 + c$.
+
+
+% Let's see if the principles of the initial PD are still valid.
+% It is better for one to defect (submit a 0) to get rid of the subtraction.
+% And it is better for the strategy if the opponent's cooperates.
+% If both defect, one gets zero points.
+% If both cooperate, both get one point.
+% If, however, one strategy exploits the opponent, meaning it defects while the other cooperates, it will get the maximum points being 1.
+% The opponent would then get $-c$ points.
+% This is the least one can receive.
 
 		% 0 to 1 rather than cooperation or defection\\
 		% Pay-off system\\ % https://www.sciencedirect.com/science/article/pii/S0022519306004255?casa_token=hIA0lYvzjf8AAAAA:Up2uQ89wotaLz7s1R0dM2FK7SaulAo40wIM-BdM9yooZ8uJeRL6mPs-K55dPNGs4XkcclNVjDQ#aep-section-id24
 		% more accurate\\
 		% more complex, generates more data \textrightarrow more insightful\\
 
-\subsection{Noise}
+\subsection{Additional variants}
 
-Noise in the ICPD is the equivalent to miscommunication or misunderstanding in the real world.
-In this variant of the PD, noise is essential to trigger interesting outcomes.
-When a game of the ICPD is started and two strategies who start with a full investment, many strategies only respond with full investments.
-So noise is necessary to trigger continuous investments. 
-Without noise, in many cases, the ICPD would be equivalent to the IPD.
+There exist several extensions of the PD that will remain untouched in this thesis, one of which is noise, meaning that investments are altered with a certain probability.
+This noise is introduced to simulate misunderstandings.\\
+Another advancement being the alternating form.
+In this variant, investments are contributed in succession rather than concurrently as in the conventional simultaneous model.\\
+The evolutionary research domain surveys the success of strategies in a world where natural selection takes place.
+This implies that losing strategies vanish, while successful ones replicate.
 
-		% sometimes necessary to trigger continuous investments\\
-		% simulates misunderstandings\\
-
-\subsection{Simultaneous vs Alternating}
-
-Two main differences can be seen when simulating an iterated variant of the PD.
-On one hand there is the simultaneous form whereby the strategies submit their contribution at the same time.
-On the other hand, there is the alternating form in which on e strategy submits its contribution and the other strategy can respond to this contribution is that round.
-Since the alternating form gives and advantage to the strategy which is allowed to respond, this only makes things more complicated than necessary.
-So, this analysis is only dedicated to the simultaneous form.
+% \subsection{Noise}
+%
+% Noise in the ICPD is the equivalent to miscommunication or misunderstanding in the real world.
+% In this variant of the PD, noise is essential to trigger interesting outcomes.
+% When a game of the ICPD is started and two strategies who start with a full investment, many strategies only respond with full investments.
+% So noise is necessary to trigger continuous investments. 
+% Without noise, in many cases, the ICPD would be equivalent to the IPD.
+%
+% 		% sometimes necessary to trigger continuous investments\\
+% 		% simulates misunderstandings\\
+%
+% \subsection{Simultaneous vs Alternating}
+%
+% Two main differences can be seen when simulating an iterated variant of the PD.
+% On one hand there is the simultaneous form whereby the strategies submit their contribution at the same time.
+% On the other hand, there is the alternating form in which on e strategy submits its contribution and the other strategy can respond to this contribution is that round.
+% Since the alternating form gives and advantage to the strategy which is allowed to respond, this only makes things more complicated than necessary.
+% So, this analysis is only dedicated to the simultaneous form.
 
 \subsection{Current Findings}
 
+Axelrod's Tournament
 In the simpler variants, e.g. the IPD without noise, it has been proved many times over that the strategy Tit-For-Tat is the most successful one. [sources]
 The success of strategies, however, can vary depending on certain conditions such as the influence of noise or different pay-off systems where continuous investments can be submitted.
 So, the very specific area of the simultaneous ICPD, has not been very well explored.
 ...
 
-		% (None really)\\
-		% Not well explored: simultaneous Iterated Continuous Prisoner's Dilemma
-
-
 \section{Methods and Implementation}
-\begin{itemize}
 
-	\item Parameter-based:\\
+For answering the central research question, it was necessary to develop a overarching study design (3.1), to specify the strategies that will be pursued in the iterated continuous Prisoner’s dilemma (3.2), and to determine details of the implementation in terms of IT (3.3).
 
-The main idea of this paper is to use parameter-based strategies.
-These strategies hold a parameter that defines the behaviour of the strategy.
-The parameter will always range from 1 to 10 inclusively.
-[Example]
+\subsection{Study design}
+
+Erratic behaviour in respect of the PD can be equated to a random conduct.
+Three strategy-types are proposed by reason that counter such erraticism.
+Hereunto can a strategy either be unaffected and behold its manner of responding or react to the randomness.
+In the former case, strategies are identified as rigid.
+Whereas the latter is characterised as adaptive.\\
+
+All of these categories of behaviour can algorithmised differently.
+This particularly concerns the above introduced distinction of the discrete and the continuous form.
+Applied to the erratic strategies this means that the investment is a substantial random number between zero and one.
+In contrast, the discrete version of this strategy generates a random number that is then rounded to the nearest integer.
+The same approach hold true in the adaptive strategy.
+Discrete contributions of rigid strategies are equal to either always cooperating (AlwaysCooperate) or constantly defecting (AlwaysDefect).
+Whereas continuous strategies of the rigid category contribute continuous investments invariably, e.g. 0.5 (AlwaysNeutral).\\
+
+\\
+
+To keep the number of comparisons manageable within the realms of a Maturaarbeit (MA), five strategy were chosen.
+Firstly, the selected strategies in the random class were named to be a discrete (Random-Discrete) and a continuous (Random-Continuous) version.
+Secondly, the same concept was established in the adaptive category with the discrete (Adapt-Discrete) and the continuous (Adapt-Continuous) behaviour.
+These strategies hold a parameter which determines the peculiarity level and ranges from zero to ten.
+So ultimately, the discrete and the continuous implementation are included in one strategy (AlwaysSame) due to this parameter.
+Thus, the distinction of a discrete and a continuous design would be trivial.\\
 
 
-		% Define parameter within strategies\\
-		% determine the behaviour\\
-
-	\item Surfaces:\\
+Surfaces:\\
 
 The end result of this paper will be several surface plots.
 The data will be generated by letting two parameter-based strategies play against each other the ICPD.
@@ -346,7 +385,9 @@ So, in the end there will be four surface plots per one ICPD.
 		% overall surface is population wealth (addition)\\
 		% difference surface is individual competence (subtraction)
 
-	\item Simulated Strategies and explanation of parameter:\\
+\subsection{Implemented Strategies}
+	
+Simulated Strategies and explanation of parameter:\\
 		\\My selection:\\
 In this simulation, strategies have to be defined and selected.
 There are two main points I want to investigate in this project.
@@ -466,7 +507,7 @@ And on the other hand, parameter 10 is equivalent to AlwaysCooperate since the p
 \end{tabular}
 \end{center}
 
-	\item Programming language:\\
+\subsection{Implementation Details}
 
 The simulation, data generation and visualisation is completely written in Python (3).
 For the visualisation, as in generating the surface plots, I used a python library called Plotly.
@@ -480,7 +521,7 @@ If anyone is interested in simulating the project on their machine, they can go 
 	% 	Parameter-Based Strategies\\
 	% 	only PBS important for MA\\
 	
-\end{itemize}
+
 
 \section{Results}
 

@@ -3,10 +3,12 @@
 \contentsline {subsection}{\numberline {2.1}Prisoner's Dilemma}{4}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Iterated}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Continuous}{5}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Noise}{6}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Simultaneous vs Alternating}{6}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Current Findings}{6}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.4}Additional variants}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Current Findings}{6}{subsection.2.5}%
 \contentsline {section}{\numberline {3}Methods and Implementation}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Study design}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Implemented Strategies}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Implementation Details}{9}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Results}{9}{section.4}%
 \contentsline {section}{\numberline {5}Discussion}{16}{section.5}%
 \contentsline {section}{\numberline {6}Conclusions and Outlook}{21}{section.6}%
