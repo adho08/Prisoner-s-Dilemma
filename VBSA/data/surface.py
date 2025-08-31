@@ -4,17 +4,22 @@ import pandas as pd
 import numpy as np
 import sys
 from pathlib import Path
+import plotly.io as pio
 
 # import variable of another python script
 script_dir = Path(__file__).parent
 sys.path.insert(0, str(script_dir.parent / 'src'))
-from main import parameters_1, repeated
+from main import strategy_1, strategy_2, repeated
 sys.path.insert(0, str(script_dir.parent / 'data'))
 
 df = pd.read_csv("results.csv")
 header = list(df.columns)
-strategy_1 = header[0]
-strategy_2 = header[2]
+# strategy_1 = header[0].split('.')[0]
+# strategy_2 = header[2].split('.')[0]
+parameters_1 = strategy_1.parameter_list
+
+strategy_1 = str(strategy_1)
+strategy_2 = str(strategy_2)
 
 # parameter axes
 list1 = df[df.columns[0]].to_numpy().tolist()[:len(parameters_1)*repeated:repeated]
@@ -42,15 +47,18 @@ zmax = max(matrix1.max(), matrix2.max())
 fig = make_subplots(
     rows=2, cols=2,
     specs=[[{'type': 'surface'}, {'type': 'surface'}], [{'type': 'surface'}, {'type': 'surface'}]],
-    subplot_titles=(header[0], header[2], "Overall (Mean)", "Overall (Difference)")
+    subplot_titles=(strategy_1, strategy_2, "Overall (Mean)", "Overall (Difference)")
 )
 
 # ---------------------- surface plot strategy_1 ---------------------- 
-fig.add_trace(go.Surface(
+srf_1 = go.Surface(
     x=list1, y=list2, z=matrix1,
     colorscale=colorscale,
     cmin=zmin, cmax=zmax,
-    colorbar=dict(title="Points", len=0.75, x=0.30)),
+    # colorbar=dict(title="Points", len=0.75, x=0.45)
+    )
+
+fig.add_trace(srf_1,
     row=1, col=1
 )
 
@@ -58,8 +66,10 @@ fig.add_trace(go.Surface(
 fig.add_trace(go.Surface(
     x=list1, y=list2, z=matrix2,
     colorscale=colorscale,
+    showscale=False,
     cmin=zmin, cmax=zmax,
-    showscale=False),
+    # colorbar=dict(title="Points", len=0.75, x=0.55)
+    ),
     row=1, col=2
 )
 
@@ -71,8 +81,8 @@ overall_zmax = zmax # matrix3.max()
 fig.add_trace(go.Surface(
     x=list1, y=list2, z=matrix3,
     colorscale=colorscale,
-    cmin=overall_zmin, cmax=overall_zmax,
-    colorbar=dict(title="Points", len=0.75, x=0.66)),
+    showscale=False,
+    cmin=overall_zmin, cmax=overall_zmax),
     row=2, col=1
 )
 
@@ -81,12 +91,12 @@ matrix4 = matrix2-matrix1
 diff_zmin = matrix4.min()
 diff_zmax = zmax # matrix4.max()
 
-# combine difference sruface with plane at z=0
+# combine difference surface with plane at z=0
 fig.add_trace(go.Surface(
     x=list1, y=list2, z=matrix4,
     colorscale=colorscale,
-    cmin=diff_zmin, cmax=diff_zmax,
-    colorbar=dict(title="Points", len=0.75, x=0.66)),
+    showscale=False,
+    cmin=diff_zmin, cmax=diff_zmax),
     row=2, col=2
 )
 
@@ -149,3 +159,5 @@ fig.update_layout(
 )
 
 fig.show()
+pio.write_image(srf_1, f"plots/{strategy_1}_vs_{strategy_2}.png")
+print("finished")
