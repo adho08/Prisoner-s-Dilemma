@@ -392,51 +392,14 @@ Thus, the distinction of a discrete and a continuous design would be trivial.\\
 
 As justified before, five strategies, namely Random-Discrete, Random-Continuous, Adapt-Discrete, Adapt-Continuous and AlwaysSame, will be presented and specified in the following.
 	
-% 		\\My selection:\\
-% In this simulation, strategies have to be defined and selected.
-% There are two main points I want to investigate in this project.
-% First, I want to associate the strategies to specific groups that differ in the characteristic of each member.
-% I suggest the following three characteristics:
-% \\1. Responsive
-% \\2. Rigid
-% \\3. Random\\
-% I chose these three qualities due to the fact that one has to follow one of these three natures.
-% In the real world, every personality can be associated with one of my defined groups.
-% It can also be looked at this from another perspective.
-% Whenever one has to respond to another's action, one has to decide how to answer.
-% The shift applied to the previous investment can be categorised in one of these three groups.
-% Either the shift is conditional to the opponent's last contribution, then this strategy is responsive.
-% Or the shift is always 0 then the behaviour falls into the group of the rigid.
-% This means that the investment will unconditionally stay the same.
-% Or the shift is neither one of the above, meaning it doesn't depend on the past interactions nor stays it always 0.
-% Then there cannot any determine aspect be established, meaning it is random.
-% \\Second, the question arises if there is a difference between the ICPD and the IPD.
-% So, I propose a discrete and a continuous variant of each group.
-% With the exception of the group 'Rigid', there will be two members of each group.
-% It will be clarified why only one strategy in this group makes sense.
-% Thus, we can analyse the difference between the two members of the group to clarify which variant gained more points in the ICPD.
-% Having two strategies in each group except in the group 'Rigid', means implementing five strategies.
-% And letting all strategies play against every other strategy, including itself, means having enough data to plot $4 \cdot \sum_{a=1}^{5}$ surfaces.
-% In total, this would equal to 60 surface plots.\\
-% The following strategies are described by algorithmising them.
-% $i(\theta)$ is a function that corresponds to the investment in the current round and holds the variable $\theta$ which is the parameter of the strategy in this round.
-% I showcase what the behaviour of the strategy will be equivalent to when the parameter is 0, 5 and 10 for an easier understanding.\\
-% 		\\Mean:\\
-% The strategy Mean belongs to the group of the responsive strategies.
-% It takes the investments of the opponent in the last $\theta_{\mathrm{Mean}}$ previous rounds as variables to its function to calculate the mean.
-% This mean will then be submitted in the next round.
-% Since in the first $\theta_{\mathrm{Mean}}$ rounds the strategy cannot calculate an average, it will submit full cooperation to offer maximum points for both of them.
-% $$i(\theta_{\mathrm{Mean}}) = \frac{1}{\theta_{\mathrm{Mean}}}\sum_{k=1}^{\theta_{\mathrm{Mean}}}\bar i_k$$
-% The variable $\bar i_k$ is the $k$'th element of the history of the opponent's investments, $k = 1$ being the last round.
-% This strategy, Mean, with the parameter 0 is equivalent to  since it only calculates the mean of the last opponent's submission.\\
-\begin{itemize}
-
-\item
+\subsubsection*{Adapt-Continuous}
 Adapt-Continuous (AdpC) is an, as the name suggests, adaptive and thus responsive strategy.
 It starts with full cooperation to offer a constructive relationship within this simulation.
 After having played one round, it will adapt to the submissions of the opponent by shifting its own investment towards the opponent's.
-$$i(\theta_{\mathrm{AdpC}}) = i_1 + s(\theta_{\mathrm{AdpC}})$$
-$$s(\theta_{\mathrm{AdpC}}) = \frac{\theta_{\mathrm{AdpC}}}{5} \cdot (\bar i_1 - i_1)$$
+$$i_k(\theta_{\mathrm{AdpC}}) = i_{k-1} + s(\theta_{\mathrm{AdpC}}, k)$$
+$$s(\theta_{\mathrm{AdpC}}, k) = \frac{\theta_{\mathrm{AdpC}}}{5} \cdot (\bar i_{k-1} - i_{k-1})$$
+$k$ indicates the current round and is used to notate the equations recursively.
+$k$ only appears in the adaptive strategies as only they require information of the past rounds.
 The shift being applied to its own previous investment is notated with the function $s(\theta_{\mathrm{AdpC}})$.
 This strategy with the parameter 0 is identical to AlwaysCooperate since the difference and thus the shift is multiplied by 0.
 Dividing $\theta_{\mathrm{AdpC}}$ by 5 implies the fact that this coefficient to the difference is equal to one if the parameter equals five.
@@ -447,12 +410,12 @@ By having the parameter set to ten, it means Adapt will add the shift to its own
 Of course, one strategy is not allowed to submit any investment that exceeds the limits that is defined to be from 0 to 1.
 The implementation of this strategy will simply set its investment to the reached limit if surpassed.\\
 
-\item 
+\subsubsection*{Adapt-Discrete}
 As mentioned, there is one continuous and one discrete strategy.
 This means there must be an Adapt-Discrete (AdpD) implemented.
 The simplest implementation of this strategy is to take the same investment function as Adapt-Continuous and round the result.
-$$i(\theta_{\mathrm{AdpD}}) = \round{i_1 + s(\theta_{\mathrm{AdpD}})}$$
-$$s(\theta_{\mathrm{AdpD}}) = \frac{\theta_{\mathrm{AdpD}}}{5} \cdot (\bar i_1 - i_1)$$
+$$i_k(\theta_{\mathrm{AdpC}}) = \round{i_{k-1} + s(\theta_{\mathrm{AdpC}}, k)}$$
+$$s(\theta_{\mathrm{AdpC}}, k) = \frac{\theta_{\mathrm{AdpC}}}{5} \cdot (\bar i_{k-1} - i_{k-1})$$
 Something that is not seen in these equations is that the strategy will start with full cooperation, as Adapt-Continuous.
 If $i(\theta_{\mathrm{AdpD}}) \ge 0.5$, the ultimate investment will be 1.
 Otherwise it will be equal to 0.
@@ -466,7 +429,7 @@ $\theta_{\mathrm{AdpD}} = 0$ means, as in the continuous version, that the strat
 If the parameter is equal to 10, it is most likely to jump from 1 to 0 back to 1 and so on.
 This only doesn't happen if the difference is less or equal to 0.25.\\
 
-\item
+\subsubsection*{AlwaysSame}
 AlwaysSame's (AlwS) parameter calculates the investment very simply.
 The investment follows the equation: 
 $$i(\theta_{\mathrm{AlwS}}) = \frac{\theta_{\mathrm{AlwS}}}{10}$$
@@ -474,7 +437,7 @@ This means that after each incrementation of the parameter, the investment incre
 Parameter 0 is equivalent to AlwaysDefect and parameter 1 has the same behaviour as AlwaysCooperate.
 If the parameter is set to five, the strategy will always submit the investment 0.5 which is identical to Neutral.\\
 
-\item
+\subsubsection*{Random-Continuous}
 The other strategy in the group of the random is oppositely continuous, meaning it can additionally submit any number between 0 and 1.
 The name of this strategy is logically Random-Continuous (RndC).
 This strategy has a base being at 0.5.
@@ -486,7 +449,7 @@ $s$ means the shift.
 It is divided by 20 so the maximum shift, parameter being 10, can not exceed the range of 0 and 1.
 There is a 50\% probability of subtracting or adding this shift, indicated by the symbol $\epsilon$.\\
 
-\item
+\subsubsection*{Random-Discrete}
 Random-Discrete (RndD) is a strategy in the group of the random.
 It is also discrete, meaning it can only submit either 0 or 1.
 The parameter in this strategy determines the likelihood of submitting 0 and 1 respectively.
@@ -500,7 +463,6 @@ i(\theta_{\mathrm{RndD}}) = \Pr(i = 0 \mid \theta_{\mathrm{RndD}}) = 1 - \frac{\
 $$
 Parameter 0 is equivalent to AlwaysDefect since the probability of submitting 0 is 0\%.
 And on the other hand, parameter 10 is equivalent to AlwaysCooperate since the probability of submitting 1 is 100\%.\\
-\end{itemize}
 
 \begin{center}
 \begin{tabular}{ c|c|c|c }
@@ -525,7 +487,7 @@ As there are eleven parameter values for each strategy, there will be $2 \cdot 5
 20 iterations of the ICPD has been decided to suffice.
 In addition, this game of 20 iterations is played a 100 times to flatten non-recurring abnormalities.
 To avoid gratuitous huge numbers, the mean of the ultimate points of these 100 repetitions is taken.
-This comes down to $100 \cdot 20 \cdot 1210 = 2420000$ procedures of the continuous PD.\\
+This comes down to $100 \cdot 20 \cdot 1210 = 2420000$ executions of the continuous PD.\\
 
 One encounter of the $11 \cdot 11$ parameter-based ICPD (pbICPD) is displays in form of a surface.
 There are two surfaces for each pbICPD, both of which represent the gained points of the corresponding strategy.
@@ -552,7 +514,7 @@ More information about the python scripts and data visualisation files that were
 
 \section{Results}
 
-In Figures 3 and 4, the surfaces for the Random-Discrete and Random-Continuous simulations are portrayed. 
+In Figures \ref{fig:RNDD-table} and \ref{fig:RndC-table}, the surfaces for the Random-Discrete and Random-Continuous simulations are portrayed. 
 There are five surfaces for each interaction that are generated from one pbICPD. 
 The x-axis, the horizontal one in the bottom-right, display the parameter of the main strategy, that is, either Random-Discrete (Figure 3) or Random-Continuous (Figure 4). 
 The y-axis, the other horizontal axis at the bottom of each graph, indicates the parameter of the opponent’s strategy. 
@@ -705,8 +667,8 @@ Therefore, the overall gain should be understood as a marker for population welf
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png} \\
 	\end{tabular}
-	\caption{pbICPD of Random-Discrete}
-	\label{RNDD-table}
+	\caption{pbICPD of Random-Discrete.}
+	\label{fig:RNDD-table}
 \end{figure}
 
 \newpage
@@ -758,8 +720,8 @@ Therefore, the overall gain should be understood as a marker for population welf
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png} \\
 	\end{tabular}
-	\caption{something}
-	\label{fig:RNDC-table}
+	\caption{pbICPD of Random-Continuous.}
+	\label{fig:RndC-table}
 \end{figure}
 
 \newpage
@@ -1101,16 +1063,16 @@ Many additional findings have been identified and were promised to be analysed i
 		\begin{subfigure}[t]{0.45\textwidth}
 			\centering
 				\includegraphics[width=\linewidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd_p_avr.png}
-			\caption{Standard Deviation $\pm$ average surface of Random-Discrete.}
+			\caption{Standard Deviation $\pm$ Average surface of Random-Discrete.}
 			\label{fig:RNDD_sd_pm_avr}
 		\end{subfigure}\hfill
 		\begin{subfigure}[t]{0.45\textwidth}
 			\centering
 				\includegraphics[width=\linewidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd_p_avr.png}
-			\caption{Standard Deviation $\pm$ average surface of AlwaysSame.}
+			\caption{Standard Deviation $\pm$ Average surface of AlwaysSame.}
 			\label{fig:ALWS_sd_pm_avr}
 		\end{subfigure}
-		\caption{Standard Deviation $\pm$ average surfaces.}
+		\caption{Standard Deviation $\pm$ Average surfaces.}
 		\label{fig:Standard Deviation average.}
 	\end{figure}
 
@@ -1198,14 +1160,14 @@ Many additional findings have been identified and were promised to be analysed i
 		\begin{subfigure}[t]{0.45\textwidth}
 			\centering
 			\includegraphics[width=\linewidth]{plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png}\\
-			\caption{}
+			\caption{Investments of Adapt-Continuous with parameters ranging from 0 to 5.}
 			\label{fig:AdpC_approx_investm_0-5}
 		\end{subfigure}
 		\hfill
 		\begin{subfigure}[t]{0.45\textwidth}
 			\centering
 			\includegraphics[width=\linewidth]{plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png}
-			\caption{hehe}
+			\caption{Pay-offs of Adapt-Continuous with parameters ranging from 0 to 5.}
 			\label{fig:AdpC_approx_payoff_0-5}
 		\end{subfigure}
 		\caption{}
@@ -1240,14 +1202,14 @@ Many additional findings have been identified and were promised to be analysed i
 		\begin{subfigure}[t]{0.45\textwidth}
 			\centering
 			\includegraphics[width=\linewidth]{plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png}
-			\caption{}
+			\caption{Investments of Adapt-Continuous with parameters ranging from 5 to 10.}
 			\label{fig:AdpC_approx_investm_5-10}
 		\end{subfigure}
 		\hfill
 		\begin{subfigure}[t]{0.45\textwidth}
 			\centering
 			\includegraphics[width=\linewidth]{plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png}
-			\caption{hehe}
+			\caption{Pay-offs of Adapt-Continuous with parameters ranging from 5 to 10.}
 			\label{fig:AdpC_approx_payoff_5-10}
 		\end{subfigure}
 		\caption{}
@@ -1266,7 +1228,7 @@ Many additional findings have been identified and were promised to be analysed i
 		\begin{center}
 			\includegraphics[width=0.5\textwidth]{plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png}
 		\end{center}
-		\caption{}
+		\caption{Accumulated points of Adapt-Continuous. Parameters ranging from 0 to 10.}
 		\label{fig:AdpC_avr_points}
 	\end{figure}
 	
@@ -1287,14 +1249,14 @@ Many additional findings have been identified and were promised to be analysed i
 		\begin{center}
 			\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Continuous/investments.png}
 		\end{center}
-		\caption{}
+		\caption{Investments of Random-Continuous. Parameters from 0 to 10.}
 		\label{fig:RndC_investm}
 	\end{figure}
 	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png}\\
 		\end{center}
-		\caption{}
+		\caption{Maximal investments of Random-Continuous to surpass threshold.}
 		\label{fig:AdpD_surpass_threshold_infl_RndC}
 	\end{figure}
 	
@@ -1315,7 +1277,7 @@ Many additional findings have been identified and were promised to be analysed i
 		\begin{center}
 			\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png}
 		\end{center}
-		\caption{hehe}
+		\caption{Influence of parameter of Random-Continuous 5 to Adapt-Discrete parameter 10.}
 		\label{fig:RndC_AdpD_peak}
 	\end{figure}
 	Figure \ref{fig:RndC_AdpD_peak} demonstrate this aspect.

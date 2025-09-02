@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {5.2}Random-Discrete vs. AlwaysSame}{15}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Random-Discrete vs. Adapt-Discrete}{17}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Random-Discrete vs. Adapt-Continuous}{18}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Random-Continuous vs. Adapt-Discrete}{19}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.5}Random-Continuous vs. Adapt-Discrete}{20}{subsection.5.5}%
 \contentsline {section}{\numberline {6}Conclusions and Outlook}{21}{section.6}%
 \contentsline {section}{\numberline {7}References}{22}{section.7}%
 \contentsline {section}{\numberline {8}Appendix}{22}{section.8}%
