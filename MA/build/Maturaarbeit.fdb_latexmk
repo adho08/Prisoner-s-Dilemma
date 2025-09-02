@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1756663319.99683 "Maturaarbeit.tex" "build/Maturaarbeit.pdf" "Maturaarbeit" 1756663321.79859 0
+["pdflatex"] 1756797593.48758 "Maturaarbeit.tex" "build/Maturaarbeit.pdf" "Maturaarbeit" 1756797595.28752 0
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -34,6 +34,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb" 1248133631 36310 f5ddc6715cc60deb16d9db5ded6a9391 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1737590400 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -96,10 +97,10 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1737590400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1756041941.56631 4547224 5cf1c14d6ee63f23cc6525ae387ed2c9 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1756041610 7759956 46aea47261505c31e75125fee8931c29 ""
-  "Maturaarbeit.tex" 1756663317.81033 69834 02bed6505b1fd8ffe6bebf3251b5bd12 ""
-  "build/Maturaarbeit.aux" 1756663321.68841 4596 edd4e7778e95e1e1cf2006196107379d "pdflatex"
-  "build/Maturaarbeit.out" 1756663321.68919 3277 8c1a392cd6389f82757f7dc5e1aa52d8 "pdflatex"
-  "build/Maturaarbeit.toc" 1756663321.68919 1795 c7fd1e28d2031fdeabc094c1e3f73690 "pdflatex"
+  "Maturaarbeit.tex" 1756797592.05408 75046 18712f06b6a2e532fa08209c6322e29d ""
+  "build/Maturaarbeit.aux" 1756797595.17503 5636 dde9ceb2dd32075ca12616236f36155f "pdflatex"
+  "build/Maturaarbeit.out" 1756797595.17589 3433 6d5b2768c20096efb554ce84173886a0 "pdflatex"
+  "build/Maturaarbeit.toc" 1756797595.17589 1881 3aa232aa6b70ed1aefd2b34d91ff5053 "pdflatex"
   "images/pd_heatmap_A.png" 1755095647.56031 174676 be9cec53606a80f0599dec94469c15f3 ""
   "images/pd_heatmap_B.png" 1755095655.88822 184497 caec8985575284e71abcfa1660044d27 ""
   "plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png" 1755949778.76822 52747 48ceaeecab0033234afb319a5eea56e4 ""

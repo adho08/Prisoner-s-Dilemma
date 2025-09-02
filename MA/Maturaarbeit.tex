@@ -430,7 +430,8 @@ As justified before, five strategies, namely Random-Discrete, Random-Continuous,
 % The variable $\bar i_k$ is the $k$'th element of the history of the opponent's investments, $k = 1$ being the last round.
 % This strategy, Mean, with the parameter 0 is equivalent to  since it only calculates the mean of the last opponent's submission.\\
 \begin{itemize}
-	\item
+
+\item
 Adapt-Continuous (AdpC) is an, as the name suggests, adaptive and thus responsive strategy.
 It starts with full cooperation to offer a constructive relationship within this simulation.
 After having played one round, it will adapt to the submissions of the opponent by shifting its own investment towards the opponent's.
@@ -447,7 +448,7 @@ Of course, one strategy is not allowed to submit any investment that exceeds the
 The implementation of this strategy will simply set its investment to the reached limit if surpassed.\\
 
 \item 
-As I mentioned, there is one continuous and one discrete strategy.
+As mentioned, there is one continuous and one discrete strategy.
 This means there must be an Adapt-Discrete (AdpD) implemented.
 The simplest implementation of this strategy is to take the same investment function as Adapt-Continuous and round the result.
 $$i(\theta_{\mathrm{AdpD}}) = \round{i_1 + s(\theta_{\mathrm{AdpD}})}$$
@@ -478,8 +479,8 @@ The other strategy in the group of the random is oppositely continuous, meaning 
 The name of this strategy is logically Random-Continuous (RndC).
 This strategy has a base being at 0.5.
 The parameter defines the shift being applied to the base, calculated by the equation:
-$$i(\theta_{\mathrm{RndC}}) = 0.5 + \epsilon \cdot s(\theta_{\mathrm{RndC}})$$
-$$s(\theta_{\mathrm{RndC}}) = \frac{\theta_{\mathrm{RndC}}}{20}$$
+$$i(\theta_{\mathrm{RndC}}) = 0.5 + \cdot s(\theta_{\mathrm{RndC}})$$
+$$s(\theta_{\mathrm{RndC}}) = \epsilon \frac{\theta_{\mathrm{RndC}}}{20}$$
 $$\Pr(\epsilon = 1) = \Pr(\epsilon = -1) = \frac{1}{2}$$
 $s$ means the shift.
 It is divided by 20 so the maximum shift, parameter being 10, can not exceed the range of 0 and 1.
@@ -933,13 +934,111 @@ Ultimately, the overall-gain surface is clarified.\\
 The results suggest certain effects of the PD.
 Many additional findings have been identified and were promised to be analysed in the Discussion since they need mathematical context for better understanding.
 
+\subsection{Shallow Randomness}
+
+	% TODO: Explain what a mixed strategy is in foundations
+	Random-Discrete and Random-Continuous, as a mixed strategies, behave equitably as pure strategies if the average of all the generated surfaces is taken.
+	The mathematical framework used to describe this phenomenon is called the Law of Large Numbers (LLN).
+	100 repetitions were named to be sufficient.
+	Random-Discrete acts identically as AlwaysSame and Random-Continuous as AlwaysNeutral.
+
+\subsubsection*{Random-Discrete}
+		
+	To clarify the resemblance between Random-Discrete and AlwaysSame, the equations to calculate the investment have to analysed.
+	\begin{equation}
+		\begin{split}
+		% \Pr(i = 1 \mid \theta_{\mathrm{RndD}}) = \frac{\theta_{\mathrm{RndD}}}{10}
+		% \text{ or }
+		% i \;\sim\; \mathrm{Bernoulli}(\frac{\theta_{\mathrm{RndD}}}{10})\\
+		i \;\sim\;
+		\begin{cases}
+		  1 & \text{with probability } \frac{1}{2}\\
+		 -1 & \text{with probability } \frac{1}{2} 
+		\end{cases}
+		\label{eq:RNDD_i_eq}
+		\end{split}
+	\end{equation}
+
+	Regarding the investment calculation of Random-Discrete (\ref{eq:RNDD_i_eq}), we can generate $n$ $i$'s (\ref{eq:RNDD_n_i}).
+
+	\begin{equation}
+		i_1, i_2, i_3, \dots, i_n \;\sim \mathrm{Bernoulli}(\frac{\theta_{\mathrm{RndD}}}{10})
+		\label{eq:RNDD_n_i}
+	\end{equation}
+
+	\begin{equation}
+		\begin{split}
+			\lim_{n\to\infty} \frac{1}{n} \sum_{k=1}^{n} i_k &= \frac{\theta_{\mathrm{RndD}}}{10} \text{ almost surely}\\
+			\frac{1}{100} \sum_{k=1}^{100} i_k &\approx \frac{\theta_{\mathrm{RndD}}}{10}
+		\label{eq:RNDD_approx_eq}
+		\end{split}
+	\end{equation}
+
+	Substituting $n$ with 100 in equation (\ref{eq:RNDD_approx_eq}) would be an approximation.
+	But, for the scope of this project, 100 repetitions were named to be sufficient.\\
+	The fact that the surfaces of AlwaysSame seem identical to those against itself is now proven and justified.
+	
+\subsubsection*{Random-Continuous}
+
+	Also in this case, the investment calculations need to be investigated to understand the appearance of AlwaysNeutral.
+
+	\begin{equation}
+		i(\theta_{\mathrm{RndC}}) = 0.5 + s(\theta_{\mathrm{RndC}})
+		\label{eq:RNDC_i_eq}
+	\end{equation}
+	\begin{equation}
+		s(\theta_{\mathrm{RndC}}) = \epsilon \cdot \frac{\theta_{\mathrm{RndC}}}{20}
+		\label{eq:RNDC_s_eq}
+	\end{equation}
+	\begin{equation}
+		\begin{split}
+		% \Pr(\epsilon = 1) = \Pr(\epsilon = -1) = \frac{1}{2} \text{ or } \epsilon \;\sim 2 \cdot \mathrm{Bernoulli}(\frac{1}{2}) - 1\\
+		\epsilon \;\sim\;
+		\begin{cases}
+		  1 & \text{with probability } \frac{1}{2}\\
+		 -1 & \text{with probability } \frac{1}{2} 
+		\end{cases}
+		\label{eq:prob_eps}
+		\end{split}
+	\end{equation}
+
+	Only the equation (\ref{eq:RNDC_s_eq}) is considerable since the probability or randomness singly appears there.
+	The same procedure is applied.
+
+	\begin{equation}
+		% \epsilon_1, \epsilon_2, \epsilon_3, \dots, \epsilon_n \;\sim 2 \cdot \mathrm{Bernoulli}(\frac{1}{2}) - 1
+		\epsilon_1, \epsilon_2, \epsilon_3, \dots, \epsilon_n \;\sim\; 
+		\begin{cases}
+		  1 & \text{with probability } \frac{1}{2}\\
+		 -1 & \text{with probability } \frac{1}{2} 
+		\end{cases}
+		\label{eq:RNDC_n_i}
+	\end{equation}
+	\begin{equation}
+		\begin{split}
+			\lim_{n\to\infty} \frac{1}{n} \sum_{k=1}^{n} \epsilon_k &= 0 \text{ almost surely}\\
+			\bar \epsilon = \frac{1}{100} \sum_{k=1}^{100} \epsilon_k &\approx 0
+		\label{eq:RNDC_approx_eq}
+		\end{split}
+	\end{equation}
+
+	As a consequence of that, the investment is always equal to 0.5, as shows equation (\ref{eq:i_eq_0.5}).
+
+	\begin{equation}
+		\begin{split}
+			i(\theta_{\mathrm{RndC}}) = 0.5 + \bar \epsilon \cdot \frac{\theta_{\mathrm{RndC}}}{20} = 0.5
+		\end{split}
+		\label{eq:i_eq_0.5}
+	\end{equation}
+
+	The non-existent influence of Random-Continuous' parameter is traces back to this fact.
+
 
 \subsection{Random-Discrete vs. AlwaysSame}
 	
-	% TODO: Explain what a mixed strategy is in foundations
 	Random-Discrete, as a mixed strategy, behaves equitably as AlwaysSame when taking the average of all the generated surfaces.
-	In the simulation, all games were played 100 times and taken the average to plot the surfaces.
-	Having the surface only generated once, results in a different-looking surface area.\\
+	In the simulation, all games were played 100 times and taken the average.
+	Having the surface only generated once, results in a different-looking surface.\\
 
 	\begin{figure}[h]
 		\centering
@@ -957,9 +1056,9 @@ Many additional findings have been identified and were promised to be analysed i
 		\label{fig:two_one-iter}
 	\end{figure}
 
-	These surfaces show the gained points of Random-Discrete and AlwaysSame when playing the ICPD only once.
-	A rougher surface is visible.
-	This is due to the fact that Random-Discrete uses probabilities after all.
+	Figure \ref{fig:RNDD_one-iter} and \ref{fig:ALWS_one-iter} show the gained points of Random-Discrete and AlwaysSame when playing the pbICPD solely once.
+	A more coarse surface is visible.
+	This joltiness is due to the fact that Random-Discrete uses probabilities after all.
 	Where as AlwaysSame submits always a determined investment.\\
 	The surface of Random-Discrete is a bit evener. 
 	This fact can be explained by examining the pay-off equations:
@@ -985,18 +1084,51 @@ Many additional findings have been identified and were promised to be analysed i
 	\\(3D object in which the prob. is 66\% of being in there in one match.)
 	\\(Why are Standard Deviation surfaces same but different scales?)
 
-\subsection{Random-Discrete vs. Adapt-Dscrete}
-		When you look at the surface, this stripe is very remarkable.
-		We will look at why this stripe exists and why is only exists from AdaptD's parameter 0 to 2.\\
-		As Adapt-Discrete is explained, its investment is rounded to the nearest integer.
-		So, in order to get from investment 0 to 1 or vice versa, its investment has to get over the threshold of 0.5.
-		To demonstrate this point, the following graph is used.
-		It shows what the opponent's investment has to be at least or at most to surpass this threshold.\\
-		\includegraphics[width=0.5\textwidth]{plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png}\\
-		The derivation to calculate this function is the following can be found in the Appendix.
-		% TODO: Put the derivation
-		It can be seen that if Adapt-Discrete has the parameter from 0 to 2, the opponent's investment must be lower than 0 which is not possible.
-		This explains why Adapt-Discrete with its parameter set to either 0, 1 or 2 behaves exactly like AlwaysCooperate since it cannot surpass the threshold of 0.5.\\
+\subsection{Random-Discrete vs. Adapt-Discrete}
+		Glancing at the surface against Adapt-Discrete, this stripe is remarkable.
+		The existence of this stripe and the factor of Adapt-Discrete's parameter from range 0 to 2 are clarified.\\
+		\begin{equation}
+			i(\theta_{\mathrm{AdpD}}) \;\sim\;
+			\begin{cases}
+				1 \text{ if } i_1 + s(\theta_{\mathrm{AdpD}}) \ge 0.5\\
+				0 \text{ if } i_1 + s(\theta_{\mathrm{AdpD}}) < 0.5\\
+			\end{cases}
+			\label{eq:ADPD_rounded}
+		\end{equation}
+
+% $$i(\theta_{\mathrm{AdpD}}) = \round{i_1 + s(\theta_{\mathrm{AdpD}})}$$
+$$s(\theta_{\mathrm{AdpD}}) = \frac{\theta_{\mathrm{AdpD}}}{5} \cdot (\bar i_1 - i_1)$$
+
+As Adapt-Discrete is defined, its investment is rounded to the nearest integer as expression (\ref{eq:ADPD_rounded}) demonstrates.
+		To get from investment 0 to 1 or vice versa, its investment has to get over a certain threshold being equal to 0.5.
+		In the first round, Adapt-Discrete contributes a 1.
+		I.e. to surpass the threshold, $s(\theta_{\mathrm{AdpD}})$ must be under -0.5.
+		To calculate a general formula that calculates the opponent's investment that is necessary to exceed the threshold in the first round given the parameter, it is required to solve for $\bar i_1$.
+
+		\begin{alignat*}{2}
+			s(\theta_{\mathrm{AdpD}}) &< -0.5 &&\\
+			\frac{\theta_{\mathrm{AdpD}}}{5} \cdot (\bar i_1 - 1) &< -0.5 &&\qquad | \cdot \frac{5}{\theta_{\mathrm{AdpD}}} \\
+			\bar i_1 - 1 &< -\frac{2.5}{\theta_{\mathrm{AdpD}}} &&\qquad | + 1 \\
+			\bar i_1 &< -\frac{2.5}{\theta_{\mathrm{AdpD}}} + 1 &&
+		\end{alignat*}
+
+
+		Figure (\ref{fig:surpass_theshold_abs}) exhibits this formula.
+		It shows what the opponent's investment has to be at least to surpass the threshold.\\
+		\begin{figure}[h]
+			\begin{center}
+			\includegraphics[width=0.5\textwidth]{plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png}
+			\end{center}
+			\caption{he}
+			\label{fig:surpass_theshold_abs}
+		\end{figure}
+	
+		It can be seen that the opponent's investment must be below zero to pass over the threshold value if $0 \le \theta_{\mathrm{AdpD}} \le 2$.
+		A contribution below 0 is impossible.
+		So to conclude, if Adapt-Discrete's parameter is either 0, 1, or 2, the shift required to overstep the marginal value cannot be achieved.
+		Thus, Adapt-Discrete is equivalent to AlwaysCooperate in cases where its parameter is equal to 0, 1, or 2.\\
+		This explains the gainfulness of this stripe in the absolute-gain surface of Random-Discrete.
+		Adapt-Discrete is exploited since it cannot react and only submits full cooperation in this area.\\
 		Coming to the next attribute of this surface; the evenness of the rest of the surface.
 		The other part of the surface is first, not influenced by the parameter of Adapt-Discrete and second, has a little inclination.
 		This question can be answered with the fact that Random-Discrete behaves, as mentioned many times, like AlwaysSame.
