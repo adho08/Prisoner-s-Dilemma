@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Theoretical Foundations}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Prisoner's Dilemma}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Iterated}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Continuous}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Additional variants}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Current Findings}{6}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Methods and Implementation}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Study design}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Implemented Strategies}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Implementation Details}{8}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Results}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Random-Discrete}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Random-Continuous}{13}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Discussion}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Shallow Randomness}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Random-Discrete vs. AlwaysSame}{15}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Random-Discrete vs. Adapt-Discrete}{17}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Random-Discrete vs. Adapt-Continuous}{18}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Random-Continuous vs. Adapt-Discrete}{20}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Conclusions and Outlook}{21}{section.6}%
+\contentsline {section}{\numberline {7}References}{22}{section.7}%
+\contentsline {section}{\numberline {8}Appendix}{22}{section.8}%
