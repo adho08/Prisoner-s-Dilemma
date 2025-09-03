@@ -29,12 +29,22 @@
 \maketitle
 
 \newpage
+
+\section{Acknowledgement}
+I want to give special thanks to my supervisor Mr Ostrin.
+As a statistically oriented mathematician, he inspired me to this subject.
+Also, my father's explanations were helpful since this is my first professional thesis paper I have ever published.
+
+\newpage
+
 \tableofcontents
 \newpage
 
 \section*{Abstract}
 
+
 \section{Introduction}
+Interactions 
 
 \begin{itemize}
 
@@ -192,11 +202,11 @@ The concept is used for $T$, $R$, $P$, and $S$, provided that the four inequalit
 \begin{equation}
 T < R < P < S\\
 \end{equation}
-\begin{equation}\label{AvGrPa}
+\begin{equation}\label{eq:AvGrPa}
 2R > T + S
 \end{equation}
 
-Inequality \eqref{AvGrPa} is necessary to avoid receiving greater pay-offs by alternating cooperation and defection.\\
+Inequality \eqref{eq:AvGrPa} is necessary to avoid receiving greater pay-offs by alternating cooperation and defection.\\
 The Nash-equilibrium in the IPD differs from the that in the PD.
 This implies that mutual cooperation yields long-term benefits.
 Playing cooperation increases trust whereas defection allows exploitation.
@@ -514,7 +524,7 @@ More information about the python scripts and data visualisation files that were
 
 \section{Results}
 
-In Figures \ref{fig:RNDD-table} and \ref{fig:RndC-table}, the surfaces for the Random-Discrete and Random-Continuous simulations are portrayed. 
+In Figures \ref{fig:RNDD-table} and \ref{fig:RNDC-table}, the surfaces for the Random-Discrete and Random-Continuous simulations are portrayed. 
 There are five surfaces for each interaction that are generated from one pbICPD. 
 The x-axis, the horizontal one in the bottom-right, display the parameter of the main strategy, that is, either Random-Discrete (Figure 3) or Random-Continuous (Figure 4). 
 The y-axis, the other horizontal axis at the bottom of each graph, indicates the parameter of the opponent’s strategy. 
@@ -721,7 +731,7 @@ Therefore, the overall gain should be understood as a marker for population welf
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png} \\
 	\end{tabular}
 	\caption{pbICPD of Random-Continuous.}
-	\label{fig:RndC-table}
+	\label{fig:RNDC-table}
 \end{figure}
 
 \newpage
@@ -1275,7 +1285,7 @@ Many additional findings have been identified and were promised to be analysed i
 	The reason for the existence of the peak at coordinates $(5, 10, z)$ has not yet been clarified.
 	\begin{figure}
 		\begin{center}
-			\includegraphics[width=0.5\textwidth]{plots.lnk/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png}
+			\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png}
 		\end{center}
 		\caption{Influence of parameter of Random-Continuous 5 to Adapt-Discrete parameter 10.}
 		\label{fig:RndC_AdpD_peak}
