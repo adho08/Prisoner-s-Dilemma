@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[11pt]{article}
 \usepackage{xcolor}
 \usepackage{textcomp}
 \usepackage{hyperref}
@@ -12,6 +12,8 @@
 % relative path to images directory
 % \graphicspath{ {./plots/} }
 \newcommand{\round}[1]{\ensuremath{\lfloor#1\rceil}}
+\setcounter{page}{0}
+
 
 % make captions of figures cursive
 \DeclareCaptionFormat{custom}
@@ -21,16 +23,40 @@
 \captionsetup{format=custom}
 % \captionsetup{singlelinecheck=false}
 
-\title{Research of Parameters in Strategies of the Iterated Continuous Prisoner's Dilemma}
-\author{Adrian Hossner}
+\def\vdist{3ex}
+
+\title{
+	\textbf{Counteracting Erratic Behaviour:}\\
+	\textbf{A Game-Theoretical Analysis of Parametrised Strategies}\\[6ex]
+	\Large{High-School Thesis}\\
+	\Large{(Maturaarbeit)}\\[\vdist]
+	\Large{Mathematical-Computational}\\
+	\Large{Analysis}\\[\vdist]
+	\Large{Author:}\\
+	\Large{Adrian Hossner}\\[3\vdist]
+	\begin{flushleft}
+		\begin{tabular}{>{\raggedright\arraybackslash}p{5cm} >{\raggedright\arraybackslash}p{5cm}}
+			\Large{Supervisor: } & \Large{Geoffrey Ostrin}\\[\vdist]
+			\Large{Submission Date: } & \Large{September 7, 2025}\\[\vdist]
+			\Large{School: } & \Large{Gymnasium Thun}\\[\vdist]
+		\end{tabular}
+	\end{flushleft}
+}
 \date{ } % display no date
 
 \begin{document}
 \maketitle
+\pagenumbering{gobble}
+
+\newpage
+\pagenumbering{arabic}
+
+\section*{Abstract}
+xxx
 
 \newpage
 
-\section{Acknowledgement}
+\section*{Preface}
 I want to give special thanks to my supervisor Mr Ostrin.
 As a statistically oriented mathematician, he inspired me to this subject.
 Also, my father's explanations were helpful since this is my first professional thesis paper I have ever published.
@@ -39,8 +65,6 @@ Also, my father's explanations were helpful since this is my first professional 
 
 \tableofcontents
 \newpage
-
-\section*{Abstract}
 
 
 \section{Introduction}
@@ -1347,6 +1371,11 @@ Many additional findings have been identified and were promised to be analysed i
 %
 % \end{itemize}
 
-\section{References}
-\section{Appendix}
+\section{Source List}
+\section{Appendices}
+\subsection{Appendix A}
+\subsection{Appendix B}
+\subsection{Appendix C}
+	
+\section{Declaration of Integrity}
 \end{document}
