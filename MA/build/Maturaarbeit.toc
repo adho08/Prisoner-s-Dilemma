@@ -10,18 +10,18 @@
 \contentsline {subsection}{\numberline {3.2}Implemented Strategies}{8}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Implementational Details}{10}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Results}{10}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Random-Discrete}{12}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Random-Continuous}{13}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Discussion}{15}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Shallow Randomness}{15}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Random-Discrete vs. AlwaysSame}{16}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Random-Discrete vs. Adapt-Discrete}{17}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Random-Discrete vs. Adapt-Continuous}{18}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Random-Continuous vs. Adapt-Discrete}{18}{subsection.5.5}%
-\contentsline {section}{\numberline {6}Conclusions and Outlook}{19}{section.6}%
-\contentsline {section}{\numberline {7}Source List}{20}{section.7}%
-\contentsline {section}{\numberline {8}Appendices}{20}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Appendix A}{20}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Appendix B}{20}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Appendix C}{20}{subsection.8.3}%
-\contentsline {section}{\numberline {9}Declaration of Integrity}{20}{section.9}%
+\contentsline {subsection}{\numberline {4.1}Random-Discrete}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Random-Continuous}{15}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Discussion}{17}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Shallow Randomness}{17}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Random-Discrete vs. AlwaysSame}{18}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Random-Discrete vs. Adapt-Discrete}{19}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Random-Discrete vs. Adapt-Continuous}{21}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Random-Continuous vs. Adapt-Discrete}{23}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Conclusions and Outlook}{24}{section.6}%
+\contentsline {section}{\numberline {7}Source List}{25}{section.7}%
+\contentsline {section}{\numberline {8}Appendices}{25}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Appendix A}{25}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Appendix B}{25}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Appendix C}{25}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Declaration of Integrity}{25}{section.9}%

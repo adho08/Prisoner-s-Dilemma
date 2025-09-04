@@ -7,6 +7,7 @@
 \usepackage{wrapfig}
 \usepackage{amsmath}
 \usepackage{array}
+\usepackage{helvet}
 \usepackage[a4paper, margin=1in, footskip=0.25in]{geometry}
 
 % relative path to images directory
@@ -623,51 +624,55 @@ Therefore, the overall gain should be understood as a marker for population welf
 
 \newpage
 
-\def\w{0.16}
-\def\a{30}
+\def\w{0.15}
+\def\h{0.0cm}
+\def\a{0}
+\def\pboxb{2cm}
+\def\pboxv{3cm}
 
 % ------------------------------- Random-Discrete -------------------------------
-\begin{figure}[h]
+\begin{figure}[!ht]
+	{\sffamily
 	\centering
-    
+
 	% Header row
 	\begin{tabular}{p{0.7cm}ccccc}
-		& \rotatebox{\a}{Random-Discrete} & \rotatebox{\a}{Random-Continuous} & \rotatebox{\a}{AlwaysSame} & \rotatebox{\a}{Adapt-Discrete} & \rotatebox{\a}{Adapt-Continuous} \\[1cm]
-		
+		& \rotatebox{\a}{\parbox{\pboxb}{\centering Random-Discrete}} & \rotatebox{\a}{\parbox{\pboxb}{\centering Random-Continuous}} & \rotatebox{\a}{\parbox{\pboxb}{\centering Always-Same}} & \rotatebox{\a}{\parbox{\pboxb}{\centering Adapt-Discrete}} & \rotatebox{\a}{\parbox{\pboxb}{\centering Adapt-Continuous}} \\[0.2cm]
+
 		% Gain Random-Discrete row
-		\rotatebox{90}{\parbox{2cm}{\centering Gain \\ Random-Discrete}} &
+		\rotatebox{90}{\parbox{\pboxv}{\centering Gain Random-Discrete}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png} \\[0.5cm]
-		
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png} \\[\h]
+
 		% Gain Opponent row  
-		\rotatebox{90}{\parbox{2cm}{\centering Gain \\ Opponent}} &
+		\rotatebox{90}{\parbox{\pboxv}{\centering Gain\\Opponent}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png} \\[0.5cm]
-		
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png} \\[\h]
+
 		% Advantage Random-Discrete row
-		\rotatebox{90}{\parbox{2cm}{\centering Advantage \\ Random-Discrete}} &
+		\rotatebox{90}{\parbox{\pboxv}{\centering Advantage\\Random-Discrete}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png} \\[0.5cm]
-		
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png} \\[\h]
+
 		% Advantage Opponent row
-		\rotatebox{90}{\parbox{2cm}{\centering Advantage \\ Opponent}} &
+		\rotatebox{90}{\parbox{\pboxv}{\centering Advantage\\Opponent}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png} \\[0.5cm]
-		
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png} \\[\h]
+
 		% Overall Gain row
-		\rotatebox{90}{\parbox{2cm}{\centering Overall \\ Gain}} &
+		\rotatebox{90}{\parbox{\pboxv}{\centering Gain\\Overall}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png} &
@@ -676,51 +681,66 @@ Therefore, the overall gain should be understood as a marker for population welf
 	\end{tabular}
 	\caption{pbICPD of Random-Discrete.}
 	\label{fig:RNDD-table}
+	}
 \end{figure}
+
+\begin{center}
+\begin{tabular}{ c|c|c|c }
+   & $\theta = 0$ & $\theta = 5$ & $\theta = 10$ \\ 
+   \hline
+	Random-Discrete & AlwaysDefect & - & AlwaysCooperate \\  
+   \hline
+	Random-Continuous & AlwaysNeutral & - & Random-Discrete ($\theta = 5$) \\
+   \hline
+	Always-Same & AlwaysDefect & AlwaysNeutral & AlwaysCooperate \\
+   \hline
+	Adapt-Discrete & AlwaysCooperate & - & -\\
+   \hline
+	Adapt-Continuous & AlwaysCooperate & Tit-For-Tat & -
+\end{tabular}
+\end{center}
 
 \newpage
 % ------------------------------- Random-Continuous -------------------------------
-\begin{figure}[h]
-    \centering
+\begin{figure}[!ht]
+	{\sffamily
+	\centering
     
 	% Header row
 	\begin{tabular}{p{0.7cm}ccccc}
-		& \rotatebox{\a}{Random-Discrete} & \rotatebox{\a}{Random-Continuous} & \rotatebox{\a}{AlwaysSame} & \rotatebox{\a}{Adapt-Discrete} & \rotatebox{\a}{Adapt-Continuous} \\[1cm]
+		& \rotatebox{\a}{\parbox{\pboxb}{\centering Random-Discrete}} & \rotatebox{\a}{\parbox{\pboxb}{\centering Random-Continuous}} & \rotatebox{\a}{\parbox{\pboxb}{\centering Always-Same}} & \rotatebox{\a}{\parbox{\pboxb}{\centering Adapt-Discrete}} & \rotatebox{\a}{\parbox{\pboxb}{\centering Adapt-Continuous}} \\[0.2cm]
 		
 		% Gain Random-Continuous row
-		\rotatebox{90}{\parbox{2cm}{\centering Gain \\ Random-Continuous}} &
+		\rotatebox{90}{\parbox{\pboxv}{\centering Gain Random-Discrete}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png} \\[0.5cm]
-		
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png} \\[\h]		
 		% Gain Opponent row  
-		\rotatebox{90}{\parbox{2cm}{\centering Gain \\ Opponent}} &
+		\rotatebox{90}{\parbox{\pboxv}{\centering Gain\\Opponent}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png} \\[0.5cm]
-		
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png} \\[\h]		
 		% Advantage Random-Continuous row
-		\rotatebox{90}{\parbox{2cm}{\centering Advantage \\ Random-Continuous}} &
+		\rotatebox{90}{\parbox{\pboxv}{\centering Advantage\\Random-Discrete}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png} \\[0.5cm]
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png} \\[\h]
 		
 		% Advantage Opponent row
-		\rotatebox{90}{\parbox{2cm}{\centering Advantage \\ Opponent}} &
+		\rotatebox{90}{\parbox{\pboxv}{\centering Advantage\\Opponent}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png} \\[0.5cm]
-		
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png} \\[\h]		
 		% Overall Gain row
-		\rotatebox{90}{\parbox{2cm}{\centering Overall \\ Gain}} &
+		\rotatebox{90}{\parbox{\pboxv}{\centering Gain\\Overall}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png} &
@@ -729,7 +749,24 @@ Therefore, the overall gain should be understood as a marker for population welf
 	\end{tabular}
 	\caption{pbICPD of Random-Continuous.}
 	\label{fig:RNDC-table}
+	}
 \end{figure}
+
+\begin{center}
+\begin{tabular}{ c|c|c|c }
+   & $\theta = 0$ & $\theta = 5$ & $\theta = 10$ \\ 
+   \hline
+	Random-Discrete & AlwaysDefect & - & AlwaysCooperate \\  
+   \hline
+	Random-Continuous & AlwaysNeutral & - & Random-Discrete ($\theta = 5$) \\
+   \hline
+	Always-Same & AlwaysDefect & AlwaysNeutral & AlwaysCooperate \\
+   \hline
+	Adapt-Discrete & AlwaysCooperate & - & -\\
+   \hline
+	Adapt-Continuous & AlwaysCooperate & Tit-For-Tat & -
+\end{tabular}
+\end{center}
 
 \newpage
 
