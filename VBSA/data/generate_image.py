@@ -14,7 +14,7 @@ from game import PrisonersDilemma as PD
 sys.path.insert(0, str(script_dir.parent / 'data'))
 
 cwd = os.getcwd()
-plots_dir = cwd + r"/plots"
+plots_dir = cwd + rf"/plots/{strategy_1}"
 final_dir = os.path.join(plots_dir, rf"{strategy_1}_vs_{strategy_2}")
 if not os.path.exists(final_dir):
     os.mkdir(final_dir)
@@ -27,6 +27,12 @@ parameters_1 = strategy_1.parameter_list
 
 strategy_1 = str(strategy_1)
 strategy_2 = str(strategy_2)
+
+
+if strategy_2[-2:] == "_2":
+    strategy_2_title = strategy_2.replace("_2", "")
+else:
+    strategy_2_title = strategy_2
 
 # parameter axes
 list1 = df[df.columns[0]].to_numpy().tolist()[:len(parameters_1)*repeated:repeated]
@@ -57,26 +63,33 @@ zmax = rounds * (1 + PD.c)
 
 # ---------------------- function for updating the fig layout ---------------------- 
 def update_fig_layout(fig, title:str, range, x=1, y=1, z=1.0):
+
+    label_axis_size = 40
+
     fig.update_layout(
         # title=dict(
         #     text=title,
         #     x=0.5,
         #     xanchor="center"
         # ),
+
         scene=dict(
             xaxis=dict(
                 title=dict(
-                    text=strategy_1
+                    text=strategy_1,
+                    font=dict(size=label_axis_size),
                 ),
             ),
             yaxis=dict(
                 title=dict(
-                    text=strategy_2
-                )
+                    text=strategy_2_title,
+                    font=dict(size=label_axis_size),
+                ),
             ),
             zaxis=dict(
                 title=dict(
-                    text="Points"
+                    text="Points",
+                    font=dict(size=label_axis_size),
                 ),
                 dtick=10,
                 range=range
@@ -87,7 +100,8 @@ def update_fig_layout(fig, title:str, range, x=1, y=1, z=1.0):
         margin=dict(l=0, r=0, b=0, t=0),  # reduce padding cuts
         scene_camera=dict(
             eye=dict(x=2.0, y=2.0, z=2.0)  # move camera further back
-        )
+        ),
+        font=dict(size=20),
     )
 
 # ---------------------- surface plot strategy_1 ---------------------- 
@@ -150,7 +164,7 @@ update_fig_layout(fig2, strategy_2, [zmin, zmax])
 # ---------------------- surface plot overall (added) ---------------------- 
 matrix3 = matrix1 + matrix2
 added_zmin = 0
-added_zmax = 40
+added_zmax = 2 * rounds 
 
 fig4 = go.Figure(data=go.Surface(
     x=list1, y=list2, z=matrix3,
@@ -256,17 +270,17 @@ def make_colorscale_fig(colorscale, range):
 # cscales = [cscale_s, cscale_a, cscale_d]
 
 # ---------------------- write plots into png's ---------------------- 
-# pio.write_images(
-#     fig=[fig1, fig2, fig4, fig5, fig6],
-#     file=[f"{final_dir}/{strategy_1}.png", f"{final_dir}/{strategy_2}.png", f"{final_dir}/added.png", f"{final_dir}/{strategy_1}_diff.png", f"{final_dir}/{strategy_2}_diff.png"],
-#     width=500,
-#     height=500
-# )
 pio.write_images(
-    fig=[fig4],
-    file=[f"{final_dir}/added.png"],
-    width=500,
-    height=500
+    fig=[fig1, fig2, fig4],
+    file=[f"{final_dir}/{strategy_1}.png", f"{final_dir}/{strategy_2}.png", f"{final_dir}/added.png"],
+    width=700,
+    height=1000
+)
+pio.write_images(
+    fig=[fig5, fig6],
+    file=[f"{final_dir}/{strategy_1}_diff.png", f"{final_dir}/{strategy_2}_diff.png"],
+    width=700,
+    height=1000
 )
 
 # for i, cscale in enumerate(cscales):
