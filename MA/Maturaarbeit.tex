@@ -13,6 +13,9 @@
 % \graphicspath{ {./plots/} }
 \newcommand{\round}[1]{\ensuremath{\lfloor#1\rceil}}
 \setcounter{page}{0}
+\renewcommand{\contentsname}{Table of Contents}
+% \newcommand{\multiply}[2]{\the\numexpr#1*#2\relax}
+% TODO: multiply for title format 
 
 
 % make captions of figures cursive
@@ -23,22 +26,24 @@
 \captionsetup{format=custom}
 % \captionsetup{singlelinecheck=false}
 
-\def\vdist{3ex}
+\newcommand{\vdist}{3}
+\newcommand{\dvdist}{\the\numexpr2*\vdist\relax}
 
 \title{
 	\textbf{Counteracting Erratic Behaviour:}\\
-	\textbf{A Game-Theoretical Analysis of Parametrised Strategies}\\[6ex]
+	\textbf{A Game-Theoretical Analysis of Parametrised Strategies}\\[\dvdist ex]
 	\Large{High-School Thesis}\\
-	\Large{(Maturaarbeit)}\\[\vdist]
+	\Large{(Maturaarbeit)}\\[\vdist ex]
 	\Large{Mathematical-Computational}\\
-	\Large{Analysis}\\[\vdist]
+	\Large{Analysis}\\[\vdist ex]
 	\Large{Author:}\\
-	\Large{Adrian Hossner}\\[3\vdist]
+	\Large{Adrian Hossner}\\[3\vdist ex]
 	\begin{flushleft}
-		\begin{tabular}{>{\raggedright\arraybackslash}p{5cm} >{\raggedright\arraybackslash}p{5cm}}
-			\Large{Supervisor: } & \Large{Geoffrey Ostrin}\\[\vdist]
-			\Large{Submission Date: } & \Large{September 7, 2025}\\[\vdist]
-			\Large{School: } & \Large{Gymnasium Thun}\\[\vdist]
+		\begin{tabular}{>{\raggedright\arraybackslash}p{6cm} >{\raggedright\arraybackslash}p{5cm}}
+			\Large{Supervisor: } & \Large{Geoffrey Ostrin}\\[\vdist ex]
+			\Large{Submission Date: } & \Large{September 7, 2025}\\[\vdist ex]
+			\Large{School: } & \Large{Gymnasium Thun}\\[\vdist ex]
+			\Large{Word Count (Sections 1-6): } & \Large{8000+}\\[\vdist ex]
 		\end{tabular}
 	\end{flushleft}
 }
@@ -58,75 +63,37 @@ xxx
 
 \section*{Preface}
 The present thesis has been written in times of global uncertainty.
-At least partially, this is ascribed to a more or less erratic behaviour of political leaders, as a prime example the 47\textsuperscript{th} President of the U.S.A. Donald J. Trump.
+At least partially, this is ascribed to a more or less erratic behaviour of political leaders---as a prime example the 47\textsuperscript{th} President of the U.S.A. Donald J. Trump.
 When discussing this issue among my family and friends, a water-polo team member of mine drew my attention to the fact that this problem of erratic behaviour could be mathematically modelled by means of game theory.
-Of particular interest in this context would be so-called Prisoner's Dilemma.
+Of particular interest in this context would be the so-called 'Prisoner's Dilemma'.
 This game has been popularised in the 'A Beautiful Mind' film that narrates a story about the famous mathematician John Forbes Nash.
-The resulting opportunity of combining my politically-social concerns with my subject-related interests in Computer Science and Mathematics captivated me immediately.
+The opportunity of combining my politically-social concerns with my subject-related interests in Computer Science and Mathematics captivated me immediately.
 Hence, I was more than delighted that my school teacher Mr Ostrin accepted my request to serve as a supervisor of a related high-school thesis.\\
-\indent Since then, Mr Ostrin has been always approachable and extremely valuable supporter of my work.
-Likewise, I am grateful for all the help I have received from my parents, may it be as critical discussion partners, proofreader, or emotional coaches when I was stuck in problems. Many thanks from the bottom of my hearts!
+\indent Since then, Mr Ostrin has been always approachable and a extremely valuable supporter of my work.
+Likewise, I am grateful for all the help I have received from my parents, be it as inspiring discussants, critical proofreaders, or supportive coaches when I was temporarily stuck in problems. Many thanks from the bottom of my heart!
+
 
 \newpage
 
 \tableofcontents
 \newpage
 
+\section{Introduction} \label{sec:intro}
+On August 9-10, 2025, the 'Süddeutsche Zeitung' (p.~20) reported on massive irritations of the incumbent Federal President of Switzerland Karin Keller-Sutter, stemming from the ongoing tariff dispute with the United States of America.
+In this context, the U.S. President's unpredictable character is perceived as particularly bothersome.
+Consequently, the question arises how to successfully counteract such erratic behaviour on the political stage.\\
+\indent Game theory offers a powerful framework for studying human decision making, for the issue sketched above, especially in the form of the Prisoner's Dilemma (PD) game.
+When translating 'erratic behaviour' as pursuing a random PD strategy, the resulting leading question of the present thesis would aim at identifying strategies that prove to be effective countermeasures against randomness.
+In addition, it seems interesting to ask whether gradations of erratic behaviour matter, meaning that a game-theoretical computational analysis would be required to allow parametrisation.
+Finally---and in sharp contrast to an 'America First' ideology---it appears worthwhile to investigate not only superiority over opponents but the overall gain collectively achieved as well.\\
+\indent The leading question derived in the present introduction (Section \ref{sec:intro}) will be explored below in five consecutive steps: After relevant theoretical foundations have been laid (Section \ref{sec:theoretical_found}), applied methods and implementational specifications of the computational analysis will be presented (Section \ref{sec:methods_and_implementation}).
+Subsequently, the obtained results will be described (Section \ref{sec:results}) and discussed (Section \ref{sec:discussion}). 
+The thesis will be rounded off with a conclusion and outlook that refers back to the leading question just formulated (Section \ref{sec:conclusion}) and will be supplemented by a source list (Section \ref{sec:sources}), appendices (Section \ref{sec:appendices}) and a declaration of integrity (Section \ref{sec:declaration_of_integrity}).
 
-\section{Introduction}
-Interactions 
-
-\begin{itemize}
-
-	% Key idea:
-	% Much uncertainty spread out because of (far-)right populists.
-	% With insecurity comes random behaviour.
-	% This simulations shows the difference of a random and a determined strategy.
-
-	\item Interactions\\
-		implication range is wide:\\
-		from two persons in a relationship to countries in alliance\\
-		from two impala's algrooming to zebras warning the herd about a lion \\
-	% https://www.cell.com/trends/ecology-evolution/pdf/S0169-5347(00)88988-0.pdf
-
-	\item Key hook:\\
-		helping someone with possible cost -- cooperation\\
-		being selfish but breaking trust -- defection\\
-
-	\item Game Theory (optional, not needed for understanding)\\
-		mathematical framework to investigate interactions\\
-
-	\item model PD:\\
-		single interaction\\
-		already well analysed\\
-		Nash found solution/equilibrium\\
-
-	\item Iterated:\\
-		more interesting, insightful\\
-		strategies\\
-
-	\item non-suited variants:\\
-		Axelrod's Tournament\\
-		Evolution\\
-
-	\item continuous:\\
-		more complex, accurate\\
-
-	\item parameters:\\
-		determines behaviour\\
-		create surface\\
-		the part that has not been experimented\\
-
-	\item overall and difference:\\
-		overall: wealth of population\\
-		difference: competence between individuals\\
-
-\end{itemize}
-
-\section{Theoretical Foundations}
+\section{Theoretical Foundations} \label{sec:theoretical_found}
 
 To grasp the game-theoretical approach pursued in this thesis, it is necessary to first understand the underlying key concepts. 
-The most important ones being the Prisoner's Dilemma (PD) (2.1), the introduction of iterations as an extension (2.2) and the approach of submitting continuous values (2.3).
+The most important ones being the Prisoner's Dilemma (2.1), the introduction of iterations as an extension (2.2) and the approach of submitting continuous values (2.3).
 Furthermore, relevant information of published researches are provided as it seems helpful (2.5).
 
 \subsection{Prisoner's Dilemma}
@@ -374,7 +341,7 @@ The success of strategies, however, can vary depending on certain conditions suc
 So, the very specific area of the simultaneous ICPD, has not been very well explored.
 ...
 
-\section{Methods and Implementation}
+\section{Methods and Implementation} \label{sec:methods_and_implementation}
 
 For answering the central research question, it was necessary to develop a overarching study design (3.1), to specify the strategies that will be pursued in the iterated continuous Prisoner’s dilemma (3.2), and to determine details of the implementation in terms of IT (3.3).
 
@@ -520,7 +487,7 @@ And on the other hand, parameter 10 is equivalent to AlwaysCooperate since the p
 \end{tabular}
 \end{center}
 
-\subsection{Implementation Details}
+\subsection{Implementational Details}
 
 Regarding the initial problem of this thesis, both Random-Discrete and Random-Continuous play against every strategy (including themselves).
 As there are eleven parameter values for each strategy, there will be $2 \cdot 5 \cdot 11 \cdot 11 = 1210$ encounters and thus comparisons.
@@ -552,7 +519,7 @@ More information about the python scripts and data visualisation files that were
 	
 
 
-\section{Results}
+\section{Results} \label{sec:results}
 
 In Figures \ref{fig:RNDD-table} and \ref{fig:RNDC-table}, the surfaces for the Random-Discrete and Random-Continuous simulations are portrayed. 
 There are five surfaces for each interaction that are generated from one pbICPD. 
@@ -931,7 +898,7 @@ Ultimately, the overall-gain surface is clarified.\\
 		The upper limit is at $z = 35$ and the lower boundary is at z-coordinate equal to 30.
 
 
-\section{Discussion}
+\section{Discussion} \label{sec:discussion}
 
 The results suggest certain effects of the PD.
 Many additional findings have been identified and were promised to be analysed in the Discussion since they need mathematical context for better understanding.
@@ -1313,7 +1280,7 @@ Many additional findings have been identified and were promised to be analysed i
 	To review this fact, please see section \ref{sec:RndD_vs_AdpD}.\\
 
 	The reason for the existence of the peak at coordinates $(5, 10, z)$ has not yet been clarified.
-	\begin{figure}
+	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png}
 		\end{center}
@@ -1331,7 +1298,7 @@ Many additional findings have been identified and were promised to be analysed i
 	Every other combination of parameters of Adapt-Discrete and Random-Continuous prevent this situation from happening.
 
 
-\section{Conclusions and Outlook}
+\section{Conclusions and Outlook} \label{sec:conclusion}
 \begin{itemize}
 
 	\item Summary and Quintessence\\
@@ -1377,11 +1344,11 @@ Many additional findings have been identified and were promised to be analysed i
 %
 % \end{itemize}
 
-\section{Source List}
-\section{Appendices}
+\section{Source List} \label{sec:sources}
+\section{Appendices} \label{sec:appendices}
 \subsection{Appendix A}
 \subsection{Appendix B}
 \subsection{Appendix C}
 	
-\section{Declaration of Integrity}
+\section{Declaration of Integrity} \label{sec:declaration_of_integrity}
 \end{document}
