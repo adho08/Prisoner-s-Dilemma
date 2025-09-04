@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1756933105.09926 "Maturaarbeit.tex" "build/Maturaarbeit.pdf" "Maturaarbeit" 1756933106.90494 0
+["pdflatex"] 1756999012.29294 "Maturaarbeit.tex" "build/Maturaarbeit.pdf" "Maturaarbeit" 1756999014.13059 0
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -94,10 +94,10 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1737590400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1756041941.56631 4547224 5cf1c14d6ee63f23cc6525ae387ed2c9 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1756041610 7759956 46aea47261505c31e75125fee8931c29 ""
-  "Maturaarbeit.tex" 1756933105.96309 81533 171fec94cdf4dff3930306658af56f8b ""
-  "build/Maturaarbeit.aux" 1756933106.78673 12061 a5f1c5a5f5d2b9c1afa9fe94c4cf3beb "pdflatex"
-  "build/Maturaarbeit.out" 1756933106.78867 3964 7de6a8407dec8b8364a41208d7669629 "pdflatex"
-  "build/Maturaarbeit.toc" 1756933106.78873 2200 249062353f2d9d970208487625b8a449 "pdflatex"
+  "Maturaarbeit.tex" 1756997865.50389 81533 171fec94cdf4dff3930306658af56f8b ""
+  "build/Maturaarbeit.aux" 1756999013.99466 12061 a5f1c5a5f5d2b9c1afa9fe94c4cf3beb "pdflatex"
+  "build/Maturaarbeit.out" 1756999013.99566 3964 7de6a8407dec8b8364a41208d7669629 "pdflatex"
+  "build/Maturaarbeit.toc" 1756999013.99566 2200 249062353f2d9d970208487625b8a449 "pdflatex"
   "images/pd_heatmap_A.png" 1755095647.56031 174676 be9cec53606a80f0599dec94469c15f3 ""
   "images/pd_heatmap_B.png" 1755095655.88822 184497 caec8985575284e71abcfa1660044d27 ""
   "plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png" 1755949778.76822 52747 48ceaeecab0033234afb319a5eea56e4 ""
@@ -164,7 +164,7 @@
   "plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png" 1755451906.36664 56540 39ab768eb2f8cb824a2b036d6bc51726 ""
   "plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png" 1755451914.31087 68711 d5607360fa09b1dd4ab7bc624e1f2188 ""
   "plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png" 1755451911.46789 69058 13d539d7187d14f30e5359851c3a1d96 ""
-  "plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png" 1755451908.37952 63479 04b20417acb19944807e4fd7c3915e9c ""
+  "plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png" 1756998899.38754 52551 ba44ab65ba03de554e802de430d0ca26 ""
   (generated)
   "build/Maturaarbeit.aux"
   "build/Maturaarbeit.log"

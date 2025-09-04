@@ -56,7 +56,7 @@ zmin = 0
 zmax = rounds * (1 + PD.c)
 
 # ---------------------- function for updating the fig layout ---------------------- 
-def update_fig_layout(fig, title:str, range, x=1, y=1, z=1):
+def update_fig_layout(fig, title:str, range, x=1, y=1, z=1.0):
     fig.update_layout(
         # title=dict(
         #     text=title,
@@ -149,8 +149,8 @@ update_fig_layout(fig2, strategy_2, [zmin, zmax])
 
 # ---------------------- surface plot overall (added) ---------------------- 
 matrix3 = matrix1 + matrix2
-added_zmin = 2 * zmin 
-added_zmax = 2 * zmax
+added_zmin = 0
+added_zmax = 40
 
 fig4 = go.Figure(data=go.Surface(
     x=list1, y=list2, z=matrix3,
@@ -170,7 +170,7 @@ fig4 = go.Figure(data=go.Surface(
 #     name='z=0 Plane'),
 # )
 
-update_fig_layout(fig4, f"{strategy_1} + {strategy_2}", [added_zmin, added_zmax], z=2)
+update_fig_layout(fig4, f"{strategy_1} + {strategy_2}", [added_zmin, added_zmax], z=4/3)
 
 # ---------------------- surface plot overall (difference strategy1) ---------------------- 
 matrix3 = matrix1 - matrix2
@@ -256,9 +256,15 @@ def make_colorscale_fig(colorscale, range):
 # cscales = [cscale_s, cscale_a, cscale_d]
 
 # ---------------------- write plots into png's ---------------------- 
+# pio.write_images(
+#     fig=[fig1, fig2, fig4, fig5, fig6],
+#     file=[f"{final_dir}/{strategy_1}.png", f"{final_dir}/{strategy_2}.png", f"{final_dir}/added.png", f"{final_dir}/{strategy_1}_diff.png", f"{final_dir}/{strategy_2}_diff.png"],
+#     width=500,
+#     height=500
+# )
 pio.write_images(
-    fig=[fig1, fig2, fig4, fig5, fig6],
-    file=[f"{final_dir}/{strategy_1}.png", f"{final_dir}/{strategy_2}.png", f"{final_dir}/added.png", f"{final_dir}/{strategy_1}_diff.png", f"{final_dir}/{strategy_2}_diff.png"],
+    fig=[fig4],
+    file=[f"{final_dir}/added.png"],
     width=500,
     height=500
 )
