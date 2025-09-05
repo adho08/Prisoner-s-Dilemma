@@ -8,8 +8,11 @@
 \usepackage{amsmath}
 \usepackage{array}
 \usepackage{helvet}
+\usepackage[style=authoryear, backend=biber]{biblatex}
+\addbibresource{refs.bib}
 \usepackage[a4paper, margin=1in, footskip=0.25in]{geometry}
 
+\defbibheading{bibliography}[\refname]{}
 % relative path to images directory
 % \graphicspath{ {./plots/} }
 \newcommand{\round}[1]{\ensuremath{\lfloor#1\rceil}}
@@ -17,7 +20,6 @@
 \renewcommand{\contentsname}{Table of Contents}
 % \newcommand{\multiply}[2]{\the\numexpr#1*#2\relax}
 % TODO: multiply for title format 
-
 
 % make captions of figures cursive
 \DeclareCaptionFormat{custom}
@@ -58,7 +60,27 @@
 \pagenumbering{arabic}
 
 \section*{Abstract}
-xxx
+hell
+\textcite{Ahs08}\\
+\textcite{AH81}\\
+% \textcite{BF06}\\
+% \textcite{Bre96}\\
+% \textcite{CF23}\\
+% \textcite{HZX22}\\
+% \textcite{HLD13}\\
+% \textcite{HLZ18}\\
+% \textcite{HS02}\\
+% \textcite{HY98}\\
+% \textcite{IGP04}\\
+% \textcite{JKK12}\\
+% \textcite{KK93}\\
+% \textcite{Kuh25}\\
+% \textcite{Lei11}\\
+% \textcite{MD17}\\
+% \textcite{McL81}\\
+% \textcite{NS93}\\
+% \textcite{RC15}\\
+% \textcite{SSLP09}
 
 \newpage
 
@@ -94,58 +116,47 @@ The thesis will be rounded off with a conclusion and outlook that refers back to
 \section{Theoretical Foundations} \label{sec:theoretical_found}
 
 To grasp the game-theoretical approach pursued in this thesis, it is necessary to first understand the underlying key concepts. 
-The most important ones being the Prisoner's Dilemma (2.1), the introduction of iterations as an extension (2.2) and the approach of submitting continuous values (2.3).
-Furthermore, relevant information of published researches are provided as it seems helpful (2.5).
+The most important ones, being the PD (2.1), the introduction of iterations as an extension (2.2) and the approach of submitting continuous values (2.3).
+Finally, further PD variants will be mentioned (2.4) and relevant information of published researches will be provided (2.5).
+Excellent overviews are available in standard encyclopedia, from which the information reported in 2.1–2.4 was compiled, in particular the \textit{International Encyclopedia of the Social and Behavioral Sciences} (Rios and Cresto, 2015) and the \textit{Stanford Encyclopedia of Philosophy} (Kuhn, 2025).
 
 \subsection{Prisoner's Dilemma}
 		
-The Prisoner's Dilemma (PD) is a famous model in Game Theory. 
-It was invented by Merrill Flood and Melvin Dresher in 1950. 
-To understand the dilemma, a proper context has to be established.\\
+The PD is a famous model in Game Theory. 
+To understand the dilemma, a proper context has to be established:
 Two persons are arrested and sued for having committed a crime jointly.
 There is yet, however, insufficient evidence to imprison the two suspects.
-Despite not having enough prove, the police utilises one of its methods.
-They interrogate them separately without giving them a chance to coordinate beforehand.
-The convicts receive two options.
-On one hand, they can confess that the other suspect was involved in the crime. 
+Despite not having enough prove, the police interrogates them separately without giving them a chance to coordinate beforehand.
+The suspects receive two options.
+On the one hand, they can confess that the other suspect was involved in the crime. 
 On the other hand, they have the right to remain silent.
-Naturally, the police rewards the act of revealing the accomplice's delinquency over exercising the right of solidarity.
-In case mutual trust and thus no confession took place, the twain separately receives an imprisonment of three years.
-If both confess, either obtains five years in prison.
-Nevertheless, by taking this course of action, this outcome is not the only existing.
-If one chooses to confess while the other remains silent, the informer is released, whereas the betrayed must devote ten years in prison.
-Remaining silent is considered as cooperation.
-Whereby defection is the opposite, meaning breaking confidence and therefore state.
-The following matrix visualises the pay-offs in this game in a comprehensive way:
+In case mutual trust and thus no confession took place, both separately receive an imprisonment of three years.
+If both confess, either obtains ten years in prison.
+However, if one chooses to confess while the other remains silent, the informer is sentenced to only one year in prison, whereas the betrayed is punished with 25 years.
+Remaining silent is considered as cooperation, whereby defection is the opposite, meaning breaking confidence. 
+The following matrix visualises the pay-offs in this game in a comprehensive way, with C representing cooperation and D corresponding to defection:
 
 % specific pay-off matrix
 \begin{center}
 \begin{tabular}{ c|c|c }
    & C & D \\ 
    \hline
- C & 3, 3 & 0, 10\\  
+ C & 3, 3 & 25, 1\\  
    \hline
- D & 10, 0 & 5, 5
+ D & 1, 25 & 10, 10
 \end{tabular}
 \end{center}
 
 \noindent
-C represents cooperation and D corresponds to defection. 
-The dilemma consists of the following.\\
-The act of confessing appears alluring since there is a chance of eluding imprisonment.
-Nonetheless, it is possible to receive five years in prison depending on the confederate's decision.
-If the second criminal also confesses, both get five years in prison. 
-This is the most inferior outcome for both which could have been avoided as either would have stayed silent.\\
-John Nash, a mathematician which made great contributions in Game Theory, has proved the most reasonable course of action to be confessing.
-The Nash-equilibrium is introduced. 
-It defines a stable state in which both would not reconsider their own judgement although each of them would be aware of the other's decision.\\
-This game composes a one-time interaction excellently in a mathematical and analytical perspective. 
-The entitlement of the variables derives form the pay-off they suggest.\\
-$T$: Temptation,
-$R$: Reward,
-$P$: Punishment,
-$S$: Sucker's pay-off\\
-The pay-offs in the matrix can be altered as long as these inequalities stay valid.
+The dilemma consists of the following:
+The act of defecting appearing alluring since there is a chance of avoiding a long sentence.
+However, it is then also possible to receive ten in prison depending on the confederate's decision.
+Although this---which could have been avoided if both had remained silent---it is nevertheless the most likely result, as the temptation to defect is simply too great.
+% John Nash, a mathematician which made great contributions in Game Theory, has proved the most reasonable course of action to be confessing.
+% The Nash-equilibrium is introduced. 
+% It defines a stable state in which both would not reconsider their own judgement although each of them would be aware of the other's decision.\\
+This PD thus composes a one-time interaction from a mathematical and analytical perspective. 
+In a more general form, the variables can be described as Reward ($R$), Sucker's pay-off ($S$), Temptation ($T$), and Punishment ($P$) as follows:
 % \url{https://www.investopedia.com/terms/n/nash-equilibrium.asp}
 
 % general pay-off matrix
@@ -159,7 +170,12 @@ The pay-offs in the matrix can be altered as long as these inequalities stay val
 \end{tabular}
 \end{center}
 
-$$T > R > P > S$$
+The pay-offs in the matrix can be altered as long as these inequalities stay valid.
+
+\begin{equation}
+	T < R < P < S
+	\label{eq:TRPS}
+\end{equation}
 
 \subsection{Iterated}
 		
@@ -1382,10 +1398,14 @@ Many additional findings have been identified and were promised to be analysed i
 % \end{itemize}
 
 \section{Source List} \label{sec:sources}
+\subsection*{References}
+\printbibliography[title={}]
+
 \section{Appendices} \label{sec:appendices}
 \subsection{Appendix A}
 \subsection{Appendix B}
 \subsection{Appendix C}
 	
 \section{Declaration of Integrity} \label{sec:declaration_of_integrity}
+
 \end{document}
