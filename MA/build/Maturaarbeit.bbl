@@ -18,31 +18,417 @@
 
 
 \refsection{0}
-  \datalist[entry]{nyt/global//global/global/global}
-    \entry{Ahs08}{thesis}{}{}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{RC15}{incollection}{}{}
+      \name{author}{2}{}{%
+        {{hash=6fb247741916a6e584db52ed369a84e2}{%
+           family={Ríos},
+           familyi={R\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=5f86df15c4596d4358e1ed06f241a2d8}{%
+           family={Cresto},
+           familyi={C\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=59f52be75ccaa3d4d5d418f245ee64ba}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={J.\bibnamedelimi D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{fda17821c43b2813d559bcb20d53e64a}
+      \strng{fullhash}{fda17821c43b2813d559bcb20d53e64a}
+      \strng{fullhashraw}{fda17821c43b2813d559bcb20d53e64a}
+      \strng{bibnamehash}{fda17821c43b2813d559bcb20d53e64a}
+      \strng{authorbibnamehash}{fda17821c43b2813d559bcb20d53e64a}
+      \strng{authornamehash}{fda17821c43b2813d559bcb20d53e64a}
+      \strng{authorfullhash}{fda17821c43b2813d559bcb20d53e64a}
+      \strng{authorfullhashraw}{fda17821c43b2813d559bcb20d53e64a}
+      \strng{editorbibnamehash}{59f52be75ccaa3d4d5d418f245ee64ba}
+      \strng{editornamehash}{59f52be75ccaa3d4d5d418f245ee64ba}
+      \strng{editorfullhash}{59f52be75ccaa3d4d5d418f245ee64ba}
+      \strng{editorfullhashraw}{59f52be75ccaa3d4d5d418f245ee64ba}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Prisoner's Dilemma (PD) is a game whose Nash equilibrium is not Pareto efficient. The sheer perversity of the interaction involved in the PD has bewildered game theorists and social scientists alike. Despite the fact that players could be better off by jointly cooperating, they have individually a dominant strategy for defection that carries out a suboptimal outcome for everyone. This article explores and assesses this result, contrasting one-shot and repeated interactions.}
+      \field{booktitle}{International Encyclopedia of the Social \& Behavioral Sciences}
+      \field{edition}{Second Edition}
+      \field{title}{Prisoner's dilemma, one shot and iterated}
+      \field{year}{2015}
+      \field{pages}{930\bibrangedash 937}
+      \range{pages}{8}
+      \verb{doi}
+      \verb https://doi.org/10.1016/B978-0-08-097086-8.63065-9
+      \endverb
+      \keyw{Backward induction,Computer simulations,Cooperation,Decision theory,Game theory,Nash equilibrium,Newcomb's paradox,Pareto optimality,Rationality,Reciprocity,Stag Hunt game,Tit-for-Tat}
+    \endentry
+    \entry{Kuh25}{incollection}{}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=281ab2cdb976877cbf21ae5152e4a636}{%
-           family={Ahslock},
+        {{hash=c3bce21f2a644c0e4d82986871a4e8db}{%
+           family={Kuhn},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=5ff1c29ff1cc8f6336533b0ffd842a79}{%
+           family={Zalta},
+           familyi={Z\bibinitperiod},
+           given={Edward\bibnamedelima N.},
+           giveni={E\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=47603970fcd579d567acd0cb66cdb242}{%
+           family={Nodelman},
+           familyi={N\bibinitperiod},
+           given={Uri},
+           giveni={U\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Metaphysics Research Lab, Stanford University}%
+      }
+      \strng{namehash}{c3bce21f2a644c0e4d82986871a4e8db}
+      \strng{fullhash}{c3bce21f2a644c0e4d82986871a4e8db}
+      \strng{fullhashraw}{c3bce21f2a644c0e4d82986871a4e8db}
+      \strng{bibnamehash}{c3bce21f2a644c0e4d82986871a4e8db}
+      \strng{authorbibnamehash}{c3bce21f2a644c0e4d82986871a4e8db}
+      \strng{authornamehash}{c3bce21f2a644c0e4d82986871a4e8db}
+      \strng{authorfullhash}{c3bce21f2a644c0e4d82986871a4e8db}
+      \strng{authorfullhashraw}{c3bce21f2a644c0e4d82986871a4e8db}
+      \strng{editorbibnamehash}{ab8d8ffb26096a29ec1c38ef9e4911c6}
+      \strng{editornamehash}{ab8d8ffb26096a29ec1c38ef9e4911c6}
+      \strng{editorfullhash}{ab8d8ffb26096a29ec1c38ef9e4911c6}
+      \strng{editorfullhashraw}{ab8d8ffb26096a29ec1c38ef9e4911c6}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The {Stanford} Encyclopedia of Philosophy}
+      \field{edition}{{F}all 2025}
+      \field{title}{Prisoner's Dilemma}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://plato.stanford.edu/archives/fall2025/entries/prisoner-dilemma/
+      \endverb
+      \verb{url}
+      \verb https://plato.stanford.edu/archives/fall2025/entries/prisoner-dilemma/
+      \endverb
+    \endentry
+    \entry{AH81}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=8543c20166972560d101ccf0213e5599}{%
+           family={Axelrod},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=46d4874427c3de9e17b0fb6158779047}{%
+           family={Hamilton},
+           familyi={H\bibinitperiod},
+           given={W.\bibnamedelimi D.},
+           giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{260669180c83512cfcb2970a6f7faeb5}
+      \strng{fullhash}{260669180c83512cfcb2970a6f7faeb5}
+      \strng{fullhashraw}{260669180c83512cfcb2970a6f7faeb5}
+      \strng{bibnamehash}{260669180c83512cfcb2970a6f7faeb5}
+      \strng{authorbibnamehash}{260669180c83512cfcb2970a6f7faeb5}
+      \strng{authornamehash}{260669180c83512cfcb2970a6f7faeb5}
+      \strng{authorfullhash}{260669180c83512cfcb2970a6f7faeb5}
+      \strng{authorfullhashraw}{260669180c83512cfcb2970a6f7faeb5}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science}
+      \field{number}{4489}
+      \field{title}{The evolution of cooperation}
+      \field{volume}{221}
+      \field{year}{1981}
+      \field{pages}{1390\bibrangedash 1396}
+      \range{pages}{7}
+      \verb{doi}
+      \verb https://doi.org/10.1126/science.7466396
+      \endverb
+    \endentry
+    \entry{NS93}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=b72351089b9a49daeed38cc66ccde2b9}{%
+           family={Nowak},
+           familyi={N\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d62d699a1bc4e2f54863aaba8c36ab0e}{%
+           family={Sigmund},
+           familyi={S\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{79f74623d4e276c71fa0eb01a3dafa06}
+      \strng{fullhash}{79f74623d4e276c71fa0eb01a3dafa06}
+      \strng{fullhashraw}{79f74623d4e276c71fa0eb01a3dafa06}
+      \strng{bibnamehash}{79f74623d4e276c71fa0eb01a3dafa06}
+      \strng{authorbibnamehash}{79f74623d4e276c71fa0eb01a3dafa06}
+      \strng{authornamehash}{79f74623d4e276c71fa0eb01a3dafa06}
+      \strng{authorfullhash}{79f74623d4e276c71fa0eb01a3dafa06}
+      \strng{authorfullhashraw}{79f74623d4e276c71fa0eb01a3dafa06}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{title}{A strategy of win-stay, lose-shift that outperforms tit-for-tat in the prisoner's dilemma game}
+      \field{volume}{364}
+      \field{year}{1993}
+      \field{pages}{56\bibrangedash 58}
+      \range{pages}{3}
+      \verb{doi}
+      \verb https://doi.org/10.1038/364056a0
+      \endverb
+    \endentry
+    \entry{Bre96}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5fb00d6365cc59d1515571b98dcae2e5}{%
+           family={Brembs},
+           familyi={B\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{5fb00d6365cc59d1515571b98dcae2e5}
+      \strng{fullhash}{5fb00d6365cc59d1515571b98dcae2e5}
+      \strng{fullhashraw}{5fb00d6365cc59d1515571b98dcae2e5}
+      \strng{bibnamehash}{5fb00d6365cc59d1515571b98dcae2e5}
+      \strng{authorbibnamehash}{5fb00d6365cc59d1515571b98dcae2e5}
+      \strng{authornamehash}{5fb00d6365cc59d1515571b98dcae2e5}
+      \strng{authorfullhash}{5fb00d6365cc59d1515571b98dcae2e5}
+      \strng{authorfullhashraw}{5fb00d6365cc59d1515571b98dcae2e5}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Oikos}
+      \field{title}{Chaos, cheating and cooperation: Potential solutions to the prisoner's dilemma}
+      \field{volume}{76}
+      \field{year}{1996}
+      \field{pages}{14\bibrangedash 24}
+      \range{pages}{11}
+      \verb{doi}
+      \verb https://doi.org/10.2307/3545744
+      \endverb
+    \endentry
+    \entry{KK93}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=85e82026d5024cb0ba47ce38e5944e28}{%
+           family={Kraines},
+           familyi={K\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=3a2f1b6e2f50322c38d1ef9177e204f4}{%
+           family={Kraines},
+           familyi={K\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{9882fc31eea89082ced277da11894e60}
+      \strng{fullhash}{9882fc31eea89082ced277da11894e60}
+      \strng{fullhashraw}{9882fc31eea89082ced277da11894e60}
+      \strng{bibnamehash}{9882fc31eea89082ced277da11894e60}
+      \strng{authorbibnamehash}{9882fc31eea89082ced277da11894e60}
+      \strng{authornamehash}{9882fc31eea89082ced277da11894e60}
+      \strng{authorfullhash}{9882fc31eea89082ced277da11894e60}
+      \strng{authorfullhashraw}{9882fc31eea89082ced277da11894e60}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Theory and Decision}
+      \field{title}{Learning to cooperate with Pavlov an adaptive strategy for the iterated prisoner's dilemma with noise}
+      \field{volume}{35}
+      \field{year}{1993}
+      \field{pages}{107\bibrangedash 150}
+      \range{pages}{44}
+      \verb{doi}
+      \verb https://doi.org/10.1007/BF01074955
+      \endverb
+    \endentry
+    \entry{HS02}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f86348e4787cea297d509a4392e4a65f}{%
+           family={Hauert},
+           familyi={H\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4d4e36ac1b96c253737d4d22d9ac9829}{%
+           family={Stenull},
+           familyi={S\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{ecb7cb70a5d5edd70eb48fff0ce4c8b4}
+      \strng{fullhash}{ecb7cb70a5d5edd70eb48fff0ce4c8b4}
+      \strng{fullhashraw}{ecb7cb70a5d5edd70eb48fff0ce4c8b4}
+      \strng{bibnamehash}{ecb7cb70a5d5edd70eb48fff0ce4c8b4}
+      \strng{authorbibnamehash}{ecb7cb70a5d5edd70eb48fff0ce4c8b4}
+      \strng{authornamehash}{ecb7cb70a5d5edd70eb48fff0ce4c8b4}
+      \strng{authorfullhash}{ecb7cb70a5d5edd70eb48fff0ce4c8b4}
+      \strng{authorfullhashraw}{ecb7cb70a5d5edd70eb48fff0ce4c8b4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Theoretical Biology}
+      \field{number}{3}
+      \field{title}{Simple adaptive strategy wins the prisoner's dilemma}
+      \field{volume}{218}
+      \field{year}{2002}
+      \field{pages}{261\bibrangedash 272}
+      \range{pages}{12}
+      \verb{doi}
+      \verb https://doi.org/10.1006/jtbi.2002.3072
+      \endverb
+    \endentry
+    \entry{HLZ18}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=12b969e4aa5d833cb879a3f075a99d08}{%
+           family={Hao},
+           familyi={H\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1a48ecf9984adc4526895c8abf1d2b80}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=85ae91828eb50de4aa0c9981355e02d1}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{532fa683fc28d862df24a8fd740a5f4c}
+      \strng{fullhash}{532fa683fc28d862df24a8fd740a5f4c}
+      \strng{fullhashraw}{532fa683fc28d862df24a8fd740a5f4c}
+      \strng{bibnamehash}{532fa683fc28d862df24a8fd740a5f4c}
+      \strng{authorbibnamehash}{532fa683fc28d862df24a8fd740a5f4c}
+      \strng{authornamehash}{532fa683fc28d862df24a8fd740a5f4c}
+      \strng{authorfullhash}{532fa683fc28d862df24a8fd740a5f4c}
+      \strng{authorfullhashraw}{532fa683fc28d862df24a8fd740a5f4c}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 27th International Joint Conference on Artificial Intelligence}
+      \field{title}{Payoff control in the iterated prisoner's dilemma}
+      \field{year}{2018}
+      \field{pages}{296\bibrangedash 302}
+      \range{pages}{7}
+      \verb{doi}
+      \verb https://doi.org/10.48550/arXiv.1807.06666
+      \endverb
+    \endentry
+    \entry{JKK12}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=890d7d0da7bf51ec98c29a8696e516d6}{%
+           family={Jurišić},
+           familyi={J\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=210fdb8e4bf476b6fa6cd5150a6e8350}{%
+           family={Kermek},
+           familyi={K\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=caff6e3391a2961115217cc57d828bdb}{%
+           family={Konecki},
+           familyi={K\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7b32c93bd4334a03f275d15508699ca5}
+      \strng{fullhash}{7b32c93bd4334a03f275d15508699ca5}
+      \strng{fullhashraw}{7b32c93bd4334a03f275d15508699ca5}
+      \strng{bibnamehash}{7b32c93bd4334a03f275d15508699ca5}
+      \strng{authorbibnamehash}{7b32c93bd4334a03f275d15508699ca5}
+      \strng{authornamehash}{7b32c93bd4334a03f275d15508699ca5}
+      \strng{authorfullhash}{7b32c93bd4334a03f275d15508699ca5}
+      \strng{authorfullhashraw}{7b32c93bd4334a03f275d15508699ca5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MIPRO: 2012 Proceedings of the 35th International Convention}
+      \field{title}{A review of iterated prisoner's dilemma strategies}
+      \field{year}{2012}
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/261424948_A_review_of_iterated_prisoner's_dilemma_strategies
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/261424948_A_review_of_iterated_prisoner's_dilemma_strategies
+      \endverb
+    \endentry
+    \entry{MD17}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=7fcf0567b1c504ac9a13b3527d219062}{%
+           family={Mathieu},
+           familyi={M\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=50d73275923d5a6a4aae15351e4d5fa9}{%
+           family={Delahaye},
+           familyi={D\bibinitperiod},
+           given={J.\bibnamedelimi P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{951f2a0ad1c8177ee3a995568fe00378}
+      \strng{fullhash}{951f2a0ad1c8177ee3a995568fe00378}
+      \strng{fullhashraw}{951f2a0ad1c8177ee3a995568fe00378}
+      \strng{bibnamehash}{951f2a0ad1c8177ee3a995568fe00378}
+      \strng{authorbibnamehash}{951f2a0ad1c8177ee3a995568fe00378}
+      \strng{authornamehash}{951f2a0ad1c8177ee3a995568fe00378}
+      \strng{authorfullhash}{951f2a0ad1c8177ee3a995568fe00378}
+      \strng{authorfullhashraw}{951f2a0ad1c8177ee3a995568fe00378}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Artificial Societies and Social Simulation}
+      \field{number}{4}
+      \field{title}{New winning strategies for the iterated prisoner’s dilemma}
+      \field{volume}{20}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://www.jasss.org/20/4/12.html
+      \endverb
+      \verb{url}
+      \verb https://www.jasss.org/20/4/12.html
+      \endverb
+    \endentry
+    \entry{Ash08}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=a1555ba9d52591dcee91e7366c603dfb}{%
+           family={Ashlock},
            familyi={A\bibinitperiod},
            given={W.},
-           giveni={W\bibinitperiod},
-           givenun=0}}%
+           giveni={W\bibinitperiod}}}%
       }
       \list{institution}{1}{%
         {University of Guelph.}%
       }
-      \strng{namehash}{281ab2cdb976877cbf21ae5152e4a636}
-      \strng{fullhash}{281ab2cdb976877cbf21ae5152e4a636}
-      \strng{fullhashraw}{281ab2cdb976877cbf21ae5152e4a636}
-      \strng{bibnamehash}{281ab2cdb976877cbf21ae5152e4a636}
-      \strng{authorbibnamehash}{281ab2cdb976877cbf21ae5152e4a636}
-      \strng{authornamehash}{281ab2cdb976877cbf21ae5152e4a636}
-      \strng{authorfullhash}{281ab2cdb976877cbf21ae5152e4a636}
-      \strng{authorfullhashraw}{281ab2cdb976877cbf21ae5152e4a636}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \strng{namehash}{a1555ba9d52591dcee91e7366c603dfb}
+      \strng{fullhash}{a1555ba9d52591dcee91e7366c603dfb}
+      \strng{fullhashraw}{a1555ba9d52591dcee91e7366c603dfb}
+      \strng{bibnamehash}{a1555ba9d52591dcee91e7366c603dfb}
+      \strng{authorbibnamehash}{a1555ba9d52591dcee91e7366c603dfb}
+      \strng{authornamehash}{a1555ba9d52591dcee91e7366c603dfb}
+      \strng{authorfullhash}{a1555ba9d52591dcee91e7366c603dfb}
+      \strng{authorfullhashraw}{a1555ba9d52591dcee91e7366c603dfb}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Using prisoner's dilemma fingerprints to analyze evolved strategies}
@@ -55,44 +441,75 @@
       \verb https://atrium.lib.uoguelph.ca/server/api/core/bitstreams/d86079e1-b4ca-4a5c-867e-c6cf536ccee7/content
       \endverb
     \endentry
-    \entry{AH81}{article}{}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=8543c20166972560d101ccf0213e5599}{%
-           family={Axelrod},
-           familyi={A\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=46d4874427c3de9e17b0fb6158779047}{%
-           family={Hamilton},
+    \entry{HLD13}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=a15abf07de41f5c313ace8e3e7596c00}{%
+           family={Hannah},
            familyi={H\bibinitperiod},
-           given={W.\bibnamedelimi D.},
-           giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod},
-           givenun=0}}%
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4731e2fc2481ffb0480d79362abacae5}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={H.\bibnamedelimi M.},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1984fa3ea741b92699785863a39566b1}{%
+           family={Dumbrell},
+           familyi={D\bibinitperiod},
+           given={A.\bibnamedelimi J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
-      \strng{namehash}{260669180c83512cfcb2970a6f7faeb5}
-      \strng{fullhash}{260669180c83512cfcb2970a6f7faeb5}
-      \strng{fullhashraw}{260669180c83512cfcb2970a6f7faeb5}
-      \strng{bibnamehash}{260669180c83512cfcb2970a6f7faeb5}
-      \strng{authorbibnamehash}{260669180c83512cfcb2970a6f7faeb5}
-      \strng{authornamehash}{260669180c83512cfcb2970a6f7faeb5}
-      \strng{authorfullhash}{260669180c83512cfcb2970a6f7faeb5}
-      \strng{authorfullhashraw}{260669180c83512cfcb2970a6f7faeb5}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \strng{namehash}{9e362c5c0410ae434738803a5898ff8c}
+      \strng{fullhash}{9e362c5c0410ae434738803a5898ff8c}
+      \strng{fullhashraw}{9e362c5c0410ae434738803a5898ff8c}
+      \strng{bibnamehash}{9e362c5c0410ae434738803a5898ff8c}
+      \strng{authorbibnamehash}{9e362c5c0410ae434738803a5898ff8c}
+      \strng{authornamehash}{9e362c5c0410ae434738803a5898ff8c}
+      \strng{authorfullhash}{9e362c5c0410ae434738803a5898ff8c}
+      \strng{authorfullhashraw}{9e362c5c0410ae434738803a5898ff8c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Science}
-      \field{number}{4489}
-      \field{title}{The evolution of cooperation}
-      \field{volume}{221}
-      \field{year}{1981}
-      \field{pages}{1390\bibrangedash 1396}
-      \range{pages}{7}
+      \field{journaltitle}{Ecological Complexity}
+      \field{title}{Evolutionary games of cooperation: Insights through integration of theory and data}
+      \field{volume}{16}
+      \field{year}{2013}
+      \field{pages}{20\bibrangedash 30}
+      \range{pages}{11}
       \verb{doi}
-      \verb https://doi.org/10.1126/science.7466396
+      \verb https://doi.org/10.1016/j.ecocom.2013.02.007
+      \endverb
+    \endentry
+    \entry{Lei11}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=823978acd580a547d33b130ab4642785}{%
+           family={Leite},
+           familyi={L\bibinitperiod},
+           given={F.\bibnamedelimi P.},
+           giveni={F\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{823978acd580a547d33b130ab4642785}
+      \strng{fullhash}{823978acd580a547d33b130ab4642785}
+      \strng{fullhashraw}{823978acd580a547d33b130ab4642785}
+      \strng{bibnamehash}{823978acd580a547d33b130ab4642785}
+      \strng{authorbibnamehash}{823978acd580a547d33b130ab4642785}
+      \strng{authornamehash}{823978acd580a547d33b130ab4642785}
+      \strng{authorfullhash}{823978acd580a547d33b130ab4642785}
+      \strng{authorfullhashraw}{823978acd580a547d33b130ab4642785}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Thinking \& Reasoning}
+      \field{number}{1}
+      \field{title}{Larger reward values alone are not enough to entice more cooperation}
+      \field{volume}{17}
+      \field{year}{2011}
+      \field{pages}{82\bibrangedash 103}
+      \range{pages}{22}
+      \verb{doi}
+      \verb https://doi.org/10.1080/13546783.2010.537521
       \endverb
     \endentry
   \enddatalist

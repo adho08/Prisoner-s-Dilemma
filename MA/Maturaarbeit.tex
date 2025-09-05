@@ -8,7 +8,7 @@
 \usepackage{amsmath}
 \usepackage{array}
 \usepackage{helvet}
-\usepackage[style=authoryear, backend=biber]{biblatex}
+\usepackage[style=numeric-comp, sorting=none, backend=biber]{biblatex}
 \addbibresource{refs.bib}
 \usepackage[a4paper, margin=1in, footskip=0.25in]{geometry}
 
@@ -60,9 +60,8 @@
 \pagenumbering{arabic}
 
 \section*{Abstract}
-hell
-\textcite{Ahs08}\\
-\textcite{AH81}\\
+% \parencite{Ahs08}\\
+% \parencite{AH81}\\
 % \textcite{BF06}\\
 % \textcite{Bre96}\\
 % \textcite{CF23}\\
@@ -118,7 +117,7 @@ The thesis will be rounded off with a conclusion and outlook that refers back to
 To grasp the game-theoretical approach pursued in this thesis, it is necessary to first understand the underlying key concepts. 
 The most important ones, being the PD (2.1), the introduction of iterations as an extension (2.2) and the approach of submitting continuous values (2.3).
 Finally, further PD variants will be mentioned (2.4) and relevant information of published researches will be provided (2.5).
-Excellent overviews are available in standard encyclopedia, from which the information reported in 2.1–2.4 was compiled, in particular the \textit{International Encyclopedia of the Social and Behavioral Sciences} (Rios and Cresto, 2015) and the \textit{Stanford Encyclopedia of Philosophy} (Kuhn, 2025).
+Excellent overviews are available in standard encyclopedia, from which the information reported in 2.1–2.4 was compiled, in particular the \textit{International Encyclopedia of the Social and Behavioral Sciences} \cite{RC15} and the \textit{Stanford Encyclopedia of Philosophy} \cite{Kuh25}.
 
 \subsection{Prisoner's Dilemma}
 		
@@ -351,12 +350,24 @@ This implies that losing strategies vanish, while successful ones replicate.
 % So, this analysis is only dedicated to the simultaneous form.
 
 \subsection{Current Findings}
+In the context of the PD, erratic behaviour might be characterised best as “random strategy”.
+In order to retrieve the most important scientific findings on this topic, a literature search was conducted on scholar.google.com with the search terms 'Prisoner's Dilemma' and 'random strategy' (for details see Appendix xxx).
+A criterion-based process of stepwise reduction of the initially found 650 hits finally resulted in eight publications of particular relevance.
 
-Axelrod's Tournament
-In the simpler variants, e.g. the IPD without noise, it has been proved many times over that the strategy Tit-For-Tat is the most successful one. [sources]
-The success of strategies, however, can vary depending on certain conditions such as the influence of noise or different pay-off systems where continuous investments can be submitted.
-So, the very specific area of the simultaneous ICPD, has not been very well explored.
-...
+Interestingly, a random strategy was already included in the original tournament organized by Axelrod and Hamilton \cite{AH81}.
+Their main finding is that a simple Tit-for-Tat strategy (TFT: “start with a C, and then use your co-players previous move”, \cite{NS93}) won over all other strategies.
+In his review on PD studies, Brembs \cite[p.~14]{Bre96} highlights as one of the “most important advancements in the game-theoretical work on different aspects of the game” the turn from deterministic to stochastic variants.
+In this context, Nowak and Sigmund \cite[p.~56]{NS93} argue that “occasional mistakes between two TFT players cause long runs of mutual backbiting” and thus introduce a so-called Pavlov strategy, which “cooperates if and only if both players opted for the same alternative in the previous move (…). Thus Pavlov (…) can correct mistakes.” 
+Building on this, Kraines and Kraines \cite[p.~112]{KK93} demonstrate that “Pavlov will exploit (…) random strategies” in the discrete IPD game.
+Even further optimisations were suggested by Hauert and Stenull \cite{HS02} in terms of adaptive strategies and by Hao, Li and Zhou \cite{HLZ18} for ways of determining the opponent’s maximum and minimum gain.
+Jurišić, Kermek and Konecki \cite{JKK12} report in their review on repetitions of Axelrod’s tournament in 2004 and 2005 on a successful Omega TFT strategy that always defects as soon as a certain randomness threshold is crossed by the opponent. 
+Finally, Mathieu and Delahaye \cite[pp.~4, 5]{MD17} introduce new strategies that perform better than probabilistic or random strategies, namely soft\_majo (“begins by cooperating and cooperates as long as the number of times the opponent has cooperated is greater that or equal to the number of times it has defected”) and gradual (“cooperates on the first move, then defect $n$ times after $n$\textsuperscript{th} defections of its opponent, and calms down with 2 cooperations”).
+
+Despite the scientific progress that becomes obvious with this short summary, it should be first noted that all of the retrieved articles refer to an overall success in a tournament with multiple strategies rather than a specific advantage over a random opponent. 
+Second, success is understood as outperforming the opponent without also considering the overall gain of both players.
+Third, the discrete variant of the IPD is used, which does not include certain gradations of randomness. 
+The last-mentioned point is strikingly corroborated by the fact that an additionally conducted scholar.google.com search with the terms 'continuous Prisoner's Dilemma' and 'random strategy' delivered three hits only, all of which are irrelevant for the present topic \cite{Ash08, HLD13, Lei11}. 
+It seems thus fair to conclude that a mathematical simulation of a competition of continuously parametrised strategies against strategies of graded randomness with a particular focus also on both players’ overall gain is worth pursuing further in the present thesis. 
 
 \section{Methods and Implementation} \label{sec:methods_and_implementation}
 
@@ -1402,9 +1413,12 @@ Many additional findings have been identified and were promised to be analysed i
 \printbibliography[title={}]
 
 \section{Appendices} \label{sec:appendices}
-\subsection{Appendix A}
-\subsection{Appendix B}
-\subsection{Appendix C}
+\subsection{Appendix A. Literature Search}
+In order to retrieve the most important scientific findings on the topic of PD and erratic behavior, a literature search was conducted on scholar.google.com with the search terms Prisoner's Dilemma and random strategy. To narrow down the search to scientific findings, first of all books (54), mere citations (20) and papers not written in English language (6) were excluded from the 650 hits as well as items with no more than 10 citations (362). On the basis of the titles of the remaining 208 articles, papers were eliminated that delt with the evolutionary (55) or other (14) PD variants (e.g., with more players), the role of noise or information use (12), implementational or analytical aspects (42) or special applications (34; e.g., in human-robot interaction). For the remaining 51 items, 50 could be retrieved from the University of Bern library (access via the University’s talent promotion program). 
+The screening of the abstracts led to a further exclusion of items due to their actual focus on the evolutionary PD variant (10; e.g., Van Segbroeck et al., 2009), the introduction of more than two players (5; e.g., Izquierdo et al., 2004), other PD variants (8; e.g., Hayashi & Yamagishi, 1998), strategy learning (10; e.g., Han et al., 2022), or specific aspects like philosophical considerations (7; e.g., McLean, 1981). For the remaining ten articles, pdf files were downloaded from the University of Bern Library and studied in more detail. After deleting two more items, in which either a different game was researched (Back & Flache, 2006: exchange dilemma) or “random strategy” was used as randomly choosing a certain strategy from a set of strategies (Chen & Fu, 2023), eight publications finally remained, which were considered as being most relevant for the present topic. These publications are briefly summarized in subsection 2.5.
+
+\subsection{Appendix B.}
+\subsection{Appendix C.}
 	
 \section{Declaration of Integrity} \label{sec:declaration_of_integrity}
 

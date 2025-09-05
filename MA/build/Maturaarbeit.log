@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.8.24)  5 SEP 2025 19:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.8.24)  5 SEP 2025 21:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -349,7 +349,7 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'authoryear.dbx' not found.
+Package biblatex Info: ... file 'numeric-comp.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count335
@@ -457,28 +457,40 @@ File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
 \biburllcskip=\muskip21
 \c@smartand=\count411
 )
-Package biblatex Info: Trying to load bibliography style 'authoryear'...
-Package biblatex Info: ... file 'authoryear.bbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
-File: authoryear.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+File: numeric-comp.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count412
 \c@bbx:relatedtotal=\count413
-))
-Package biblatex Info: Trying to load citation style 'authoryear'...
-Package biblatex Info: ... file 'authoryear.cbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx
-File: authoryear.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
+)))
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count414
+\c@cbx@tempcntb=\count415
+\c@cbx@tempcntc=\count416
+\c@cbx@tempcntd=\count417
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
 Package biblatex Info: Redefining '\footcitetext'.
 Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
 Package biblatex Info: Redefining '\textcite'.
 Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
@@ -491,7 +503,7 @@ Package biblatex Info: Document encoding is UTF8 ....
 Package: expl3 2023-02-22 L3 programming layer (loader) 
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count414
+\l__color_backend_stack_int=\count418
 \l__pdf_internal_box=\box56
 ))
 Package biblatex Info: ... and expl3
@@ -507,9 +519,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count415
-\Gm@cntv=\count416
-\c@Gm@tempcnt=\count417
+\Gm@cnth=\count419
+\Gm@cntv=\count420
+\c@Gm@tempcnt=\count421
 \Gm@bindingoffset=\dimen168
 \Gm@wd@mp=\dimen169
 \Gm@odd@mp=\dimen170
@@ -520,8 +532,8 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen175
 \Gm@dimlist=\toks24
 )
-\@quotelevel=\count418
-\@quotereset=\count419
+\@quotelevel=\count422
+\@quotereset=\count423
  (build/Maturaarbeit.aux
 
 LaTeX Warning: Label `fig:RNDD_one-iter' multiply defined.
@@ -561,16 +573,16 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
 LaTeX Font Info:    ... okay on input line 55.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count420
+\scratchcounter=\count424
 \scratchdimen=\dimen176
 \scratchbox=\box57
-\nofMPsegments=\count421
-\nofMParguments=\count422
+\nofMPsegments=\count425
+\nofMParguments=\count426
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count423
+\MPscratchCnt=\count427
 \MPscratchDim=\dimen177
-\MPnumerator=\count424
-\makeMPintoPDFobject=\count425
+\MPnumerator=\count428
+\makeMPintoPDFobject=\count429
 \everyMPtoPDFconversion=\toks26
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -641,443 +653,428 @@ LaTeX Warning: No \author given.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 63--84
-
- []
-
-[1] [2] (build/Maturaarbeit.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1] [2] (build/Maturaarbeit.toc)
 \tf@toc=\write5
 \openout5 = `Maturaarbeit.toc'.
 
  [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 182--192
+Underfull \hbox (badness 10000) in paragraph at lines 181--191
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 241--268
+Underfull \hbox (badness 10000) in paragraph at lines 240--267
 
  []
 
 <images/pd_heatmap_A.png, id=194, 369.2997pt x 341.8371pt>
 File: images/pd_heatmap_A.png Graphic file (type png)
 <use images/pd_heatmap_A.png>
-Package pdftex.def Info: images/pd_heatmap_A.png  used on input line 280.
+Package pdftex.def Info: images/pd_heatmap_A.png  used on input line 279.
 (pdftex.def)             Requested size: 203.83417pt x 188.6734pt.
 <images/pd_heatmap_B.png, id=196, 369.2997pt x 341.8371pt>
 File: images/pd_heatmap_B.png Graphic file (type png)
 <use images/pd_heatmap_B.png>
-Package pdftex.def Info: images/pd_heatmap_B.png  used on input line 281.
+Package pdftex.def Info: images/pd_heatmap_B.png  used on input line 280.
 (pdftex.def)             Requested size: 203.83417pt x 188.6734pt.
-[6 <./images/pd_heatmap_A.png> <./images/pd_heatmap_B.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 367--372
+[6 <./images/pd_heatmap_A.png> <./images/pd_heatmap_B.png>] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 378--383
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 373--380
+Underfull \hbox (badness 10000) in paragraph at lines 384--391
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--385
+Underfull \hbox (badness 10000) in paragraph at lines 392--396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--392
+Underfull \hbox (badness 10000) in paragraph at lines 397--403
 
  []
 
-[7]
-Overfull \hbox (12.10349pt too wide) in paragraph at lines 417--418
+
+Overfull \hbox (12.10349pt too wide) in paragraph at lines 428--429
 \OT1/cmr/m/n/10.95 As jus-ti-fied be-fore, five strate-gies, namely Random-Discrete, Random-Continuous, Adapt-Discrete,
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 424--436
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--455
-
- []
-
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 459--463
+Underfull \hbox (badness 10000) in paragraph at lines 435--447
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 471--475
+Underfull \hbox (badness 10000) in paragraph at lines 453--466
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 487--490
+Underfull \hbox (badness 10000) in paragraph at lines 470--474
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 509--515
+Underfull \hbox (badness 10000) in paragraph at lines 482--486
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--563
+Underfull \hbox (badness 10000) in paragraph at lines 498--501
 
  []
 
-[10{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 564--572
+
+Underfull \hbox (badness 10000) in paragraph at lines 520--526
 
  []
 
-[11]
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 651.
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 552--574
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 575--583
+
+ []
+
+[11{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [12]
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 662.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
-Overfull \hbox (1.93388pt too wide) in paragraph at lines 659--659
+Overfull \hbox (1.93388pt too wide) in paragraph at lines 670--670
 []|[]| 
  []
 
-<plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png, id=238, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png, id=264, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png  used on input line 660.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png  used on input line 671.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png, id=239, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png, id=265, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png  used on input line 661.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png  used on input line 672.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png, id=240, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png, id=266, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png  used on input line 662.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png  used on input line 673.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png, id=241, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png, id=267, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png  used on input line 663.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png  used on input line 674.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png, id=242, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png, id=268, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png  used on input line 664.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png  used on input line 675.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
 
-Overfull \hbox (4.03633pt too wide) in paragraph at lines 667--667
+Overfull \hbox (4.03633pt too wide) in paragraph at lines 678--678
 []|[]| 
  []
 
-<plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png, id=243, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png, id=269, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png  used on input line 668.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png  used on input line 679.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png, id=244, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png, id=270, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png  used on input line 669.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png  used on input line 680.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png, id=245, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png, id=271, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png  used on input line 670.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png  used on input line 681.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png, id=246, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png, id=272, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png  used on input line 671.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png  used on input line 682.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png, id=247, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png, id=273, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png  used on input line 672.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png  used on input line 683.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
 
-Overfull \hbox (1.77501pt too wide) in paragraph at lines 675--675
+Overfull \hbox (1.77501pt too wide) in paragraph at lines 686--686
 []|[]| 
  []
 
-<plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png, id=248, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png, id=274, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png  used on input line 676.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png  used on input line 687.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png, id=249, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png, id=275, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png  used on input line 677.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png  used on input line 688.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png, id=250, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png, id=276, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png  used on input line 678.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png  used on input line 689.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png, id=251, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png, id=277, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png  used on input line 679.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png  used on input line 690.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png, id=252, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png, id=278, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png  used on input line 680.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png  used on input line 691.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
 
-Overfull \hbox (3.87746pt too wide) in paragraph at lines 683--683
+Overfull \hbox (3.87746pt too wide) in paragraph at lines 694--694
 []|[]| 
  []
 
-<plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png, id=253, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png, id=279, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png  used on input line 684.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png  used on input line 695.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png, id=254, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png, id=280, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png  used on input line 685.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png  used on input line 696.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png, id=255, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png, id=281, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png  used on input line 686.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png  used on input line 697.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png, id=256, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png, id=282, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png  used on input line 687.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png  used on input line 698.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png, id=257, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png, id=283, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png  used on input line 688.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png  used on input line 699.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
 
-Overfull \hbox (1.93388pt too wide) in paragraph at lines 691--691
+Overfull \hbox (1.93388pt too wide) in paragraph at lines 702--702
 []|[]| 
  []
 
-<plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png, id=258, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png, id=284, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png  used on input line 692.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png  used on input line 703.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png, id=259, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png, id=285, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png  used on input line 693.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png  used on input line 704.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png, id=260, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png, id=286, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png  used on input line 694.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png  used on input line 705.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/added.png, id=261, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/added.png, id=287, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/added.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/added.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/added.png  used on input line 695.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/added.png  used on input line 706.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png, id=262, 702.625pt x 1003.75pt>
+<plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png, id=288, 702.625pt x 1003.75pt>
 File: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png Graphic file (type png)
 <use plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png>
-Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png  used on input line 696.
+Package pdftex.def Info: plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png  used on input line 707.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-[12{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png> <./plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png> <./plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png> <./plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/ad
+[13{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png> <./plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png> <./plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png> <./plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png> <./plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/ad
 ded.png> <./plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png>]
-Overfull \hbox (1.93388pt too wide) in paragraph at lines 730--730
+Overfull \hbox (1.93388pt too wide) in paragraph at lines 741--741
 []|[]| 
  []
 
-<plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete.png, id=294, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete.png, id=319, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete.png  used on input line 731.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete.png  used on input line 742.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png, id=295, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png, id=320, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png  used on input line 732.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png  used on input line 743.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png, id=296, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png, id=321, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png  used on input line 733.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png  used on input line 744.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png, id=297, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png, id=322, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png  used on input line 734.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png  used on input line 745.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png, id=298, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png, id=323, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png  used on input line 735.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png  used on input line 746.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
 
-Overfull \hbox (4.03633pt too wide) in paragraph at lines 737--737
+Overfull \hbox (4.03633pt too wide) in paragraph at lines 748--748
 []|[]| 
  []
 
-<plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png, id=299, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png, id=324, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png  used on input line 738.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png  used on input line 749.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png, id=300, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png, id=325, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png  used on input line 739.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png  used on input line 750.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png, id=301, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png, id=326, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png  used on input line 740.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png  used on input line 751.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png, id=302, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png, id=327, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png  used on input line 741.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png  used on input line 752.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png, id=303, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png, id=328, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png  used on input line 742.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png  used on input line 753.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
 
-Overfull \hbox (1.77501pt too wide) in paragraph at lines 744--744
+Overfull \hbox (1.77501pt too wide) in paragraph at lines 755--755
 []|[]| 
  []
 
-<plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png, id=304, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png, id=329, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png  used on input line 745.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png  used on input line 756.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png, id=305, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png, id=330, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png  used on input line 746.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png  used on input line 757.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png, id=306, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png, id=331, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png  used on input line 747.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png  used on input line 758.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png, id=307, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png, id=332, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png  used on input line 748.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png  used on input line 759.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png, id=308, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png, id=333, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png  used on input line 749.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png  used on input line 760.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
 
-Overfull \hbox (3.87746pt too wide) in paragraph at lines 752--752
+Overfull \hbox (3.87746pt too wide) in paragraph at lines 763--763
 []|[]| 
  []
 
-<plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete_diff.png, id=309, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete_diff.png, id=334, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete_diff.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete_diff.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete_diff.png  used on input line 753.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete_diff.png  used on input line 764.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png, id=310, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png, id=335, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png  used on input line 754.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png  used on input line 765.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png, id=311, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png, id=336, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png  used on input line 755.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png  used on input line 766.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png, id=312, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png, id=337, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png  used on input line 756.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png  used on input line 767.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png, id=313, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png, id=338, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png  used on input line 757.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png  used on input line 768.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
 
-Overfull \hbox (1.93388pt too wide) in paragraph at lines 759--759
+Overfull \hbox (1.93388pt too wide) in paragraph at lines 770--770
 []|[]| 
  []
 
-<plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png, id=314, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png, id=339, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png  used on input line 760.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png  used on input line 771.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png, id=315, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png, id=340, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png  used on input line 761.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png  used on input line 772.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png, id=316, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png, id=341, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png  used on input line 762.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png  used on input line 773.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png, id=317, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png, id=342, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png  used on input line 763.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png  used on input line 774.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-<plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png, id=318, 702.625pt x 1003.75pt>
+<plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png, id=343, 702.625pt x 1003.75pt>
 File: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png Graphic file (type png)
 <use plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png>
-Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png  used on input line 764.
+Package pdftex.def Info: plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png  used on input line 775.
 (pdftex.def)             Requested size: 67.94241pt x 97.05731pt.
-[13 <./plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png> <./plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png> <./plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png> <./plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png> <./plots
+[14 <./plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png> <./plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png> <./plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png> <./plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png> <./plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png> <./plots
 /Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png> <./plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 789--794
+Underfull \hbox (badness 10000) in paragraph at lines 800--805
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 798--808
+Underfull \hbox (badness 10000) in paragraph at lines 809--819
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 809--813
+Underfull \hbox (badness 10000) in paragraph at lines 820--824
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 814--820
+Underfull \hbox (badness 10000) in paragraph at lines 825--831
 
  []
 
 
-Overfull \hbox (13.89804pt too wide) in paragraph at lines 823--826
+Overfull \hbox (13.89804pt too wide) in paragraph at lines 834--837
 \OT1/cmr/m/n/10.95 The absolute-gain sur-faces con-cern-ing the in-ter-ac-tion of Random-Discrete and Random-Continuous
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 823--826
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 827--832
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 833--835
+Underfull \hbox (badness 10000) in paragraph at lines 834--837
 
  []
 
@@ -1086,231 +1083,282 @@ Underfull \hbox (badness 10000) in paragraph at lines 838--843
 
  []
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 846--859
+
+Underfull \hbox (badness 10000) in paragraph at lines 844--846
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 860--864
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--868
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 882--883
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 897--900
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 903--911
+Underfull \hbox (badness 10000) in paragraph at lines 849--854
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 912--914
+Underfull \hbox (badness 10000) in paragraph at lines 857--870
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 915--916
+Underfull \hbox (badness 10000) in paragraph at lines 871--875
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 919--921
+Underfull \hbox (badness 10000) in paragraph at lines 876--879
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 924--930
+Underfull \hbox (badness 10000) in paragraph at lines 893--894
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 931--935
+Underfull \hbox (badness 10000) in paragraph at lines 908--911
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 936--938
+Underfull \hbox (badness 10000) in paragraph at lines 914--922
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 923--925
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 946--949
+Underfull \hbox (badness 10000) in paragraph at lines 926--927
 
  []
 
-[16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 1061--1064
+
+Underfull \hbox (badness 10000) in paragraph at lines 930--932
 
  []
 
-<plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_first.png, id=390, 501.875pt x 501.875pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--941
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 942--946
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 947--949
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 957--960
+
+ []
+
+[17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 1072--1075
+
+ []
+
+<plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_first.png, id=416, 501.875pt x 501.875pt>
 File: plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_first.png Graphic file (type png)
 <use plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_first.png>
-Package pdftex.def Info: plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_first.png  used on input line 1069.
+Package pdftex.def Info: plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_first.png  used on input line 1080.
 (pdftex.def)             Requested size: 203.83417pt x 203.8326pt.
-<plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_first.png, id=391, 501.875pt x 501.875pt>
+<plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_first.png, id=417, 501.875pt x 501.875pt>
 File: plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_first.png Graphic file (type png)
 <use plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_first.png>
-Package pdftex.def Info: plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_first.png  used on input line 1075.
+Package pdftex.def Info: plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_first.png  used on input line 1086.
 (pdftex.def)             Requested size: 203.83417pt x 203.8326pt.
-[18 <./plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_first.png> <./plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_first.png>]
-<plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd.png, id=409, 501.875pt x 501.875pt>
+[19 <./plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_first.png> <./plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_first.png>]
+<plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd.png, id=434, 501.875pt x 501.875pt>
 File: plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd.png Graphic file (type png)
 <use plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd.png>
-Package pdftex.def Info: plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd.png  used on input line 1104.
+Package pdftex.def Info: plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd.png  used on input line 1115.
 (pdftex.def)             Requested size: 203.83417pt x 203.8326pt.
-<plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd.png, id=410, 501.875pt x 501.875pt>
+<plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd.png, id=435, 501.875pt x 501.875pt>
 File: plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd.png Graphic file (type png)
 <use plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd.png>
-Package pdftex.def Info: plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd.png  used on input line 1110.
+Package pdftex.def Info: plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd.png  used on input line 1121.
 (pdftex.def)             Requested size: 203.83417pt x 203.8326pt.
 
-Underfull \hbox (badness 4366) in paragraph at lines 1111--1111
+Underfull \hbox (badness 4366) in paragraph at lines 1122--1122
 [] \OT1/cmr/bx/n/10 (b) |\OT1/cmr/m/it/10 Stan-dard De-vi-a-tion sur-face of Al-
  []
 
-<plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd_p_avr.png, id=412, 501.875pt x 501.875pt>
+<plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd_p_avr.png, id=437, 501.875pt x 501.875pt>
 File: plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd_p_avr.png Graphic file (type png)
 <use plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd_p_avr.png>
-Package pdftex.def Info: plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd_p_avr.png  used on input line 1125.
+Package pdftex.def Info: plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd_p_avr.png  used on input line 1136.
 (pdftex.def)             Requested size: 203.83417pt x 203.8326pt.
-<plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd_p_avr.png, id=413, 501.875pt x 501.875pt>
+<plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd_p_avr.png, id=438, 501.875pt x 501.875pt>
 File: plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd_p_avr.png Graphic file (type png)
 <use plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd_p_avr.png>
-Package pdftex.def Info: plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd_p_avr.png  used on input line 1131.
+Package pdftex.def Info: plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd_p_avr.png  used on input line 1142.
 (pdftex.def)             Requested size: 203.83417pt x 203.8326pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1145--1147
+Underfull \hbox (badness 10000) in paragraph at lines 1156--1158
 
  []
 
-[19 <./plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd.png> <./plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd.png>]
-<plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png, id=425, 702.625pt x 501.875pt>
+[20 <./plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd.png> <./plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd.png>]
+<plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png, id=450, 702.625pt x 501.875pt>
 File: plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png Graphic file (type png)
 <use plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png>
-Package pdftex.def Info: plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png  used on input line 1181.
+Package pdftex.def Info: plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png  used on input line 1192.
 (pdftex.def)             Requested size: 226.48395pt x 161.77495pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1187--1193
+Underfull \hbox (badness 10000) in paragraph at lines 1198--1204
 
  []
 
-[20 <./plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd_p_avr.png> <./plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd_p_avr.png>]
-<plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png, id=437, 702.625pt x 501.875pt>
+[21 <./plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd_p_avr.png> <./plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd_p_avr.png>]
+<plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png, id=462, 702.625pt x 501.875pt>
 File: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png Graphic file (type png)
 <use plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png>
-Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png  used on input line 1222.
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png  used on input line 1233.
 (pdftex.def)             Requested size: 203.83417pt x 145.59363pt.
-<plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png, id=438, 702.625pt x 501.875pt>
+<plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png, id=463, 702.625pt x 501.875pt>
 File: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png Graphic file (type png)
 <use plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png>
-Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png  used on input line 1229.
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png  used on input line 1240.
 (pdftex.def)             Requested size: 203.83417pt x 145.59363pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1255--1257
+Underfull \hbox (badness 10000) in paragraph at lines 1266--1268
 
  []
 
-[21 <./plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png>]
-<plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png, id=450, 702.625pt x 501.875pt>
+[22 <./plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png>]
+<plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png, id=475, 702.625pt x 501.875pt>
 File: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png Graphic file (type png)
 <use plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png>
-Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png  used on input line 1264.
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png  used on input line 1275.
 (pdftex.def)             Requested size: 203.83417pt x 145.59363pt.
-<plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png, id=451, 702.625pt x 501.875pt>
+<plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png, id=476, 702.625pt x 501.875pt>
 File: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png Graphic file (type png)
 <use plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png>
-Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png  used on input line 1271.
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png  used on input line 1282.
 (pdftex.def)             Requested size: 203.83417pt x 145.59363pt.
-<plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png, id=453, 702.625pt x 501.875pt>
+<plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png, id=478, 702.625pt x 501.875pt>
 File: plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png Graphic file (type png)
 <use plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png>
-Package pdftex.def Info: plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png  used on input line 1289.
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png  used on input line 1300.
 (pdftex.def)             Requested size: 226.48395pt x 161.77495pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1295--1297
+Underfull \hbox (badness 10000) in paragraph at lines 1306--1308
 
  []
 
-[22 <./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png> <./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png> <./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png> <./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png>]
-<plots/Discussion/Random-Continuous/investments.png, id=466, 702.625pt x 501.875pt>
+[23 <./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png> <./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png> <./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png> <./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png>]
+<plots/Discussion/Random-Continuous/investments.png, id=491, 702.625pt x 501.875pt>
 File: plots/Discussion/Random-Continuous/investments.png Graphic file (type png)
 <use plots/Discussion/Random-Continuous/investments.png>
-Package pdftex.def Info: plots/Discussion/Random-Continuous/investments.png  used on input line 1310.
+Package pdftex.def Info: plots/Discussion/Random-Continuous/investments.png  used on input line 1321.
 (pdftex.def)             Requested size: 226.48395pt x 161.77495pt.
-<plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png, id=467, 702.625pt x 501.875pt>
+<plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png, id=492, 702.625pt x 501.875pt>
 File: plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png Graphic file (type png)
 <use plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png>
-Package pdftex.def Info: plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png  used on input line 1317.
+Package pdftex.def Info: plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png  used on input line 1328.
 (pdftex.def)             Requested size: 226.48395pt x 161.77495pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1323--1334
+Underfull \hbox (badness 10000) in paragraph at lines 1334--1345
 
  []
 
-<plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png, id=471, 702.625pt x 501.875pt>
+<plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png, id=496, 702.625pt x 501.875pt>
 File: plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png Graphic file (type png)
 <use plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png>
-Package pdftex.def Info: plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png  used on input line 1338.
+Package pdftex.def Info: plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png  used on input line 1349.
 (pdftex.def)             Requested size: 226.48395pt x 161.77495pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23 <./plots/Discussion/Adapt-Continuous/Payoffs_5_line_chart_0-10.png> <./plots/Discussion/Random-Continuous/investments.png>] [24 <./plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png> <./plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png>] [25] (build/Maturaarbeit.aux)
+[24 <./plots/Discussion/Adapt-Continuous/Payoffs_5_line_chart_0-10.png> <./plots/Discussion/Random-Continuous/investments.png>] [25 <./plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png> <./plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png>]
+Overfull \hbox (11.545pt too wide) in paragraph at lines 1413--1413
+[]\OT1/cmr/m/n/10.95 B. Brembs. ``Chaos, cheat-ing and co-op-er-a-tion: Po-ten-tial so-lu-tions to the pris-oner's dilemma''.
+ []
+
+
+Overfull \hbox (8.25514pt too wide) in paragraph at lines 1413--1413
+[]\OT1/cmr/m/n/10.95 P. Math-ieu and J. P. De-la-haye. ``New win-ning strate-gies for the it-er-ated pris-oner's dilemma''.
+ []
+
+[26]
+./Maturaarbeit.tex:1418: Misplaced alignment tab character &.
+l.1418 ...), other PD variants (8; e.g., Hayashi &
+                                                   Yamagishi, 1998), strateg...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Maturaarbeit.tex:1418: Misplaced alignment tab character &.
+l.1418 ... a different game was researched (Back &
+                                                   Flache, 2006: exchange di...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Maturaarbeit.tex:1418: Misplaced alignment tab character &.
+l.1418 ...trategy from a set of strategies (Chen &
+                                                   Fu, 2023), eight publicat...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[27] (build/Maturaarbeit.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Maturaarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 7DE6A8407DEC8B8364A41208D7669629;3964.
+(rerunfilecheck)             Checksum: BE519330F4E3754713EEA9CAB5290F67;4075.
 Package logreq Info: Writing requests to 'Maturaarbeit.run.xml'.
 \openout1 = `Maturaarbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19768 strings out of 476034
- 373825 string characters out of 5792864
- 1865388 words of memory out of 6000000
- 39865 multiletter control sequences out of 15000+600000
+ 19886 strings out of 476034
+ 376947 string characters out of 5792864
+ 1866388 words of memory out of 6000000
+ 39967 multiletter control sequences out of 15000+600000
  523526 words of font info for 67 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 75i,23n,77p,685b,1283s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,23n,77p,989b,1451s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on build/Maturaarbeit.pdf (26 pages, 4481378 bytes).
+Output written on build/Maturaarbeit.pdf (28 pages, 4495018 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 395 compressed objects within 4 object streams
- 107 named destinations out of 1000 (max. 500000)
+ 645 PDF objects out of 1000 (max. 8388607)
+ 444 compressed objects within 5 object streams
+ 120 named destinations out of 1000 (max. 500000)
  552 words of extra memory for PDF output out of 10000 (max. 10000000)
 

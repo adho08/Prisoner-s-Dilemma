@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/Maturaarbeit"] 1757094252.10727 "build/Maturaarbeit.bcf" "build/Maturaarbeit.bbl" "build/Maturaarbeit" 1757094262.57605 0
-  "build/Maturaarbeit.bcf" 1757094262.40645 108657 afc35296a5a0c591b6a86c1c8390aa2e "pdflatex"
-  "refs.bib" 1757091271.40066 7058 427c05a05fcf06a3b6dd08d90eb7cfa7 ""
+["biber build/Maturaarbeit"] 1757099192.9692 "build/Maturaarbeit.bcf" "build/Maturaarbeit.bbl" "build/Maturaarbeit" 1757099608.74181 0
+  "build/Maturaarbeit.bcf" 1757099608.58741 108716 4af83402e7f3fb316f059244f6fdfe1f "pdflatex"
+  "refs.bib" 1757098416.4211 7058 168ba940034e46302555cfe150136873 ""
   (generated)
   "build/Maturaarbeit.bbl"
   "build/Maturaarbeit.blg"
   (rewritten before read)
-["pdflatex"] 1757094259.13844 "Maturaarbeit.tex" "build/Maturaarbeit.pdf" "Maturaarbeit" 1757094262.57637 0
+["pdflatex"] 1757099605.49429 "Maturaarbeit.tex" "build/Maturaarbeit.pdf" "Maturaarbeit" 1757099608.74232 2
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1737590400 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -78,7 +78,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty" 1737590400 5319 48d7f3cfa322abd2788e3c09d624b922 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo" 1737590400 8464 63bf71cc1214ffdd38288da73a7ca182 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty" 1737590400 2894 f2f8ee7d4fb94263f9f255fa22cab2d3 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx" 1566680006 8024 f170876981d3e1db9ed0abd5abc62dbe ""
+  "/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx" 1342308459 92 7cdbb04a1e32fba0fbb91b6e6d123497 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx" 1609451401 1818 9ed166ac0a9204a8ebe450ca09db5dde ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx" 1609451401 25680 409c3f3d570418bc545e8065bebd0688 ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg" 1342308459 69 249fa6df04d948e51b6d5c67bea30c42 ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def" 1711143581 96838 228f189cb4020ea9f6d467af8aa859c2 ""
@@ -86,7 +87,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty" 1711143581 9961 107fdb78f652fccae7bce0d23bdc19cd ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def" 1643926307 13919 5426dbe90e723f089052b4e908b56ef9 ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def" 1711143581 32761 18d14e3b502c120f79b2184de4e21d14 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx" 1566680006 3976 2d46354b304f9bc8fda915fe9215de04 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx" 1678141846 10425 7de071597dabda19c14ff0780122d6d4 ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx" 1711143581 40021 daa5a82ed0967f3ac4b77cb8384cac55 ""
   "/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty" 1678653221 55778 14d5c99aa26410e440820bb9ea5b8b3a ""
   "/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty" 1678653221 71836 1a735454ad10692452eb2f2fc37f3865 ""
@@ -128,12 +129,12 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1737590400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1756041941.56631 4547224 5cf1c14d6ee63f23cc6525ae387ed2c9 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1756041610 7759956 46aea47261505c31e75125fee8931c29 ""
-  "Maturaarbeit.tex" 1757094248.74257 83451 3cfe5f095bd85f778106f33e142890be ""
-  "build/Maturaarbeit.aux" 1757094262.40431 12565 db46b21e12e00c2064214c52c6e18027 "pdflatex"
-  "build/Maturaarbeit.bbl" 1757094252.79432 3719 ac1b1732b475bddca739255c9ce6525e "biber build/Maturaarbeit"
-  "build/Maturaarbeit.out" 1757094262.40645 3964 7de6a8407dec8b8364a41208d7669629 "pdflatex"
-  "build/Maturaarbeit.run.xml" 1757094262.4085 2361 32cfe09d812736758d6e06e0045dbf91 "pdflatex"
-  "build/Maturaarbeit.toc" 1757094262.4085 2200 b7e777ca21be7e6f57c87af358d8099b "pdflatex"
+  "Maturaarbeit.tex" 1757099605.40027 88402 641d7055b207cfb5b79e3aabd018a89d ""
+  "build/Maturaarbeit.aux" 1757099608.58556 13894 fd7f7d187ab5589e5a9231ca80c71f09 "pdflatex"
+  "build/Maturaarbeit.bbl" 1757099193.78714 21857 a03c26944bc03bed49b95a1b2cbf2c0c "biber build/Maturaarbeit"
+  "build/Maturaarbeit.out" 1757099608.58741 4075 be519330f4e3754713eea9cab5290f67 "pdflatex"
+  "build/Maturaarbeit.run.xml" 1757099608.58954 2396 5efcd003b9f4b269aed627cb896ccf08 "pdflatex"
+  "build/Maturaarbeit.toc" 1757099608.58954 2221 89dae0c8a0a1de26acae34e2a8407268 "pdflatex"
   "images/pd_heatmap_A.png" 1755095647.56031 174676 be9cec53606a80f0599dec94469c15f3 ""
   "images/pd_heatmap_B.png" 1755095655.88822 184497 caec8985575284e71abcfa1660044d27 ""
   "plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png" 1755949778.76822 52747 48ceaeecab0033234afb319a5eea56e4 ""
