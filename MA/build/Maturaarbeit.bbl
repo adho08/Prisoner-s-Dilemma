@@ -512,6 +512,270 @@
       \verb https://doi.org/10.1080/13546783.2010.537521
       \endverb
     \endentry
+    \entry{SSLP09}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=9d05bc3068dcabed4864e62248287209}{%
+           family={Van\bibnamedelima Segbroeck},
+           familyi={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=be75a582524ef548709ad90e40fd99de}{%
+           family={Santos},
+           familyi={S\bibinitperiod},
+           given={F.\bibnamedelimi C.},
+           giveni={F\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=a613526a801b23741d239b2e39d94bce}{%
+           family={Lenaerts},
+           familyi={L\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=2745c253fea686ad670feae35f96d8c7}{%
+           family={Pacheco},
+           familyi={P\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{c903809c4c06abc84566897667990039}
+      \strng{fullhash}{ea561cc87c794bbdd6a4cfa610c34f67}
+      \strng{fullhashraw}{ea561cc87c794bbdd6a4cfa610c34f67}
+      \strng{bibnamehash}{c903809c4c06abc84566897667990039}
+      \strng{authorbibnamehash}{c903809c4c06abc84566897667990039}
+      \strng{authornamehash}{c903809c4c06abc84566897667990039}
+      \strng{authorfullhash}{ea561cc87c794bbdd6a4cfa610c34f67}
+      \strng{authorfullhashraw}{ea561cc87c794bbdd6a4cfa610c34f67}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{number}{058105}
+      \field{title}{Reacting differently to adverse ties promotes cooperation in social networks}
+      \field{volume}{102}
+      \field{year}{2009}
+      \verb{doi}
+      \verb https://doi.org/10.1103/PhysRevLett.102.058105
+      \endverb
+    \endentry
+    \entry{IGP04}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=6b2d970d1b1b7eacad62a344425d0bec}{%
+           family={Izquierdo},
+           familyi={I\bibinitperiod},
+           given={L.\bibnamedelimi R.},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=031bafa855812e27fa7e18cb9b8c603e}{%
+           family={Gotts},
+           familyi={G\bibinitperiod},
+           given={N.\bibnamedelimi M.},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=47f74cca4ba5bb3fe885565ec858ada1}{%
+           family={Polhill},
+           familyi={P\bibinitperiod},
+           given={J.\bibnamedelimi G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{0425cf60de7c9d84f718f364280fcada}
+      \strng{fullhash}{0425cf60de7c9d84f718f364280fcada}
+      \strng{fullhashraw}{0425cf60de7c9d84f718f364280fcada}
+      \strng{bibnamehash}{0425cf60de7c9d84f718f364280fcada}
+      \strng{authorbibnamehash}{0425cf60de7c9d84f718f364280fcada}
+      \strng{authornamehash}{0425cf60de7c9d84f718f364280fcada}
+      \strng{authorfullhash}{0425cf60de7c9d84f718f364280fcada}
+      \strng{authorfullhashraw}{0425cf60de7c9d84f718f364280fcada}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Artificial Societies and Social Simulation}
+      \field{number}{3}
+      \field{title}{Case-based reasoning, social dilemmas, and a new equilibrium concept}
+      \field{volume}{7}
+      \field{year}{2004}
+      \verb{urlraw}
+      \verb https://www.jasss.org/7/3/1.html
+      \endverb
+      \verb{url}
+      \verb https://www.jasss.org/7/3/1.html
+      \endverb
+    \endentry
+    \entry{HY98}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=06ad061eaea7078a1ad304f43d36a0aa}{%
+           family={Hayashi},
+           familyi={H\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=86a7bf4d2eab3785a608ed2d602a1b2c}{%
+           family={Yamagishi},
+           familyi={Y\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{58ea77c910e831fc2fcda1e02990c574}
+      \strng{fullhash}{58ea77c910e831fc2fcda1e02990c574}
+      \strng{fullhashraw}{58ea77c910e831fc2fcda1e02990c574}
+      \strng{bibnamehash}{58ea77c910e831fc2fcda1e02990c574}
+      \strng{authorbibnamehash}{58ea77c910e831fc2fcda1e02990c574}
+      \strng{authornamehash}{58ea77c910e831fc2fcda1e02990c574}
+      \strng{authorfullhash}{58ea77c910e831fc2fcda1e02990c574}
+      \strng{authorfullhashraw}{58ea77c910e831fc2fcda1e02990c574}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Personality and Social Psychology Review}
+      \field{number}{4}
+      \field{title}{Selective play: Choosing partners in an uncertain world}
+      \field{volume}{2}
+      \field{year}{1998}
+      \field{pages}{276\bibrangedash 289}
+      \range{pages}{14}
+      \verb{doi}
+      \verb https://doi.org/10.1207/s15327957pspr0204_4
+      \endverb
+    \endentry
+    \entry{HZX22}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=d5f7ae42a563998bd7eccae3eaed6b75}{%
+           family={Han},
+           familyi={H\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=b2ff85d118c95088c7ca004045563aa8}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=e84db8e6e88e11b89bc601ee48a69bc6}{%
+           family={Xia},
+           familyi={X\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{7992a4ec2cb3df73fa93ee55d7ecbcca}
+      \strng{fullhash}{7992a4ec2cb3df73fa93ee55d7ecbcca}
+      \strng{fullhashraw}{7992a4ec2cb3df73fa93ee55d7ecbcca}
+      \strng{bibnamehash}{7992a4ec2cb3df73fa93ee55d7ecbcca}
+      \strng{authorbibnamehash}{7992a4ec2cb3df73fa93ee55d7ecbcca}
+      \strng{authornamehash}{7992a4ec2cb3df73fa93ee55d7ecbcca}
+      \strng{authorfullhash}{7992a4ec2cb3df73fa93ee55d7ecbcca}
+      \strng{authorfullhashraw}{7992a4ec2cb3df73fa93ee55d7ecbcca}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Chaos, Solitons \& Fractals}
+      \field{number}{112684}
+      \field{title}{Hybrid learning promotes cooperation in the spatial prisoner’s dilemma game}
+      \field{volume}{164}
+      \field{year}{2022}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.chaos.2022.112684
+      \endverb
+    \endentry
+    \entry{McL81}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=1581c7f369137bfa2bd476bbd104978a}{%
+           family={McLean},
+           familyi={M\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{1581c7f369137bfa2bd476bbd104978a}
+      \strng{fullhash}{1581c7f369137bfa2bd476bbd104978a}
+      \strng{fullhashraw}{1581c7f369137bfa2bd476bbd104978a}
+      \strng{bibnamehash}{1581c7f369137bfa2bd476bbd104978a}
+      \strng{authorbibnamehash}{1581c7f369137bfa2bd476bbd104978a}
+      \strng{authornamehash}{1581c7f369137bfa2bd476bbd104978a}
+      \strng{authorfullhash}{1581c7f369137bfa2bd476bbd104978a}
+      \strng{authorfullhashraw}{1581c7f369137bfa2bd476bbd104978a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Political Studies}
+      \field{number}{3}
+      \field{title}{The social contract in Leviathan and the prisoner‘s dilemma supergame}
+      \field{volume}{29}
+      \field{year}{1981}
+      \field{pages}{339\bibrangedash 351}
+      \range{pages}{13}
+      \verb{doi}
+      \verb https://doi.org/10.1111/j.1467-9248.1981.tb00500.x
+      \endverb
+    \endentry
+    \entry{BF06}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=edb9faef4314b34d8845e61a289993ed}{%
+           family={Back},
+           familyi={B\bibinitperiod},
+           given={I},
+           giveni={I\bibinitperiod}}}%
+        {{hash=e784c2ca21c6c5fb7e0b0773c4133e24}{%
+           family={Flache},
+           familyi={F\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{e7b9906e92eaeb3cfdc9213445e51327}
+      \strng{fullhash}{e7b9906e92eaeb3cfdc9213445e51327}
+      \strng{fullhashraw}{e7b9906e92eaeb3cfdc9213445e51327}
+      \strng{bibnamehash}{e7b9906e92eaeb3cfdc9213445e51327}
+      \strng{authorbibnamehash}{e7b9906e92eaeb3cfdc9213445e51327}
+      \strng{authornamehash}{e7b9906e92eaeb3cfdc9213445e51327}
+      \strng{authorfullhash}{e7b9906e92eaeb3cfdc9213445e51327}
+      \strng{authorfullhashraw}{e7b9906e92eaeb3cfdc9213445e51327}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Artificial Societies and Social Simulation}
+      \field{number}{1}
+      \field{title}{The viability of cooperation based on interpersonal commitment}
+      \field{volume}{9}
+      \field{year}{2006}
+      \verb{urlraw}
+      \verb https://www.jasss.org/9/1/12.html
+      \endverb
+      \verb{url}
+      \verb https://www.jasss.org/9/1/12.html
+      \endverb
+    \endentry
+    \entry{CF23}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=60aeb23a507616b6ae2488ddaab41f0e}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=77c4d7849b734433a85c29d19eef4278}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e9819c71e156286f183135738f279a5}
+      \strng{fullhash}{4e9819c71e156286f183135738f279a5}
+      \strng{fullhashraw}{4e9819c71e156286f183135738f279a5}
+      \strng{bibnamehash}{4e9819c71e156286f183135738f279a5}
+      \strng{authorbibnamehash}{4e9819c71e156286f183135738f279a5}
+      \strng{authornamehash}{4e9819c71e156286f183135738f279a5}
+      \strng{authorfullhash}{4e9819c71e156286f183135738f279a5}
+      \strng{authorfullhashraw}{4e9819c71e156286f183135738f279a5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PNAS Nexus}
+      \field{note}{pgad176}
+      \field{number}{6}
+      \field{title}{Outlearning extortioners: Unbending strategies can foster reciprocal fairness and cooperation}
+      \field{volume}{2}
+      \field{year}{2023}
+      \verb{doi}
+      \verb https://doi.org/10.1093/pnasnexus/pgad176
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

@@ -148,15 +148,11 @@ The following matrix visualises the pay-offs in this game in a comprehensive way
 
 \noindent
 The dilemma consists of the following:
-The act of defecting appearing alluring since there is a chance of avoiding a long sentence.
+The act of defecting appears alluring since there is a chance of avoiding a long sentence.
 However, it is then also possible to receive ten in prison depending on the confederate's decision.
 Although this---which could have been avoided if both had remained silent---it is nevertheless the most likely result, as the temptation to defect is simply too great.
-% John Nash, a mathematician which made great contributions in Game Theory, has proved the most reasonable course of action to be confessing.
-% The Nash-equilibrium is introduced. 
-% It defines a stable state in which both would not reconsider their own judgement although each of them would be aware of the other's decision.\\
 This PD thus composes a one-time interaction from a mathematical and analytical perspective. 
 In a more general form, the variables can be described as Reward ($R$), Sucker's pay-off ($S$), Temptation ($T$), and Punishment ($P$) as follows:
-% \url{https://www.investopedia.com/terms/n/nash-equilibrium.asp}
 
 % general pay-off matrix
 \begin{center}
@@ -169,14 +165,14 @@ In a more general form, the variables can be described as Reward ($R$), Sucker's
 \end{tabular}
 \end{center}
 
-The pay-offs in the matrix can be altered as long as these inequalities stay valid.
+\noindent The pay-offs in the matrix can be altered as long as the following inequalities stay valid:
 
 \begin{equation}
 	T < R < P < S
 	\label{eq:TRPS}
 \end{equation}
 
-\subsection{Iterated}
+\subsection{Iterated Prisoner's Dilemma}
 		
 The Iterated Prisoner's Dilemma (IPD) is a game which extends the PD. 
 As the name suggests, the PD is played a number of times sequentially. 
@@ -349,9 +345,9 @@ This implies that losing strategies vanish, while successful ones replicate.
 % Since the alternating form gives and advantage to the strategy which is allowed to respond, this only makes things more complicated than necessary.
 % So, this analysis is only dedicated to the simultaneous form.
 
-\subsection{Current Findings}
+\subsection{Scientific Findings} \label{sec:scientific_findings}
 In the context of the PD, erratic behaviour might be characterised best as “random strategy”.
-In order to retrieve the most important scientific findings on this topic, a literature search was conducted on scholar.google.com with the search terms 'Prisoner's Dilemma' and 'random strategy' (for details see Appendix xxx).
+To retrieve the most important scientific findings on this topic, a literature search was conducted on \url{scholar.google.com} with the search terms 'Prisoner's Dilemma' and 'random strategy' (for details see Appendix \ref{sec:Appx_search}).
 A criterion-based process of stepwise reduction of the initially found 650 hits finally resulted in eight publications of particular relevance.
 
 Interestingly, a random strategy was already included in the original tournament organized by Axelrod and Hamilton \cite{AH81}.
@@ -1412,12 +1408,219 @@ Many additional findings have been identified and were promised to be analysed i
 \subsection*{References}
 \printbibliography[title={}]
 
+\newpage
+
 \section{Appendices} \label{sec:appendices}
-\subsection{Appendix A. Literature Search}
-In order to retrieve the most important scientific findings on the topic of PD and erratic behavior, a literature search was conducted on scholar.google.com with the search terms Prisoner's Dilemma and random strategy. To narrow down the search to scientific findings, first of all books (54), mere citations (20) and papers not written in English language (6) were excluded from the 650 hits as well as items with no more than 10 citations (362). On the basis of the titles of the remaining 208 articles, papers were eliminated that delt with the evolutionary (55) or other (14) PD variants (e.g., with more players), the role of noise or information use (12), implementational or analytical aspects (42) or special applications (34; e.g., in human-robot interaction). For the remaining 51 items, 50 could be retrieved from the University of Bern library (access via the University’s talent promotion program). 
-The screening of the abstracts led to a further exclusion of items due to their actual focus on the evolutionary PD variant (10; e.g., Van Segbroeck et al., 2009), the introduction of more than two players (5; e.g., Izquierdo et al., 2004), other PD variants (8; e.g., Hayashi & Yamagishi, 1998), strategy learning (10; e.g., Han et al., 2022), or specific aspects like philosophical considerations (7; e.g., McLean, 1981). For the remaining ten articles, pdf files were downloaded from the University of Bern Library and studied in more detail. After deleting two more items, in which either a different game was researched (Back & Flache, 2006: exchange dilemma) or “random strategy” was used as randomly choosing a certain strategy from a set of strategies (Chen & Fu, 2023), eight publications finally remained, which were considered as being most relevant for the present topic. These publications are briefly summarized in subsection 2.5.
+\subsection{Appendix A. Literature Search} \label{sec:Appx_search}
+To retrieve the most important scientific findings on the topic of PD and erratic behaviour, a literature search was conducted on \url{scholar.google.com} with the search terms 'Prisoner's Dilemma' and 'random strategy'. 
+To narrow down the search to scientific findings, books (54), mere citations (20) and papers not written in English (6) were excluded from the 650 hits as well as items with no more than ten citations (362).
+On the basis of the titles of the remaining 208 articles, papers were eliminated that dealt with the evolutionary (55) or other PD variants (14; e.g., with more players), the role of noise or information use (12), implementational or analytical aspects (42) or special applications (34; e.g., in human-robot interaction). 
+From the remaining 51 items, 50 could be retrieved via the \textit{University of Bern} library (access via the GymThun's and University’s joint talent promotion programme). 
+
+The screening of the abstracts led to a further exclusion of items due to their actual focus on the evolutionary PD variant (10; e.g.~\cite{SSLP09}), the introduction of more than two players (5; e.g.~\cite{IGP04}), other PD variants (8; e.g.~\cite{HY98}), strategy learning (10; e.g.~\cite{HZX22}), or specific aspects like philosophical considerations (7; e.g.~\cite{McL81}). 
+For the remaining ten articles, pdf files were downloaded from the \textit{University of Bern} library and studied in more detail.
+After deleting two more items, in which either a different game was researched (\cite{BF06}: exchange dilemma) or “random strategy” was used as randomly choosing a certain strategy from a set of strategies \cite{CF23}, eight publications finally remained, which were considered as being most relevant for the present topic.
+These publications are briefly summarised in subsection \ref{sec:scientific_findings}.
+
+For the retrieved publications finally included in the reference list, pdf files are available under \url{https://github.com/adho08/Prisoner-s-Dilemma}.
+The following items were not included in the reference list because they were either not accessible or excluded during abstract screening (sorted by number of citations):\\
+
+\noindent 
+Tit for tat in heterogeneous populations\\
+MA Nowak, K Sigmund - Nature, 1992 - nature.com\\
+Speichern Zitieren Zitiert von: 1448 Ähnliche Artikel Alle 9 Versionen\\
+\\
+\noindent 
+Reciprocity and the induction of cooperation in social dilemmas.\\
+SS Komorita, CD Parks, LG Hulbert - Journal of Personality and …, 1992 - psycnet.apa.org\\
+Speichern Zitieren Zitiert von: 238 Ähnliche Artikel Alle 6 Versionen\\
+
+\noindent 
+"An eye for an eye leaves everyone blind": Cooperation and accounting systems\\
+P Kollock - American Sociological Review, 1993 - JSTOR\\
+Speichern Zitieren Zitiert von: 214 Ähnliche Artikel Alle 6 Versionen\\
+\\
+\noindent 
+Reacting differently to adverse ties promotes cooperation in social networks\\
+S Van Segbroeck, FC Santos, T Lenaerts, JM Pacheco - Physical review letters, 2009 - APS\\
+Speichern Zitieren Zitiert von: 200 Ähnliche Artikel Alle 16 Versionen\\
+\\
+\noindent 
+Is strategic decision making chaotic?\\
+D Richards - Behavioral science, 1990 - Wiley Online Library\\
+Speichern Zitieren Zitiert von: 164 Ähnliche Artikel Alle 6 Versionen\\
+\\
+\noindent 
+[HTML] Prisoner's dilemma\\
+S Kuhn - 1997 - plato.stanford.edu\\
+Speichern Zitieren Zitiert von: 159 Ähnliche Artikel Alle 6 Versionen\\
+\\
+\noindent 
+Aspiration dynamics of multi-player games in finite populations\\
+J Du, B Wu, PM Altrock, L Wang - Journal of the Royal …, 2014 - royalsocietypublishing.org\\
+Speichern Zitieren Zitiert von: 141 Ähnliche Artikel Alle 12 Versionen\\
+\\
+\noindent 
+Selective play: Choosing partners in an uncertain world\\
+N Hayashi, T Yamagishi - Personality and Social Psychology …, 1998 - journals.sagepub.com\\
+Speichern Zitieren Zitiert von: 138 Ähnliche Artikel Alle 7 Versionen\\
+\\
+\noindent 
+Prisoner's dilemma and the pigeon: Control by immediate consequences\\
+L Green, PC Price… - Journal of the experimental …, 1995 - Wiley Online Library\\
+Speichern Zitieren Zitiert von: 129 Ähnliche Artikel Alle 12 Versionen\\
+\\
+\noindent 
+[HTML] Communication and cooperation\\
+JH Miller, CT Butts, D Rode - Journal of Economic Behavior \& Organization, 2002 - Elsevier\\
+Speichern Zitieren Zitiert von: 126 Ähnliche Artikel Alle 19 Versionen\\
+\\
+\noindent 
+Multiple strategies in structured populations\\
+CE Tarnita, N Wage, MA Nowak - Proceedings of the National Academy of …, 2011 - pnas.org\\
+Speichern Zitieren Zitiert von: 120 Ähnliche Artikel Alle 15 Versionen\\
+\\
+\noindent 
+Resolving the iterated prisoner's dilemma: theory and reality\\
+NJ Raihani, R Bshary - Journal of Evolutionary Biology, 2011 - academic.oup.com\\
+Speichern Zitieren Zitiert von: 118 Ähnliche Artikel Alle 8 Versionen\\
+\\
+\noindent 
+Self-organization and emergence in social systems: Modeling the coevolution of social environments and cooperative behavior\\
+D Helbing, W Yu, H Rauhut - The Journal of Mathematical …, 2011 - Taylor \& Francis\\
+Speichern Zitieren Zitiert von: 96 Ähnliche Artikel Alle 13 Versionen\\
+\\
+\noindent 
+Relationship between cooperation in an iterated prisoner's dilemma game and the discounting of hypothetical outcomes\\
+R Yi, MW Johnson, WK Bickel - Learning \& behavior, 2005 - Springer\\
+Speichern Zitieren Zitiert von: 79 Ähnliche Artikel Alle 14 Versionen\\
+\\
+\noindent 
+Skill in games\\
+P Larkey, JB Kadane, R Austin… - Management …, 1997 - pubsonline.informs.org\\
+Speichern Zitieren Zitiert von: 66 Ähnliche Artikel Alle 18 Versionen\\
+\\
+\noindent 
+Finite automata play repeated prisoner's dilemma with information processing costs\\
+TH Ho - Journal of economic dynamics and control, 1996 - Elsevier\\
+Speichern Zitieren Zitiert von: 59 Ähnliche Artikel Alle 6 Versionen\\
+\\
+\noindent 
+Development and the origin of behavioral strategies\\
+TD Johnston - Behavioral and Brain Sciences, 1984 - cambridge.org\\
+Speichern Zitieren Zitiert von: 58 Ähnliche Artikel Alle 2 Versionen\\
+\\
+\noindent 
+The social contract in Leviathan and the Prisoner's Dilemma supergame\\
+I McLean - Political Studies, 1981 - journals.sagepub.com\\
+Speichern Zitieren Zitiert von: 58 Ähnliche Artikel Alle 5 Versionen\\
+\\
+\noindent 
+Social and strategic imitation: the way to consensus\\
+D Vilone, JJ Ramasco, A Sánchez, MS Miguel - Scientific reports, 2012 - nature.com\\
+Speichern Zitieren Zitiert von: 53 Ähnliche Artikel Alle 18 Versionen\\
+\\
+\noindent 
+[HTML] Modeling cooperation among self-interested agents: a critique\\
+H Gintis - The journal of socio-economics, 2004 - Elsevier\\
+Speichern Zitieren Zitiert von: 45 Ähnliche Artikel Alle 7 Versionen\\
+\\
+\noindent 
+Chaos in cooperation: continuous-valued Prisoner's Dilemmas in infinite-valued logic\\
+G Mar, PS Denis - International journal of bifurcation and chaos, 1994 - World Scientific\\
+Speichern Zitieren Zitiert von: 43 Ähnliche Artikel Alle 5 Versionen\\
+\\
+\noindent 
+Invasion Dynamics of the Finitely Repeated Prisoner's Dilemma\\
+MA Nowak, K Sigmund - Games and Economic Behavior, 1995 - Elsevier\\
+Speichern Zitieren Zitiert von: 38 Ähnliche Artikel Alle 4 Versionen\\
+\\
+\noindent 
+[HTML] Strategies and evolution in the minority game: A multi-round strategy experiment\\
+J Linde, J Sonnemans, J Tuinstra - Games and economic behavior, 2014 - Elsevier\\
+Speichern Zitieren Zitiert von: 32 Ähnliche Artikel Alle 16 Versionen\\
+\\
+\noindent
+[PDF] Using the iterated prisoner's dilemma for explaining the evolution of cooperation in open source communities\\
+D Eckert, S Koch, J Mitloehner - Proceedings of the first …, 2005 - researchgate.net\\
+Speichern Zitieren Zitiert von: 29 Ähnliche Artikel Alle 3 Versionen\\
+\lbrack no access to the abstract via \textit{University of Bern} library\rbrack\\
+\\
+\noindent 
+A framework for learning and planning against switching strategies in repeated games\\
+P Hernandez-Leal, E Munoz de Cote… - Connection Science, 2014 - Taylor \& Francis\\
+Speichern Zitieren Zitiert von: 27 Ähnliche Artikel Alle 5 Versionen\\
+\\
+\noindent 
+An experimental comparison of negotiation strategies for siting NIMBY facilities\\
+CP Chiu, SK Lai - … and Planning B: Planning and Design, 2009 - journals.sagepub.com\\
+Speichern Zitieren Zitiert von: 24 Ähnliche Artikel Alle 8 Versionen\\
+\\
+\noindent 
+[HTML] Introspection dynamics: a simple model of counterfactual learning in asymmetric games\\
+MC Couto, S Giaimo, C Hilbe - New Journal of Physics, 2022 - iopscience.iop.org\\
+Speichern Zitieren Zitiert von: 24 Ähnliche Artikel Alle 7 Versionen\\
+\\
+\noindent 
+[HTML] Case-based reasoning, social dilemmas, and a new equilibrium concept\\
+LR Izquierdo, NM Gotts… - Journal of Artificial …, 2004 - jasss.soc.surrey.ac.uk\\
+Speichern Zitieren Zitiert von: 23 Ähnliche Artikel Alle 4 Versionen\\
+\\
+\noindent 
+Why some representations are more cooperative than others for prisoner's dilemma\\
+W Ashlock - 2007 IEEE Symposium on Foundations of …, 2007 - ieeexplore.ieee.org\\
+Speichern Zitieren Zitiert von: 19 Ähnliche Artikel Alle 2 Versionen\\
+\\
+\noindent 
+[HTML] Hybrid learning promotes cooperation in the spatial prisoner's dilemma game\\
+X Han, X Zhao, H Xia - Chaos, Solitons \& Fractals, 2022 - Elsevier\\
+Speichern Zitieren Zitiert von: 19 Ähnliche Artikel Alle 5 Versionen\\
+\\
+\noindent 
+On some winning strategies for the Iterated Prisoner's Dilemma, or, Mr. Nice Guy and the Cosa Nostra\\
+W Slany, W Kienreich - The iterated prisoners' dilemma, 2007 - books.google.com\\
+Speichern Zitieren Zitiert von: 19 Ähnliche Artikel Alle 9 Versionen\\
+\\
+\noindent 
+The life game: Cognitive strategies for repeated stochastic games\\
+KL Cheng, I Zuckerman, D Nau… - 2011 IEEE Third …, 2011 - ieeexplore.ieee.org\\
+Speichern Zitieren Zitiert von: 18 Ähnliche Artikel Alle 12 Versionen\\
+\\
+\noindent 
+Risk and interaction aversion: Screening mechanisms in the prisoner's dilemma game\\
+GA Canova, JJ Arenzon - Journal of Statistical Physics, 2018 - Springer\\
+Speichern Zitieren Zitiert von: 17 Ähnliche Artikel Alle 7 Versionen\\
+\\
+\noindent 
+[PDF] Game theory and agents\\
+SJ Johansson - Licentiate Thesis, University of Karlskrona …, 1999 - researchgate.net\\
+Speichern Zitieren Zitiert von: 15 Ähnliche Artikel Alle 3 Versionen\\
+\\
+\noindent 
+Artificial agents play the" Mad Mex trust game": a computational approach\\
+DJ Wu, SO Kimbrough, F Zhong - Proceedings of the 35th …, 2002 - ieeexplore.ieee.org\\
+Speichern Zitieren Zitiert von: 15 Ähnliche Artikel Alle 3 Versionen\\
+\\
+\noindent 
+The rationality of prejudices\\
+T Chadefaux, D Helbing - PloS one, 2012 - journals.plos.org\\
+Speichern Zitieren Zitiert von: 14 Ähnliche Artikel Alle 18 Versionen\\
+\\
+\noindent 
+Game theory without rationality\\
+A Rapoport - Behavioral and Brain Sciences, 1984 - cambridge.org\\
+Speichern Zitieren Zitiert von: 13 Ähnliche Artikel Alle 2 Versionen\\
+\\
+\noindent 
+An exploration of differential utility in iterated prisoner's dilemma\\
+D Ashlock, W Ashlock, G Umphry - 2006 IEEE Symposium on …, 2006 - ieeexplore.ieee.org\\
+Speichern Zitieren Zitiert von: 12 Ähnliche Artikel Alle 2 Versionen\\
+
+\newpage
 
 \subsection{Appendix B.}
+
+
 \subsection{Appendix C.}
 	
 \section{Declaration of Integrity} \label{sec:declaration_of_integrity}
