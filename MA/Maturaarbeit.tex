@@ -307,7 +307,7 @@ Another advancement is the alternating form.
 In this variant, investments are contributed by the players in succession rather than concurrently as in the conventional simultaneous model.
 Finally, the evolutionary PD game surveys the success of strategies in a world where natural selection takes place.
 This implies that losing strategies vanish, while successful ones replicate and ultimately survive a PD tournament.
-However, since the ICPD---as introduced above---offers a promising and seemingly sufficient framework for approaching the leading question, those further variants can be disregarded in the present thesis.
+However, since the ICPD---as introduced above---offers a promising and apparently sufficient framework for approaching the leading question, those further variants can be disregarded in the present thesis.
 
 % \subsection{Noise}
 %
@@ -349,36 +349,29 @@ It seems thus fair to conclude that a mathematical simulation of a competition o
 
 \section{Methods and Implementation} \label{sec:methods_and_implementation}
 
-For answering the central research question, it was necessary to develop a overarching study design (3.1), to specify the strategies that will be pursued in the iterated continuous Prisoner’s dilemma (3.2), and to determine details of the implementation in terms of IT (3.3).
+To answer the leading question, it is necessary to develop an overarching study design (\ref{sec:study_design}), to specify the parametrised strategies that will be pursued in the ICPD (\ref{sec:implemented_strategies}), and to determine details of the implementation in terms of IT (\ref{sec:implementational_details}).
 
-\subsection{Study design}
+\subsection{Study Design} \label{sec:study_design}
 
-Erratic behaviour in respect of the PD can be equated to a random conduct.
-Three strategy-types are proposed by reason that counter such erraticism.
-Hereunto can a strategy either be unaffected and behold its manner of responding or react to the randomness.
-In the former case, strategies are identified as rigid.
-Whereas the latter is characterised as adaptive.\\
+Erratic behaviour with respect to the PD can be equated to a random conduct.
+Two strategy types are proposed by reason to counter such erraticism:
+a strategy can either be unaffected and behold its manner of responding and a strategy that actively reacts to the randomness.
+In the former case, strategies are identified as rigid whereas the latter are characterised as adaptive.
 
-All of these categories of behaviour can algorithmised differently.
+Behavioural categories can be algorithmised differently.
 This particularly concerns the above introduced distinction of the discrete and the continuous form.
-Applied to the erratic strategies, this means that the investment is a substantial random number between zero and one.
+Applied to the erratic strategies in their continuous form, this means that the investment is a random number between 0 and 1.
 In contrast, the discrete version of this strategy generates a random number that is then rounded to the nearest integer.
-The same approach hold true in the adaptive strategy.
-Discrete contributions of rigid strategies are equal to either always cooperating (AlwaysCooperate) or constantly defecting (AlwaysDefect).
-Whereas continuous strategies of the rigid category contribute continuous investments invariably, e.g. 0.5 (AlwaysNeutral).\\
+The same approach applies to the adaptive strategies.
+Finally, discrete contributions of rigid strategies are equal to either always cooperating (AlwaysCooperate) or constantly defecting (AlwaysDefect) whereas continuous versions of the rigid category contribute continuous investments invariably (e.g. 0.5; AlwaysNeutral).
 
 Furthermore, it is possible to specify the extremeness of each behaviour.
-This means that the randomness of an erratic strategy, the adaptiveness of an adaptive strategy and the investment of a rigid strategy can be defined.
-On this account, a parameter is incorporated into the determination of the investment and the evaluation of various conditions.
-It has, incidently, never been undertaken in this manner in the history of researches that concern the ICPD.\\
+This means that the randomness of an erratic strategy, the adaptiveness of an adaptive strategy and the constant investment of a rigid strategy can be specified.
+On this account, a parameter ($\theta$) is incorporated into the determination of the investment and the evaluation of various conditions (which---to the best of the authors knowledge---not been undertaken in PD research so far).
 
-To keep the number of comparisons manageable within the realms of a Maturaarbeit (MA), five strategy were chosen.
-Firstly, the selected strategies in the random class were named to be a discrete (Random-Discrete) and a continuous (Random-Continuous) version.
-Secondly, the same concept was established in the adaptive category with the discrete (Adapt-Discrete) and the continuous (Adapt-Continuous) behaviour.
-These strategies hold a parameter which determines the peculiarity level and ranges from zero to ten.
-So ultimately, the discrete and the continuous implementation are included in one strategy (AlwaysSame) due to this parameter.
-Thus, the distinction of a discrete and a continuous design would be trivial.\\
-
+To keep the number of comparisons manageable within the realms of a high-school thesis, five strategies were finally chosen:
+a discrete and a continuous version of the random category (Random-Discrete, Random-Continuous), as well as of the adaptive category (Adapt-Discrete, Adapt-Continuous), complemented by a rigid strategy (AlwaysSame) in which the extreme values of the parameter correspond to the discrete form and the in-between parametrisations implement the continuous form.
+According to the leading question, the two random strategies will play against all strategies, including themselves.
 
 % Surfaces:\\
 %
@@ -401,99 +394,133 @@ Thus, the distinction of a discrete and a continuous design would be trivial.\\
 		% overall surface is population wealth (addition)\\
 		% difference surface is individual competence (subtraction)
 
-\subsection{Implemented Strategies}
+\subsection{Implemented Strategies} \label{sec:implemented_strategies}
 
-As justified before, five strategies, namely Random-Discrete, Random-Continuous, Adapt-Discrete, Adapt-Continuous and AlwaysSame, will be presented and specified in the following.
+As justified before, five strategies, namely Random-Discrete, Random-Continuous, Adapt-Discrete, Adapt-Continuous and AlwaysSame, will be presented and specified in the following paragraphs.
+The implemented parameter takes an integer value ranging from 0 to 10 (inclusively).
+As the discrete variant of the adaptive strategy is derived from the continuous variant, the continuous implementation will be described first.
+Special features of the parametrisations are summarised in advance in Table \ref{table:strategies_overview}.
 	
-\subsubsection*{Adapt-Continuous}
-Adapt-Continuous (AdpC) is an, as the name suggests, adaptive and thus responsive strategy.
-It starts with full cooperation to offer a constructive relationship within this simulation.
-After having played one round, it will adapt to the submissions of the opponent by shifting its own investment towards the opponent's.
-$$i_k(\theta_{\mathrm{AdpC}}) = i_{k-1} + s(\theta_{\mathrm{AdpC}}, k)$$
-$$s(\theta_{\mathrm{AdpC}}, k) = \frac{\theta_{\mathrm{AdpC}}}{5} \cdot (\bar i_{k-1} - i_{k-1})$$
-$k$ indicates the current round and is used to notate the equations recursively.
-$k$ only appears in the adaptive strategies as only they require information of the past rounds.
-The shift being applied to its own previous investment is notated with the function $s(\theta_{\mathrm{AdpC}})$.
-This strategy with the parameter 0 is identical to AlwaysCooperate since the difference and thus the shift is multiplied by 0.
-Dividing $\theta_{\mathrm{AdpC}}$ by 5 implies the fact that this coefficient to the difference is equal to one if the parameter equals five.
-This means that the strategy will shift its next investment to exactly the previous investment of the opponent.
-This behaviour corresponds to Tit-For-Tat.
-$\theta_{\mathrm{AdpC}} = 10$ also shows an interesting nature of the strategy.
-By having the parameter set to ten, it means Adapt will add the shift to its own previous investment twice.
-Of course, one strategy is not allowed to submit any investment that exceeds the limits that is defined to be from 0 to 1.
-The implementation of this strategy will simply set its investment to the reached limit if surpassed.\\
+\def\wTstr{3.5cm}
 
-\subsubsection*{Adapt-Discrete}
-As mentioned, there is one continuous and one discrete strategy.
-This means there must be an Adapt-Discrete (AdpD) implemented.
-The simplest implementation of this strategy is to take the same investment function as Adapt-Continuous and round the result.
-$$i_k(\theta_{\mathrm{AdpC}}) = \round{i_{k-1} + s(\theta_{\mathrm{AdpC}}, k)}$$
-$$s(\theta_{\mathrm{AdpC}}, k) = \frac{\theta_{\mathrm{AdpC}}}{5} \cdot (\bar i_{k-1} - i_{k-1})$$
-Something that is not seen in these equations is that the strategy will start with full cooperation, as Adapt-Continuous.
-If $i(\theta_{\mathrm{AdpD}}) \ge 0.5$, the ultimate investment will be 1.
-Otherwise it will be equal to 0.
-Once the strategy is at full defection, it can only get to cooperation again if $\theta_{\mathrm{AdpD}} \ge 3$.
-Here is why:\\
-The maximum difference there can be is when this strategy submits 1 and the opponent submits a 0, so 1.
-Looking at the function, this threshold of 0.5 can only be overstepped if the shift is at least equal to 0.5.
-This only can be achieved if the coefficient is greater of equal to 0.5 ($\frac{\theta_{\mathrm{AdpD}}}{5} \ge 0.5$).
-This inequation is fulfilled if $\theta_{\mathrm{AdpD}} \ge 3$.\\
-$\theta_{\mathrm{AdpD}} = 0$ means, as in the continuous version, that the strategy corresponds to AlwaysCooperate because the shift is equal to 0 and thus always stays at its first investment, being full cooperation.
-If the parameter is equal to 10, it is most likely to jump from 1 to 0 back to 1 and so on.
-This only doesn't happen if the difference is less or equal to 0.25.\\
-
-\subsubsection*{AlwaysSame}
-AlwaysSame's (AlwS) parameter calculates the investment very simply.
-The investment follows the equation: 
-$$i(\theta_{\mathrm{AlwS}}) = \frac{\theta_{\mathrm{AlwS}}}{10}$$
-This means that after each incrementation of the parameter, the investment increases by 0.1.
-Parameter 0 is equivalent to AlwaysDefect and parameter 1 has the same behaviour as AlwaysCooperate.
-If the parameter is set to five, the strategy will always submit the investment 0.5 which is identical to Neutral.\\
-
-\subsubsection*{Random-Continuous}
-The other strategy in the group of the random is oppositely continuous, meaning it can additionally submit any number between 0 and 1.
-The name of this strategy is logically Random-Continuous (RndC).
-This strategy has a base being at 0.5.
-The parameter defines the shift being applied to the base, calculated by the equation:
-$$i(\theta_{\mathrm{RndC}}) = 0.5 + \cdot s(\theta_{\mathrm{RndC}})$$
-$$s(\theta_{\mathrm{RndC}}) = \epsilon \frac{\theta_{\mathrm{RndC}}}{20}$$
-$$\Pr(\epsilon = 1) = \Pr(\epsilon = -1) = \frac{1}{2}$$
-$s$ means the shift.
-It is divided by 20 so the maximum shift, parameter being 10, can not exceed the range of 0 and 1.
-There is a 50\% probability of subtracting or adding this shift, indicated by the symbol $\epsilon$.\\
+\begin{table}[h]
+	{\sffamily
+	\footnotesize
+	\centering
+	\caption{Implemented strategies, illustrated by parameter values meanings (TFT = Tit-for-Tat).}
+	\label{table:strategies_overview}
+	\begin{tabular}{ p{\wTstr}|p{\wTstr}|p{\wTstr}|p{\wTstr} }
+		& \hfil $\theta$ = 0 & \hfil $\theta$ = 5 & \hfil $\theta$ = 10 \\ 
+		\hline
+		Random-Discrete & \hfil AlwaysDefect & \hfil (50\% 0.00\textbar 1.00) & \hfil AlwaysCooperate \\  
+		\hline
+		Random-Continuous & \hfil AlwaysNeutral & \hfil (50\% 0.25\textbar 0.75) & \hfil (50\% 0.00\textbar 1.00) \\
+		\hline
+		Always-Same & \hfil AlwaysDefect & \hfil AlwaysNeutral & \hfil AlwaysCooperate \\
+		\hline
+		Adapt-Discrete & \hfil AlwaysCooperate & \hfil (rounded TFT) & \hfil (rounded overshot TFT)\\
+		\hline
+		Adapt-Continuous & \hfil AlwaysNeutral & \hfil TFT & \hfil (overshot TFT)
+	\end{tabular}
+}
+\end{table}
 
 \subsubsection*{Random-Discrete}
-Random-Discrete (RndD) is a strategy in the group of the random.
+Random-Discrete (RD) is a strategy in the group of random.
 It is also discrete, meaning it can only submit either 0 or 1.
-The parameter in this strategy determines the likelihood of submitting 0 and 1 respectively.
-The probability of submitting full defection is described in the following equation.
-$$
-\begin{array}{c}
-i(\theta_{\mathrm{RndD}}) = \Pr(i = 1 \mid \theta_{\mathrm{RndD}}) = \frac{\theta_{\mathrm{RndD}}}{10}\\
-\mathrm{or}\\
-i(\theta_{\mathrm{RndD}}) = \Pr(i = 0 \mid \theta_{\mathrm{RndD}}) = 1 - \frac{\theta_{\mathrm{RndD}}}{10}
-\end{array}
-$$
-Parameter 0 is equivalent to AlwaysDefect since the probability of submitting 0 is 0\%.
-And on the other hand, parameter 10 is equivalent to AlwaysCooperate since the probability of submitting 1 is 100\%.\\
+The parameter in this strategy determines the likelihood of submitting 0 and 1, respectively.
+The probability (Pr) of submitting either full cooperation or full defection is described in the following equations:
 
-\begin{center}
-\begin{tabular}{ c|c|c|c }
-   & $\theta = 0$ & $\theta = 5$ & $\theta = 10$ \\ 
-   \hline
-	Random-Discrete & AlwaysDefect & - & AlwaysCooperate \\  
-   \hline
-	Random-Continuous & AlwaysNeutral & - & Random-Discrete ($\theta = 5$) \\
-   \hline
-	Always-Same & AlwaysDefect & AlwaysNeutral & AlwaysCooperate \\
-   \hline
-	Adapt-Discrete & AlwaysCooperate & - & -\\
-   \hline
-	Adapt-Continuous & AlwaysCooperate & Tit-For-Tat & -
-\end{tabular}
-\end{center}
+\begin{equation}
+	\Pr(i = 1) = \frac{1}{10} \theta_{\mathrm{RD}} 
+	\label{eq:RD_i_eq_1}
+\end{equation}
+\begin{equation}
+	\Pr(i = 0) = 1 - \frac{1}{10} \theta_{\mathrm{RD}} 
+	\label{eq:RD_i_eq_2}
+\end{equation}
+Please note that parameter 0 is equivalent to AlwaysDefect since the probability of submitting 0 is 0\%.
+Parameter 10, on the contrary, is equivalent to AlwaysCooperate since the probability of submitting 1 is 100\%.
+Parameter 5 thus means that the two possible investments equally occur in random order.
 
-\subsection{Implementational Details}
+\subsubsection*{Random-Continuous}
+The other strategy in the random group is Random-Continuous (RC), meaning it can additionally submit any number between 0 and 1.
+The investment of this strategy is anchored around the value of 0.5.
+The parameter specifies the shift ($s$) upwards or downwards from that anchor depending on $\epsilon$, as calculated by the following equations:
+\begin{equation}
+	i(\theta_{\mathrm{RC}}) = 0.5 + \epsilon \cdot s(\theta_{\mathrm{RC}})
+	\label{eq:RC_i_eq}
+\end{equation}
+\begin{equation}
+	s(\theta_{\mathrm{RC}}) = \frac{1}{20} {\theta_{\mathrm{RC}}}
+	\label{eq:RC_s_eq}
+\end{equation}
+\begin{equation}
+	\Pr(\epsilon = 1) = \Pr(\epsilon = -1) = \frac{1}{2}
+	\label{eq:RC_e_prob}
+\end{equation}
+Parameter 0 results in a behaviour corresponding to AlwaysNeutral.
+
+As the maximum value of the parameter is 10, due to the division by 20, the maximum shift cannot exceed the limits of 0 and 1.
+The probability of subtracting or adding this shift is 50\%.
+Consequently, parameter 10 leads to contributing a discrete value of either 0 or 1 with a chance of 50\%. 
+
+
+\subsubsection*{AlwaysSame}
+AlwaysSame(AS) calculates the investment as a function of the parameter according to the following equation: 
+\begin{equation}
+	i(\theta_{\mathrm{AS}}) = \frac{1}{10} \theta_{\mathrm{AS}}
+	\label{eq:AS_i_eq}
+\end{equation}
+This means that after each incrementation of the parameter, the investment increases by 0.1.
+Consequently, parameter 0 is equivalent to AlwaysDefect and parameter 10 to AlwaysCooperate.
+If the parameter is set to 5, the strategy will always submit the investment 0.5 which is identical to AlwaysNeutral.
+
+\subsubsection*{Adapt-Continuous}
+Adapt-Continuous (AC) is that starts with full cooperation to offer a constructive relationship as recommended in fundamental PD literature \cite{RC15, Kuh25}.
+After the first round, it will adapt to the submissions of the other player by shifting its own investment towards the opponent's on the basis of the following equations:
+\begin{equation}
+	i_0 = 1
+	\label{eq:AC_i0}
+\end{equation}
+\begin{equation}
+	i(\theta_{\mathrm{AC}}, k) = i_{k-1} + s(\theta_{\mathrm{AC}}, k)
+	\label{eq:AC_i_eq}
+\end{equation}
+\begin{equation}
+	s(\theta_{\mathrm{AC}}, k) = \frac{1}{5} \theta_{\mathrm{AC}} \cdot (\bar i_{k-1} - i_{k-1})
+	\label{eq:AC_s_eq}
+\end{equation}
+Please note that $k$ indicates the current round and is used to notate the equations recursively.
+$k$ only appears in the adaptive strategies as only they require information about the past rounds.
+The shift being applied to one's own previous investment is defined by the function $s(\theta_{\mathrm{AC}})$.
+Parameter 0 is identical to AlwaysCooperate since the difference and thus the shift is multiplied by 0.
+Dividing $\theta_{\mathrm{AC}}$ by 5 implies that this coefficient to the difference is 1 if the parameter equals 5.
+This means that the strategy will shift its next investment to exactly the previous investment of the opponent.
+This behaviour corresponds to Tit-for-Tat (cf. \ref{sec:scientific_findings}).
+Parameter 10 means that the strategy will add the shift to its own previous investment twice, which comes down to an overshooting Tit-for-Tat.
+However, since strategies are not allowed to submit any investments exceeding the limits of 0 to 1, the implementation of this strategy will simply set its investment to the reached limit if surpassed.
+
+\subsubsection*{Adapt-Discrete}
+Adapt-Discrete (AD) is insofar derived from Adapt-Continuous as the same investment function is taken and the results simply rounded to the nearest integer.
+\begin{equation}
+	i_0 = 1
+	\label{eq:AD_i0}
+\end{equation}
+\begin{equation}
+	i(\theta_{\mathrm{AD}}, k) = \round{i_{k-1} + s(\theta_{\mathrm{AD}}, k)}
+	\label{eq:AD_i_eq}
+\end{equation}
+\begin{equation}
+	s(\theta_{\mathrm{AD}}, k) = \frac{\theta_{\mathrm{AD}}}{5} \cdot (\bar i_{k-1} - i_{k-1})
+	\label{eq:AD_s_eq}
+\end{equation}
+The strategy will start with full cooperation.
+In the following rounds, the submitted investment will be 1 if the calculated investment is greater or equal to 0.5, otherwise it will be equal to 0.
+As in the continuous version, Parameter 0 means that the strategy corresponds to AlwaysCooperate because the shift is equal to 0 and thus always stays at its first investment, being full cooperation.
+If the parameter is equal to 10, due to the rounding of the overshot Tit-for-Tat, the investment is most likely to change from 1 to 0 or vice versa.
+
+\subsection{Implementational Details} \label{sec:implementational_details}
 
 Regarding the initial problem of this thesis, both Random-Discrete and Random-Continuous play against every strategy (including themselves).
 As there are eleven parameter values for each strategy, there will be $2 \cdot 5 \cdot 11 \cdot 11 = 1210$ encounters and thus comparisons.
@@ -686,11 +713,11 @@ Therefore, the overall gain should be understood as a marker for population welf
 	\end{tabular}
 \begin{center}
 \begin{tabular}{ c|c|c|c }
-   & $\theta = 0$ & $\theta = 5$ & $\theta = 10$ \\ 
+   & $\theta$ = 0 & $\theta$ = 5 & $\theta$ = 10 \\ 
    \hline
 	Random-Discrete & AlwaysDefect & - & AlwaysCooperate \\  
    \hline
-	Random-Continuous & AlwaysNeutral & - & Random-Discrete ($\theta = 5$) \\
+	Random-Continuous & AlwaysNeutral & - & Random-Discrete ($\theta$ = 5) \\
    \hline
 	Always-Same & AlwaysDefect & AlwaysNeutral & AlwaysCooperate \\
    \hline

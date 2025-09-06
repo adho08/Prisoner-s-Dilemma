@@ -6,7 +6,7 @@
 \contentsline {subsection}{\numberline {2.4}Further Variants}{6}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Scientific Findings}{6}{subsection.2.5}%
 \contentsline {section}{\numberline {3}Methods and Implementation}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Study design}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Study Design}{7}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Implemented Strategies}{8}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Implementational Details}{10}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Results}{10}{section.4}%
