@@ -14,7 +14,7 @@ from game import PrisonersDilemma as PD
 sys.path.insert(0, str(script_dir.parent / 'data'))
 
 cwd = os.getcwd()
-plots_dir = cwd + rf"/plots/{strategy_1}"
+plots_dir = cwd + rf"/plots/Colorscales"
 final_dir = os.path.join(plots_dir, rf"{strategy_1}_vs_{strategy_2}")
 if not os.path.exists(final_dir):
     os.mkdir(final_dir)
@@ -109,7 +109,7 @@ fig1 = go.Figure(
     data=go.Surface(
     x=list1, y=list2, z=matrix1,
     colorscale=colorscale_s,
-    showscale=False,
+    showscale=True,
     cmin=zmin, cmax=zmax,),
 )
 
@@ -117,7 +117,7 @@ fig1 = go.Figure(
 # fig1.add_trace(go.Surface(
 #     x=list1, y=list2,
 #     z=np.zeros_like(matrix1),  # plane at z=0
-#     showscale=False,
+#     showscale=True,
 #     opacity=0.4,  # semi-transparent
 #     colorscale=[[0, 'gray'], [1, 'gray']],
 #     name='z=0 Plane'),
@@ -129,7 +129,7 @@ update_fig_layout(fig1, strategy_1, [zmin, zmax])
 fig2 = go.Figure(data=go.Surface(
     x=list1, y=list2, z=matrix2,
     colorscale=colorscale_s,
-    showscale=False,
+    showscale=True,
     cmin=zmin, cmax=zmax,
     )
 )
@@ -138,7 +138,7 @@ fig2 = go.Figure(data=go.Surface(
 # fig2.add_trace(go.Surface(
 #     x=list1, y=list2,
 #     z=np.zeros_like(matrix2),  # plane at z=0
-#     showscale=False,
+#     showscale=True,
 #     opacity=0.4,  # semi-transparent
 #     colorscale=[[0, 'gray'], [1, 'gray']],
 #     name='z=0 Plane'),
@@ -154,7 +154,7 @@ update_fig_layout(fig2, strategy_2, [zmin, zmax])
 # fig3 = go.Figure(data=go.Surface(
 #     x=list1, y=list2, z=matrix3,
 #     colorscale=colorscale_s,
-#     showscale=False,
+#     showscale=True,
 #     cmin=added_zmin, cmax=added_zmax,
 #     )
 # )
@@ -169,7 +169,7 @@ added_zmax = 2 * rounds
 fig4 = go.Figure(data=go.Surface(
     x=list1, y=list2, z=matrix3,
     colorscale=colorscale_a,
-    showscale=False,
+    showscale=True,
     cmin=added_zmin, cmax=added_zmax,
     )
 )
@@ -178,7 +178,7 @@ fig4 = go.Figure(data=go.Surface(
 # fig4.add_trace(go.Surface(
 #     x=list1, y=list2,
 #     z=np.zeros_like(matrix3),  # plane at z=0
-#     showscale=False,
+#     showscale=True,
 #     opacity=0.4,  # semi-transparent
 #     colorscale=[[0, 'gray'], [1, 'gray']],
 #     name='z=0 Plane'),
@@ -195,7 +195,7 @@ diff_zmax = zmax
 fig5 = go.Figure(data=go.Surface(
     x=list1, y=list2, z=matrix3,
     colorscale=colorscale_d,
-    showscale=False,
+    showscale=True,
     cmin=diff_zmin, cmax=diff_zmax,
     )
 )
@@ -221,7 +221,7 @@ matrix3 = matrix2 - matrix1
 fig6 = go.Figure(data=go.Surface(
     x=list1, y=list2, z=matrix3,
     colorscale=colorscale_d,
-    showscale=False,
+    showscale=True,
     cmin=diff_zmin, cmax=diff_zmax,
     )
 )
