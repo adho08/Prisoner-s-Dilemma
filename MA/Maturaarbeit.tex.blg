@@ -1,0 +1,5 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'Maturaarbeit.tex.blg'
+[72] biber:340> INFO - === Sat Sep  6, 2025, 14:40:58
+[150] Utils.pm:410> ERROR - Cannot find 'Maturaarbeit.tex.bcf'!
+[150] Biber.pm:136> INFO - ERRORS: 1

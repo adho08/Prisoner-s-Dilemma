@@ -148,12 +148,12 @@ The following matrix visualises the pay-offs in this game in a comprehensive way
 
 \noindent
 The dilemma consists of the following:
-The tempting act of defecting appears alluring since there is a chance of avoiding a long sentence.
+The act of defecting is tempting since there is a chance of avoiding a long sentence.
 However, it is then also possible to receive a punishment of ten years in prison depending on the confederate's decision.
 Although this---which could have been avoided if both had remained silent and thus obtained a reward of three easy surmountable years in confinement---is nevertheless the most likely result, as the temptation to defect is simply too great.
 Additionally, the possibility of becoming the sucker in this game forces the player to consider trust as the deciding factor.
 As trust is bound to be unreliable, defection is the more reasonable choice.
-This PD thus composes a one-time interaction from a mathematical and analytical perspective. 
+The PD thus composes a one-time interaction from a mathematical and analytical perspective. 
 In a more general form, the variables can be described as Reward ($R$), Sucker's pay-off ($S$), Temptation ($T$), and Punishment ($P$) as follows:
 
 % general pay-off matrix
@@ -176,69 +176,52 @@ In a more general form, the variables can be described as Reward ($R$), Sucker's
 
 \subsection{Iterated Prisoner's Dilemma}
 		
-The Iterated Prisoner's Dilemma (IPD) is a game which extends the PD. 
-As the name suggests, the PD is played a number of times sequentially. 
+The Iterated Prisoner's Dilemma (IPD) extends the PD as the game is played multiple times sequentially. 
 To refer to the number of rounds played, $n$ is used as the denotation. 
-The gained pay-offs accumulated over the last $n-i$ rounds are summed where $i$ represents the current round.
-A strategy is an autonomous player which has its own behaviour.
-Such a strategy has the whole history of the previous PDs at hand to generate the decision for the next round.
-These decisions are calculated using conditions and probabilities that will be applied on the given data.
-In this, and in the following variants, the analogy to the real world is changed.
-Maximising one owns points is preferred.
-Since a strategy strives to gain as many points as possible, the pay-off matrix must be altered accordingly.\\
-
-\begin{center}
-\begin{tabular}{ c|c|c }
-   & C & D \\ 
-   \hline
- C & 5, 5 & 10, 0\\  
-   \hline
- D & 0, 10 & 3, 3
-\end{tabular}
-\end{center}
-
-And to generalise this pay-off matrix as well, the numbers can be replaced with variables.
-The concept is used for $T$, $R$, $P$, and $S$, provided that the four inequalities are satisfied.
-
-\begin{center}
-\begin{tabular}{ c|c|c }
-   & C & D \\ 
-   \hline
- C & R, R & S, T\\  
-   \hline
- D & T, S & P, P
-\end{tabular}
-\end{center}
+The gained pay-offs are accumulated over the last $n-k$ rounds where $k$ represents the current round.
+A player's strategy can be based on the entire history of the previous PDs to generate the decision for the next round.
+These decisions can be are calculated using conditions and probabilities that will be applied on the given data.
+The prison analogy is changed from minimising years in prison to maximising one's points.
+Thus, the pay-off matrix must be altered accordingly.
+In particular, the following inequalities need to be satisfied:
+%
+% \begin{center}
+% \begin{tabular}{ c|c|c }
+%    & C & D \\ 
+%    \hline
+%  C & R, R & S, T\\  
+%    \hline
+%  D & T, S & P, P
+% \end{tabular}
+% \end{center}
 
 \begin{equation}
-T < R < P < S\\
+T > R > P > S
 \end{equation}
+An additional inequality is necessary to avoid receiving greater pay-offs by coordinated alternation of cooperation and defection ($T + S$) than continued mutual cooperation ($2 R$):
 \begin{equation}\label{eq:AvGrPa}
 2R > T + S
 \end{equation}
 
-Inequality \eqref{eq:AvGrPa} is necessary to avoid receiving greater pay-offs by alternating cooperation and defection.\\
-The Nash-equilibrium in the IPD differs from the that in the PD.
-This implies that mutual cooperation yields long-term benefits.
-Playing cooperation increases trust whereas defection allows exploitation.
-Maximum pay-off during all the games is achieved only by consistent exploitation ($n \cdot T$).
-Since persistent defection leads to mutual defection as a response, the practical attainment of the maximum points is severely limited.
-To conclude, both strategies benefit the most with mutual cooperation.\\
-A problem arises in the last round.
-Since cooperation is only played to conserve trust, the reasonable action in the last round is to defect as trust has no use beyond the game.
-If both strategies act rational, mutual defection will be played in the last round.
-And because both are aware of this fact, there is no logical reason to cooperate the second last round.
-This will end up in an inductive defection behaviour for both strategies the whole game.
-So, to prevent constant mutual defection, the number of rounds played is an information that needs to be hidden from both strategies.
-As a consequence of that, $n$ is a random number whose limits can be defined.\\
-This extension of the PD allows to simulate a relationship of two individuals.
+In the IPD, mutual cooperation yields long-term benefits since playing cooperation increases trust.
+The maximum pay-off, however, can only be achieved by exploitation ($p_{\mathrm{max}} = n T$).
+Because persistent defection leads to mutual defection as e response, the attainment of this maximum value is highly unlikely.
 
-\subsection{Continuous}
+% A problem arises in the last round.
+% Since cooperation is only played to conserve trust, the reasonable action in the last round is to defect as trust has no use beyond the game.
+% If both strategies act rational, mutual defection will be played in the last round.
+% And because both are aware of this fact, there is no logical reason to cooperate the second last round.
+% This will end up in an inductive defection behaviour for both strategies the whole game.
+% So, to prevent constant mutual defection, the number of rounds played is an information that needs to be hidden from both strategies.
+% As a consequence of that, $n$ is a random number whose limits can be defined.\\
+% This extension of the PD allows to simulate a relationship of two individuals.
+%
+\subsection{Iterated Continuous Prisoner's Dilemma}
 
-In this variant, strategies are not limited to either cooperate or defect; instead, they can chose any level of cooperation between 0 and 1.
-It is thus named Iterated Continuous Prisoner's Dilemma (ICPD)
-This cooperation level, called investment or contribution, ranges from zero (defect) to one (cooperate).
-The continuous form offers enhanced precision and mathematical applicability.\\
+In the Iterated Continuous Prisoner's Dilemma (ICPD), strategies are not limited to either cooperate or defect.
+Instead, the players can choose any level of cooperation between 0 (defect) and 1 (cooperate).
+This cooperation level is called investment or contribution.
+The continuous form offers enhanced precision and mathematical applicability.
 % One would suspect a very similar pay-off system to the iterated variant.
 % In the discrete version, it looked like this:
 %
@@ -263,20 +246,15 @@ The continuous form offers enhanced precision and mathematical applicability.\\
 % \end{tabular}
 % \end{center}
 
-Two main approaches will be presented and evaluated for practicality in this thesis.
-First, an intuitive extension of the iterated form. And second, a way that simplifies mathematically analysability.\\
-A similar concept can be used to calculate the pay-offs given the investments of both strategies.
-This concept is referring to a matrix-like pay-off system.
-To include continuous values, a mathematical procedure is applied to the discrete version of the matrix, namely bilinear interpolation.
-This will establish a field that can be represented by colour grades, a heat map.
-Please see Figure \ref{fig:heatmaps}.
+To include continuous values in the ICPD, a mathematical procedure can be applied to the discrete version of the matrix, namely bilinear interpolation.
+This will establish a field that can be represented by colour grades, a heat map as depicted in Figure \ref{fig:heatmaps}.
 The equation used to calculate this heat map can be found in the Appendix.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_A}\hfill
 	\includegraphics[width=0.45\textwidth]{images/pd_heatmap_B}
-	\caption{Pay-off heat maps in the ICPD.}
+	\caption{Pay-off heat maps in the ICPD for player A (left) and player B (right).}
 	\label{fig:heatmaps}
 \end{figure}
 
@@ -288,22 +266,24 @@ The equation used to calculate this heat map can be found in the Appendix.
 %
 % These functions are applied to every point on the map.
 % The variable x is the investment of strategy A and y is the investment of strategy B.
-The second approach utilises only equations instead.
-This pay-off system of [sciencedirect.com] is formed by:
+For reason of simplifying analysability, this pay-off system can be expressed in the following equations \cite[cf.][p.~259]{LB07}:
 
-$$p_A = y - c \cdot x + c$$
-$$p_B = x - c \cdot y + c$$
+\begin{equation}
+	p_A = y - c x + c
+\end{equation}
+\begin{equation}
+	p_B = x - c y + c
+\end{equation}
 
-$p_A$ and $p_B$ are the pay-offs of strategy A and B respectively.
+\noindent
+In these equations, $p_A$ and $p_B$ are the pay-offs of strategy A and B, respectively.
 $x$ is the investment of strategy A and $y$ is that of strategy B.
-The coefficient $c$ ranges, as well as x and y, from 0 to 1 and describes the cost-to-benefit ratio.
-The pay-off is highly influenced by the opponent's investment.
-Only a fraction of one owns contribution is subtracted, $c$ being the coefficient.
-The minimum pay-off one strategy can collect is then $-c$.
-To avoid negative pay-offs and enhance subsequent convenience, a third addend is appended, $c$.
-So, the least points that can be gained is 0.
-The maximal points, which can be earned by exploitation, is $1 + c$.
-
+The coefficient $c$ ranges, as well as $x$ and $y$, from 0 to 1 (inclusively) and describes the cost of cooperation.
+The pay-off is highly affected by the opponent's investment.
+Only a fraction of one's own contribution is subtracted, $c$ being the coefficient.
+Consequently, the minimum pay-off would then be $-c$.
+However, to avoid negative pay-offs and enhance comprehensibility of results achieved, a third addend is appended in the present thesis, namely $c$.
+So, the least points that can be gained is 0 while the maximal points that can be earned by exploitation is $1 + c$.
 
 % Let's see if the principles of the initial PD are still valid.
 % It is better for one to defect (submit a 0) to get rid of the subtraction.
