@@ -20,7 +20,8 @@ final_dir = os.path.join(plots_dir, rf"{strategy_1}_vs_{strategy_2}")
 if not os.path.exists(final_dir):
     os.mkdir(final_dir)
 
-df = pd.read_csv(rf"{strategy_1}_vs_{strategy_2}_results.csv")
+df = pd.read_csv(rf"/home/adrianho/Documents/Maturaarbeit/Prisoner-s-Dilemma/VBSA/data/results/Random-Discrete_vs_Always-Same_results.csv")
+# df = pd.read_csv(rf"results/{strategy_1}_vs_{strategy_2}_results.csv")
 header = list(df.columns)
 # strategy_1 = header[0].split('.')[0]
 # strategy_2 = header[2].split('.')[0]

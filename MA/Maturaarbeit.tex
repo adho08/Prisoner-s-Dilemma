@@ -85,7 +85,15 @@
 \pagenumbering{arabic}
 
 \section*{Abstract}
-
+This high-school thesis addresses the politically and socially relevant question of how to best counteract erratic behaviour.
+To this end, game theory is used as a theoretical framework, in particular the Prisoner's Dilemma game.
+In its extended version of the iterated continuous Prisoner's Dilemma, two persons repeatedly play against each other and win or lose points depending on how they mutually treated each other in the previous round.
+A discrete and a continuous random strategy are chosen as erratic behaviours, which compete against each other as well as against a rigid strategy and a discrete and a continuous version of an adaptive strategy.
+All strategies are parametrised (from 0 to 10) in terms of the rigour with which the respective strategy is pursued.
+The results are presented in the form of individual absolute- and relative-gain plots as well as an overall-gain plot that reflects the benefit achieved jointly by both players.
+On the one hand, the mathematical-computational analysis reveals surprising details, which are discussed in detail under the headings of shallow randomness, dispersion and risk, threshold values for discrete adaptations, and dynamics of continuous adaptations.
+On the other hand, when examining the interactions in terms of gains accumulated against randomness, no strong strategy could be identified that successfully counteracts unpredictable behaviour while maximising relative- and overall-gain values simultaneously.
+In the case of encountering erratic behaviour, the summarising recommendation is that, if one's own advantage is emphasised, cooperation should be completely rejected, while some cooperation should be offered if one is dealing with an at least partially rational interaction partner.
 
 \newpage
 
@@ -378,7 +386,7 @@ This means that the randomness of an erratic strategy, the adaptiveness of an ad
 On this account, a parameter ($\theta$) is incorporated into the determination of the investment and the evaluation of various conditions (which---to the best of the authors knowledge---has not been undertaken in PD research so far).
 
 To keep the number of comparisons manageable within the realms of a high-school thesis, five strategies were finally chosen:
-a discrete and a continuous version of the random category (Random-Discrete, Random-Continuous), as well as of the adaptive category (Adapt-Discrete, Adapt-Continuous), complemented by a rigid strategy (AlwaysSame) in which the extreme values of the parameter correspond to the discrete form and the in-between parametrisations implement the continuous form.
+a discrete and a continuous version of the random category (Random-Discrete, Random-Continuous), as well as of the adaptive category (Adapt-Discrete, Adapt-Continuous), complemented by a rigid strategy (Always-Same) in which the extreme values of the parameter correspond to the discrete form and the in-between parametrisations implement the continuous form.
 According to the leading question, the two random strategies will play against all strategies, including themselves.
 
 % Surfaces:\\
@@ -476,8 +484,8 @@ The probability of subtracting or adding this shift is 50\%.
 Consequently, parameter 10 leads to contributing a discrete value of either 0 or 1 with a chance of 50\%. 
 
 
-\subsubsection*{AlwaysSame}
-AlwaysSame(AS) calculates the investment as a function of the parameter according to the following equation: 
+\subsubsection*{Always-Same}
+Always-Same (AS) calculates the investment as a function of the parameter according to the following equation: 
 \begin{equation}
 	i(\theta_{\mathrm{AS}}) = \frac{1}{10} \theta_{\mathrm{AS}}
 	\label{eq:AS_i_eq}
@@ -687,7 +695,7 @@ Therefore, the overall gain should be understood as a marker for population welf
 		\rotatebox{90}{\parbox{\pboxv}{\centering Absolute-Gain\\Random-Discrete}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete.png} &
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Always-Same/Random-Discrete.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete.png} \\[\h]
 
@@ -695,7 +703,7 @@ Therefore, the overall gain should be understood as a marker for population welf
 		\rotatebox{90}{\parbox{\pboxv}{\centering Absolute-Gain\\Opponent}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame.png} &
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Always-Same/Always-Same.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous.png} \\[\h]
 
@@ -703,7 +711,7 @@ Therefore, the overall gain should be understood as a marker for population welf
 		\rotatebox{90}{\parbox{\pboxv}{\centering Relative-Gain\\Random-Discrete}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Discrete_diff.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/Random-Discrete_diff.png} &
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Always-Same/Random-Discrete_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Random-Discrete_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Random-Discrete_diff.png} \\[\h]
 
@@ -711,7 +719,7 @@ Therefore, the overall gain should be understood as a marker for population welf
 		\rotatebox{90}{\parbox{\pboxv}{\centering Relative-Gain\\Opponent}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/Random-Discrete_2_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/Random-Continuous_diff.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/AlwaysSame_diff.png} &
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Always-Same/Always-Same_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/Adapt-Discrete_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/Adapt-Continuous_diff.png} \\[\h]
 
@@ -719,7 +727,7 @@ Therefore, the overall gain should be understood as a marker for population welf
 		\rotatebox{90}{\parbox{\pboxv}{\centering Overall-Gain\\Both Players}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Discrete_2/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Random-Continuous/added.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_AlwaysSame/added.png} &
+		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Always-Same/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png} \\
 	\end{tabular}
@@ -745,21 +753,21 @@ Therefore, the overall gain should be understood as a marker for population welf
 		\rotatebox{90}{\parbox{\pboxv}{\centering Absolute-Gain\\Random-Continuous}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous.png} &
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Always-Same/Random-Continuous.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous.png} \\[\h]		
 		% Gain Opponent row  
 		\rotatebox{90}{\parbox{\pboxv}{\centering Absolute-Gain\\Opponent}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame.png} &
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Always-Same/Always-Same.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous.png} \\[\h]		
 		% Advantage Random-Continuous row
 		\rotatebox{90}{\parbox{\pboxv}{\centering Relative-Gain\\Random-Continuous}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Continuous_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_diff.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/Random-Continuous_diff.png} &
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Always-Same/Random-Continuous_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Random-Continuous_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Random-Continuous_diff.png} \\[\h]
 		
@@ -767,14 +775,14 @@ Therefore, the overall gain should be understood as a marker for population welf
 		\rotatebox{90}{\parbox{\pboxv}{\centering Relative-Gain\\Opponent}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/Random-Discrete_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/Random-Continuous_2_diff.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/AlwaysSame_diff.png} &
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Always-Same/Always-Same_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_diff.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/Adapt-Continuous_diff.png} \\[\h]		
 		% Overall Gain row
 		\rotatebox{90}{\parbox{\pboxv}{\centering Overall-Gain\\Both Players}} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Discrete/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Random-Continuous_2/added.png} &
-		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_AlwaysSame/added.png} &
+		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Always-Same/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png} \\
 	\end{tabular}
@@ -828,9 +836,9 @@ The description follows a certain patter: First, the two absolute-gain, second, 
 		The maximum value of 40 is not achieved since full exploitation does not take place.
 		The fact that the surfaces are not affected by the parameter value of Random-Continuous will be analysed in the discussion section \ref{sec:discussion}.
 
-\subsubsection*{AlwaysSame}
-		Remarkably, AlwaysSame behaves exactly like Random-Discrete.
-		This becomes visible when looking at the columns where Random-Discrete plays against itself and against AlwaysSame.
+\subsubsection*{Always-Same}
+		Remarkably, Always-Same behaves exactly like Random-Discrete.
+		This becomes visible when looking at the columns where Random-Discrete plays against itself and against Always-Same.
 		The surprising absence of any difference between these two strategies needs further explanation and will thus be revisited in the discussion section \ref{sec:discussion}.
 
 \subsubsection*{Adapt-Discrete}
@@ -894,8 +902,8 @@ The description follows a certain patter: First, the two absolute-gain, second, 
 	Adding these two even surfaces---which are both at height 15---an overall surface at height 30 follows.
 	The flatness of all the surfaces deserves to be revisited in the discussion (\ref{sec:discussion}).
 
-\subsubsection*{AlwaysSame}
-	As already observed in the subsection on the Random-Discrete strategy (\ref{sec:desc_RD}), AlwaysSame behaves identically to Random-Discrete.
+\subsubsection*{Always-Same}
+	As already observed in the subsection on the Random-Discrete strategy (\ref{sec:desc_RD}), Always-Same behaves identically to Random-Discrete.
 	Once again, this effect requires further examination in the discussion section (\ref{sec:discussion}).
 
 \subsubsection*{Adapt-Discrete}
@@ -934,11 +942,11 @@ Finally, the interactions in terms of gains against random strategies will be re
 
 \subsection{Shallow Randomness} \label{sec:shallow_randomness}
 
-	It was found that Random-Discrete acts identically as AlwaysSame and Random-Continuous as AlwaysNeutral.
+	It was found that Random-Discrete acts identically as Always-Same and Random-Continuous as AlwaysNeutral.
 	This means that Random-Discrete and Random-Continuous, as random strategies, behave equitably as deterministic strategies if the average of all the generated surfaces is taken.
 	% The mathematical framework used to describe this phenomenon is called the Law of Large Numbers (LLN).
 		
-	To clarify the resemblance between Random-Discrete and AlwaysSame, the equations to calculate the investment have to be analysed (see Equation \ref{eq:RD_i_eq_1}).
+	To clarify the resemblance between Random-Discrete and Always-Same, the equations to calculate the investment have to be analysed (see Equation \ref{eq:RD_i_eq_1}).
 
 
 	\begin{equation}
@@ -961,7 +969,7 @@ Finally, the interactions in terms of gains against random strategies will be re
 	% \end{equation}
 
 	\noindent
-	Regarding the investment calculation of Random-Discrete (Equation \ref{eq:RD_i_eq_discuss}), we can generate $n$ investments (Equation \ref{eq:RNDD_n_i}).
+	Regarding the investment calculation of Random-Discrete (Equation \ref{eq:RD_i_eq_discuss}), we can generate $n$ investments (Equation \ref{eq:RD_n_i}).
 
 	\begin{equation}
 		% \epsilon_1, \epsilon_2, \epsilon_3, \dots, \epsilon_n \;\sim 2 \cdot \mathrm{Bernoulli}(\frac{1}{2}) - 1
@@ -974,7 +982,7 @@ Finally, the interactions in terms of gains against random strategies will be re
 	\end{equation}
 
 	\noindent
-	The average of all the generated investments in equation (\ref{eq:RD_n_i}) converges to a certain value as shown in equation (\ref{eq:RD_i_avr}).
+	The average of all the generated investments in Equation \ref{eq:RD_n_i} converges to a certain value as shown in Equation \ref{eq:RD_i_avr}.
 
 	\begin{equation}
 		\bar i = \lim_{n\to\infty} \frac{1}{n} \sum_{k=1}^{n} i_k = \theta_{\mathrm{RD}} \frac{1}{10} \text{ almost surely}
@@ -991,11 +999,11 @@ Finally, the interactions in terms of gains against random strategies will be re
 	\end{equation}
 
 	\noindent
-	Hence, calculating an investment with a certain probability, ultimately comes down to investing the same contribution constantly, which in turn corresponds to the behaviour of AlwaysSame.\\
+	Hence, calculating an investment with a certain probability ultimately comes down to investing the same contribution constantly, which in turn corresponds to the behaviour of Always-Same.\\
 
 	\noindent
 	A similar effect applies for Random-Continuous and the convergence to the behaviour of the AlwaysNeutral strategy.
-	To investigate a similar effect, the same procedure is conducted.
+	To investigate this effect, the same procedure is conducted.
 	First, the investment equations of Random-Continuous need to be revisited (see Equations \ref{eq:RC_i_eq}-\ref{eq:RC_e_prob}).
 
 	\begin{equation}
@@ -1052,19 +1060,19 @@ Finally, the interactions in terms of gains against random strategies will be re
 	\end{equation}
 
 	\noindent
-	The generally non-existent influence of Random-Continuous' parameter value can be traced back to this phenomenon which is labelled as the Law of Large Number in mathematical statistics.
+	The generally non-existent influence of Random-Continuous' parameter values can be traced back to this phenomenon---which is labelled as the Law of Large Number in mathematical statistics.
 
 
 \subsection{Dispersion and Risk} \label{sec:dispersion_risk}
 	
-	Building on the discussions on shallow randomness (section \ref{sec:shallow_randomness}), it seems worthwhile to delve deeper into the dispersion of the Random-Discrete and AlwaysSame surfaces, which on average show the same behaviour.
+	Building on the discussions on shallow randomness (section \ref{sec:shallow_randomness}), it seems worthwhile to delve deeper into the dispersion of the Random-Discrete and Always-Same surfaces, which on average show the same behaviour.
 	To this end, Figure \ref{fig:two_one-iter} illustrates the absolute-gain surfaces of the interaction of both strategies if only played once (with 20 rounds).
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.45\textwidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_first.png}
-		\includegraphics[width=0.45\textwidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_first.png}\\
-		\caption{pbICPD surfaces without repetitions. Absolute-gain surfaces for Random-Discrete (left) and for AlwaysSame (right).}
+		\includegraphics[width=0.45\textwidth]{plots/Discussion/Random-Discrete_vs_Always-Same/Random-Discrete_first.png}
+		\includegraphics[width=0.45\textwidth]{plots/Discussion/Random-Discrete_vs_Always-Same/Always-Same_first.png}\\
+		\caption{pbICPD surfaces without repetitions. Absolute-gain surfaces for Random-Discrete (left) and for Always-Same (right).}
 		\label{fig:two_one-iter}
 	\end{figure}
 
@@ -1072,7 +1080,7 @@ Finally, the interactions in terms of gains against random strategies will be re
 	Coarser surfaces are visible, which is due to the phenomenon of the Law of Large Numbers as explained above (section \ref{sec:shallow_randomness}).
 	The surface of Random-Discrete is a bit evener. 
 	This fact can be explained by examining the pay-off Equations \ref{eq:payoff_A} and \ref{eq:payoff_B}:
-	$p_A = y - c x + c$ and $p_B = x - c y + c$, where $x$ is the previous investment of Random-Discrete and $y$ the previous investment of AlwaysSame.
+	$p_A = y - c x + c$ and $p_B = x - c y + c$, where $x$ is the previous investment of Random-Discrete and $y$ the previous investment of Always-Same.
 	Since $x$ is random---depending on Random-Discrete's parameter---and $y$ is a constant over one ICPD, subtracting only a fraction of the random investment pays off a more constant amount of points.
 
 	To calculate the dispersion of the average absolute-gain surface, the Standard Deviation (SD) (Equation \ref{eq:standard_deviation}) can be used for every game and thus new surface plots can be generated (see Figure \ref{fig:two_one-iter_sd}). 
@@ -1084,28 +1092,28 @@ Finally, the interactions in terms of gains against random strategies will be re
 
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=0.42\textwidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd.png}
-		\includegraphics[width=0.42\textwidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd.png}
-		\caption{pbICPD Standard-Deviation surfaces for 100 repetitions. Standard deviations of the absolute-gain surfaces of Random-Discrete (left) and of AlwaysSame (right).}
+		\includegraphics[width=0.42\textwidth]{plots/Discussion/Random-Discrete_vs_Always-Same/Random-Discrete_sd.png}
+		\includegraphics[width=0.42\textwidth]{plots/Discussion/Random-Discrete_vs_Always-Same/Always-Same_sd.png}
+		\caption{pbICPD Standard-Deviation surfaces for 100 repetitions. Standard deviations of the absolute-gain surfaces of Random-Discrete (left) and of Always-Same (right).}
 		\label{fig:two_one-iter_sd}
 	\end{figure}
 
-	As can be seen in Figure \ref{fig:two_one-iter_sd}, the SD surface of Random-Discrete is considerably smaller than that of AlwaysSame, which refers to the explanation already provided above.
+	As can be seen in Figure \ref{fig:two_one-iter_sd}, the SD surface of Random-Discrete is considerably smaller than that of Always-Same, which refers to the explanation already provided above.
 	Furthermore, it becomes obvious that both SD surfaces are only affected by the parameter value of Random-Discrete with the highest SDs located at a parameter value of 5, which represents the most random version of the strategy. 
-	To conclude, on the one hand, there is a more pronounced chance for AlwaysSame to win or loose if the parameter of Random-Discrete takes medium values.
+	To conclude, on the one hand, there is a more pronounced chance for Always-Same to win or lose if the parameter of Random-Discrete takes medium values.
 	On the other hand, as can be seen in Figure \ref{fig:SD_avr}, the resulting risk is largely negligible since the average absolute-gain surfaces are not remarkably altered by the SD (which covers 68.2\% of the samples).
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.45\textwidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/Random-Discrete_sd_p_avr.png}
-		\includegraphics[width=0.45\textwidth]{plots/Discussion/Random-Discrete_vs_AlwaysSame/AlwaysSame_sd_p_avr.png}
-		\caption{pbICPD surfaces after 100 repetitions. Absolute-gain surfaces $\pm$ SD for Random-Discrete (left) and for AlwaysSame (right).}
+		\includegraphics[width=0.45\textwidth]{plots/Discussion/Random-Discrete_vs_Always-Same/Random-Discrete_sd_p_avr.png}
+		\includegraphics[width=0.45\textwidth]{plots/Discussion/Random-Discrete_vs_Always-Same/Always-Same_sd_p_avr.png}
+		\caption{pbICPD surfaces after 100 repetitions. Absolute-gain surfaces $\pm$ SD for Random-Discrete (left) and for Always-Same (right).}
 		\label{fig:SD_avr}
 	\end{figure}
 
 \subsection{Threshold Values for Discrete Adaptations} \label{sec:threshold_values}
 		
-	Regarding the surfaces of the interactions of Random-Discrete with Adapt-Discrete, a stripe can be observed.
+	Regarding the surfaces of the interactions of Random-Discrete with Adapt-Discrete, a surprising stripe can be observed.
 	To understand the reason for this effect, the investment calculations of Adapt-Discrete should be recalled (see Equations \ref{eq:AD_i0}-\ref{eq:AD_s_eq}).
 	\begin{equation}
 		i_0 = 1
@@ -1128,8 +1136,8 @@ Finally, the interactions in terms of gains against random strategies will be re
 
 	\noindent
 	As the investments of Adapt-Discrete are rounded to the nearest integer (Equation \ref{eq:AD_rounded}), to get from investment 0 to 1 or vice versa, the raw value of the investment has to exceed a certain threshold value which is equal to 0.5.
-	In the first round, Adapt-Discrete contributes full cooperation (Equation \ref{eq:AD_i0_discuss}), so that to surpass the threshold, shift in Equation \ref{eq:AD_eq_s_discuss} must be lower than -0.5.
-	To generate a general formula that calculates the opponent's investment that is necessary to exceed the threshold in the first round given the parameter, it is required to solve for $\tilde{i}_1$.
+	In the first round, Adapt-Discrete contributes full cooperation (Equation \ref{eq:AD_i0_discuss}), so that to surpass the threshold, the shift in Equation \ref{eq:AD_eq_s_discuss} must be lower than -0.5.
+	To generate a general formula that calculates the opponent's investment that is necessary to exceed the threshold in the first round given the Adapt-Discrete parameter, it is required to solve for $\tilde{i}_1$.
 
 	\begin{equation}
 \begin{alignedat}{2}
@@ -1146,9 +1154,9 @@ s(\theta_{\mathrm{AD}}, k)                           &< -0.5
 \end{equation}
 
 	\noindent
-	Figure (\ref{fig:surpass_theshold_abs}) illustrates this formula graphically.
+	Figure \ref{fig:surpass_theshold_abs} illustrates this formula graphically.
 	The curve depicts the upper limit of the area of values for which adaptation takes place (exclusively).
-	It can be seen that the opponent's investment would be needed to be below 0 to exceed the threshold value if $0 \le \theta_{\mathrm{AD}} \le 2$.
+	It can be seen that the opponent's investment would be needed to fall below 0 to exceed the threshold value if $0 \le \theta_{\mathrm{AD}} \le 2$.
 	However, a contribution below 0 is impossible.
 	To conclude, if Adapt-Discrete's parameter is either 0, 1, or 2, the shift required to surpass the threshold value cannot be achieved.
 	Thus, Adapt-Discrete is equivalent to AlwaysCooperate in cases where its parameter is lower than 3.
@@ -1158,13 +1166,13 @@ s(\theta_{\mathrm{AD}}, k)                           &< -0.5
 		\begin{center}
 			\includegraphics[width=0.8\textwidth]{plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png}
 		\end{center}
-		\caption{Threshold values for discrete adaptions as a function of the Adapt-Discrete parameter.}
+		\caption{Threshold values for discrete adaptations as a function of the Adapt-Discrete parameter.}
 		\label{fig:surpass_theshold_abs}
 	\end{figure}
 
 	% Coming to the next attribute of this plot; the evenness of the rest of the surface.
 	% The other part of the surface is first, not influenced by the parameter of Adapt-Discrete and second, has a little inclination.
-	% The first point can be answered with the already proven fact that Random-Discrete parallels AlwaysSame.
+	% The first point can be answered with the already proven fact that Random-Discrete parallels Always-Same.
 	% Adapt-Discrete mimics the opposing strategy if it belongs to the rigid category since the shift is equal to zero after the first few round, as will be discussed later.% explanation needed??
 	% \\
 	% The second quality can be justified by becoming clear about the fact that Random-Discrete will range its contributions from 0 to 1 as its parameter increases.
@@ -1206,7 +1214,7 @@ s(\theta_{\mathrm{AD}}, k)                           &< -0.5
 
 	\noindent
 	The investment of Random-Continuous as a function of its parameter can be found as a graph in Figure \ref{fig:RC_investm} (left).
-	The lower and upper point of one parameter value are notated as 'RC [parameter value] lower' or  'RC [parameter value] upper', respectively.
+	The lower and upper points of one parameter value are notated as 'RC [parameter value] lower' or  'RC [parameter value] upper', respectively.
 
 	\begin{figure}[h]
 		\centering
@@ -1217,47 +1225,47 @@ s(\theta_{\mathrm{AD}}, k)                           &< -0.5
 	\end{figure}
 
 	\noindent
-	As shown in Figure \ref{fig:RC_investm} (right), every investment of Random-Continuous above the line of \textit{'Maximum Investment'} results in an exploitation of Adapt-Discrete.
-	Parameters equal to either 0, 1, or 2 necessitate a different approach (see \ref{sec:threshold_values}).
+	As shown in Figure \ref{fig:RC_investm} (right), every investment of Random-Continuous above the line of \textit{'Threshold Values'} results in an exploitation of Adapt-Discrete.
+	Parameters equal to either 0, 1, or 2 necessitate a different approach (as discussed above).
 	To explain this fact, the parameter value of Adapt-Discrete equal to 3 will be taken as an example.
 	The same idea applies to every further value of the parameter.
-	The graph at parameter 3 is at an investment value of $0.1\overline{6}$ and thus lies between the lines \textit{'RndC 7 lower'} and \textit{'RndC 6 lower'}.
+	The graph at parameter 3 is at an investment value of $0.1\overline{6}$ and thus lies between the lines \textit{'RC 7 Lower'} and \textit{'RC 6 Lower'}.
 	The line below this point means that this and every greater parameter of Random-Continuous does not exploit Adapt-Discrete.
 	% Adapt-Discrete can surpass the threshold value of 0.5 because the investment of Random-Continuous 7 and every further one submits a lower investment (with a 50\% change) and thus defects completely.
 	The line above indicates the first version of Random-Continuous in negative direction that exploits Adapt-Discrete.
-	This line can be at the same height as the point and it would still result in a losing situation for Adapt-Discrete (see \ref{sec:threshold_values}).\\
+	This line can be at the same height as the point and it would still result in a losing situation for Adapt-Discrete.\\
 	
 	\noindent 
 	The appearance of the small peak is also a part of the discontinuity of the surfaces.
-	% The reason for the existence of the peak at coordinates $(5, 10, z)$ has not yet been clarified.
-
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.8\textwidth]{plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png}
-		\caption{}
-		\label{fig:RndC_AdpD_peak}
-	\end{figure}
-
-	\noindent
-	% Figure \ref{fig:RndC_AdpD_peak} demonstrate this aspect.
-	In Figure \ref{fig:RndC_AdpD_peak} it can be seen that the two traces \textit{'RndC 5 lower'} and \textit{'RndC 5 upper'} intersect with \textit{'Surpass threshold down'} and \textit{'Surpass threshold up'} where the parameter value of Adapt-Discrete is equal to 10, respectively.
-	In the first round---as Adapt-Discrete starts with full cooperation---Adapt-Discrete only adapts from 1 to 0 with a probability of 50\% since only the investment line \textit{'RndC 5 lower'} is located below the point of the \textit{'Surpass threshold down'} curve.
-	However, Adapt-Discrete always surpasses the threshold value of 0.5 from full defection to full cooperation as both \textit{'RndC 5 lower'} and \textit{'RndC 5 upper'} are above the corresponding point of the \textit{'Surpass threshold up'} graph.
+	In Figure \ref{fig:RndC_AdpD_peak} it can be seen that the two traces \textit{'RC 5 Lower'} and \textit{'RC 5 Upper'} intersect with \textit{'Surpass Threshold Down'} and \textit{'Surpass threshold Up'} where the parameter value of Adapt-Discrete is equal to 10, respectively.
+	In the first round---as Adapt-Discrete starts with full cooperation---Adapt-Discrete only adapts from 1 to 0 with a probability of 50\% since only the investment line \textit{'RC 5 lower'} is located below the point of the \textit{'Surpass threshold down'} curve.
+	However, Adapt-Discrete always surpasses the threshold value of 0.5 from full defection to full cooperation as both \textit{'RC 5 Lower'} and \textit{'RC 5 Upper'} are above the corresponding point of the \textit{'Surpass Threshold Up'} graph.
 	So, Adapt-Discrete will go down 50\% of the cases when it is at full cooperation but it will go up to full cooperation when it is at full defection with 100\% probability.
 	This implies that Adapt-Discrete is exploited more often as Adapt-Discrete cooperates more often than it defects.
 	Every other combination of parameters of Adapt-Discrete and Random-Continuous prevents this situation from occurring.
+
+
+	% The reason for the existence of the peak at coordinates $(5, 10, z)$ has not yet been clarified.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png}
+		\caption{Intersections of surpass thresholds curves with \emph{'RC 5 Lower'} and \emph{'RC 5 Upper'}.}
+		\label{fig:RndC_AdpD_peak}
+	\end{figure}
+	% Figure \ref{fig:RndC_AdpD_peak} demonstrate this aspect.
+
 
 \subsection{Dynamics of Continuous Adaptations} \label{sec:dynamics}
 	
 	The absolute-gain surface of Adapt-Continuous in the interaction with Random-Discrete has similar qualities to that of Adapt-Discrete against Random-Discrete.
 	The main difference between these surfaces concerns the angularity.
 	% A same idea can be used to explain the similar appearance of the surfaces against Adapt-Continuous compared to the ones against Adapt-Discrete.
-	Figure \ref{fig:AC_approx_invetm_and_payoffs_0-5} demonstrates the investments of Adapt-Continuous in one ICPD when it plays against Random-Discrete, thereby taking AlwaysSame as equivalent to Random-Discrete for simplicity (see \ref{sec:shallow_randomness} and \ref{sec:dispersion_risk}).
+	Figure \ref{fig:AC_approx_invetm_and_payoffs_0-5} demonstrates the investments of Adapt-Continuous in one ICPD when it plays against Random-Discrete, thereby taking Always-Same as equivalent to Random-Discrete for simplicity (see \ref{sec:shallow_randomness} and \ref{sec:dispersion_risk}).
 	Adapt-Continuous pursuits getting on the same level of investment as the opponent for parameter values from 1 to 5.
 	Parameter 0 forms a special case as its strategy never adapts and thus always cooperates, which can be derived from the fact that the difference to the opponent's investment is multiplied by 0 and thus no adaption is made.
 	The parameter value of Random-Discrete equals 5 in Figure \ref{fig:AC_approx_invetm_and_payoffs_0-5}.
 
-	% AlwaysSame vs Adapt-Continuous better?
+	% Always-Same vs Adapt-Continuous better?
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.45\textwidth]{plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png}
@@ -1268,7 +1276,7 @@ s(\theta_{\mathrm{AD}}, k)                           &< -0.5
 	
 	\noindent
 	The function for each graph can be derived from the investment calculation of Adapt-Continuous (Equations \ref{eq:AC_i0}-\ref{eq:AC_s_eq}).
-	Equation (\ref{eq:AdpC_i_eq_rec}) describes this process recursively.
+	Equation \ref{eq:AdpC_i_eq_rec} describes this process recursively.
 	$k$ indicates the current round and $\theta$ is the parameter of Adapt-Continuous.
 	$\tilde{i}$ is the opponent's investment and thus constant.
 	\begin{equation}
@@ -1326,7 +1334,7 @@ s(\theta_{\mathrm{AD}}, k)                           &< -0.5
 	This particularly applies to low parameter values of the adaptive strategy, meaning that the adaptation dynamics from the initial state of full cooperation is limited and thus exploitation by the opponent is offered.
 	Positive relative-gain values can only be achieved if the opponent's investment is greater than one's own.
 	Ultimately, it is thus logical to fully defect against random strategies if the aim is to maximise the personal advantage.
-	This can happen by always defecting in a AlwaysSame strategy or cooperating only with a small probability in a Random-Discrete strategy.
+	This can happen by always defecting in a Always-Same strategy or cooperating only with a small probability in a Random-Discrete strategy.
 	If the opponent reacts on this behaviour, the fundamental concepts of the PD surface, meaning that both player end up in mutual defection and thus receiving the least overall-gain.
 
 	When the aim is to maximise this overall-gain, cooperating always should be preferred, or at least with a high probability.

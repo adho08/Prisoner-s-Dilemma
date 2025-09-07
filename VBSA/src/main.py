@@ -20,14 +20,14 @@ RNDC = RandomContinuous(name="Random-Continuous")
 RNDC2 = RandomContinuous(name="Random-Continuous_2")
 RNDD = RandomDiscrete(name="Random-Discrete")
 RNDD2 = RandomDiscrete(name="Random-Discrete_2")
-ALWS = AlwaysSame()
+ALWS = AlwaysSame(name="Always-Same")
 ALWS2 = AlwaysSame(name="AlwaysSame_2")
 ADPC = AdaptContinuous(name="Adapt-Continuous")
 ADPC2 = AdaptContinuous(name="Adapt-Continuous_2")
 ADPD = AdaptDiscrete(name="Adapt-Discrete")
 ADPD2 = AdaptDiscrete(name="Adapt-Discrete_2")
 
-PB_strategies: list[PBStrategy] = [RNDD, RNDD2]
+PB_strategies: list[PBStrategy] = [RNDC, ALWS]
 strategy_1 = PB_strategies[0]
 strategy_2 = PB_strategies[1]
 

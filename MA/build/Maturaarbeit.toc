@@ -18,7 +18,7 @@
 \contentsline {subsection}{\numberline {5.3}Threshold Values for Discrete Adaptations}{19}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Dynamics of Continuous Adaptations}{21}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}Gains Against Random Strategies}{23}{subsection.5.5}%
-\contentsline {section}{\numberline {6}Conclusions and Outlook}{24}{section.6}%
+\contentsline {section}{\numberline {6}Conclusions and Outlook}{23}{section.6}%
 \contentsline {section}{\numberline {7}Source List}{24}{section.7}%
 \contentsline {section}{\numberline {A}Appendix: Literature Search}{26}{appendix.A}%
 \contentsline {section}{\numberline {B}Declaration of Integrity}{30}{appendix.B}%
