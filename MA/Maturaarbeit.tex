@@ -16,8 +16,7 @@
 	{\sffamily
 	\footnotesize
 	\centering
-	\caption{Implemented strategies, illustrated by parameter values meanings (TFT = Tit-for-Tat).}
-	\label{table:strategies_overview}
+	% \label{table:strategies_overview}
 	\begin{tabular}{ p{\wTstr}|p{\wTstr}|p{\wTstr}|p{\wTstr} }
 		& \hfil $\theta$ = 0 & \hfil $\theta$ = 5 & \hfil $\theta$ = 10 \\ 
 		\hline
@@ -117,7 +116,7 @@ In addition, it seems interesting to ask whether gradations of erratic behaviour
 Finally---and in sharp contrast to an 'America First' ideology---it appears worthwhile to investigate not only superiority over opponents but the overall gain collectively achieved as well.\\
 \indent The leading question derived in the present introduction (Section \ref{sec:intro}) will be explored below in five consecutive steps: After relevant theoretical foundations have been laid (Section \ref{sec:theoretical_found}), applied methods and implementational specifications of the computational analysis will be presented (Section \ref{sec:methods_and_implementation}).
 Subsequently, the obtained results will be described (Section \ref{sec:results}) and discussed (Section \ref{sec:discussion}). 
-The thesis will be rounded off with a conclusion and outlook that refers back to the leading question just formulated (Section \ref{sec:conclusion}) and will be supplemented by a source list (Section \ref{sec:sources}), appendices (Section \ref{sec:appendices}) and a declaration of integrity (Section \ref{sec:declaration_of_integrity}).
+The thesis will be rounded off with a conclusion and outlook that refers back to the leading question just formulated (Section \ref{sec:conclusion}) and will be supplemented by a source list (Section \ref{sec:sources}), an appendix (\ref{sec:appendices}) and a declaration of integrity (\ref{sec:declaration_of_integrity}).
 
 \section{Theoretical Foundations} \label{sec:theoretical_found}
 
@@ -128,7 +127,7 @@ Excellent overviews are available in standard encyclopedia, from which the infor
 
 \subsection{Prisoner's Dilemma}
 		
-The PD is a famous model in Game Theory. 
+The PD is a famous model in game theory. 
 To understand the dilemma, a proper context has to be established:
 Two persons are arrested and sued for having committed a crime jointly.
 There is yet, however, insufficient evidence to imprison the two suspects.
@@ -157,7 +156,7 @@ The following matrix visualises the pay-offs in this game in a comprehensive way
 The dilemma consists of the following:
 The act of defecting is tempting since there is a chance of avoiding a long sentence.
 However, it is then also possible to receive a punishment of ten years in prison depending on the confederate's decision.
-Although this---which could have been avoided if both had remained silent and thus obtained a reward of three easy surmountable years in confinement---is nevertheless the most likely result, as the temptation to defect is simply too great.
+Nevertheless, this outcome---which could have been avoided if both had remained silent and thus obtained a reward of three easy surmountable years in confinement---is the most likely result, as the temptation to defect is simply too great.
 Additionally, the possibility of becoming the sucker in this game forces the player to consider trust as the deciding factor.
 As trust is bound to be unreliable, defection is the more reasonable choice.
 The PD thus composes a one-time interaction from a mathematical and analytical perspective. 
@@ -187,7 +186,7 @@ The Iterated Prisoner's Dilemma (IPD) extends the PD as the game is played multi
 To refer to the number of rounds played, $n$ is used as the denotation. 
 The gained pay-offs are accumulated over the last $n-k$ rounds where $k$ represents the current round.
 A player's strategy can be based on the entire history of the previous PDs to generate the decision for the next round.
-These decisions can be are calculated using conditions and probabilities that will be applied on the given data.
+These decisions can be calculated using conditions and probabilities that are applied to the given data.
 The prison analogy is changed from minimising years in prison to maximising one's points.
 Thus, the pay-off matrix must be altered accordingly.
 In particular, the following inequalities need to be satisfied:
@@ -210,9 +209,10 @@ An additional inequality is necessary to avoid receiving greater pay-offs by coo
 2R > T + S
 \end{equation}
 
+\noindent
 In the IPD, mutual cooperation yields long-term benefits since playing cooperation increases trust.
 The maximum pay-off, however, can only be achieved by exploitation ($p_{\mathrm{max}} = n T$).
-Because persistent defection leads to mutual defection as e response, the attainment of this maximum value is highly unlikely.
+Because persistent defection leads to mutual defection as a response, the attainment of this maximum value is highly unlikely.
 
 % A problem arises in the last round.
 % Since cooperation is only played to conserve trust, the reasonable action in the last round is to defect as trust has no use beyond the game.
@@ -255,7 +255,6 @@ The continuous form offers enhanced precision and mathematical applicability.
 
 To include continuous values in the ICPD, a mathematical procedure can be applied to the discrete version of the matrix, namely bilinear interpolation.
 This will establish a field that can be represented by colour grades, a heat map as depicted in Figure \ref{fig:heatmaps}.
-The equation used to calculate this heat map can be found in the Appendix.
 
 \begin{figure}[h]
 	\centering
@@ -310,7 +309,7 @@ So, the least points that can be gained is 0 while the maximal points that can b
 
 \subsection{Further Variants}
 
-There exist several extensions of the PD one of which is noise, meaning that investments are altered with a certain probability.
+There exist several extensions of the PD, one of which is noise, meaning that investments are altered with a certain probability.
 This noise is introduced to simulate potential misunderstandings.
 Another advancement is the alternating form.
 In this variant, investments are contributed by the players in succession rather than concurrently as in the conventional simultaneous model.
@@ -337,14 +336,14 @@ However, since the ICPD---as introduced above---offers a promising and apparentl
 % Since the alternating form gives and advantage to the strategy which is allowed to respond, this only makes things more complicated than necessary.
 % So, this analysis is only dedicated to the simultaneous form.
 \subsection{Scientific Findings} \label{sec:scientific_findings}
-In the context of the PD, erratic behaviour might be characterised best as “random strategy”.
-To retrieve the most important scientific findings on this topic, a literature search was conducted on \url{scholar.google.com} with the search terms 'Prisoner's Dilemma' and 'random strategy' (for details see Appendix \ref{sec:Appx_search}).
+In the context of the PD, erratic behaviour might be characterised best as 'random strategy'.
+To retrieve the most important scientific findings on this topic, a literature search was conducted on \url{scholar.google.com} with the search terms 'Prisoner's Dilemma' and 'random strategy' (for details see Appendix \ref{sec:appendices}).
 A criterion-based process of stepwise reduction of the initially found 650 hits finally resulted in eight publications of particular relevance.
 
-Interestingly, a random strategy was already included in the original tournament organized by Axelrod and Hamilton \cite{AH81}.
+Interestingly, a random strategy was already included in the first conducted PD tournament organised by Axelrod and Hamilton \cite{AH81}.
 Their main finding is that a simple Tit-for-Tat strategy (TFT: “start with a C, and then use your co-players previous move”, \cite{NS93}) won over all other strategies.
 In his review on PD studies, Brembs \cite[p.~14]{Bre96} highlights as one of the “most important advancements in the game-theoretical work on different aspects of the game” the turn from deterministic to stochastic variants.
-In this context, Nowak and Sigmund \cite[p.~56]{NS93} argue that “occasional mistakes between two TFT players cause long runs of mutual backbiting” and thus introduce a so-called Pavlov strategy, which “cooperates if and only if both players opted for the same alternative in the previous move (…). Thus Pavlov (…) can correct mistakes.” 
+In this context, Nowak and Sigmund \cite[p.~56]{NS93} argue that “occasional mistakes between two TFT players cause long runs of mutual backbiting.” They thus introduce a so-called Pavlov strategy, which “cooperates if and only if both players opted for the same alternative in the previous move (…). Thus Pavlov (…) can correct mistakes.” 
 Building on this, Kraines and Kraines \cite[p.~112]{KK93} demonstrate that “Pavlov will exploit (…) random strategies” in the discrete IPD game.
 Even further optimisations were suggested by Hauert and Stenull \cite{HS02} in terms of adaptive strategies and by Hao, Li and Zhou \cite{HLZ18} for ways of determining the opponent’s maximum and minimum gain.
 Jurišić, Kermek and Konecki \cite{JKK12} report in their review on repetitions of Axelrod’s tournament in 2004 and 2005 on a successful Omega TFT strategy that always defects as soon as a certain randomness threshold is crossed by the opponent. 
@@ -364,11 +363,11 @@ To answer the leading question, it is necessary to develop an overarching study 
 
 Erratic behaviour with respect to the PD can be equated to a random conduct.
 Two strategy types are proposed by reason to counter such erraticism:
-a strategy can either be unaffected and behold its manner of responding and a strategy that actively reacts to the randomness.
+a strategy remains unaffected and beholds its manner of responding and a strategy that actively reacts to the randomness.
 In the former case, strategies are identified as rigid whereas the latter are characterised as adaptive.
 
 Behavioural categories can be algorithmised differently.
-This particularly concerns the above introduced distinction of the discrete and the continuous form.
+This particularly concerns the above introduced distinction of the discrete and the continuous form of the IPD.
 Applied to the erratic strategies in their continuous form, this means that the investment is a random number between 0 and 1.
 In contrast, the discrete version of this strategy generates a random number that is then rounded to the nearest integer.
 The same approach applies to the adaptive strategies.
@@ -376,7 +375,7 @@ Finally, discrete contributions of rigid strategies are equal to either always c
 
 Furthermore, it is possible to specify the extremeness of each behaviour.
 This means that the randomness of an erratic strategy, the adaptiveness of an adaptive strategy and the constant investment of a rigid strategy can be specified.
-On this account, a parameter ($\theta$) is incorporated into the determination of the investment and the evaluation of various conditions (which---to the best of the authors knowledge---not been undertaken in PD research so far).
+On this account, a parameter ($\theta$) is incorporated into the determination of the investment and the evaluation of various conditions (which---to the best of the authors knowledge---has not been undertaken in PD research so far).
 
 To keep the number of comparisons manageable within the realms of a high-school thesis, five strategies were finally chosen:
 a discrete and a continuous version of the random category (Random-Discrete, Random-Continuous), as well as of the adaptive category (Adapt-Discrete, Adapt-Continuous), complemented by a rigid strategy (AlwaysSame) in which the extreme values of the parameter correspond to the discrete form and the in-between parametrisations implement the continuous form.
@@ -405,15 +404,14 @@ According to the leading question, the two random strategies will play against a
 
 \subsection{Implemented Strategies} \label{sec:implemented_strategies}
 
-As justified before, five strategies, namely Random-Discrete, Random-Continuous, Adapt-Discrete, Adapt-Continuous and AlwaysSame, will be presented and specified in the following paragraphs.
+As justified before, five strategies, namely Random-Discrete, Random-Continuous, Always-Same, Adapt-Discrete, and Adapt-Continuous will be presented and specified in the following paragraphs.
 The implemented parameter takes an integer value ranging from 0 to 10 (inclusively).
-As the discrete variant of the adaptive strategy is derived from the continuous variant, the continuous implementation will be described first.
+As the discrete variant of the adaptive strategy is derived from its continuous variant, the continuous implementation will be described first.
 Special features of the parametrisations are summarised in advance in Table \ref{table:strategies_overview}.
 	
 \def\wTstr{3.5cm}
 
 \begin{table}[h]
-	\tableComp
 % 	{\sffamily
 % 	\footnotesize
 % 	\centering
@@ -433,6 +431,9 @@ Special features of the parametrisations are summarised in advance in Table \ref
 % 		Adapt-Continuous & \hfil AlwaysNeutral & \hfil TFT & \hfil (overshot TFT)
 % 	\end{tabular}
 % }
+	\caption{Implemented strategies, illustrated by parameter values meanings (TFT = Tit-for-Tat).}
+	\tableComp
+	\label{table:strategies_overview}
 \end{table}
 
 \subsubsection*{Random-Discrete}
@@ -470,7 +471,6 @@ The parameter specifies the shift ($s$) upwards or downwards from that anchor de
 	\label{eq:RC_e_prob}
 \end{equation}
 Parameter 0 results in a behaviour corresponding to AlwaysNeutral.
-
 As the maximum value of the parameter is 10, due to the division by 20, the maximum shift cannot exceed the limits of 0 and 1.
 The probability of subtracting or adding this shift is 50\%.
 Consequently, parameter 10 leads to contributing a discrete value of either 0 or 1 with a chance of 50\%. 
@@ -487,7 +487,7 @@ Consequently, parameter 0 is equivalent to AlwaysDefect and parameter 10 to Alwa
 If the parameter is set to 5, the strategy will always submit the investment 0.5 which is identical to AlwaysNeutral.
 
 \subsubsection*{Adapt-Continuous}
-Adapt-Continuous (AC) is that starts with full cooperation to offer a constructive relationship as recommended in fundamental PD literature \cite{RC15, Kuh25}.
+Adapt-Continuous (AC) starts with full cooperation to offer a constructive relationship as recommended in fundamental PD literature \cite{RC15, Kuh25}.
 After the first round, it will adapt to the submissions of the other player by shifting its own investment towards the opponent's on the basis of the following equations:
 \begin{equation}
 	i_0 = 1
@@ -498,7 +498,7 @@ After the first round, it will adapt to the submissions of the other player by s
 	\label{eq:AC_i_eq}
 \end{equation}
 \begin{equation}
-	s(\theta_{\mathrm{AC}}, k) = \frac{1}{5} \theta_{\mathrm{AC}} \cdot (\tilde{\i}_{k-1} - i_{k-1})
+	s(\theta_{\mathrm{AC}}, k) = \frac{1}{5} \theta_{\mathrm{AC}} \cdot (\tilde{i}_{k-1} - i_{k-1})
 	\label{eq:AC_s_eq}
 \end{equation}
 Please note that $k$ indicates the current round and is used to notate the equations recursively.
@@ -520,8 +520,8 @@ Adapt-Discrete (AD) is insofar derived from Adapt-Continuous as the same investm
 \begin{equation}
 	i(\theta_{\mathrm{AD}}, k) =
 	\begin{cases}
-		1 & \text{ if } i_1 + s(\theta_{\mathrm{AD}}, k) \ge 0.5\\
-		0 & \text{ if } i_1 + s(\theta_{\mathrm{AD}}, k) < 0.5\\
+		1 & \text{ if } i_{k-1} + s(\theta_{\mathrm{AD}}, k) \ge 0.5\\
+		0 & \text{ if } i_{k-1} + s(\theta_{\mathrm{AD}}, k) < 0.5\\
 	\end{cases}
 	\label{eq:AD_i_eq}
 \end{equation}
@@ -531,23 +531,23 @@ Adapt-Discrete (AD) is insofar derived from Adapt-Continuous as the same investm
 \end{equation}
 The strategy will start with full cooperation.
 In the following rounds, the submitted investment will be 1 if the calculated investment is greater or equal to 0.5, otherwise it will be equal to 0.
-As in the continuous version, Parameter 0 means that the strategy corresponds to AlwaysCooperate because the shift is equal to 0 and thus always stays at its first investment, being full cooperation.
+Parameter 0 thus means that the strategy corresponds to AlwaysCooperate because the shift is equal to 0 and thus always stays at its first investment, being full cooperation.
 If the parameter is equal to 10, due to the rounding of the overshot Tit-for-Tat, the investment is most likely to change from 1 to 0 or vice versa.
 
 \subsection{Implementational Details} \label{sec:implementational_details}
 
 For the pay-off system of the ICPD, a value of 0.5 has been chosen for $c$ (see Equations \ref{eq:payoff_A} and \ref{eq:payoff_B} in \ref{sec:iterated_continuous_prisoners_dilemma}).
-Regarding the initial problem of this thesis, both Random-Discrete and Random-Continuous play against every strategy (including themselves).
+Regarding the leading question of this thesis, both Random-Discrete and Random-Continuous play against every strategy (including themselves).
 As there are eleven parameter values for each strategy, there will be $2 \cdot 5 \cdot 11 \cdot 11 = 1210$ encounters and thus comparisons.
 20 iterations of the ICPD has been decided to suffice.
-In addition, this game of 20 iterations is played a 100 times to flatten random peaks or valleys.
+In addition, this game of 20 iterations is played a hundred times to flatten random peaks or valleys.
 This comes down to $100 \cdot 20 \cdot 1210 = 2420000$ executions of the continuous PD (CPD).
 Therefore, only the means of the 100 repetitions will be plotted.
 
 One encounter of the $11 \cdot 11$ parameter-based ICPD (pbICPD) will be displayed in form of a surface.
-There are two surfaces for each pbICPD, both of which represent the gained points of the corresponding strategy (absolute-gain).
+There are two surfaces for each pbICPD, both of which represent the gained points of the corresponding strategies (absolute-gain).
 Additionally, two further surfaces can be established.
-These ones are calculated by subtracting the absolute gains and thus depict the relative-gain, i.e., the advantage of strategy A over strategy B and vice versa.
+These ones are calculated by subtracting the absolute-gain values and thus depict the advantage of strategy A over strategy B and vice versa (relative-gain).
 Finally, a fifth surface will be generated by adding the two absolute-gain surfaces, which represents the points both players gained together (overall-gain).
 
 The simulation, data generation and visualisation is completely written in \textit{Python} (Version 3.13.5).
@@ -571,32 +571,31 @@ The x-axis---the horizontal axis at the bottom right of each plot---displays the
 The y-axis---the horizontal axis at the bottom left of each plot---indicates the parameter value of the opponent’s strategy. 
 The z-axis always exhibits points gained in the ICPD.
 These dependent values are not only marked by height in the plots but also by colour. 
-It should be noted that the two horizontal axes are scaled in such a way that the minimum parameter value of 0 appears at the rear end of the plot and its maximum of 10 at its front end, meaning that the left axis needs to be read “from the left to the right” and the right axis “from the right to the left”, respectively. 
-To help the readers to relate these values to meaningful content, at the bottom of Figure \ref{fig:RNDD-table} and \ref{fig:RNDC-table}, an aggregated version of the explanations provided in Table \ref{table:strategies_overview} has been added.
+It should be noted that the two horizontal axes are scaled in such a way that the minimum parameter value of 0 appears at the rear end of the plot and its maximum of 10 at its front end, meaning that the left axis needs to be read 'from the left to the right' and the right axis 'from the right to the left', respectively. 
+To help the readers to relate these values to meaningful content, at the bottom of Figures \ref{fig:RNDD-table} and \ref{fig:RNDC-table}, the explanations provided in Table \ref{table:strategies_overview} are repeated.
 
 Within each column, the first two rows are the most substantial surface plots. 
 They illustrate the absolute gains of the random strategy itself and then of the opponent’s strategy.
 The opponent's strategy is specified in the five columns of the figures.
-The maximum of absolutely gained points can be calculated from the pay-off equations \ref{eq:payoff_A} and \ref{eq:payoff_B}; they are gained by exploitation. 
+The maximum of absolutely gained points can be calculated from the pay-off Equations \ref{eq:payoff_A} and \ref{eq:payoff_B}; they are gained by exploitation. 
 So, $p_A = y - c \cdot x + c$ becomes by substitution $p_A = 1 - 0.5 \cdot 0 + 0.5$ \textrightarrow $p_A = 1.5$.
 And since the CPD is played 20 times, $p_A \cdot 20 = 30$.
-Consequently, the boundaries in which the points can vary is from 0 to 30. 
-All the points in a absolute-gain surface with a value of 30 have their correspondent x-y-coordinate of 0 in the opponent’s surface since to receive 30 points, exploitation is required. 
-The exact same principle holds for the minimum value, merely reversed.
+Consequently, the boundaries in which the points can vary are 0 and 30. 
+All the points in an absolute-gain surface with a value of 30 have their correspondent x-y-coordinate of 0 in the opponent’s surface since to receive 30 points, exploitation is required. 
+The exact same principle holds for the minimum value, merely reversed since
 $p_B = 0 - 0.5 \cdot 1 + 0.5$ \textrightarrow $p_B = 0$.
 Mutual cooperation results in both players receiving a pay-off of 1 point because if $y$ and $x$ are equal to 1, $p_A = p_B = 1 - 0.5 \cdot 1 + 0.5$ \textrightarrow $p_A = p_B = 1$.
 Thus, if the players constantly mutually cooperate, both receive an end result of 20.
 However, the z-coordinate of 20 does not guarantee mutual cooperation because the CPD is not a zero-sum game.
 Finally, mutual defection leads to both receiving 0.5 points as $p_A = p_B = 0 - 0.5 \cdot 0 + 0.5$ \textrightarrow $p_A = p_B = 0.5$.
-Therefore, if both decide to defect constantly, the absolute-gain is 10.
+Therefore, if both decide to defect constantly, the resulting absolute-gain is 10.
 
 The next two surface plots within a column concern the relative gain, that means the advantage of one strategy over the other. 
-This illustrates the superiority of the one strategy over the other. 
 For the surface of the main strategy, the opponent’s absolute gain surface is subtracted from its own absolute-gain surface and vice versa. 
 Consequently, if the resulting surface plot happens to be entirely above the zero-plane, it means that the displayed strategy has won in every single game of the pbICPD regardless of the parameters.
 The maximum and the minimum values of the resulting relative-gain surfaces can be calculated from the difference of the maximum and the minimum values of the first two surfaces. 
 Accordingly, the points can vary between -30 and 30. 
-Since the two absolute-gain surfaces would intersect if they were put into the same coordinate system, the intersection points can be found in the relative-gain plots where the surfaces intersect with the zero-plane because the difference of two same number is always equal to zero. 
+Since the two absolute-gain surfaces would intersect if they were put into the same coordinate system, the intersection points can be found in the relative-gain plots where the surfaces intersect with the zero-plane because the difference of two same numbers is always equal to zero. 
 Finally, it should be noted that the two relative-gain surfaces are always mirrored by the zero-plane since $A - B = (B - A) \cdot (-1)$.
 
 The last row of plots displays how many points have been gained by both opponents together. 
@@ -796,12 +795,12 @@ The description follows a certain patter: First, the two absolute-gain, second, 
 
 \subsubsection*{Random-Discrete}
 		The left (10, 0) and right (0, 10) corner are the extremes of the surface.
-		Random-Discrete is exploited if its parameter equals 10, meaning it corresponds to AlwaysCooperate, and the parameter Random-Discrete as an opponent is 0, i.e., equivalent to AlwaysDefect.
+		Random-Discrete is exploited if its parameter equals 10, meaning it corresponds to AlwaysCooperate, and the parameter of Random-Discrete as an opponent is 0, i.e., equivalent to AlwaysDefect.
 		% This is how one can get the maximum output, by exploiting.
 		% This can be seen in the surface of Random-Discrete\textunderscore2.
-		The rearmost corner at the coordinate (0, 0) is where both defect constantly, which relates to the already clarified fact that this point is located at a height of 10 for both players.
+		The rearmost corner at the coordinate (0, 0) is where both players defect constantly, which relates to the already clarified fact that this point is located at a height of 10 for both players.
 		% This is the point where both get their relative lowest output, as can be seen later.\\
-		Where both parameter equal to 10, both points have a z-component of 20.
+		When both parameters equal 10, both points have a z-component of 20.
 		This indicates that both strategies behave equally, i.e., as AlwaysCooperate, which leads to a gain of 20 points separately.
 
 		The peaks of both relative-gain surfaces derive from the maximum outputs of the pay-off system.
@@ -832,32 +831,32 @@ The description follows a certain patter: First, the two absolute-gain, second, 
 \subsubsection*{AlwaysSame}
 		Remarkably, AlwaysSame behaves exactly like Random-Discrete.
 		This becomes visible when looking at the columns where Random-Discrete plays against itself and against AlwaysSame.
-		The surprisingly absence of any difference between these two strategies needs further explanation and will thus be revisited in the discussion section \ref{sec:discussion}.
+		The surprising absence of any difference between these two strategies needs further explanation and will thus be revisited in the discussion section \ref{sec:discussion}.
 
 \subsubsection*{Adapt-Discrete}
-		In the surface of Random-Discrete against Adapt-Discrete, a stripe appears at the parameter of Adapt-Discrete ranging from 0 to 2.
+		In the absolute-gain surface of Random-Discrete against Adapt-Discrete, a stripe appears at Adapt-Discrete parameter values from 0 to 2.
 		This stripe ranges from absolute exploitation at (0, 0) to mutual cooperation where the parameter of Random-Discrete is equal to 10.
 		Abruptly, this stripe does not continue to follow its pattern in the y-direction, rather a new inclination is visible.
-		Both surfaces' lowest points are at a height of 10, which means that---after adaption of Adapt-Discrete---mutual defection was played.
-		However, if Random-Discrete always cooperates, the same effect appears as due to the adaption of Adapt-Discrete, mutual cooperation can be observed resulting in 20 points for both players. 
-		Additionally, the maximum points of the first plot indicate that the same points on corresponding surface of the opponent must be at height 0.
+		Both surfaces' lowest points are at a height of 10, which means that---after adaptation of Adapt-Discrete---mutual defection was played.
+		However, if Random-Discrete always cooperates, the same effect appears, due to the adaptation of Adapt-Discrete, mutual cooperation can be observed resulting in 20 points for both players. 
+		Additionally, the maximum points of the first plot indicate that the same points on the corresponding surface of the opponent must be at height 0.
 		% The broader slope is also going downwards.
 		% But this slope is not as steep as the one on the other surface and thus has lower points at the edge where the parameter of Random-Discrete is 0.
 		% When Random-Discrete has its parameter at 10, which means it behaves like AlwaysCooperate, mutual cooperation will take place.\\
 
 		The relative-gain surfaces---with the exception of the stripe highlighted above---is close to 0, meaning that there are practically no advantages.
-		At the coordinates of the stripe, however, is a remarkable advantage for Random-Discrete over Adapt-Discrete stands out, which needs further discussion (\ref{sec:discussion}).
+		At the coordinates of the stripe, however, a remarkable advantage for Random-Discrete over Adapt-Discrete stands out, which needs further discussion (\ref{sec:discussion}).
 
 		As a matter of course, the overall-gain surface shows highest points where only mutual cooperation occurs, which is where the parameter of Random-Discrete is equal to 10 and Adapt-Discrete adapts to this value.
 		The rear end of the stripe is at a height of 30 which indicates full exploitation.
 		And the broader subsurface ends at a height of 20 which suggests mutual defection.
-		Once again, the reason for this discontinuity will be analysed in the Discussion (\ref{sec:discussion}). 
+		Once again, the reason for this discontinuity will be analysed in the discussion (\ref{sec:discussion}). 
 
 \subsubsection*{Adapt-Continuous}
 		The absolute-gain surfaces considerably resemble the ones of the Adapt-Discrete interaction.
 		The difference mainly concerns the angularity since curves appear to replace the edges.
 		So on the one hand, the similarity can be attributed to the description already delivered for Adapt-Discrete.
-		On the other hand, the rounding off effect needs further investigation in the Discussion (\ref{sec:discussion}).
+		On the other hand, the rounding off effect needs further investigation in the discussion (\ref{sec:discussion}).
 		% The edge where points are at height 20, stays as it was in the game against Adapt-Discrete.
 		% The broad slope is also similar to that surface, its lowest points being at 10.
 		% The surface of Adapt-Continuous is in a same way similar to the one of Adapt-Discrete.
@@ -882,7 +881,7 @@ The description follows a certain patter: First, the two absolute-gain, second, 
 	So, no further explanation is required.
 
 \subsubsection*{Random-Continuous}
-	The interaction of Random-Continuous and itself results in completely flat surfaces.
+	The interaction of Random-Continuous with itself results in completely flat surfaces.
 	The absolute-gain surfaces are at a height of 15.
 	This can be ascribed to the fact that Random-Continuous on average delivers 0.5 as an investment.
 	% We can calculate at which height the surface is.
@@ -892,18 +891,18 @@ The description follows a certain patter: First, the two absolute-gain, second, 
 	Subtracting two flat surfaces at the same height results in an also flat surface which corresponds to the zero-plane.
 	No strategy was better than the other at any point.
 
-	Adding these even two surfaces---which are both at height 15---an overall surface at height 30 follows.
+	Adding these two even surfaces---which are both at height 15---an overall surface at height 30 follows.
 	The flatness of all the surfaces deserves to be revisited in the discussion (\ref{sec:discussion}).
 
 \subsubsection*{AlwaysSame}
 	As already observed in the subsection on the Random-Discrete strategy (\ref{sec:desc_RD}), AlwaysSame behaves identically to Random-Discrete.
-	Once again, this effect requires further examination in the discussion section \ref{sec:discussion}.
+	Once again, this effect requires further examination in the discussion section (\ref{sec:discussion}).
 
 \subsubsection*{Adapt-Discrete}
 	For the absolute-gain plots, there are two main levels of the surfaces.
 	The upper level in the Random-Continuous surface is at a height of 25 and the lower one at a height of 10.
-	Additionally, there is a little peak at the coordinate (5, 10) with an approximate height of 17, 12, respectively.
-	This lower level in the Adapt-Discrete surface is located at a height of 10 and the upper one at a height of 15 while the peak is pointing downwards.
+	Additionally, there is a little peak at the coordinate (5, 10) with an approximate height of 17 and 12, respectively.
+	The lower level in the Adapt-Discrete surface is located at a height of 10 and the upper one at a height of 15 while the peak is pointing downwards.
 
 	The upper level of the absolute-gain surface of Random-Continuous is approximately 15 points higher than the lower level of the other absolute-gain plot.
 	Additionally, the lower level of the surface of Random-Continuous and the upper one of the surface of Adapt-Discrete have almost the same z value.
@@ -918,7 +917,7 @@ The description follows a certain patter: First, the two absolute-gain, second, 
 	The absolute-gain surfaces resemble a wave or a curve in the y-direction.
 	The fact that the Random-Continuous parameter does not affect the surface's form can be traced back to the already discussed phenomenon that Random-Continuous on average behaves like AlwaysNeutral.
 	Strikingly, the upper and lower limits of the surfaces correspond to the absolute-gain surfaces described above for the Adapt-Discrete interaction.
-	For Adapt-Continuous parameter values of lower than 4, the curved surface appears to pronouncedly converge to a flat plane at a height of about 15.
+	For Adapt-Continuous parameter values of higher than three, the curved surface appears to pronouncedly converge to a flat plane at a height of about 15.
 
 	The same properties can be seen in the relative-gain surface plots.
 	Upper and lower limits correspond to those of the relative-gain surfaces of the Adapt-Discrete interaction and the relative-gain surface of Random-Continuous is again completely located above the zero-plane.
@@ -929,7 +928,9 @@ The description follows a certain patter: First, the two absolute-gain, second, 
 \section{Discussion} \label{sec:discussion}
 
 % The results suggest certain effects of the PD.
-Many additional findings have been identified and were promised to be analysed in the Discussion since they need mathematical context for better understanding.
+In the results section (\ref{sec:results}), several issues have been identified that deserve a closer inspection.
+In the following subsections, these issues will be discussed in regard to aspects of shallow randomness (\ref{sec:shallow_randomness}), dispersion and risk (\ref{sec:dispersion_risk}), threshold values for discrete adaptations (\ref{sec:threshold_values}), and dynamics of continuous adaptations (\ref{sec:dynamics}).
+Finally, the interactions in terms of gains against random strategies will be referred back to the leading question of the present thesis (\ref{sec:conclusion_discuss}).
 
 \subsection{Shallow Randomness} \label{sec:shallow_randomness}
 
@@ -981,7 +982,7 @@ Many additional findings have been identified and were promised to be analysed i
 	\end{equation}
 
 	\noindent
-	Substituting $n$ with 100---the number of repetitions in the present simulation---in equation (\ref{eq:RD_i_avr}) would be an approximation.
+	Substituting $n$ with 100---the number of repetitions in the present simulation---in Equation \ref{eq:RD_i_avr} would be an approximation.
 	% But, for the scope of this project, 100 repetitions were chosen to be sufficient.
 
 	\begin{equation}
@@ -1018,8 +1019,8 @@ Many additional findings have been identified and were promised to be analysed i
 	\end{equation}
 
 	\noindent
-	Only equation (\ref{eq:prob_eps}) contains a probability
-	We thus form $n$ $\epsilon$ values, as equation (\ref{eq:RC_n_e}) implies.
+	Only Equation \ref{eq:prob_eps} contains a probability
+	We thus form $n$ $\epsilon$ values, as Equation \ref{eq:RC_n_e} implies.
 
 	\begin{equation}
 		\epsilon_1, \epsilon_2, \epsilon_3, \dots, \epsilon_n = 
@@ -1043,7 +1044,7 @@ Many additional findings have been identified and were promised to be analysed i
 	\end{equation}
 
 	\noindent
-	Consequently, the investment is---over 100 repetitions---approximately equal to 0.5, as shows equation (\ref{eq:i_eq_0.5}).
+	Consequently, the investment is---over 100 repetitions---approximately equal to 0.5, as shows Equation \ref{eq:i_eq_0.5}.
 
 	\begin{equation}
 		i(\theta_{\mathrm{RC}}) \approx 0.5 + \bar \epsilon \cdot \theta_{\mathrm{RC}} \frac{1}{20} \approx 0.5
@@ -1054,7 +1055,7 @@ Many additional findings have been identified and were promised to be analysed i
 	The generally non-existent influence of Random-Continuous' parameter value can be traced back to this phenomenon which is labelled as the Law of Large Number in mathematical statistics.
 
 
-\subsection{Dispersion and Risk} \label{sec:RndD_vs_AlwS}
+\subsection{Dispersion and Risk} \label{sec:dispersion_risk}
 	
 	Building on the discussions on shallow randomness (section \ref{sec:shallow_randomness}), it seems worthwhile to delve deeper into the dispersion of the Random-Discrete and AlwaysSame surfaces, which on average show the same behaviour.
 	To this end, Figure \ref{fig:two_one-iter} illustrates the absolute-gain surfaces of the interaction of both strategies if only played once (with 20 rounds).
@@ -1070,7 +1071,7 @@ Many additional findings have been identified and were promised to be analysed i
 	\noindent
 	Coarser surfaces are visible, which is due to the phenomenon of the Law of Large Numbers as explained above (section \ref{sec:shallow_randomness}).
 	The surface of Random-Discrete is a bit evener. 
-	This fact can be explained by examining the pay-off equations (\ref{eq:payoff_A} and \ref{eq:payoff_B}):
+	This fact can be explained by examining the pay-off Equations \ref{eq:payoff_A} and \ref{eq:payoff_B}:
 	$p_A = y - c x + c$ and $p_B = x - c y + c$, where $x$ is the previous investment of Random-Discrete and $y$ the previous investment of AlwaysSame.
 	Since $x$ is random---depending on Random-Discrete's parameter---and $y$ is a constant over one ICPD, subtracting only a fraction of the random investment pays off a more constant amount of points.
 
@@ -1102,7 +1103,7 @@ Many additional findings have been identified and were promised to be analysed i
 		\label{fig:SD_avr}
 	\end{figure}
 
-\subsection{Threshold Values for Discrete Adaptations} \label{sec:RndD_vs_AdpD}
+\subsection{Threshold Values for Discrete Adaptations} \label{sec:threshold_values}
 		
 	Regarding the surfaces of the interactions of Random-Discrete with Adapt-Discrete, a stripe can be observed.
 	To understand the reason for this effect, the investment calculations of Adapt-Discrete should be recalled (see Equations \ref{eq:AD_i0}-\ref{eq:AD_s_eq}).
@@ -1127,17 +1128,21 @@ Many additional findings have been identified and were promised to be analysed i
 
 	\noindent
 	As the investments of Adapt-Discrete are rounded to the nearest integer (Equation \ref{eq:AD_rounded}), to get from investment 0 to 1 or vice versa, the raw value of the investment has to exceed a certain threshold value which is equal to 0.5.
-	In the first round, Adapt-Discrete contributes full cooperation (Equation \ref{eq:AD_i0_discuss}), so that to surpass the threshold, shift in equation (\ref{eq:AD_eq_s_discuss}) must be lower than -0.5.
+	In the first round, Adapt-Discrete contributes full cooperation (Equation \ref{eq:AD_i0_discuss}), so that to surpass the threshold, shift in Equation \ref{eq:AD_eq_s_discuss} must be lower than -0.5.
 	To generate a general formula that calculates the opponent's investment that is necessary to exceed the threshold in the first round given the parameter, it is required to solve for $\tilde{i}_1$.
 
 	\begin{equation}
-	\begin{split}
-		s(\theta_{\mathrm{AdpD}}) &< -0.5 \\
-		\frac{\theta_{\mathrm{AdpD}}}{5} \cdot (\tilde{i}_1 - 1) &< -0.5 \qquad | \cdot \frac{5}{\theta_{\mathrm{AdpD}}} \\
-		\tilde{i}_1 - 1 &< -\frac{2.5}{\theta_{\mathrm{AdpD}}} \qquad | + 1 \\
-		\tilde{i}_1 &< -\frac{2.5}{\theta_{\mathrm{AdpD}}} + 1
-	\end{split}
-	\label{eq:adpd_inequality}
+\begin{alignedat}{2}
+s(\theta_{\mathrm{AD}}, k)                           &< -0.5
+  &\qquad& \\[5pt]
+\frac{\theta_{\mathrm{AD}}}{5}(\tilde{i}_{k-1}-1)    &< -0.5
+  &\qquad& \bigl|\cdot\frac{5}{\theta_{\mathrm{AD}}}\bigr.\\[5pt]
+\tilde{i}_{k-1} - 1                                  &< -\dfrac{2.5}{\theta_{\mathrm{AD}}}
+  &\qquad& \bigl|+1\bigr.\\[5pt]
+\tilde{i}_{k-1}                                      &< -\dfrac{2.5}{\theta_{\mathrm{AD}}}+1
+  &\qquad&
+\end{alignedat}
+\label{eq:adpd_inequality}
 \end{equation}
 
 	\noindent
@@ -1213,14 +1218,14 @@ Many additional findings have been identified and were promised to be analysed i
 
 	\noindent
 	As shown in Figure \ref{fig:RC_investm} (right), every investment of Random-Continuous above the line of \textit{'Maximum Investment'} results in an exploitation of Adapt-Discrete.
-	Parameters equal to either 0, 1, or 2 necessitate a different approach (see \ref{sec:RndD_vs_AdpD}).
+	Parameters equal to either 0, 1, or 2 necessitate a different approach (see \ref{sec:threshold_values}).
 	To explain this fact, the parameter value of Adapt-Discrete equal to 3 will be taken as an example.
 	The same idea applies to every further value of the parameter.
 	The graph at parameter 3 is at an investment value of $0.1\overline{6}$ and thus lies between the lines \textit{'RndC 7 lower'} and \textit{'RndC 6 lower'}.
 	The line below this point means that this and every greater parameter of Random-Continuous does not exploit Adapt-Discrete.
 	% Adapt-Discrete can surpass the threshold value of 0.5 because the investment of Random-Continuous 7 and every further one submits a lower investment (with a 50\% change) and thus defects completely.
 	The line above indicates the first version of Random-Continuous in negative direction that exploits Adapt-Discrete.
-	This line can be at the same height as the point and it would still result in a losing situation for Adapt-Discrete (see \ref{sec:RndD_vs_AdpD}).\\
+	This line can be at the same height as the point and it would still result in a losing situation for Adapt-Discrete (see \ref{sec:threshold_values}).\\
 	
 	\noindent 
 	The appearance of the small peak is also a part of the discontinuity of the surfaces.
@@ -1242,12 +1247,12 @@ Many additional findings have been identified and were promised to be analysed i
 	This implies that Adapt-Discrete is exploited more often as Adapt-Discrete cooperates more often than it defects.
 	Every other combination of parameters of Adapt-Discrete and Random-Continuous prevents this situation from occurring.
 
-\subsection{Dynamics of Continuous Adaptations}
+\subsection{Dynamics of Continuous Adaptations} \label{sec:dynamics}
 	
 	The absolute-gain surface of Adapt-Continuous in the interaction with Random-Discrete has similar qualities to that of Adapt-Discrete against Random-Discrete.
 	The main difference between these surfaces concerns the angularity.
 	% A same idea can be used to explain the similar appearance of the surfaces against Adapt-Continuous compared to the ones against Adapt-Discrete.
-	Figure \ref{fig:AC_approx_invetm_and_payoffs_0-5} demonstrates the investments of Adapt-Continuous in one ICPD when it plays against Random-Discrete, thereby taking AlwaysSame as equivalent to Random-Discrete for simplicity (see \ref{sec:shallow_randomness} and \ref{sec:RndD_vs_AlwS}).
+	Figure \ref{fig:AC_approx_invetm_and_payoffs_0-5} demonstrates the investments of Adapt-Continuous in one ICPD when it plays against Random-Discrete, thereby taking AlwaysSame as equivalent to Random-Discrete for simplicity (see \ref{sec:shallow_randomness} and \ref{sec:dispersion_risk}).
 	Adapt-Continuous pursuits getting on the same level of investment as the opponent for parameter values from 1 to 5.
 	Parameter 0 forms a special case as its strategy never adapts and thus always cooperates, which can be derived from the fact that the difference to the opponent's investment is multiplied by 0 and thus no adaption is made.
 	The parameter value of Random-Discrete equals 5 in Figure \ref{fig:AC_approx_invetm_and_payoffs_0-5}.
@@ -1316,7 +1321,7 @@ Many additional findings have been identified and were promised to be analysed i
 % 	If $5 \le \theta \le 10$ however, the investments equal the opponent's contribution since their overpassing the value of the opponent's investment results in an average being equal to the opponent's investment.\\
 % \subsection{Random-Continuous vs. Adapt-Discrete}
 
-\subsection{Gains against Random Strategies}
+\subsection{Gains Against Random Strategies} \label{sec:conclusion_discuss}
 	When evaluating the surface plots depicted in Figure \ref{fig:RNDD-table} and \ref{fig:RNDC-table}, random strategies always win against adaptive strategies.
 	This particularly applies to low parameter values of the adaptive strategy, meaning that the adaptation dynamics from the initial state of full cooperation is limited and thus exploitation by the opponent is offered.
 	Positive relative-gain values can only be achieved if the opponent's investment is greater than one's own.
@@ -1394,8 +1399,7 @@ Many additional findings have been identified and were promised to be analysed i
 
 \appendix
 
-\section{Appendices} \label{sec:appendices}
-\subsection{Appendix A. Literature Search} \label{sec:Appx_search}
+\section{Appendix: Literature Search} \label{sec:appendices}
 To retrieve the most important scientific findings on the topic of PD and erratic behaviour, a literature search was conducted on \url{scholar.google.com} with the search terms 'Prisoner's Dilemma' and 'random strategy'. 
 To narrow down the search to scientific findings, books (54), mere citations (20) and papers not written in English (6) were excluded from the 650 hits as well as items with no more than ten citations (362).
 On the basis of the titles of the remaining 208 articles, papers were eliminated that dealt with the evolutionary (55) or other PD variants (14; e.g., with more players), the role of noise or information use (12), implementational or analytical aspects (42) or special applications (34; e.g., in human-robot interaction). 
@@ -1601,11 +1605,6 @@ D Ashlock, W Ashlock, G Umphry - 2006 IEEE Symposium on …, 2006 - ieeexplore.i
 Speichern Zitieren Zitiert von: 12 Ähnliche Artikel Alle 2 Versionen\\
 
 \newpage
-
-\subsection{Appendix B.}
-
-
-\subsection{Appendix C.}
 	
 \section{Declaration of Integrity} \label{sec:declaration_of_integrity}
 
