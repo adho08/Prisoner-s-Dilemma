@@ -18,13 +18,13 @@ parameter_B = 5
 parameter_start = 0
 parameter_end = 10
 list_parameters = range(parameter_start, parameter_end+1)
-add_trace_to_fig(fig, [0.5 + 0.05 * j for j in list_parameters], "Maximum Investment")
-add_trace_to_fig(fig, [0.5] * len(list_parameters), "Base")
-add_trace_to_fig(fig, [0.5 + -0.05 * j for j in list_parameters], "Minimum Investment")
+add_trace_to_fig(fig, [0.5 + 0.05 * j for j in list_parameters], "Upper Investment")
+add_trace_to_fig(fig, [0.5] * len(list_parameters), "Anchor")
+add_trace_to_fig(fig, [0.5 + -0.05 * j for j in list_parameters], "Lower Investment")
 
 fig.update_layout(
-    xaxis=dict(range=[0, 10], title="Parameters", dtick=1),
-    yaxis=dict(range=[0, 1], title="Investments", dtick=0.1)
+    xaxis=dict(range=[0, 10], title="Parameter of Random-Continuous", dtick=1),
+    yaxis=dict(range=[0, 1], title="Investment", dtick=0.1)
 )
 
-fig.write_image("plots/Discussion/RandomC/investments.png")
+fig.write_image("plots/Discussion/Random-Continuous/investments.png")
