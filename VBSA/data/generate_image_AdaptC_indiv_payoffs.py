@@ -10,7 +10,7 @@ def add_trace_to_fig(fig, csv_file, i):
         go.Scatter(
             x=df[df.columns[0]], 
             y=df[df.columns[2]], 
-            name=f"Parameter {i}"
+            name=f"AC {i}"
         )
     )
 
@@ -23,8 +23,8 @@ for i in list_parameters:
     add_trace_to_fig(fig, f"{directory}/AdaptC_vs_AlwaysS_simulation_{i}_{parameter_B}.csv", i)
 
 fig.update_layout(
-    xaxis=dict(range=[1, 20], title="Round", dtick=1),
-    yaxis=dict(range=[0, 1], title="Adapt-Continuous's Pay-off", dtick=0.1
+    xaxis=dict(range=[1, 20], title="Iteration", dtick=1),
+    yaxis=dict(range=[0, 1], title="Pay-Off", dtick=0.1
     )
 )
 

@@ -1,15 +1,15 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'build/Maturaarbeit.blg'
-[72] biber:340> INFO - === Sat Sep  6, 2025, 19:14:35
-[85] Biber.pm:420> INFO - Reading 'build/Maturaarbeit.bcf'
-[147] Biber.pm:994> INFO - Found 21 citekeys in bib section 0
-[157] Biber.pm:4463> INFO - Processing section 0
-[165] Biber.pm:4654> INFO - Looking for bibtex file 'refs.bib' for section 0
-[166] bibtex.pm:1713> INFO - LaTeX decoding ...
-[183] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
-[321] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[321] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[321] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[321] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[334] bbl.pm:676> INFO - Writing 'build/Maturaarbeit.bbl' with encoding 'UTF-8'
-[341] bbl.pm:779> INFO - Output to build/Maturaarbeit.bbl
+[78] biber:340> INFO - === Sun Sep  7, 2025, 21:46:05
+[98] Biber.pm:420> INFO - Reading 'build/Maturaarbeit.bcf'
+[157] Biber.pm:994> INFO - Found 21 citekeys in bib section 0
+[168] Biber.pm:4463> INFO - Processing section 0
+[180] Biber.pm:4654> INFO - Looking for bibtex file 'refs.bib' for section 0
+[182] bibtex.pm:1713> INFO - LaTeX decoding ...
+[199] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
+[349] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[350] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[350] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[350] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[371] bbl.pm:676> INFO - Writing 'build/Maturaarbeit.bbl' with encoding 'UTF-8'
+[378] bbl.pm:779> INFO - Output to build/Maturaarbeit.bbl

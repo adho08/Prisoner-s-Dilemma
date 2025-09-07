@@ -15,7 +15,7 @@ fig.add_trace(
         x=df["x"], 
         y=df["y"], 
         mode="lines+markers",
-        name="Surpass threshold up",
+        name="Surpass Threshold Up",
         line=dict(color="green")
     )
 )
@@ -28,7 +28,7 @@ fig.add_trace(
         x=df["x"], 
         y=df["y"], 
         mode="lines+markers",
-        name="Surpass threshold down",
+        name="Surpass Threshold Down",
         line=dict(color="blue")
     )
 )
@@ -39,31 +39,32 @@ def randomC_investm_up(parameter):
 def randomC_investm_down(parameter):
     return 0.5 - parameter/20
 
-def fig_add_trace_up(parameter_B, colour):
+def fig_add_trace_up(parameter_B, colour, name):
     fig.add_trace(
         go.Scatter(
             x=df["x"], 
             y=[randomC_investm_up(parameter_B)]*len(df["x"]), 
             mode="lines",
-            name=f"RndC {parameter_B}",
+            name=name,
             line=dict(color=colour)
         )
     )
 
-def fig_add_trace_down(parameter_B, colour):
+def fig_add_trace_down(parameter_B, colour, name):
     fig.add_trace(
         go.Scatter(
             x=df["x"], 
             y=[randomC_investm_down(parameter_B)]*len(df["x"]), 
             mode="lines",
+            name=name,
             line=dict(color=colour)
         )
     )
 
 colours = ["red", "green", "pink", "yellow", "black", "brown"]
 
-fig_add_trace_down(5, "red")
-fig_add_trace_up(5, "red")
+fig_add_trace_up(5, "red",  "RC 5 Upper")
+fig_add_trace_down(5, "orange", "RC 5 Lower")
 
 # Set axes from 0 to 11 (large y will be clipped out)
 fig.update_layout(
