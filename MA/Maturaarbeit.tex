@@ -65,7 +65,7 @@
 	\Large{Adrian Hossner}\\[3\vdist ex]
 	\begin{flushleft}
 		\begin{tabular}{>{\raggedright\arraybackslash}p{6cm} >{\raggedright\arraybackslash}p{5cm}}
-			\Large{Supervisor: } & \Large{Geoffrey Ostrin}\\[\vdist ex]
+			\Large{Supervisor: } & \Large{Dr. Geoffrey Ostrin}\\[\vdist ex]
 			\Large{Submission Date: } & \Large{September 7, 2025}\\[\vdist ex]
 			\Large{School: } & \Large{Gymnasium Thun}\\[\vdist ex]
 			\Large{Word Count (Sections 1-6): } & \Large{8000+}\\[\vdist ex]
@@ -86,26 +86,7 @@
 \pagenumbering{arabic}
 
 \section*{Abstract}
-% \parencite{Ahs08}\\
-% \parencite{AH81}\\
-% \textcite{BF06}\\
-% \textcite{Bre96}\\
-% \textcite{CF23}\\
-% \textcite{HZX22}\\
-% \textcite{HLD13}\\
-% \textcite{HLZ18}\\
-% \textcite{HS02}\\
-% \textcite{HY98}\\
-% \textcite{IGP04}\\
-% \textcite{JKK12}\\
-% \textcite{KK93}\\
-% \textcite{Kuh25}\\
-% \textcite{Lei11}\\
-% \textcite{MD17}\\
-% \textcite{McL81}\\
-% \textcite{NS93}\\
-% \textcite{RC15}\\
-% \textcite{SSLP09}
+
 
 \newpage
 
@@ -117,7 +98,7 @@ Of particular interest in this context would be the so-called 'Prisoner's Dilemm
 This game has been popularised in the 'A Beautiful Mind' film that narrates a story about the famous mathematician John Forbes Nash.
 The opportunity of combining my politically-social concerns with my subject-related interests in Computer Science and Mathematics captivated me immediately.
 Hence, I was more than delighted that my school teacher Mr Ostrin accepted my request to serve as a supervisor of a related high-school thesis.\\
-\indent Since then, Mr Ostrin has been always approachable and a extremely valuable supporter of my work.
+\indent Since then, Mr Ostrin has been always approachable and an extremely valuable supporter of my work.
 Likewise, I am grateful for all the help I have received from my parents, be it as inspiring discussants, critical proofreaders, or supportive coaches when I was temporarily stuck in problems. Many thanks from the bottom of my heart!
 
 
@@ -1336,38 +1317,59 @@ Many additional findings have been identified and were promised to be analysed i
 % \subsection{Random-Continuous vs. Adapt-Discrete}
 
 \subsection{Gains against Random Strategies}
-	
+	When evaluating the surface plots depicted in Figure \ref{fig:RNDD-table} and \ref{fig:RNDC-table}, random strategies always win against adaptive strategies.
+	This particularly applies to low parameter values of the adaptive strategy, meaning that the adaptation dynamics from the initial state of full cooperation is limited and thus exploitation by the opponent is offered.
+	Positive relative-gain values can only be achieved if the opponent's investment is greater than one's own.
+	Ultimately, it is thus logical to fully defect against random strategies if the aim is to maximise the personal advantage.
+	This can happen by always defecting in a AlwaysSame strategy or cooperating only with a small probability in a Random-Discrete strategy.
+	If the opponent reacts on this behaviour, the fundamental concepts of the PD surface, meaning that both player end up in mutual defection and thus receiving the least overall-gain.
+
+	When the aim is to maximise this overall-gain, cooperating always should be preferred, or at least with a high probability.
+	When pursuing an adaptive strategy, however, another option would be to offer exploitation, meaning being altruistic.
+	This results in a guaranteed, although lower overall-gain (at a height of 30) at the price of accepting negative relative-gain values.
+
+	Overall a superior for successfully counteracting a random strategy in terms of maximising relative-gain as well as overall-gain values, could not be identified in the present simulation.
+
 
 \section{Conclusions and Outlook} \label{sec:conclusion}
-\begin{itemize}
+	
+	When coming back to the leading question, one needs to conclude that no strong strategy counteracting erratic behaviour was found in the PD simulations.
+	It was rather confirmed that if the personal advantage is emphasised, cooperation should be completely refused.
+	However, complete erratic behaviours in the real world are practically not found---which is a considerable limitation of the pursued game-theoretical approach.
+	It is reasonable to expect that interaction partners behave rationally at a certain degree at least. 
+	When being confronted with an apparent erratic behaviour, the resulting issue then comes ultimately down to the question whether the other person is actually erratic or at least partially constructive.
+	In the first case, harshly finding back is advisable whereas in the second case, some cooperation should be offered. 
+	Coming back to the introductory political example of this thesis: Whether Donald J. Trump is more on erratic or on the rational side seems to be an open question...
 
-	\item Summary and Quintessence\\
-		First, we looked at the features of each surface.
-		To conclude, both Adapt-Discrete and Adapt-Continuous did very bad against Random-Discrete and Random-Continuous.
-		AlwaySame did equally well as bad against both random strategies.
-		The random strategies that played against themselves also scored fairly well.
-
-		Some areas in this simulation have not been explored due to factors concerning the time.
-		These areas apply to parameters such as the coefficient $c$ in the pay-off equations.
-		Or, the factor of noise, which changes the investments slightly and thus create a simulation where misunderstanding come to play.
-		Another limitation is the applicability to the real world.
-		To verify these results, further researches must be made.
-		These further researches concern empirical social or political researches.
-
-		To answer the initial question.
-		What behaviour is best when encountering an erratic behaviour.
-		As already mentioned, the interpretation into the real world are questionable.
-		But, from what we can conclude from this simulation is the following.
-		First, responsive/adaptive strategy could beat a random/erratic strategy.
-		The maximum they could get is mutual cooperation which is best for the total welfare but not ideal when one cares about advantage over the other.
-		Second, the rigid strategy could explore every outcome.
-		It could exploit the erratic strategy or lose against it.
-		But, it could also cooperate and defect mutually.
-		Ultimately, the random strategies itself could also get every outcome from the simulation.
-		This means when encountering a erratic strategy, it is best to be rigid or random oneself.
-		Being adaptive is only a loss.
-
-\end{itemize}
+% \begin{itemize}
+%
+% 	\item Summary and Quintessence\\
+% 		First, we looked at the features of each surface.
+% 		To conclude, both Adapt-Discrete and Adapt-Continuous did very bad against Random-Discrete and Random-Continuous.
+% 		AlwaySame did equally well as bad against both random strategies.
+% 		The random strategies that played against themselves also scored fairly well.
+%
+% 		Some areas in this simulation have not been explored due to factors concerning the time.
+% 		These areas apply to parameters such as the coefficient $c$ in the pay-off equations.
+% 		Or, the factor of noise, which changes the investments slightly and thus create a simulation where misunderstanding come to play.
+% 		Another limitation is the applicability to the real world.
+% 		To verify these results, further researches must be made.
+% 		These further researches concern empirical social or political researches.
+%
+% 		To answer the initial question.
+% 		What behaviour is best when encountering an erratic behaviour.
+% 		As already mentioned, the interpretation into the real world are questionable.
+% 		But, from what we can conclude from this simulation is the following.
+% 		First, responsive/adaptive strategy could beat a random/erratic strategy.
+% 		The maximum they could get is mutual cooperation which is best for the total welfare but not ideal when one cares about advantage over the other.
+% 		Second, the rigid strategy could explore every outcome.
+% 		It could exploit the erratic strategy or lose against it.
+% 		But, it could also cooperate and defect mutually.
+% 		Ultimately, the random strategies itself could also get every outcome from the simulation.
+% 		This means when encountering a erratic strategy, it is best to be rigid or random oneself.
+% 		Being adaptive is only a loss.
+%
+% \end{itemize}
 
 % \section{Self Reflection}
 % \begin{itemize}
