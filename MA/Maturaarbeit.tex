@@ -12,6 +12,28 @@
 \addbibresource{refs.bib}
 \usepackage[a4paper, margin=1in, footskip=0.25in]{geometry}
 
+\def\tableComp{
+	{\sffamily
+	\footnotesize
+	\centering
+	\caption{Implemented strategies, illustrated by parameter values meanings (TFT = Tit-for-Tat).}
+	\label{table:strategies_overview}
+	\begin{tabular}{ p{\wTstr}|p{\wTstr}|p{\wTstr}|p{\wTstr} }
+		& \hfil $\theta$ = 0 & \hfil $\theta$ = 5 & \hfil $\theta$ = 10 \\ 
+		\hline
+		Random-Discrete & \hfil AlwaysDefect & \hfil (50\% 0.00\textbar 1.00) & \hfil AlwaysCooperate \\  
+		\hline
+		Random-Continuous & \hfil AlwaysNeutral & \hfil (50\% 0.25\textbar 0.75) & \hfil (50\% 0.00\textbar 1.00) \\
+		\hline
+		Always-Same & \hfil AlwaysDefect & \hfil AlwaysNeutral & \hfil AlwaysCooperate \\
+		\hline
+		Adapt-Discrete & \hfil AlwaysCooperate & \hfil (rounded TFT) & \hfil (rounded overshot TFT)\\
+		\hline
+		Adapt-Continuous & \hfil AlwaysNeutral & \hfil TFT & \hfil (overshot TFT)
+	\end{tabular}
+	}
+}
+
 \defbibheading{bibliography}[\refname]{}
 % relative path to images directory
 % \graphicspath{ {./plots/} }
@@ -53,6 +75,10 @@
 \date{ } % display no date
 
 \begin{document}
+
+% make text never surpass the margin
+\sloppy
+
 \maketitle
 \pagenumbering{gobble}
 
@@ -406,25 +432,26 @@ Special features of the parametrisations are summarised in advance in Table \ref
 \def\wTstr{3.5cm}
 
 \begin{table}[h]
-	{\sffamily
-	\footnotesize
-	\centering
-	\caption{Implemented strategies, illustrated by parameter values meanings (TFT = Tit-for-Tat).}
-	\label{table:strategies_overview}
-	\begin{tabular}{ p{\wTstr}|p{\wTstr}|p{\wTstr}|p{\wTstr} }
-		& \hfil $\theta$ = 0 & \hfil $\theta$ = 5 & \hfil $\theta$ = 10 \\ 
-		\hline
-		Random-Discrete & \hfil AlwaysDefect & \hfil (50\% 0.00\textbar 1.00) & \hfil AlwaysCooperate \\  
-		\hline
-		Random-Continuous & \hfil AlwaysNeutral & \hfil (50\% 0.25\textbar 0.75) & \hfil (50\% 0.00\textbar 1.00) \\
-		\hline
-		Always-Same & \hfil AlwaysDefect & \hfil AlwaysNeutral & \hfil AlwaysCooperate \\
-		\hline
-		Adapt-Discrete & \hfil AlwaysCooperate & \hfil (rounded TFT) & \hfil (rounded overshot TFT)\\
-		\hline
-		Adapt-Continuous & \hfil AlwaysNeutral & \hfil TFT & \hfil (overshot TFT)
-	\end{tabular}
-}
+	\tableComp
+% 	{\sffamily
+% 	\footnotesize
+% 	\centering
+% 	\caption{Implemented strategies, illustrated by parameter values meanings (TFT = Tit-for-Tat).}
+% 	\label{table:strategies_overview}
+% 	\begin{tabular}{ p{\wTstr}|p{\wTstr}|p{\wTstr}|p{\wTstr} }
+% 		& \hfil $\theta$ = 0 & \hfil $\theta$ = 5 & \hfil $\theta$ = 10 \\ 
+% 		\hline
+% 		Random-Discrete & \hfil AlwaysDefect & \hfil (50\% 0.00\textbar 1.00) & \hfil AlwaysCooperate \\  
+% 		\hline
+% 		Random-Continuous & \hfil AlwaysNeutral & \hfil (50\% 0.25\textbar 0.75) & \hfil (50\% 0.00\textbar 1.00) \\
+% 		\hline
+% 		Always-Same & \hfil AlwaysDefect & \hfil AlwaysNeutral & \hfil AlwaysCooperate \\
+% 		\hline
+% 		Adapt-Discrete & \hfil AlwaysCooperate & \hfil (rounded TFT) & \hfil (rounded overshot TFT)\\
+% 		\hline
+% 		Adapt-Continuous & \hfil AlwaysNeutral & \hfil TFT & \hfil (overshot TFT)
+% 	\end{tabular}
+% }
 \end{table}
 
 \subsubsection*{Random-Discrete}
@@ -490,7 +517,7 @@ After the first round, it will adapt to the submissions of the other player by s
 	\label{eq:AC_i_eq}
 \end{equation}
 \begin{equation}
-	s(\theta_{\mathrm{AC}}, k) = \frac{1}{5} \theta_{\mathrm{AC}} \cdot (\bar i_{k-1} - i_{k-1})
+	s(\theta_{\mathrm{AC}}, k) = \frac{1}{5} \theta_{\mathrm{AC}} \cdot (\tilde{\i}_{k-1} - i_{k-1})
 	\label{eq:AC_s_eq}
 \end{equation}
 Please note that $k$ indicates the current round and is used to notate the equations recursively.
@@ -514,7 +541,7 @@ Adapt-Discrete (AD) is insofar derived from Adapt-Continuous as the same investm
 	\label{eq:AD_i_eq}
 \end{equation}
 \begin{equation}
-	s(\theta_{\mathrm{AD}}, k) = \frac{1}{5} \theta_{\mathrm{AD}} \cdot (\bar i_{k-1} - i_{k-1})
+	s(\theta_{\mathrm{AD}}, k) = \frac{1}{5} \theta_{\mathrm{AD}} \cdot (\tilde{i}_{k-1} - i_{k-1})
 	\label{eq:AD_s_eq}
 \end{equation}
 The strategy will start with full cooperation.
@@ -665,7 +692,6 @@ Therefore, the overall gain should be understood as a marker for population welf
 % ------------------------------- Random-Discrete -------------------------------
 \begin{figure}[!ht]
 	{\sffamily
-	% \small
 	\footnotesize
 	\centering
 
@@ -713,22 +739,8 @@ Therefore, the overall gain should be understood as a marker for population welf
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Discrete/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Discrete/Random-Discrete_vs_Adapt-Continuous/added.png} \\
 	\end{tabular}
-\begin{center}
-\begin{tabular}{ c|c|c|c }
-   & $\theta$ = 0 & $\theta$ = 5 & $\theta$ = 10 \\ 
-   \hline
-	Random-Discrete & AlwaysDefect & - & AlwaysCooperate \\  
-   \hline
-	Random-Continuous & AlwaysNeutral & - & Random-Discrete ($\theta$ = 5) \\
-   \hline
-	Always-Same & AlwaysDefect & AlwaysNeutral & AlwaysCooperate \\
-   \hline
-	Adapt-Discrete & AlwaysCooperate & - & -\\
-   \hline
-	Adapt-Continuous & AlwaysCooperate & Tit-For-Tat & -
-\end{tabular}
-\end{center}
-\caption{pbICPD surface plots for Random-Discrete. Absolute-, Relative-, and Overall-Gain values (rows) are shown for each implemented strategy (columns). Parameter value meanings for each strategy are repeated to enhance comprehensibility (Table \ref{table:strategies_overview}).}
+	\tableComp
+	\caption{pbICPD surface plots for Random-Discrete. Absolute-, Relative-, and Overall-Gain values (rows) are shown for each implemented strategy (columns). Parameter value meanings for each strategy are repeated to enhance comprehensibility (Table \ref{table:strategies_overview}).}
 	\label{fig:RNDD-table}
 	}
 \end{figure}
@@ -738,6 +750,7 @@ Therefore, the overall gain should be understood as a marker for population welf
 % ------------------------------- Random-Continuous -------------------------------
 \begin{figure}[!ht]
 	{\sffamily
+	\footnotesize
 	\centering
     
 	% Header row
@@ -781,21 +794,7 @@ Therefore, the overall gain should be understood as a marker for population welf
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Discrete/added.png} &
 		\includegraphics[width=\w\textwidth]{plots/Random-Continuous/Random-Continuous_vs_Adapt-Continuous/added.png} \\
 	\end{tabular}
-\begin{center}
-\begin{tabular}{ c|c|c|c }
-   & $\theta = 0$ & $\theta = 5$ & $\theta = 10$ \\ 
-   \hline
-	Random-Discrete & AlwaysDefect & - & AlwaysCooperate \\  
-   \hline
-	Random-Continuous & AlwaysNeutral & - & Random-Discrete ($\theta = 5$) \\
-   \hline
-	Always-Same & AlwaysDefect & AlwaysNeutral & AlwaysCooperate \\
-   \hline
-	Adapt-Discrete & AlwaysCooperate & - & -\\
-   \hline
-	Adapt-Continuous & AlwaysCooperate & Tit-For-Tat & -
-\end{tabular}
-\end{center}
+	\tableComp
 	\caption{pbICPD surface plots for Random-Continuous. Absolute-, Relative-, and Overall-Gain values (rows) are shown for each implemented strategy (columns). Parameter value meanings for each strategy are repeated to enhance comprehensibility (Table \ref{table:strategies_overview}).}
 	\label{fig:RNDC-table}
 	}
@@ -804,99 +803,81 @@ Therefore, the overall gain should be understood as a marker for population welf
 
 \newpage
 
-In the following two pages, the results of each column, meaning the five surface plots, will be presented objectively.
-The description of each interaction follows a certain pattern. 
-First, the two absolute-gain surfaces are exhibited.
-Second, both relative-gain surface plots are explained.
-Ultimately, the overall-gain surface is clarified.\\
+\noindent
+In the following two subsections (\ref{sec:desc_RD}, \ref{sec:desc_RC}), the results of each column of each figure, meaning the five surface plots, will be described.
+The description follows a certain patter: First, the two absolute-gain, second, both relative-gain, and third, the overall-gain surfaces are explained in more detail.
 
-\subsection{Random-Discrete}
+\subsection{Random-Discrete} \label{sec:desc_RD}
 
-\subsubsection*{Random-Discrete\textunderscore2}
-		The left (10, 0) and right (0, 10) corner are the extremes.
-		Random-Discrete is exploited if its parameter is equal to 10, meaning it corresponds to AlwaysCooperate, and Random-Discrete\textunderscore2's parameter is at 0, i.e. it is equivalent to AlwaysDefect.
+\subsubsection*{Random-Discrete}
+		The left (10, 0) and right (0, 10) corner are the extremes of the surface.
+		Random-Discrete is exploited if its parameter equals 10, meaning it corresponds to AlwaysCooperate, and the parameter Random-Discrete as an opponent is 0, i.e., equivalent to AlwaysDefect.
 		% This is how one can get the maximum output, by exploiting.
 		% This can be seen in the surface of Random-Discrete\textunderscore2.
-		The hindmost corner at the coordinate (0, 0) is where both defect constantly.
-		This fact can be excogitated by the bespoken feature that this coordinate is located at a z-coordinate of 10.
+		The rearmost corner at the coordinate (0, 0) is where both defect constantly, which relates to the already clarified fact that this point is located at a height of 10 for both players.
 		% This is the point where both get their relative lowest output, as can be seen later.\\
-		The nearest point to this perspective is at the coordinate (10, 10).
-		Either's value of their parameter is 10, this indicates that both Random-Discrete and Random-Discrete\textunderscore2 behave equally, viz. as AlwaysCooperate.
-		So, both always cooperate and thus gain 20 points separately.\\
+		Where both parameter equal to 10, both points have a z-component of 20.
+		This indicates that both strategies behave equally, i.e., as AlwaysCooperate, which leads to a gain of 20 points separately.
 
-		The peaks of both relative-gain surface plots derive from having the maximum output.
-		Since one can get the maximum output only if the other is exploited, the advantage surface result in the highest z-value possible.
-		When the two parameter's are identical, however, they are not any better than the other.
-		This makes sense since they behave the same when they have the same parameter and can thus not exploit each other.\\
+		The peaks of both relative-gain surfaces derive from the maximum outputs of the pay-off system.
+		Since one can get the maximum output only if the other is exploited, the relative-gain surfaces entail the extreme outcomes of the ICPD.
+		When the two parameters are identical, however, no strategy wins.
 
-		The overall-gain surface indicates clearly that the pinnacle of the slope is at (10, 10).
-		This point, as already mentioned, has the quality that both strategies are equal to AlwaysCooperate.
+		The overall-gain surface clearly indicates that the peak of the surface is at (10, 10).
+		This point has the quality that both strategies are equivalent to AlwaysCooperate.
 		% This illustrates the dilemma pretty well.
-		On the opposite corner, however, it becomes clear this is the lowest point.
-		As already mentioned, the most behind point, being the lowest, results from the fact that both defected constantly.
-		So, for the welfare of the population, it is best if both cooperate interminably.\\
-
+		The rearmost point, being the lowest, results from the fact that both defected constantly.
+		So, for the welfare of the population, it is best if both always cooperate.
+		In sum, this is the standard outcome of the PD game.
 
 \subsubsection*{Random-Continuous}
-		The absolute-gain surfaces concerning the interaction of Random-Discrete and Random-Continuous range from 20 to 10 and from 5 to 25 continuously.
-		Both surfaces are not influenced by the parameter of Random-Continuous.\\
+		The absolute-gain surfaces concerning the interaction of Random-Discrete and Random-Continuous continuously range from 20 to 10 and from 5 to 25, respectively.
+		Both surfaces are not influenced by the parameter of Random-Continuous.
+
 		% This is logical and will be looked at the discussion.\\
 
-		The two relative-gain surfaces, if put together in one plot, would intersect exactly in the middle where the parameter of Random-Discrete is equal to 5.
-		Since they range from different limits but both upper and lower limit add up to 30, they intersect in the middle where the parameter of Random-Discrete is 5.
-		That is why the surface of the relative-gain intersects the zero-plane at the same line.
-		Naturally, this surface is only influenced by the parameter of Random-Discrete and not Random-Continuous.
-		They range continuously from -15 to 15.\\
+		The two relative-gain surfaces, show that Random-Discrete wins if the parameter values are lower than 5, which corresponds to defecting with a higher probability than 50\%.
+		For the parameter values higher than 5, i.e., cooperating more than defecting, the contrary is true.
+		The relative-gain surfaces range continuously from -15 to 15.
 
-		The overall-gain surface shows a constant slope ranging from 35 to 25.
-		The maximum value, 40, has not been achieved since exploitation did not take place.\\
-
+		The overall-gain surface shows a constant slope with points ranging from 35 to 25.
+		The maximum value of 40 is not achieved since full exploitation does not take place.
+		The fact that the surfaces are not affected by the parameter value of Random-Continuous will be analysed in the discussion section \ref{sec:discussion}.
 
 \subsubsection*{AlwaysSame}
-		It has to be mentioned that Random-Discrete behaves like AlwaysSame.
-		This is due to the fact that this simulation has been run 100 times to smooth out one-time abnormalities.
-		This is notable by looking at the column where Random-Discrete plays against itself and against AlwaysSame.
-		Since the two strategies behave exactly in the same way, these two columns of surface plots are duplicates.
-		The differential between Random-Discrete and AlwaysSame is later defined in the Discussion.\\
-
+		Remarkably, AlwaysSame behaves exactly like Random-Discrete.
+		This becomes visible when looking at the columns where Random-Discrete plays against itself and against AlwaysSame.
+		The surprisingly absence of any difference between these two strategies needs further explanation and will thus be revisited in the discussion section \ref{sec:discussion}.
 
 \subsubsection*{Adapt-Discrete}
-		In the surface of Random-Discrete against Adapt-Discrete, there is a stripe at the parameter of Adapt-Discrete being from 0 to 2.
-		This stripe ranges from absolute exploitation at (0, 0) to mutual cooperation at parameter of Random-Discrete being equal to 10.
-		Abruptly, this stripe does not follow its pattern in the y-direction any more.
-		Rather a new inclination is visible.
-		This sudden alternation will be analysed in the Discussion. 
-		This slope's lowest points are at a height of 10.
-		But, both slopes range from where they begin at the y-z-plane to 20 at the other y-z-plane.
-		Respecting the fact that the height of 20 is an indicator of mutual cooperation, it can be verified by regarding the height of the correspondent points.
-		Since they are indeed at the same height, mutual cooperation takes place where the parameter of Random-Discrete is equal to 10.
-		Also the maximum points of the first plot indicate that the same points on the other surface must be at height 0.\\
+		In the surface of Random-Discrete against Adapt-Discrete, a stripe appears at the parameter of Adapt-Discrete ranging from 0 to 2.
+		This stripe ranges from absolute exploitation at (0, 0) to mutual cooperation where the parameter of Random-Discrete is equal to 10.
+		Abruptly, this stripe does not continue to follow its pattern in the y-direction, rather a new inclination is visible.
+		Both surfaces' lowest points are at a height of 10, which means that---after adaption of Adapt-Discrete---mutual defection was played.
+		However, if Random-Discrete always cooperates, the same effect appears as due to the adaption of Adapt-Discrete, mutual cooperation can be observed resulting in 20 points for both players. 
+		Additionally, the maximum points of the first plot indicate that the same points on corresponding surface of the opponent must be at height 0.
 		% The broader slope is also going downwards.
 		% But this slope is not as steep as the one on the other surface and thus has lower points at the edge where the parameter of Random-Discrete is 0.
 		% When Random-Discrete has its parameter at 10, which means it behaves like AlwaysCooperate, mutual cooperation will take place.\\
 
-		The relative-gain surface of Adapt-Discrete hides its most interesting element, the inverted stripe that leads ends at absolute exploitation and thus at height 0.
-		The rest of the surface is very near to the zero-plane which means it was as good as Random-Continuous in this area.
-		Because the slopes look pretty similar, there are practically no advantages in this scope.
-		At the coordinates of the stripe, however, is a great advantage which only Random-Continuous has over Adapt-Discrete.\\
+		The relative-gain surfaces---with the exception of the stripe highlighted above---is close to 0, meaning that there are practically no advantages.
+		At the coordinates of the stripe, however, is a remarkable advantage for Random-Discrete over Adapt-Discrete stands out, which needs further discussion (\ref{sec:discussion}).
 
-		As a matter of course, the overall-gain surface is the highest where only mutual cooperation occurred, which is where the parameter of Random-Discrete is equal to 10.
-		The stripe breaks off at height 30 which indicates exploitation.
-		And the broader slope finishes at height 20 which suggests mutual defection.\\
-
+		As a matter of course, the overall-gain surface shows highest points where only mutual cooperation occurs, which is where the parameter of Random-Discrete is equal to 10 and Adapt-Discrete adapts to this value.
+		The rear end of the stripe is at a height of 30 which indicates full exploitation.
+		And the broader subsurface ends at a height of 20 which suggests mutual defection.
+		Once again, the reason for this discontinuity will be analysed in the Discussion (\ref{sec:discussion}). 
 
 \subsubsection*{Adapt-Continuous}
-		The absolute-gain surfaces look akin to the ones against Adapt-Discrete.
-		The difference concerns the angularity.
-		Curves appear to replace the edges.\\
-		Since this phenomenon differs from that in the interaction between Adapt-Discrete, also this occurrence will be investigated further in the Discussion.
-		
+		The absolute-gain surfaces considerably resemble the ones of the Adapt-Discrete interaction.
+		The difference mainly concerns the angularity since curves appear to replace the edges.
+		So on the one hand, the similarity can be attributed to the description already delivered for Adapt-Discrete.
+		On the other hand, the rounding off effect needs further investigation in the Discussion (\ref{sec:discussion}).
 		% The edge where points are at height 20, stays as it was in the game against Adapt-Discrete.
 		% The broad slope is also similar to that surface, its lowest points being at 10.
 		% The surface of Adapt-Continuous is in a same way similar to the one of Adapt-Discrete.
 		% The edges are curved out.
 		% But, the slope is, again, a bit steeper than the one of Random-Discrete.\\
-
 		The same applies to the relative-gain and overall-gain surface plots.\\
 
 		% The advantage surface of Adapt-Continuous is in a difficult angle to see.
@@ -909,131 +890,140 @@ Ultimately, the overall-gain surface is clarified.\\
 		% This edge is rather a curve than a straight line.
 		% This curve bows from exploitation at coordinates being at (0, 0) to 20, the absolute minimum of this surface.
 	
-\subsection{Random-Continuous}
+\subsection{Random-Continuous} \label{sec:desc_RC}
 
 \subsubsection*{Random-Discrete}
-		Certain interactions appear twice, as this one.
-		Random-Discrete has already played against Random-Continuous.
-		There is thus no need for any explanation.\\
-	
+	The interaction of Random-Discrete and Random-Continuous has already been described above (\ref{sec:desc_RD}).
+	So, no further explanation is required.
 
-\subsubsection*{Random-Continuous\textunderscore2}
-		As already mentioned, Random-Continuous behaves like AlwaysNeutral by having played several times.
-		This results to having a completely flat surface.
-		We can calculate at which height the surface is.
-		Plugging in 0.5 for both $x$ and $y$ in the pay-off equations, we get $P_A = 0.5 - c \cdot 0.5 + c$ where $c = 0.5$.
-		The pay-off of strategy A is $P_A = 0.75$ and having played the ICPD 20 rounds, it is equal to $P_A \cdot 20 = 15$.
-		Both strategies A and B get the same pay-off since they submitted the same investment.
-		$P_B = P_A \rightarrow P_B \cdot 20 = 15$.
-		So, both surfaces are at the same height at every point.\\
+\subsubsection*{Random-Continuous}
+	The interaction of Random-Continuous and itself results in completely flat surfaces.
+	The absolute-gain surfaces are at a height of 15.
+	This can be ascribed to the fact that Random-Continuous on average delivers 0.5 as an investment.
+	% We can calculate at which height the surface is.
+	Plugging in 0.5 for both $x$ and $y$ in the pay-off equations (see \ref{sec:iterated_continuous_prisoners_dilemma}), we get $p_A = p_B = 0.5 - 0.5 \cdot 0.5 + 0.5$ \textrightarrow $p_A = p_B = 0.75$.
+	After 20 rounds of the CPD, this comes down to 15 points for both players.
 
-		Subtracting two flat surfaces at the same height at every coordinate, results in an also flat surface which corresponds to the zero-plane.
-		No strategy was better than the other at any point.\\
+	Subtracting two flat surfaces at the same height results in an also flat surface which corresponds to the zero-plane.
+	No strategy was better than the other at any point.
 
-		Adding these even two surfaces which are both at height 15, a surface at height $15 + 15 = 30$ follows.\\
-
+	Adding these even two surfaces---which are both at height 15---an overall surface at height 30 follows.
+	The flatness of all the surfaces deserves to be revisited in the discussion (\ref{sec:discussion}).
 
 \subsubsection*{AlwaysSame}
-		These surfaces are identical to the one's of the Random-Continuous vs. Random-Discrete interaction.
-		I will not describe them as they already have been.\\
-	
+	As already observed in the subsection on the Random-Discrete strategy (\ref{sec:desc_RD}), AlwaysSame behaves identically to Random-Discrete.
+	Once again, this effect requires further examination in the discussion section \ref{sec:discussion}.
 
 \subsubsection*{Adapt-Discrete}
-		There are two main levels on this surface.
-		The upper level in the Random-Continuous surface is at z-coordinate equal to 25 and lower to 10.
-		There is a little peak at the coordinate (5, 10) with an approximate height of 17, 12 respectively.\\
-		It seems as if the two absolute-gain surfaces are congruent.
-		This lower level is at $z = 10$ and the upper one at $z = 15$.
-		Also, the peak is pointing downwards making it to a lacuna.\\
+	For the absolute-gain plots, there are two main levels of the surfaces.
+	The upper level in the Random-Continuous surface is at a height of 25 and the lower one at a height of 10.
+	Additionally, there is a little peak at the coordinate (5, 10) with an approximate height of 17, 12, respectively.
+	This lower level in the Adapt-Discrete surface is located at a height of 10 and the upper one at a height of 15 while the peak is pointing downwards.
 
-		The upper level of the absolute-gain surface of Random-Continuous is approximately 15 points higher than the lower level of the other absolute-gain plot.
-		Additionally, the lower level of the surface of Random-Continuous and the upper one of the surface of Adapt-Discrete have nearly the same z component.
-		Notably, the relative-gain surface of Random-Continuous is above the zero-plane.
-		This means that Random-Continuous was better in every single game.\\
+	The upper level of the absolute-gain surface of Random-Continuous is approximately 15 points higher than the lower level of the other absolute-gain plot.
+	Additionally, the lower level of the surface of Random-Continuous and the upper one of the surface of Adapt-Discrete have almost the same z value.
+	Notably, the relative-gain surface of Random-Continuous is completely above the zero-plane, which pronouncedly applies for small parameter values of Adapt-Discrete, i.e., corresponding to AlwaysCooperate.
+	This means that Random-Continuous won the entire pbICPD.
 
-		According to this surface, the upper level of the absolute-gain surface of Random-Continuous added to the lower level of the one of Adapt-Discrete is greater than adding the two other levels.
-		The peak pointing upwards indicates that the peak is higher than the lacuna is profound.\\
-		
+	In terms of overall-gain, the upper level of the absolute-gain surface of Random-Continuous added to the lower level of the one of Adapt-Discrete results in higher values than adding the two levels of similar height.
+	Furthermore, a small positive peak remains.
+	Again, the reason for this discontinuity will be discussed later (\ref{sec:discussion}).
 
 \subsubsection*{Adapt-Continuous}
-		The absolute-gain surfaces resemble a wave or a curve in the y-direction.
-		This derives from the fact that, as already mentioned, Random-Continuous behaves like AlwaysNeutral.\\
-		The upper and lower limits conform to that of the correspondent absolute-gain surfaces against Adapt-Discrete.
-		Interestingly, this curve gives the impression that the lower limit has been reached once the parameter of Adapt-Continuous arrives at a certain value, estimative 4.
+	The absolute-gain surfaces resemble a wave or a curve in the y-direction.
+	The fact that the Random-Continuous parameter does not affect the surface's form can be traced back to the already discussed phenomenon that Random-Continuous on average behaves like AlwaysNeutral.
+	Strikingly, the upper and lower limits of the surfaces correspond to the absolute-gain surfaces described above for the Adapt-Discrete interaction.
+	For Adapt-Continuous parameter values of lower than 4, the curved surface appears to pronouncedly converge to a flat plane at a height of about 15.
 
-		The same properties can be seen in the relative-gain surface plots.
-		Upper and lower limits correspond to that of the relative-gain surfaces against Adapt-Discrete.
-		Also, the relative-gain surface of Random-Continuous is completely above the zero-plane.\\
-
-		This bespoken relation between the interaction against Adapt-Discrete is indifferent in the overall-gain surface plot.
-		The upper limit is at $z = 35$ and the lower boundary is at z-coordinate equal to 30.
+	The same properties can be seen in the relative-gain surface plots.
+	Upper and lower limits correspond to those of the relative-gain surfaces of the Adapt-Discrete interaction and the relative-gain surface of Random-Continuous is again completely located above the zero-plane.
+	The same applies to the overall-gain surface plot with its upper limit at a height of 35 and the lower limit at a height of 30.
+	The reasons for this curvature will be revisited in the discussion (\ref{sec:discussion}).
 
 
 \section{Discussion} \label{sec:discussion}
 
-The results suggest certain effects of the PD.
+% The results suggest certain effects of the PD.
 Many additional findings have been identified and were promised to be analysed in the Discussion since they need mathematical context for better understanding.
 
 \subsection{Shallow Randomness} \label{sec:shallow_randomness}
 
-	% TODO: Explain what a mixed strategy is in foundations
-	Random-Discrete and Random-Continuous, as a mixed strategies, behave equitably as pure strategies if the average of all the generated surfaces is taken.
-	The mathematical framework used to describe this phenomenon is called the Law of Large Numbers (LLN).
-	100 repetitions were named to be sufficient.
-	Random-Discrete acts identically as AlwaysSame and Random-Continuous as AlwaysNeutral.
-
-\subsubsection*{Random-Discrete}
+	It was found that Random-Discrete acts identically as AlwaysSame and Random-Continuous as AlwaysNeutral.
+	This means that Random-Discrete and Random-Continuous, as random strategies, behave equitably as deterministic strategies if the average of all the generated surfaces is taken.
+	% The mathematical framework used to describe this phenomenon is called the Law of Large Numbers (LLN).
 		
-	To clarify the resemblance between Random-Discrete and AlwaysSame, the equations to calculate the investment have to analysed.
+	To clarify the resemblance between Random-Discrete and AlwaysSame, the equations to calculate the investment have to be analysed (see Equation \ref{eq:RD_i_eq_1}).
+
+
 	\begin{equation}
-		\begin{split}
-		% \Pr(i = 1 \mid \theta_{\mathrm{RndD}}) = \frac{\theta_{\mathrm{RndD}}}{10}
-		% \text{ or }
-		% i \;\sim\; \mathrm{Bernoulli}(\frac{\theta_{\mathrm{RndD}}}{10})\\
-		i \;\sim\;
+		\Pr(i = 1) = \frac{1}{10} \theta_{\mathrm{RD}}
+		\label{eq:RD_i_eq_discuss}
+	\end{equation}
+
+	% \begin{equation}
+	% 	\begin{split}
+	% 	% \Pr(i = 1 \mid \theta_{\mathrm{RndD}}) = \frac{\theta_{\mathrm{RndD}}}{10}
+	% 	% \text{ or }
+	% 	% i \;\sim\; \mathrm{Bernoulli}(\frac{\theta_{\mathrm{RndD}}}{10})\\
+	% 	i \;\sim\;
+	% 	\begin{cases}
+	% 	  1 & \text{with probability } \frac{1}{2}\\
+	% 	 -1 & \text{with probability } \frac{1}{2} 
+	% 	\end{cases}
+	% 	\label{eq:RNDD_i_eq}
+	% 	\end{split}
+	% \end{equation}
+
+	\noindent
+	Regarding the investment calculation of Random-Discrete (Equation \ref{eq:RD_i_eq_discuss}), we can generate $n$ investments (Equation \ref{eq:RNDD_n_i}).
+
+	\begin{equation}
+		% \epsilon_1, \epsilon_2, \epsilon_3, \dots, \epsilon_n \;\sim 2 \cdot \mathrm{Bernoulli}(\frac{1}{2}) - 1
+		i_1, i_2, i_3, \dots, i_n = 
 		\begin{cases}
-		  1 & \text{with probability } \frac{1}{2}\\
-		 -1 & \text{with probability } \frac{1}{2} 
+		1 & \text{with probability } \frac{1}{10} \theta_{\mathrm{RD}}\\
+		0 & \text{with probability } 1 - \frac{1}{10} \theta_{\mathrm{RD}} 
 		\end{cases}
-		\label{eq:RNDD_i_eq}
-		\end{split}
+		\label{eq:RD_n_i}
 	\end{equation}
 
-	Regarding the investment calculation of Random-Discrete (\ref{eq:RNDD_i_eq}), we can generate $n$ $i$'s (\ref{eq:RNDD_n_i}).
+	\noindent
+	The average of all the generated investments in equation (\ref{eq:RD_n_i}) converges to a certain value as shown in equation (\ref{eq:RD_i_avr}).
 
 	\begin{equation}
-		i_1, i_2, i_3, \dots, i_n \;\sim \mathrm{Bernoulli}(\frac{\theta_{\mathrm{RndD}}}{10})
-		\label{eq:RNDD_n_i}
+		\bar i = \lim_{n\to\infty} \frac{1}{n} \sum_{k=1}^{n} i_k = \theta_{\mathrm{RD}} \frac{1}{10} \text{ almost surely}
+	\label{eq:RD_i_avr}
 	\end{equation}
 
+	\noindent
+	Substituting $n$ with 100---the number of repetitions in the present simulation---in equation (\ref{eq:RD_i_avr}) would be an approximation.
+	% But, for the scope of this project, 100 repetitions were chosen to be sufficient.
+
 	\begin{equation}
-		\begin{split}
-			\lim_{n\to\infty} \frac{1}{n} \sum_{k=1}^{n} i_k &= \frac{\theta_{\mathrm{RndD}}}{10} \text{ almost surely}\\
-			\frac{1}{100} \sum_{k=1}^{100} i_k &\approx \frac{\theta_{\mathrm{RndD}}}{10}
-		\label{eq:RNDD_approx_eq}
-		\end{split}
+		\bar i \approx \frac{1}{100} \sum_{k=1}^{100} i_k \approx \theta_{\mathrm{RD}} \frac{1}{10}
+		\label{eq:RD_approx_i}
 	\end{equation}
 
-	Substituting $n$ with 100 in equation (\ref{eq:RNDD_approx_eq}) would be an approximation.
-	But, for the scope of this project, 100 repetitions were named to be sufficient.\\
-	The fact that the surfaces of AlwaysSame seem identical to those against itself is now proven and justified.
-	
-\subsubsection*{Random-Continuous}
+	\noindent
+	Hence, calculating an investment with a certain probability, ultimately comes down to investing the same contribution constantly, which in turn corresponds to the behaviour of AlwaysSame.\\
 
-	Also in this case, the investment calculations need to be investigated to understand the appearance of AlwaysNeutral.
+	\noindent
+	A similar effect applies for Random-Continuous and the convergence to the behaviour of the AlwaysNeutral strategy.
+	To investigate a similar effect, the same procedure is conducted.
+	First, the investment equations of Random-Continuous need to be revisited (see Equations \ref{eq:RC_i_eq}-\ref{eq:RC_e_prob}).
 
 	\begin{equation}
-		i(\theta_{\mathrm{RndC}}) = 0.5 + s(\theta_{\mathrm{RndC}})
-		\label{eq:RNDC_i_eq}
+		i(\theta_{\mathrm{RC}}) = 0.5 + \epsilon \cdot s(\theta_{\mathrm{RC}})
+		\label{eq:}
 	\end{equation}
 	\begin{equation}
-		s(\theta_{\mathrm{RndC}}) = \epsilon \cdot \frac{\theta_{\mathrm{RndC}}}{20}
-		\label{eq:RNDC_s_eq}
+		s(\theta_{\mathrm{RC}}) = \theta_{\mathrm{RC}} \frac{1}{20}
+		\label{eq:}
 	\end{equation}
 	\begin{equation}
 		\begin{split}
 		% \Pr(\epsilon = 1) = \Pr(\epsilon = -1) = \frac{1}{2} \text{ or } \epsilon \;\sim 2 \cdot \mathrm{Bernoulli}(\frac{1}{2}) - 1\\
-		\epsilon \;\sim\;
+		\epsilon = 
 		\begin{cases}
 		  1 & \text{with probability } \frac{1}{2}\\
 		 -1 & \text{with probability } \frac{1}{2} 
@@ -1042,36 +1032,41 @@ Many additional findings have been identified and were promised to be analysed i
 		\end{split}
 	\end{equation}
 
-	Only the equation (\ref{eq:RNDC_s_eq}) is considerable since the probability or randomness singly appears there.
-	The same procedure is applied.
+	\noindent
+	Only equation (\ref{eq:prob_eps}) contains a probability
+	We thus form $n$ $\epsilon$ values, as equation (\ref{eq:RC_n_e}) implies.
 
 	\begin{equation}
-		% \epsilon_1, \epsilon_2, \epsilon_3, \dots, \epsilon_n \;\sim 2 \cdot \mathrm{Bernoulli}(\frac{1}{2}) - 1
-		\epsilon_1, \epsilon_2, \epsilon_3, \dots, \epsilon_n \;\sim\; 
+		\epsilon_1, \epsilon_2, \epsilon_3, \dots, \epsilon_n = 
 		\begin{cases}
 		  1 & \text{with probability } \frac{1}{2}\\
 		 -1 & \text{with probability } \frac{1}{2} 
 		\end{cases}
-		\label{eq:RNDC_n_i}
-	\end{equation}
-	\begin{equation}
-		\begin{split}
-			\lim_{n\to\infty} \frac{1}{n} \sum_{k=1}^{n} \epsilon_k &= 0 \text{ almost surely}\\
-			\bar \epsilon = \frac{1}{100} \sum_{k=1}^{100} \epsilon_k &\approx 0
-		\label{eq:RNDC_approx_eq}
-		\end{split}
+		\label{eq:RC_n_e}
 	\end{equation}
 
-	As a consequence of that, the investment is always equal to 0.5, as shows equation (\ref{eq:i_eq_0.5}).
+	\noindent	
+	The average of these $\epsilon$ values cancels out and therefore equals 0 (Equations \ref{eq:RC_e_avr} and \ref{eq:RC_approx_eq}).
 
 	\begin{equation}
-		\begin{split}
-			i(\theta_{\mathrm{RndC}}) = 0.5 + \bar \epsilon \cdot \frac{\theta_{\mathrm{RndC}}}{20} = 0.5
-		\end{split}
+		\bar \epsilon = \lim_{n\to\infty} \frac{1}{n} \sum_{k=1}^{n} \epsilon_k = 0 \text{ almost surely}\\
+		\label{eq:RC_e_avr}
+	\end{equation}
+	\begin{equation}
+		\bar \epsilon \approx \frac{1}{100} \sum_{k=1}^{100} \epsilon_k \approx 0
+		\label{eq:RC_approx_eq}
+	\end{equation}
+
+	\noindent
+	Consequently, the investment is---over 100 repetitions---approximately equal to 0.5, as shows equation (\ref{eq:i_eq_0.5}).
+
+	\begin{equation}
+		i(\theta_{\mathrm{RC}}) \approx 0.5 + \bar \epsilon \cdot \theta_{\mathrm{RC}} \frac{1}{20} \approx 0.5
 		\label{eq:i_eq_0.5}
 	\end{equation}
 
-	The non-existent influence of Random-Continuous' parameter is traced back to this fact.
+	\noindent
+	The generally non-existent influence of Random-Continuous' parameter value can be traced back to this phenomenon which is labelled as the Law of Large Number in mathematical statistics.
 
 
 \subsection{Random-Discrete vs. AlwaysSame} \label{sec:RndD_vs_AlwS}
