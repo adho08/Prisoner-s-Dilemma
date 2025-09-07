@@ -1261,94 +1261,82 @@ Many additional findings have been identified and were promised to be analysed i
 	This implies that Adapt-Discrete is exploited more often as Adapt-Discrete cooperates more often than it defects.
 	Every other combination of parameters of Adapt-Discrete and Random-Continuous prevents this situation from occurring.
 
-\subsection{Random-Discrete vs. Adapt-Continuous}
-	A same idea can be used to explain the similar appearance of the surfaces against Adapt-Continuous compared to the ones against Adapt-Discrete.
-	The following line chart demonstrates the investments of Adapt-Continuous in one ICPD.
-	I assumed that Random-Discrete behaves exactly the same as AlwaysSame due to discussed reasons (see sections \ref{sec:shallow_randomness} and \ref{sec:RndD_vs_AlwS}).
-	Adapt-Continuous pursuits getting on the same level of investment as the opponent.\\
-	Random-Discrete's parameter equals 5 in Figure \ref{fig:AdpC_approx_invetm_and_payoffs_0-5}.\\
+\subsection{Dynamics of Continuous Adaptations}
+	
+	The absolute-gain surface of Adapt-Continuous in the interaction with Random-Discrete has similar qualities to that of Adapt-Discrete against Random-Discrete.
+	The main difference between these surfaces concerns the angularity.
+	% A same idea can be used to explain the similar appearance of the surfaces against Adapt-Continuous compared to the ones against Adapt-Discrete.
+	Figure \ref{fig:AC_approx_invetm_and_payoffs_0-5} demonstrates the investments of Adapt-Continuous in one ICPD when it plays against Random-Discrete, thereby taking AlwaysSame as equivalent to Random-Discrete for simplicity (see \ref{sec:shallow_randomness} and \ref{sec:RndD_vs_AlwS}).
+	Adapt-Continuous pursuits getting on the same level of investment as the opponent for parameter values from 1 to 5.
+	Parameter 0 forms a special case as its strategy never adapts and thus always cooperates, which can be derived from the fact that the difference to the opponent's investment is multiplied by 0 and thus no adaption is made.
+	The parameter value of Random-Discrete equals 5 in Figure \ref{fig:AC_approx_invetm_and_payoffs_0-5}.
+
 	% AlwaysSame vs Adapt-Continuous better?
 	\begin{figure}[h!]
 		\centering
-		\begin{subfigure}[t]{0.45\textwidth}
-			\centering
-			\includegraphics[width=\linewidth]{plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png}\\
-			\caption{Investments of Adapt-Continuous with parameters ranging from 0 to 5.}
-			\label{fig:AdpC_approx_investm_0-5}
-		\end{subfigure}
-		\hfill
-		\begin{subfigure}[t]{0.45\textwidth}
-			\centering
-			\includegraphics[width=\linewidth]{plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png}
-			\caption{Pay-offs of Adapt-Continuous with parameters ranging from 0 to 5.}
-			\label{fig:AdpC_approx_payoff_0-5}
-		\end{subfigure}
-		\caption{}
-		\label{fig:AdpC_approx_invetm_and_payoffs_0-5}
+		\includegraphics[width=0.45\textwidth]{plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png}
+		\includegraphics[width=0.45\textwidth]{plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png}
+		\caption{Investments (left) and pay-offs (right) of Adapt-Continuous with parameters ranging from 0 to 5 against Random-Discrete parameter 5 as a functions of the iteration.}
+		\label{fig:AC_approx_invetm_and_payoffs_0-5}
 	\end{figure}
-
-	The function to calculate each graph can be derived from the equation of Adapt-Continuous that calculates the investment.
+	
+	\noindent
+	The function for each graph can be derived from the investment calculation of Adapt-Continuous (Equations \ref{eq:AC_i0}-\ref{eq:AC_s_eq}).
 	Equation (\ref{eq:AdpC_i_eq_rec}) describes this process recursively.
 	$k$ indicates the current round and $\theta$ is the parameter of Adapt-Continuous.
-	$\bar i$ has no numbering because it is constant.
+	$\tilde{i}$ is the opponent's investment and thus constant.
 	\begin{equation}
-		i_k = i_{k-1} + \frac{\theta}{5} \cdot (\bar i - i_{k-1})
+		i_k = i_{k-1} + \frac{\theta}{5} \cdot (\tilde{i} - i_{k-1})
 		\label{eq:AdpC_i_eq_rec}
 	\end{equation}
 
+	\noindent
 	% derivation in appendix (ChatGPT)
-	It is not possible to calculate a graph with the recursive form of this equation.
-	The explicit version is required as equation (\ref{eq:AdpC_i_eq_expl}) implies.
+	Since it is not possible to generate a graph using the recursive form, the explicit version is required (Equation \ref{eq:AdpC_i_eq_expl}).
 
 	\begin{equation}
-		i_k = \bar i + (1 - \frac{\theta}{5})^k \cdot (i_0 - \bar i)
+		i_k = \tilde{i} + (1 - \frac{\theta}{5})^k \cdot (i_0 - \tilde{i})
 		\label{eq:AdpC_i_eq_expl}
 	\end{equation}
 	
-	The higher the parameter of Adapt-Continuous, the faster it can adjust its investment.
-	This means that Adapt-Continuous, when the parameter is small, will be more exploited in the first several rounds than a Adapt-Continuous with a big value of its parameter.\\
-	
-	The question arises what the behaviour looks like if Adapt-Continuous' parameter has a value over 5.
-	Figure \ref{fig:AdpC_approx_investm_5-10} demonstrates the answer to this question.\\
-	\begin{figure}[h!]
-		\centering
-		\begin{subfigure}[t]{0.45\textwidth}
-			\centering
-			\includegraphics[width=\linewidth]{plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png}
-			\caption{Investments of Adapt-Continuous with parameters ranging from 5 to 10.}
-			\label{fig:AdpC_approx_investm_5-10}
-		\end{subfigure}
-		\hfill
-		\begin{subfigure}[t]{0.45\textwidth}
-			\centering
-			\includegraphics[width=\linewidth]{plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png}
-			\caption{Pay-offs of Adapt-Continuous with parameters ranging from 5 to 10.}
-			\label{fig:AdpC_approx_payoff_5-10}
-		\end{subfigure}
-		\caption{}
-		\label{fig:AdpC_approx_invetm_and_payoffs_5-10}
-	\end{figure}
-	
-	The investments always overstep the value of the opponent's investment.
-	The lines of parameters from six to nine tend to that value.
-	The ultimate accumulated points they receive is, however, indifferent to that of the behaviour of parameter equal to ten.
-	This is a consequence of the fact that the pay-offs of these investments cancel out.
-	The points that are gained more is the counterpart of the deficit of points in the next round.
-	
-	The peaks and the lows at parameter from 5 to 10 converge into a common average.
-	This average can be seen in Figure \ref{fig:AdpC_avr_points}.\\
-	\begin{figure}[h]
-		\begin{center}
-			\includegraphics[width=0.5\textwidth]{plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png}
-		\end{center}
-		\caption{Accumulated points of Adapt-Continuous. Parameters ranging from 0 to 10.}
-		\label{fig:AdpC_avr_points}
-	\end{figure}
-	
-	To summarise, if $0 \le \theta \le 5$, their investment converge to the opponent's contribution since they can adapt faster the higher the parameter.
-	If $5 \le \theta \le 10$ however, the investments equal the opponent's contribution since their overpassing the value of the opponent's investment results in an average being equal to the opponent's investment.\\
-\subsection{Random-Continuous vs. Adapt-Discrete}
+	\noindent
+	The higher the parameter of Adapt-Continuous, the faster the strategy can adjust its investment.
+	This means that Adapt-Continuous, when the parameter is small, will be more exploited in the first several rounds than an Adapt-Continuous version with a larger parameter value.
+	For parameter values of Adapt-Continuous greater than or equal to 5, Figure \ref{fig:AC_approx_invetm_and_payoffs_5-10} shows the dynamics of the investments and pay-offs.
 
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.45\textwidth]{plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png}
+		\includegraphics[width=0.45\textwidth]{plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png}
+		\caption{Investments (left) and pay-offs (right) of Adapt-Continuous with parameters ranging from 5 to 10 against Random-Discrete parameter 5 as a functions of the iteration.}
+		\label{fig:AC_approx_invetm_and_payoffs_5-10}
+	\end{figure}
+	
+	\noindent
+	For the depicted parameter values, Adapt-Continuous versions generally overstep the value of the opponent's investment.
+	However, whilst parameter 5 immediately adapts, the traces of parameters from 6 to 9 converge to a certain pay-off value of 0.75, which can be ascribed to specifics of the applied pay-off system again.
+	On the contrary, the parameter value of 10 always surpasses the opponent's contribution.
+	This results in an alternating cooperating and defecting behaviour.
+	% Most traces converge to a value of 0.75 because [pay-off system].
+	% The accumulated points in the end of the ICPD is, however, the same to that of 
+	% This is a consequence of the fact that the pay-offs of these investments cancel out.
+	% The points that are gained more is the counterpart of the deficit of points in the next round.
+	%
+	% The peaks and the lows at parameter from 5 to 10 converge into a common average.
+	% This average can be seen in Figure \ref{fig:AC_avr_points}.
+	% \begin{figure}[h]
+	% 	\centering
+	% 	\includegraphics[width=0.5\textwidth]{plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png}
+	% 	\caption{Accumulated points of Adapt-Continuous. Parameters ranging from 0 to 10.}
+	% 	\label{fig:AC_avr_points}
+	% \end{figure}
+	
+% 	To summarise, if $0 \le \theta \le 5$, their investment converge to the opponent's contribution since they can adapt faster the higher the parameter.
+% 	If $5 \le \theta \le 10$ however, the investments equal the opponent's contribution since their overpassing the value of the opponent's investment results in an average being equal to the opponent's investment.\\
+% \subsection{Random-Continuous vs. Adapt-Discrete}
+
+\subsection{Gains against Random Strategies}
+	
 
 \section{Conclusions and Outlook} \label{sec:conclusion}
 \begin{itemize}

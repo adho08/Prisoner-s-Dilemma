@@ -1098,7 +1098,6 @@ INPUT ./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png
 INPUT plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png
 INPUT ./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png
 INPUT ./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT ./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png
 INPUT ./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png
 INPUT plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png
@@ -1114,11 +1113,6 @@ INPUT ./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png
 INPUT plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png
 INPUT ./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png
 INPUT ./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png
-INPUT ./plots/Discussion/Adapt-Continuous/Payoffs_5_line_chart_0-10.png
-INPUT ./plots/Discussion/Adapt-Continuous/Payoffs_5_line_chart_0-10.png
-INPUT plots/Discussion/Adapt-Continuous/Payoffs_5_line_chart_0-10.png
-INPUT ./plots/Discussion/Adapt-Continuous/Payoffs_5_line_chart_0-10.png
-INPUT ./plots/Discussion/Adapt-Continuous/Payoffs_5_line_chart_0-10.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT build/Maturaarbeit.aux
 INPUT build/Maturaarbeit.out

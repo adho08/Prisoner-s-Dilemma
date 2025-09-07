@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/Maturaarbeit"] 1757178875.35023 "build/Maturaarbeit.bcf" "build/Maturaarbeit.bbl" "build/Maturaarbeit" 1757249262.84249 0
-  "build/Maturaarbeit.bcf" 1757249262.7065 109322 e0cbe5b9e1824ff36e4a7d73a1c61339 "pdflatex"
+["biber build/Maturaarbeit"] 1757178875.35023 "build/Maturaarbeit.bcf" "build/Maturaarbeit.bbl" "build/Maturaarbeit" 1757254370.37521 0
+  "build/Maturaarbeit.bcf" 1757254370.22836 109322 e0cbe5b9e1824ff36e4a7d73a1c61339 "pdflatex"
   "refs.bib" 1757163234.98497 6660 bca9ff7fb1e99f51986f128cf8dac3bc ""
   (generated)
   "build/Maturaarbeit.bbl"
   "build/Maturaarbeit.blg"
   (rewritten before read)
-["pdflatex"] 1757249259.31585 "Maturaarbeit.tex" "build/Maturaarbeit.pdf" "Maturaarbeit" 1757249262.84282 0
+["pdflatex"] 1757254366.93681 "Maturaarbeit.tex" "build/Maturaarbeit.pdf" "Maturaarbeit" 1757254370.37555 0
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1737590400 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -135,19 +135,18 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1737590400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1756041941.56631 4547224 5cf1c14d6ee63f23cc6525ae387ed2c9 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1756041610 7759956 46aea47261505c31e75125fee8931c29 ""
-  "Maturaarbeit.tex" 1757249253.94155 100751 aa68f620199739b2b7e177aa8323014c ""
-  "build/Maturaarbeit.aux" 1757249262.7045 18658 86246e2afb95f2d31a08ffdb5e3a615a "pdflatex"
+  "Maturaarbeit.tex" 1757254362.02433 101310 4670be19acd03473ab8d7d7baa32abab ""
+  "build/Maturaarbeit.aux" 1757254370.22576 17773 10422ad434afb714c415f7f1763c25af "pdflatex"
   "build/Maturaarbeit.bbl" 1757178876.1529 33606 334123145aebb43c6f1bbbf1c8e71efc "biber build/Maturaarbeit"
-  "build/Maturaarbeit.out" 1757249262.7055 4316 91522a2c0d8301892c2342cf4f063b12 "pdflatex"
-  "build/Maturaarbeit.run.xml" 1757249262.70858 2396 5efcd003b9f4b269aed627cb896ccf08 "pdflatex"
-  "build/Maturaarbeit.toc" 1757249262.70858 2266 2d8dc1a5d4f9e38bbc99ece0fd7ab674 "pdflatex"
+  "build/Maturaarbeit.out" 1757254370.22736 4287 6809e3c10e9d47ae41c792c61af082df "pdflatex"
+  "build/Maturaarbeit.run.xml" 1757254370.23054 2396 5efcd003b9f4b269aed627cb896ccf08 "pdflatex"
+  "build/Maturaarbeit.toc" 1757254370.23054 2259 c6a3ad6b7038b23b8cd2f98604814b9f "pdflatex"
   "images/pd_heatmap_A.png" 1755095647.56031 174676 be9cec53606a80f0599dec94469c15f3 ""
   "images/pd_heatmap_B.png" 1755095655.88822 184497 caec8985575284e71abcfa1660044d27 ""
   "plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png" 1755949778.76822 52747 48ceaeecab0033234afb319a5eea56e4 ""
   "plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png" 1755950354.71375 101084 c0ca45841a05512deaab0f539f69a8b2 ""
   "plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png" 1755951794.48373 46027 1643235f3cfd7b4239814a116cc9a0fd ""
   "plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png" 1755951848.18346 72776 1f03b50693eca5ad46fde7effc10dac5 ""
-  "plots/Discussion/Adapt-Continuous/Payoffs_5_line_chart_0-10.png" 1755952690.76125 28267 d5b3fb31fc411d182d764e5d4f6a5b02 ""
   "plots/Discussion/Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png" 1755966712.26054 32283 d91e0c76bd58ec59ec47532a1bde629e ""
   "plots/Discussion/Random-Continuous/investments.png" 1755955255.29749 41861 2863e9f937d770ffab468678d7bff3b0 ""
   "plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png" 1755970328.85309 37540 7009d6109ffebbb38c602f3e621ef7c5 ""

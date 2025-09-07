@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.8.24)  7 SEP 2025 14:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.8.24)  7 SEP 2025 16:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1015,234 +1015,219 @@ File: plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values
 Package pdftex.def Info: plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png  used on input line 1250.
 (pdftex.def)             Requested size: 362.37569pt x 258.84758pt.
 [21 <./plots/Discussion/Random-Continuous/investments.png> <./plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_abs.png> <./plots/Discussion/Random-Continuous_vs_Adapt-Discrete/Adapt-Discrete_values_surpass_threshold_up.png>]
-<plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png, id=556, 702.625pt x 501.875pt>
+<plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png, id=557, 702.625pt x 501.875pt>
 File: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png Graphic file (type png)
 <use plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png>
-Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png  used on input line 1275.
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png  used on input line 1277.
 (pdftex.def)             Requested size: 203.83417pt x 145.59363pt.
-<plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png, id=557, 702.625pt x 501.875pt>
+<plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png, id=558, 702.625pt x 501.875pt>
 File: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png Graphic file (type png)
 <use plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png>
-Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png  used on input line 1282.
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png  used on input line 1278.
 (pdftex.def)             Requested size: 203.83417pt x 145.59363pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1308--1310
-
- []
-
-[22 <./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png> <./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png>]
-<plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png, id=570, 702.625pt x 501.875pt>
+ [22 <./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_0-5.png> <./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_0-5.png>]
+<plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png, id=573, 702.625pt x 501.875pt>
 File: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png Graphic file (type png)
 <use plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png>
-Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png  used on input line 1317.
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png  used on input line 1309.
 (pdftex.def)             Requested size: 203.83417pt x 145.59363pt.
-<plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png, id=571, 702.625pt x 501.875pt>
+<plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png, id=574, 702.625pt x 501.875pt>
 File: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png Graphic file (type png)
 <use plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png>
-Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png  used on input line 1324.
+Package pdftex.def Info: plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png  used on input line 1310.
 (pdftex.def)             Requested size: 203.83417pt x 145.59363pt.
-<plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png, id=573, 702.625pt x 501.875pt>
-File: plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png Graphic file (type png)
-<use plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png>
-Package pdftex.def Info: plots/Discussion/Adapt-Continuous/payoffs_5_line_chart_0-10.png  used on input line 1342.
-(pdftex.def)             Requested size: 226.48395pt x 161.77495pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1348--1350
-
- []
-
-[23 <./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png> <./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png> <./plots/Discussion/Adapt-Continuous/Payoffs_5_line_chart_0-10.png>] [24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1419--1421
+ [23 <./plots/Discussion/Adapt-Continuous/Approx_5_line_chart_5-10.png> <./plots/Discussion/Adapt-Continuous/Approx_pay-offs_5_line_chart_5-10.png>] [24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 1407--1409
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1422--1431
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1419
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1422--1431
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1419
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1432--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1600
 
  []
 
@@ -1254,24 +1239,24 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Maturaarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 91522A2C0D8301892C2342CF4F063B12;4316.
+(rerunfilecheck)             Checksum: 6809E3C10E9D47AE41C792C61AF082DF;4287.
 Package logreq Info: Writing requests to 'Maturaarbeit.run.xml'.
 \openout1 = `Maturaarbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19986 strings out of 476034
- 378745 string characters out of 5792864
+ 19961 strings out of 476034
+ 377859 string characters out of 5792864
  1876388 words of memory out of 6000000
- 40030 multiletter control sequences out of 15000+600000
- 525269 words of font info for 72 fonts, out of 8000000 for 9000
+ 40007 multiletter control sequences out of 15000+600000
+ 524961 words of font info for 71 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 75i,23n,77p,685b,1453s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,23n,77p,685b,1457s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on build/Maturaarbeit.pdf (31 pages, 4518571 bytes).
+Output written on build/Maturaarbeit.pdf (31 pages, 4503047 bytes).
 PDF statistics:
- 776 PDF objects out of 1000 (max. 8388607)
- 566 compressed objects within 6 object streams
- 150 named destinations out of 1000 (max. 500000)
- 552 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 775 PDF objects out of 1000 (max. 8388607)
+ 567 compressed objects within 6 object streams
+ 149 named destinations out of 1000 (max. 500000)
+ 547 words of extra memory for PDF output out of 10000 (max. 10000000)
 
