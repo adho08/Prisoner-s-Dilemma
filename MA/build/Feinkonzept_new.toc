@@ -1,7 +1,0 @@
-\thispagestyle {empty}
-\contentsline {section}{\numberline {1}Introduction}{}{}%
-\contentsline {section}{\numberline {2}Theoretical Foundations}{}{}%
-\contentsline {section}{\numberline {3}Methods and Implementation}{}{}%
-\contentsline {section}{\numberline {4}Results}{}{}%
-\contentsline {section}{\numberline {5}Discussion and Limitations}{}{}%
-\contentsline {section}{\numberline {6}Conclusion}{}{}%
