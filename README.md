@@ -2,10 +2,10 @@
 
 ## Table of Contents
 
-1. [Description](## Description)
-2. [Installation](## Description)
-3. [Requirements](## Description)
-4. [Usage](## Description)
+1. [Description](##Description)
+2. [Installation](##Description)
+3. [Requirements](##Description)
+4. [Usage](##Description)
 
 ## Description
 
